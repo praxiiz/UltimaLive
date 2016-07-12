@@ -1,0 +1,53 @@
+** Original Update Statics Packet **
+14 bytes + 7 bytes per static 
+00    0x3f      Command 
+02    ushort    Size of packet
+06    uint      Block Number
+10    uint      Number of statics
+14    uint      Extra value for the index file - this will be split up and used for the
+                Ultima Live custom protocols
+Static[number of statics]    7 bytes
+		  ushort      ArtID
+		  byte        X offset in the block
+		  byte        Y offset in the block
+		  sbyte       Z axis position of the static
+		  ushort      Hue Number
+
+All derived packets follow the same basic syntax.	  
+		  
+** Server Packet: QueryClientHash (Update Statics) **
+0x3f		Packet Number
+ushort	Packet Size
+uint		Block Number central block of 25 requested
+uint		0	(no statics sent)
+ushort		Command / Security Number. 
+			Normall this is a security number. This will be used to make sure that players can't
+            spam the server with unrequested Query Responses. Not Implemented yet. 
+			If the next field is 0x7F, this will be a command number.
+			Commands:
+			0x00	Update Statics
+			0x01	Map Definition
+ushort		Normally this is the map ID. If its a query, it will be 0xFF, if its another command it will be 0x7F
+
+** Client Packet: HashQueryResponse (Update Statics) **
+0x3f        Packet Number
+ushort      Packet Size       	(43 bytes total)
+uint        Block Number      	central block of player
+uint        Number of Blocks  	4 blocks x 7 bytes = 28 bytes are expected in 
+								the statics portion of this packet
+ushort      ushort.maxvalue   	Ultima Live Command
+ushort      mapID             	Note: This would normally be a part of the 
+								statics of the packet.
+ushort      Validation Number   This number is sent out by the server query, it
+								its not returned the packet will be dropped.
+byte[25]    Block Versions     	If this number is different than the server's, 
+								the block will be resent.
+byte         padding
+
+
+
+  
+
+ 
+
+

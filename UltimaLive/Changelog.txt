@@ -1,0 +1,64 @@
+0.98
+Lots of ClientSide cleanup:
+  Added debug print and removed the #ifdef DEBUG statements
+  Fixed a number of warnings throughout the codebase
+  Renamed ClientRedirections class to Client class
+  Renamed UOLiveAppState class to UltimaLive class
+  Improved encapsulation of Client class
+  Client internal structure searching done all at once up front, abort UltimaLive upon failure to find any internal client structures
+  Added VTable definition to static object definition to clarify calls to Static Object method calls
+  Removed many unnecesary casts and changed memory searching functions to return void*
+  Added internal client structure definitions and made searching and calling functions have stronger type enforcement
+  Added self registering class mechanism to provide for adding classes without modifying existing code
+  Moved memory allocation from FileManager child classes into the base class
+  Eliminated most warnings
+
+0.97
+Fixed a bug that caused some file handles to be closed twice
+Fixed a bug that was causing map and graphic glitches on maps that were smaller than Felucca
+Moved Client files save path into the UltimaLiveSettings.cs file to centralize it
+Added path for lumber harvest system to the UltimaLiveSettings.cs file. If you are not using the system, you can remove these lines of code or leave them.
+Cleaned up various warnings
+Fixed a bug that was causing map operations to conflict
+Moved ServerSide files into a subfolder called Core in preparation for systems that will leverage UltimaLive
+Added Eric T. Benoit's modification to AddStaticCommand
+Moved some of the PlayerMobile edits to PlayerMobilePartial.cs. This will require the player to mark the PlayerMobile class as partial, but will require less overall edits.
+Added Eric T. Benoit's Set Hue Command
+Added Fwiffo's fix for Tile sorting
+Added Fwiffo's Fix for Client file export
+Added Fwiffo's Fix for LiveFreeze command
+Added Eric T. Benoit's incsx and incsy commands for moving statics
+
+0.96
+Fixed terrain refresh bug that caused black tiles to appear in some stock maps and in custom maps.
+Removed some client function signatures that were no longer being used
+Added Client Export fix patch submitted by fwiffo that properly handles exported maps when virtual maps are used
+Fixed bug in serverside files that would reset the hues of statics in the same x,y to 0 when a static was deleted 
+Fixed a minor bug that prevented MapRegistry.cs from compiling on .NET < 3.0
+
+0.95
+Refactored client refresh method to avoid resynching with server each time. Eliminated black flashing that players hate.
+Included patch by fwiffo to fix virtualized maps.
+Included patch by fwiffo to fix CRASH BUG FOR "IncStaticAlt" "DelStatic" "SetStaticID"
+
+0.91
+Added support to Copy existing mul files if they're the correct dimensions instead of creating new ones (both pre-UOP and UOP)
+Refactored to remove some duplicate code from subclassed file managers into basefilemanager
+Changed various integer types to be more consistent
+
+0.90
+Added support to Copy existing mul files if they're the correct dimensions instead of creating new ones (pre-UOP only at this time)
+Added progress dialog window to let users know the current progress of importing existing game client maps
+
+0.89
+Fixed bug in FileManagers that would cause UltimaLive to write to the index file instead of the statics file in certain circumstances
+Fixed bug in FileManagers that would cause the index file to reference a valid statics location, but with zero length for static content 
+
+0.87
+Added support mod from fwiffo for clients > 6.0.6.2 && < 7.0.0.0
+Added UltimaLive Version packet and support
+Added Version information to the file properties. An Igrping.dll can be checked by right click on it in windows and checking it's properties.
+Fixed bug that would cause a player not to refresh map after a relog resulting in a black screen
+Fixed bug in writeStaticsBlock that would sometimes result in a client crash.
+Fixed bug server/client side that prevented UltimaLive from streaming correcting across Map wrapping points
+Add message that displays UltimaLive and the version

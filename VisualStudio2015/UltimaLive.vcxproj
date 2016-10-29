@@ -14,6 +14,7 @@
     <ProjectGuid>{70890819-C61D-4D5E-80D4-477E21601B4B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>UltimaLive</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -43,12 +44,14 @@
     <LinkIncremental>
     </LinkIncremental>
     <TargetName>Igrping</TargetName>
-    <OutDir>..\..\..\Ultima\Clients\7.0.1.1_AllureClient\</OutDir>
+    <OutDir>$(SolutionDir)\igrping\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\obj\igrping\$(Configuration)-obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>Igrping</TargetName>
-    <OutDir>..\..\..\Ultima\Clients\7.0.1.1_AllureClient\</OutDir>
+    <OutDir>$(SolutionDir)\igrping\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\obj\igrping\$(Configuration)-obj\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -66,6 +69,7 @@
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCMTD</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib32\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -85,6 +89,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>mhook.lib;Version.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMTD</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib32\$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -131,7 +136,6 @@
     <ClCompile Include="..\UltimaLive\Network\PacketHandlerFactory.cpp" />
     <ClCompile Include="..\UltimaLive\ProgressBarDialog.cpp" />
     <ClCompile Include="..\UltimaLive\UltimaLive.cpp" />
-    <ClCompile Include="..\UltimaLive\UoLiveAppState.cpp" />
     <ClCompile Include="..\UltimaLive\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -182,7 +186,6 @@
     <ClInclude Include="..\UltimaLive\ProgressBarDialog.h" />
     <ClInclude Include="..\UltimaLive\resource.h" />
     <ClInclude Include="..\UltimaLive\UltimaLive.h" />
-    <ClInclude Include="..\UltimaLive\UoLiveAppState.h" />
     <ClInclude Include="..\UltimaLive\Utils.h" />
   </ItemGroup>
   <ItemGroup>

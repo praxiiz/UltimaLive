@@ -11,7 +11,6 @@
     <ClCompile Include="..\UltimaLive\MasterControlUtils.cpp" />
     <ClCompile Include="..\UltimaLive\ProgressBarDialog.cpp" />
     <ClCompile Include="..\UltimaLive\UltimaLive.cpp" />
-    <ClCompile Include="..\UltimaLive\UoLiveAppState.cpp" />
     <ClCompile Include="..\UltimaLive\Utils.cpp" />
     <ClCompile Include="..\UltimaLive\Network\BasePacketHandler.cpp">
       <Filter>Network</Filter>
@@ -127,7 +126,6 @@
     <ClInclude Include="..\UltimaLive\ProgressBarDialog.h" />
     <ClInclude Include="..\UltimaLive\resource.h" />
     <ClInclude Include="..\UltimaLive\UltimaLive.h" />
-    <ClInclude Include="..\UltimaLive\UoLiveAppState.h" />
     <ClInclude Include="..\UltimaLive\Utils.h" />
     <ClInclude Include="..\UltimaLive\Network\BasePacketHandler.h">
       <Filter>Network</Filter>

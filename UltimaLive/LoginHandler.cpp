@@ -171,7 +171,7 @@ void LoginHandler::onLoginComplete()
   uint16_t minor = static_cast<uint16_t>(Utils::getModuleMinorVersionLower());
   uint16_t major = static_cast<uint16_t>(Utils::getModuleMinorVersionUpper());
 
-  sprintf(welcomeMessageBuff, "ULTIMALIVE v.%u.%u", major, minor);
+  sprintf_s(welcomeMessageBuff, "ULTIMALIVE v.%u.%u", major, minor);
 
   uint8_t* pPacket = BuildUnicodeMessagePacket(0xFFFFFFFF, 0x03, 0xb205, welcomeMessageBuff);
   m_pManager->sendPacketToClient(pPacket);

@@ -29,7 +29,11 @@ LogoutRequestHandler_7_0_29_2::LogoutRequestHandler_7_0_29_2(NetworkManager* pMa
   //do nothing
 }
 
-bool LogoutRequestHandler_7_0_29_2::handlePacket(uint8_t* pPacketData)
+/* @brief
+ *
+ * @param pPacketData pointer to packet data bytes
+ */
+bool LogoutRequestHandler_7_0_29_2::handlePacket(uint8_t*)
 {
   m_pManager->onLogout();
   return true;

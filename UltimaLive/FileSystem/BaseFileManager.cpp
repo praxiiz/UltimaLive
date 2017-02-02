@@ -290,11 +290,14 @@ void BaseFileManager::copyFile(std::string sourceFilePath, std::string destFileP
   char* buffer = new char[4096];
   size_t bytesToWrite;
 
-  FILE* pSource = fopen(sourceFilePath.c_str(), "rb");
-  FILE* pDest = fopen(destFilePath.c_str(), "wb");
+  FILE* pSource = NULL;
+  FILE* pDest = NULL;
 
-    // clean and more secure
-    // feof(FILE* stream) returns non-zero if the end of file indicator for stream is set
+  errno_t err = fopen_s(&pSource, sourceFilePath.c_str(), "rb");
+  err = fopen_s(&pDest, destFilePath.c_str(), "wb");
+
+  // clean and more secure
+  // feof(FILE* stream) returns non-zero if the end of file indicator for stream is set
   do 
   {
     bytesToWrite = fread(buffer, 1, 4096, pSource);

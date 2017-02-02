@@ -79,7 +79,7 @@
 class LocalPeHelper32
 {
   public:
- 	  static std::list<MODULEENTRY32> GetLocalModuleList();
+ 	static std::list<MODULEENTRY32> GetLocalModuleList();
     static void HexPrint(char* buffer, int size);
     static void HexPrint(unsigned char* buffer, int size);
     static DWORD SetMemoryWritable(DWORD startingAddress);

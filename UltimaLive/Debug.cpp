@@ -29,59 +29,38 @@ void ConsoleLogger::InitializeLogger()
 {
   if (AttachConsole(ATTACH_PARENT_PROCESS) || AttachConsole(GetCurrentProcessId()) || AllocConsole())
   {
-    SetConsoleTitleA("UltimaLive Debug Console");
+    SetConsoleTitleA("UltimaLive Debug Console2");
 
-    //Redirect STDOUT
-    long lStdHandle = (long)GetStdHandle(STD_OUTPUT_HANDLE);
-    int hConHandle = _open_osfhandle(lStdHandle, _O_TEXT);    //Associates a C run-time file descriptor with an existing operating-system file handle.
-    FILE* fp = _fdopen( hConHandle, "r+" );
-    *stdout = *fp;
-    setvbuf( stdout, NULL, _IONBF, 0 );
-    std::ios::sync_with_stdio();
-    m_hConOut = CreateFileA("CONOUT$", GENERIC_READ | GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, 0, 0 );
+	HWND hwnd = ::GetConsoleWindow();
+	if (hwnd != NULL)
+	{
+		HMENU hMenu = ::GetSystemMenu(hwnd, FALSE);
+		if (hMenu != NULL)
+		{
+			EnableMenuItem(hMenu, SC_CLOSE, MF_GRAYED);
+			DeleteMenu(hMenu, SC_CLOSE, MF_BYCOMMAND);
+		}
+	}
 
-    //Redirect STDIN
-    lStdHandle = (long)GetStdHandle(STD_INPUT_HANDLE);
-    hConHandle = _open_osfhandle(lStdHandle, _O_TEXT);
-    fp = _fdopen( hConHandle, "r+" );
-    *stdin = *fp;
-    setvbuf( stdin, NULL, _IONBF, 0 );
+	// http://stackoverflow.com/questions/311955/redirecting-cout-to-a-console-in-windows
 
-    //Redirect STDERR
-    lStdHandle = (long)GetStdHandle(STD_ERROR_HANDLE);
-    hConHandle = _open_osfhandle(lStdHandle, _O_TEXT);
-    fp = _fdopen( hConHandle, "r+" );
-    *stderr = *fp;
-    setvbuf( stderr, NULL, _IONBF, 0 );
+	//FILE * freopen(const char * filename, const char * mode, FILE * stream)
+	errno_t err;
+	FILE* pStream = NULL;
+	err = freopen_s(&pStream, "CONIN$", "r", stdin);
+	err = freopen_s(&pStream, "CONOUT$", "w", stdout);
+	err = freopen_s(&pStream, "CONOUT$", "w", stderr);
+	
+	std::wcout.clear();
+	std::cout.clear();
+	std::wcerr.clear();
+	std::cerr.clear();
+	std::wcin.clear();
+	std::cin.clear();
 
-    HWND hwnd = ::GetConsoleWindow();
-    if (hwnd != NULL)
-    {
-       HMENU hMenu = ::GetSystemMenu(hwnd, FALSE);
-       if (hMenu != NULL)
-       {
-         EnableMenuItem(hMenu, SC_CLOSE, MF_GRAYED);
-         DeleteMenu(hMenu, SC_CLOSE, MF_BYCOMMAND);
-       }
-    }
+	m_hConOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
-    BOOL successfullyGotScreenBufferInfo = GetConsoleScreenBufferInfo( m_hConOut, &csbiInfo );
-
-    if (successfullyGotScreenBufferInfo)
-    {
-      COORD coord;
-      coord.X = 100;
-      coord.Y = csbiInfo.dwSize.Y;
-      SetConsoleScreenBufferSize( m_hConOut, coord);
-
-      SMALL_RECT rect = csbiInfo.srWindow;
-      rect.Right = rect.Left + 99;
-
-      SetConsoleWindowInfo(m_hConOut, TRUE, &rect);
-    }
-
-      SetConsoleTextAttribute(m_hConOut, WHITE);
+    SetConsoleTextAttribute(m_hConOut, WHITE);
   }
 }
 

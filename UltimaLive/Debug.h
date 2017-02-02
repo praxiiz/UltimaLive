@@ -72,9 +72,9 @@ class ConsoleLogger : public Logger
 
     void LogLastErrorMessage();
 
-	  void LogPrintWithoutDate(const char *, ...);
-	  void LogPrintWithoutDateWarning(const char *, ...);
-	  void LogPrintWithoutDateError(const char *, ...);
+	void LogPrintWithoutDate(const char *, ...);
+	void LogPrintWithoutDateWarning(const char *, ...);
+	void LogPrintWithoutDateError(const char *, ...);
 
     void LogPrintTaskStatusResult(bool status);
     void InitializeLogger();

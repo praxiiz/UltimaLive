@@ -107,9 +107,9 @@ void LocalPeHelper32::HexPrint(unsigned char* buffer, int size)
     if (i > 0 && ((i + 1) % 16) == 0)
     {
       Logger::g_pLogger->LogPrint(" | %s |\n", asciiLine);
-      for ( int i = 0; i < 16; i++)
+      for ( int j = 0; j < 16; j++)
       {
-        asciiLine[i] = '.';
+        asciiLine[j] = '.';
       }
     }
   }
@@ -165,9 +165,9 @@ void LocalPeHelper32::HexPrint(char* buffer, int size)
     if (i > 0 && ((i + 1) % 16) == 0)
     {
       Logger::g_pLogger->LogPrint(" | %s |\n", asciiLine);
-      for ( int i = 0; i < 16; i++)
+      for ( int j = 0; j < 16; j++)
       {
-        asciiLine[i] = '.';
+        asciiLine[j] = '.';
       }
     }
   }
@@ -238,8 +238,8 @@ DWORD LocalPeHelper32::getExportedFunctionAddress(std::string dllName, std::stri
     {
       WORD ordinal = nameOrdinals[i];
       char* pName = reinterpret_cast<char*>(nameAddresses[ordinal] + (DWORD)m_pBaseAddress);
-      string functionName(pName);
-      if (toUpper(pName) == toUpper(functionName))
+      string functionNameItr(pName);
+      if (toUpper(pName) == toUpper(functionNameItr))
       {
         DWORD* addresses = reinterpret_cast<DWORD*>(m_pExportDirectory->AddressOfFunctions + (DWORD)m_pBaseAddress);
         addressValue = addresses[ordinal];
@@ -373,7 +373,8 @@ list<string> LocalPeHelper32::getImportedFunctionNames(std::string dllName)
         {
           char buffer [64];
           string functionName = string("ORDINAL_");
-          functionName.append(itoa(*pLookupItrAddr & 0x0000FFFF, buffer, 10));
+		  _itoa_s(*pLookupItrAddr & 0x0000FFFF, buffer, 64, 10);
+          functionName.append(buffer);
         }
         else
         {

@@ -61,9 +61,9 @@ class Client
   #pragma region Search Signatures for Client Internals
   private:
     static unsigned char g_sendSignature1[];
-	  static unsigned char g_sendSignature2[];
-	  static unsigned char g_recvSignature1[];
-	  static unsigned char g_recvSignature2[];
+	static unsigned char g_sendSignature2[];
+	static unsigned char g_recvSignature1[];
+	static unsigned char g_recvSignature2[];
     static unsigned char g_NetworkObjectSignature1[];
     static unsigned char g_NetworkObjectSignature2[];
     static unsigned char g_PlayerBaseSignature1[];
@@ -83,7 +83,7 @@ class Client
 
   #pragma region Lookup Methods for Client Internals 
   private:
-	  static void** FindNetworkStructureInstance();
+	static void** FindNetworkStructureInstance();
     static ClientRecvFunction FindRecvFunction();
     static ClientSendFunction FindSendFunction();
     static unsigned char* FindDrawMapThingieTable();

@@ -2,7 +2,7 @@
 Lots of ClientSide cleanup:
   Added debug print and removed the #ifdef DEBUG statements
   Fixed a number of warnings throughout the codebase
-  Renamed ClientRedirections class to Client class
+  Separated ClientRedirections class into Client class and ClientRedirections class
   Renamed UOLiveAppState class to UltimaLive class
   Improved encapsulation of Client class
   Client internal structure searching done all at once up front, abort UltimaLive upon failure to find any internal client structures

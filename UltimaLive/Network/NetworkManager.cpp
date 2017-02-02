@@ -126,7 +126,7 @@ NetworkManager::NetworkManager()
   //do nothing
 }
 
-bool NetworkManager::OnReceiveServerUltimaLivePacket(unsigned char *pBuffer)
+bool NetworkManager::OnReceiveServerUltimaLivePacket(unsigned char* pBuffer)
 {
   bool retVal = false;
   uint8_t command = pBuffer[13];
@@ -184,6 +184,12 @@ bool NetworkManager::OnReceivePacket(unsigned char *pBuffer)
     Logger::g_pLogger->LogPacketToClient("%s\n",  packetName.str().c_str());
   }
 #endif
+
+#if defined(DEBUG) && defined(PRINT_PACKET_HEX)
+  LocalPeHelper32::HexPrint(pBuffer, 32);
+#endif
+
+
   return retVal;
 }
 

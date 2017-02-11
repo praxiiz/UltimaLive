@@ -91,7 +91,7 @@ class ConsoleLogger : public Logger
 	  inline void LogPrintWithoutDateWarning(const char *, ...) {};
 	  inline void LogPrintWithoutDateError(const char *, ...) {};
 
-    inline void LogPrintTaskStatusResult(bool status) {};
+    inline void LogPrintTaskStatusResult(bool) {};
     inline void InitializeLogger() {};
   #endif 
 

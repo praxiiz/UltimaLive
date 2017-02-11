@@ -11,7 +11,6 @@
     <ClCompile Include="..\UltimaLive\MasterControlUtils.cpp" />
     <ClCompile Include="..\UltimaLive\ProgressBarDialog.cpp" />
     <ClCompile Include="..\UltimaLive\UltimaLive.cpp" />
-    <ClCompile Include="..\UltimaLive\UoLiveAppState.cpp" />
     <ClCompile Include="..\UltimaLive\Utils.cpp" />
     <ClCompile Include="..\UltimaLive\Network\BasePacketHandler.cpp">
       <Filter>Network</Filter>
@@ -25,34 +24,19 @@
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler.cpp">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClCompile>
-    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler_7_0_29_2.cpp">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClCompile>
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ClientCrashPacketHandler.cpp">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClCompile>
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler.cpp">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClCompile>
-    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler_7_0_29_2.cpp">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClCompile>
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler.cpp">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler_7_0_29_2.cpp">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClCompile>
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler.cpp">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClCompile>
-    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler_7_0_29_2.cpp">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClCompile>
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler.cpp">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler_7_0_29_2.cpp">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClCompile>
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerVersionRequestHandler.cpp">
@@ -112,6 +96,11 @@
     <ClCompile Include="..\UltimaLive\ClassRegistration\SelfRegisteringClass.cpp">
       <Filter>ClassRegistration</Filter>
     </ClCompile>
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler_7_0_29_2.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler_7_0_29_2.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler_7_0_29_2.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler_7_0_29_2.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler_7_0_29_2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\UltimaLive\Client.h" />
@@ -127,7 +116,6 @@
     <ClInclude Include="..\UltimaLive\ProgressBarDialog.h" />
     <ClInclude Include="..\UltimaLive\resource.h" />
     <ClInclude Include="..\UltimaLive\UltimaLive.h" />
-    <ClInclude Include="..\UltimaLive\UoLiveAppState.h" />
     <ClInclude Include="..\UltimaLive\Utils.h" />
     <ClInclude Include="..\UltimaLive\Network\BasePacketHandler.h">
       <Filter>Network</Filter>
@@ -141,34 +129,19 @@
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler.h">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClInclude>
-    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler_7_0_29_2.h">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClInclude>
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ClientCrashPacketHandler.h">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClInclude>
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler.h">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClInclude>
-    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler_7_0_29_2.h">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClInclude>
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler.h">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler_7_0_29_2.h">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClInclude>
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler.h">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClInclude>
-    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler_7_0_29_2.h">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClInclude>
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler.h">
-      <Filter>Network\ConcretePacketHandlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler_7_0_29_2.h">
       <Filter>Network\ConcretePacketHandlers</Filter>
     </ClInclude>
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerVersionRequestHandler.h">
@@ -231,13 +204,14 @@
     <ClInclude Include="..\UltimaLive\ClassRegistration\SelfRegisteringClass.h">
       <Filter>ClassRegistration</Filter>
     </ClInclude>
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler_7_0_29_2.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler_7_0_29_2.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler_7_0_29_2.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler_7_0_29_2.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler_7_0_29_2.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\UltimaLive\UltimaLive.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\UltimaLive\UltimaLiveIcon_16_x_16.ico" />
-    <Image Include="..\UltimaLive\UltimaLiveIcon_32_x_32.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\UltimaLive\Changelog.txt" />
@@ -265,5 +239,9 @@
     <Filter Include="ClassRegistration">
       <UniqueIdentifier>{3f344469-9aed-4a08-9928-9f8f7645095f}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\UltimaLive\UltimaLiveIcon_16_x_16.ico" />
+    <Image Include="..\UltimaLive\UltimaLiveIcon_32_x_32.ico" />
   </ItemGroup>
 </Project>

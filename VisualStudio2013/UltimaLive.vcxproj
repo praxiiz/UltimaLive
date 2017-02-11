@@ -40,15 +40,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>
-    </LinkIncremental>
+    <LinkIncremental>false</LinkIncremental>
     <TargetName>Igrping</TargetName>
-    <OutDir>..\..\..\Ultima\Clients\7.0.1.1_AllureClient\</OutDir>
+    <OutDir>$(SolutionDir)\igrping\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\obj\igrping\$(Configuration)-obj\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetName>Igrping</TargetName>
-    <OutDir>..\..\..\Ultima\Clients\7.0.1.1_AllureClient\</OutDir>
+    <OutDir>$(SolutionDir)\igrping\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\obj\igrping\$(Configuration)-obj\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -57,6 +58,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDLL;%(PreprocessorDefinitions);DEBUG;PRINT_PACKETS</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>1Byte</StructMemberAlignment>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -66,17 +68,21 @@
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCMTD</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\tmp\lib32\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;ULTIMALIVE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>1Byte</StructMemberAlignment>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -85,6 +91,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>mhook.lib;Version.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMTD</IgnoreSpecificDefaultLibraries>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\tmp\lib32\$(Configuration)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -110,9 +117,14 @@
     <ClCompile Include="..\UltimaLive\MasterControlUtils.cpp" />
     <ClCompile Include="..\UltimaLive\Network\BasePacketHandler.cpp" />
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler_7_0_29_2.cpp" />
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler_7_0_29_2.cpp" />
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler_7_0_29_2.cpp" />
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler_7_0_29_2.cpp" />
+    <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler_7_0_29_2.cpp" />
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerVersionRequestHandler.cpp" />
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler.cpp" />
     <ClCompile Include="..\UltimaLive\Network\ConcretePacketHandlers\ClientCrashPacketHandler.cpp" />
@@ -154,9 +166,14 @@
     <ClInclude Include="..\UltimaLive\mhook.h" />
     <ClInclude Include="..\UltimaLive\Network\BasePacketHandler.h" />
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ChangeMapHandler_7_0_29_2.h" />
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginCompleteHandler_7_0_29_2.h" />
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LoginConfirmHandler_7_0_29_2.h" />
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\LogoutRequestHandler_7_0_29_2.h" />
+    <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler_7_0_29_2.h" />
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerVersionRequestHandler.h" />
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ServerMobileStatusHandler.h" />
     <ClInclude Include="..\UltimaLive\Network\ConcretePacketHandlers\ClientCrashPacketHandler.h" />
@@ -179,6 +196,10 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\UltimaLive\UltimaLive.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\UltimaLive\UltimaLiveIcon_16_x_16.ico" />
+    <Image Include="..\UltimaLive\UltimaLiveIcon_32_x_32.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

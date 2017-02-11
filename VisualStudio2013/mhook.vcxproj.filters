@@ -21,49 +21,46 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="mhook-test.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\mhook\disasm-lib\cpu.c">
+      <Filter>Source Files\disasm-lib</Filter>
     </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="..\mhook\disasm-lib\disasm.c">
+      <Filter>Source Files\disasm-lib</Filter>
     </ClCompile>
-    <ClCompile Include="mhook-lib\mhook.cpp">
+    <ClCompile Include="..\mhook\disasm-lib\disasm_x86.c">
+      <Filter>Source Files\disasm-lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mhook\disasm-lib\misc.c">
+      <Filter>Source Files\disasm-lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mhook\mhook-lib\mhook.cpp">
       <Filter>Source Files\mhook-lib</Filter>
     </ClCompile>
-    <ClCompile Include="disasm-lib\cpu.c">
-      <Filter>Source Files\disasm-lib</Filter>
-    </ClCompile>
-    <ClCompile Include="disasm-lib\disasm.c">
-      <Filter>Source Files\disasm-lib</Filter>
-    </ClCompile>
-    <ClCompile Include="disasm-lib\disasm_x86.c">
-      <Filter>Source Files\disasm-lib</Filter>
-    </ClCompile>
-    <ClCompile Include="disasm-lib\misc.c">
-      <Filter>Source Files\disasm-lib</Filter>
+    <ClCompile Include="..\mhook\stdafx.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="mhook-lib\mhook.h">
+    <ClInclude Include="..\mhook\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mhook\disasm-lib\cpu.h">
+      <Filter>Source Files\disasm-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mhook\disasm-lib\disasm.h">
+      <Filter>Source Files\disasm-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mhook\disasm-lib\disasm_x86.h">
+      <Filter>Source Files\disasm-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mhook\disasm-lib\disasm_x86_tables.h">
+      <Filter>Source Files\disasm-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mhook\mhook-lib\mhook.h">
       <Filter>Source Files\mhook-lib</Filter>
     </ClInclude>
-    <ClInclude Include="disasm-lib\cpu.h">
+    <ClInclude Include="..\mhook\disasm-lib\misc.h">
       <Filter>Source Files\disasm-lib</Filter>
-    </ClInclude>
-    <ClInclude Include="disasm-lib\disasm.h">
-      <Filter>Source Files\disasm-lib</Filter>
-    </ClInclude>
-    <ClInclude Include="disasm-lib\disasm_x86.h">
-      <Filter>Source Files\disasm-lib</Filter>
-    </ClInclude>
-    <ClInclude Include="disasm-lib\disasm_x86_tables.h">
-      <Filter>Source Files\disasm-lib</Filter>
-    </ClInclude>
-    <ClInclude Include="disasm-lib\misc.h">
-      <Filter>Source Files\disasm-lib</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

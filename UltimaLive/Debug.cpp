@@ -25,6 +25,8 @@
 Logger* Logger::g_pLogger = new ConsoleLogger();
 
 #ifdef DEBUG
+/* @brief Spawns a console window if one does not exist.  Redirects stdout to the console.
+*/
 void ConsoleLogger::InitializeLogger()
 {
   if (AttachConsole(ATTACH_PARENT_PROCESS) || AttachConsole(GetCurrentProcessId()) || AllocConsole())
@@ -64,6 +66,11 @@ void ConsoleLogger::InitializeLogger()
   }
 }
 
+/* @brief Logs a packet to the console with appropriate colors.
+ *
+ * @param fmt Printf format for the log statement
+ * @param ... arguments to be passed to the printf command
+ */
 void ConsoleLogger::LogPacketToClient(const char* fmt, ...) 
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -83,7 +90,12 @@ void ConsoleLogger::LogPacketToClient(const char* fmt, ...)
   }
 }
 
-void ConsoleLogger::LogPacketToServer(const char* fmt, ...) 
+/* @brief Logs a packet to the console with appropriate colors.
+ *
+ * @param fmt Printf format for the log statement
+ * @param ... arguments to be passed to the printf command
+ */
+void ConsoleLogger::LogPacketToServer(const char* fmt, ...)
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
   bool successfullyGotScreenBufferInfo = GetConsoleScreenBufferInfo( m_hConOut, &csbiInfo ) != 0;
@@ -102,7 +114,11 @@ void ConsoleLogger::LogPacketToServer(const char* fmt, ...)
   }
 }
 
-
+/* @brief Logs a message to the console log with an [INFO] printed in front of it
+ *
+ * @param fmt Printf format for the log statement
+ * @param ... arguments to be passed to the printf command
+ */
 void ConsoleLogger::LogPrint(const char* fmt, ...)
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -122,6 +138,11 @@ void ConsoleLogger::LogPrint(const char* fmt, ...)
   }
 }
 
+/* @brief Logs a message to the console log with an [WARNING] printed in front of it
+ *
+ * @param fmt Printf format for the log statement
+ * @param ... arguments to be passed to the printf command
+ */
 void ConsoleLogger::LogPrintWarning(const char* fmt, ...)
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -143,6 +164,11 @@ void ConsoleLogger::LogPrintWarning(const char* fmt, ...)
   }
 }
 
+/* @brief Logs a message to the console log with an [ERROR] printed in front of it
+ *
+ * @param fmt Printf format for the log statement
+ * @param ... arguments to be passed to the printf command
+ */
 void ConsoleLogger::LogPrintError(const char* fmt, ...)
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -164,6 +190,8 @@ void ConsoleLogger::LogPrintError(const char* fmt, ...)
   }
 }
 
+/* @brief Logs the last error message reported by Windows with a [WINDOWS ERROR] printed in front of it
+ */
 void ConsoleLogger::LogLastErrorMessage()
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -191,6 +219,11 @@ void ConsoleLogger::LogLastErrorMessage()
   }
 }
 
+/* @brief Logs a message to the console log without any logger decoration
+*
+* @param fmt Printf format for the log statement
+* @param ... arguments to be passed to the printf command
+*/
 void ConsoleLogger::LogPrintWithoutDate(const char* fmt, ...)
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -208,6 +241,11 @@ void ConsoleLogger::LogPrintWithoutDate(const char* fmt, ...)
   }
 }
 
+/* @brief Logs a warning message to the console log without date information
+ *
+ * @param fmt Printf format for the log statement
+ * @param ... arguments to be passed to the printf command
+ */
 void ConsoleLogger::LogPrintWithoutDateWarning(const char* fmt, ...)
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -225,6 +263,11 @@ void ConsoleLogger::LogPrintWithoutDateWarning(const char* fmt, ...)
   }
 }
 
+/* @brief Logs an error message to the console log without date information
+*
+* @param fmt Printf format for the log statement
+* @param ... arguments to be passed to the printf command
+*/
 void ConsoleLogger::LogPrintWithoutDateError(const char* fmt, ...)
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -242,8 +285,10 @@ void ConsoleLogger::LogPrintWithoutDateError(const char* fmt, ...)
   }
 }
 
-
-
+/* @brief Logs a message with a success or failure status message
+*
+* @param status True for success, false for failure
+*/
 void ConsoleLogger::LogPrintTaskStatusResult(bool status)
 {
   CONSOLE_SCREEN_BUFFER_INFO csbiInfo;
@@ -272,6 +317,8 @@ void ConsoleLogger::LogPrintTaskStatusResult(bool status)
 }
 #endif
 
+/* @brief Logs the current date and time to the console
+*/
 void ConsoleLogger::printCurrentDateTime() 
 {
   time_t rawtime;

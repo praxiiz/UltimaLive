@@ -34,6 +34,10 @@
 class NetworkManager;
 class MapDefinition;
 
+/* @class LoginHandler
+ *
+ * @brief Handles the Ultima Client's Login 
+ */
 class LoginHandler
 {
   public:
@@ -48,11 +52,11 @@ class LoginHandler
     void onServerMobileUpdate();
     void onUpdateMapDefinitions(std::vector<MapDefinition> definitions);
 
-    NetworkManager* m_pManager;
-    bool m_needToSendCachedLoginPacket;
-    bool m_firstHashQuery;
-    uint8_t* m_pCachedLoginPacket;
-    bool m_firstMobileUpdateFromServer;
+    NetworkManager* m_pManager;         //!< Pointer to the concrete network manager
+    bool m_needToSendCachedLoginPacket; //!< Flag indicating whether or not to send a cached login packet as part of the login process
+    bool m_firstHashQuery;              //!< Flag indicating if the first hash query has been made
+    uint8_t* m_pCachedLoginPacket;      //!< Pointer to the cached login packet
+    bool m_firstMobileUpdateFromServer; //!< Flag indicating if the first mobile update has been sent from the server
 
   #pragma region Self Registration
   public:
@@ -60,7 +64,7 @@ class LoginHandler
     static void Configure();
 
   private:
-    static SelfRegisteringClass <LoginHandler> m_registration;
+    static SelfRegisteringClass <LoginHandler> m_registration; //!< Self registering class variable which triggers the self registration
   #pragma endregion
 };
 

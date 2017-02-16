@@ -32,6 +32,10 @@
 #include <metahost.h>
 #pragma comment(lib, "mscoree.lib")
 
+/* @class DotNetHost
+ * 
+ * @brief Class used to host the .NET common language runtime (CLR) 
+ */
 class DotNetHost
 {
   public:
@@ -40,9 +44,9 @@ class DotNetHost
     DotNetHost();
 
   private:
-    ICLRMetaHost* m_pMetaHost;
-    ICLRRuntimeInfo* m_pRuntimeInfo;
-    ICLRRuntimeHost* m_pClrRuntimeHost;
-    HRESULT m_hr;
+    ICLRMetaHost* m_pMetaHost;          //!< Provides methods that return a specific version of the common language runtime (CLR) based on its version number.
+    ICLRRuntimeInfo* m_pRuntimeInfo;    //!< Provides methods that return information about a specific common language runtime.
+    ICLRRuntimeHost* m_pClrRuntimeHost; //!< Provides methods that enable the host to start and stop the common language runtime (CLR) explicitly.
+    HRESULT m_hr;                       //!< Stores the result of launching the common language runtime (CLR)
 };
 #endif

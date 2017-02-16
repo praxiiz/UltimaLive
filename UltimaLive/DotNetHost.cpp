@@ -22,6 +22,8 @@
 
 #include "DotNetHost.h"
 
+/*  @brief DotNetHost constructor 
+ */
 DotNetHost::DotNetHost()
   : m_pMetaHost(NULL),
     m_pRuntimeInfo(NULL),
@@ -31,6 +33,8 @@ DotNetHost::DotNetHost()
   //do nothing
 }
 
+/* @brief Sets up the common language runtime in the client process
+ */
 void DotNetHost::LaunchCLR()
 {
   m_hr = CLRCreateInstance(CLSID_CLRMetaHost, IID_PPV_ARGS(&m_pMetaHost));
@@ -39,6 +43,8 @@ void DotNetHost::LaunchCLR()
   m_hr = m_pClrRuntimeHost->Start();
 }
 
+/* @brief Starts executing a common language runtime assembly inside the Client Process host
+*/
 uint32_t DotNetHost::LaunchNetAssembly(std::string assemblyPath, std::string typeName, std::string methodName, std::string argument)
 {
   DWORD returnValue = 0;

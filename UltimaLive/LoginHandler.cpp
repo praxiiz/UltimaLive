@@ -27,13 +27,16 @@
 #pragma region Self Registration
 SelfRegisteringClass <LoginHandler> LoginHandler::m_registration;
 
-
+/* @brief Self Registering Class Configure function that registeres this class with the UltimaLive application state
+*/
 void LoginHandler::Configure()
 {
   Logger::g_pLogger->LogPrint("LoginHandler configure\n");
   UltimaLive::g_pUltimaLive->Register("LoginHandler", new LoginHandler());
 }
 
+/* @brief Self Registering Class Initialize function that sets up packet subscriptions with the network manager
+*/
 bool LoginHandler::Initialize()
 {
   Logger::g_pLogger->LogPrint("Initializing LoginHandler!\n"); 
@@ -71,7 +74,8 @@ bool LoginHandler::Initialize()
 
 #pragma endregion
 
-
+/* @brief LoginHandler constructor
+*/
 LoginHandler::LoginHandler()
   : m_pManager(NULL),
   m_needToSendCachedLoginPacket(false),
@@ -82,11 +86,19 @@ LoginHandler::LoginHandler()
   //do nothing
 }
 
+/* @brief This function is called when the server sends map definitions to the client. It is responsible for setting the first mobile update flag.
+ *
+ * @param definitions Vector of MapDefinitions received from the server
+ */
 void LoginHandler::onUpdateMapDefinitions(std::vector<MapDefinition> definitions)
 {
   m_firstMobileUpdateFromServer = true;
 }
 
+/* @brief This function is called when the server sends its mobile update to the client. 
+ * 
+ * @verbose This functions performs a refresh client prior to the client receiving its first update.  This only happens once. 
+ */
 void LoginHandler::onServerMobileUpdate()
 {
   if (m_firstMobileUpdateFromServer)
@@ -98,6 +110,8 @@ void LoginHandler::onServerMobileUpdate()
   }
 }
 
+/* @brief This function is called each time that the server changes which map the client is on.
+ */
 void LoginHandler::onBeforeMapChange(uint8_t&)
 {
 
@@ -112,6 +126,10 @@ void LoginHandler::onBeforeMapChange(uint8_t&)
   }
 }
 
+/* @brief Handles the login confirmation packet sent from the server. Caches the packet to be used to complete login in the proper order.
+ *
+ * @param pPacketData pointer to the packet data
+ */
 void LoginHandler::onLoginConfirm(uint8_t* pPacketData)
 {
   Logger::g_pLogger->LogPrint("LOGIN HANDLER RECEIVED LOGIN CONFIRM\n");
@@ -123,7 +141,16 @@ void LoginHandler::onLoginConfirm(uint8_t* pPacketData)
   memcpy(m_pCachedLoginPacket, pPacketData, 37);
 }
 
-uint8_t* BuildUnicodeMessagePacket(uint32_t serial, uint8_t messageMode, uint16_t hue, char* message)
+/* @brief Builds a unicode message that can be sent to the client
+ *
+ * @param serial       Mobile serial number
+ * @param messageMode  0x00 - Regular, 0x01 - Broadcast, 0x02 - Emote, 0x06 - System, 0x07 - Message, 0x08 - Whisper, 0x09 - Yell
+ * @param hue          Color value to display the message
+ * @param pMessage     Text content of the message
+ *
+ * @return pointer to the unicode message
+ */
+uint8_t* BuildUnicodeMessagePacket(uint32_t serial, uint8_t messageMode, uint16_t hue, char* pMessage)
 {
       // send welcome message
     uint8_t aUnicodeMessage[48] = { 
@@ -139,7 +166,7 @@ uint8_t* BuildUnicodeMessagePacket(uint32_t serial, uint8_t messageMode, uint16_
     /* 18 48       Name        */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 
 
-    int messageLen = strlen(message);
+    int messageLen = strlen(pMessage);
     uint16_t packetLength = static_cast<uint16_t>(50 + (messageLen * 2)); // 48 + message + 2 (null terminator)
     uint8_t* pUnicodePacket = new uint8_t[packetLength];
 
@@ -153,13 +180,14 @@ uint8_t* BuildUnicodeMessagePacket(uint32_t serial, uint8_t messageMode, uint16_
 
     for (int i = 0; i < messageLen; ++i)
     {
-      pUnicodePacket[49 + (2 * i)] = message[i];
+      pUnicodePacket[49 + (2 * i)] = pMessage[i];
     }
 
     return pUnicodePacket;
 }
 
-
+/* @brief Sends the UltimaLive message to the client when the login confirmation packet has been received
+*/
 void LoginHandler::onLoginComplete()
 {
   Logger::g_pLogger->LogPrint("LOGIN HANDLER RECEIVED LOGIN COMPLETE\n");
@@ -178,6 +206,8 @@ void LoginHandler::onLoginComplete()
   Logger::g_pLogger->LogPrint("%s\n", welcomeMessageBuff);
 }
 
+/* @brief Cleans up when the client receives a logout request.
+*/
 void LoginHandler::onLogoutRequest()
 {
   Logger::g_pLogger->LogPrint("LoginHandler received logout request!\n");

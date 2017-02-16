@@ -28,6 +28,10 @@ void* Client::BASE_ADDRESS = reinterpret_cast<void*>(0x400000);
 #pragma region Self Registration
 SelfRegisteringClass <Client> Client::m_registration;
 
+/* @brief Self Registering Class Configure Method.  This function is called first  
+ * to create an instance of this class and make it available for other
+ * class instances to find.
+ */
 void Client::Configure()
 {
   Logger::g_pLogger->LogPrint("Client configure\n");
@@ -36,6 +40,10 @@ void Client::Configure()
   UltimaLive::g_pUltimaLive->m_pClient = pClient;
 }
 
+/* @brief Self Registering Class Initialize Method. Searches for client internal structures and pointers. 
+ *
+ * @return True if all client structures are found
+ */
 bool Client::Initialize()
 {
   bool success = true;
@@ -113,6 +121,10 @@ unsigned char Client::g_masterStaticsListSig2[] = { 0x68, 0x40, 0xF9, 0x2F, 0x00
 
 #pragma region Lookup Methods for Client Internals
 
+/* @brief Looks up the client's DrawMapThingie Structure
+ *
+ * @return Memory pointer to client's DrawMapThingie Structure
+ */
 unsigned char* Client::FindDrawMapThingieTable()
 {
   unsigned char* drawMapThingieTableAddress = static_cast<unsigned char*>(MasterControlUtils::FindSignature(BASE_ADDRESS, 0x300000, g_aDrawMapThingieTableSig1, sizeof(g_aDrawMapThingieTableSig1), 14));
@@ -124,6 +136,10 @@ unsigned char* Client::FindDrawMapThingieTable()
   return drawMapThingieTableAddress;
 }
 
+/* @brief Searches for the client's Master Statics List Structure
+ *
+ * @return Memory pointer to the Master Statics List Structure
+ */
 CStaticObject** Client::FindMasterStaticsList()
 {
   CStaticObject** masterStaticListAddress = static_cast<CStaticObject**>(MasterControlUtils::FindSignature(BASE_ADDRESS, 0x300000, g_masterStaticsListSig1, sizeof(g_masterStaticsListSig1), 9));
@@ -135,6 +151,10 @@ CStaticObject** Client::FindMasterStaticsList()
   return masterStaticListAddress;
 }
 
+/* @brief Searches for the client's Structure that holds the minimum coords to display on screen
+ *
+ * @return Memory pointer to the Minimum Coord Display Structure
+ */
 MapMinDisplay* Client::FindMapMinCoordDisplayStructure()
 {
   unsigned char* minClientDisplayX = static_cast<unsigned char*>(MasterControlUtils::FindSignature(BASE_ADDRESS, 0x300000, g_minClientDisplaySig1, sizeof(g_minClientDisplaySig1), 12));
@@ -152,6 +172,10 @@ MapMinDisplay* Client::FindMapMinCoordDisplayStructure()
   return reinterpret_cast<MapMinDisplay*>(minClientDisplayX);
 }
 
+/* @brief Searches for the client's Display Blocks Table.  This table contains a 64x64 array of blocks.
+ *
+ * @return Pointer to an the clients Display Blocks Table
+ */
 int* Client::FindClientDisplayedBlocksTable()
 {
   void* minClientDisplayX = MasterControlUtils::FindSignature(BASE_ADDRESS, 0x300000, g_minClientDisplaySig1, sizeof(g_minClientDisplaySig1), 12);
@@ -174,6 +198,10 @@ int* Client::FindClientDisplayedBlocksTable()
   return static_cast<int*>(minClientDisplayX);
 }
 
+/* @brief Searches for the client function that updates onscreen statics
+ *
+ * @return Pointer to the UpdateBlocks client function
+ */
 Client::ClientUpdateStaticBlocksFunction Client::FindUpdateBlocksFunction()
 {
   void* updateBlock = MasterControlUtils::FindFunctionCall(BASE_ADDRESS, 0x300000, g_updateBlocksSig1, sizeof(g_updateBlocksSig1));
@@ -186,7 +214,10 @@ Client::ClientUpdateStaticBlocksFunction Client::FindUpdateBlocksFunction()
   return static_cast<ClientUpdateStaticBlocksFunction>(updateBlock);
 }
 
-
+/* @brief Searches for the client function that refreshes the onscreen map graphics.
+ *
+ * @return Pointer to the refresh terrain client function
+ */
 Client::RefreshTerrainFunction Client::FindRefreshTerrainFunction()
 {
   void* pRefreshFunction = 0;
@@ -202,6 +233,10 @@ Client::RefreshTerrainFunction Client::FindRefreshTerrainFunction()
   return reinterpret_cast<Client::RefreshTerrainFunction>(pRefreshFunction);
 }
 
+/* @brief Searches for the client Player structure memory address
+ *
+ * @return Pointer to the memory address of the client player structure
+ */
 CPlayerMobile* Client::FindPlayerStructure()
 {
   void* pOffset = MasterControlUtils::FindSignatureOffset(BASE_ADDRESS, CLIENT_IMAGE_MAX_SIZE, g_PlayerBaseSignature1, sizeof(g_PlayerBaseSignature1));
@@ -214,6 +249,10 @@ CPlayerMobile* Client::FindPlayerStructure()
   return reinterpret_cast<CPlayerMobile*>(static_cast<char*>(pOffset) + 6);
 }
 
+/* @brief Searches for the client's network send function
+ *
+ * @return Pointer to the memory address of the client's network send function
+ */
 Client::ClientSendFunction Client::FindSendFunction()
 {
   unsigned char* pReturnAddress = NULL;
@@ -236,6 +275,10 @@ Client::ClientSendFunction Client::FindSendFunction()
   return reinterpret_cast<ClientSendFunction>(pReturnAddress);
 }
 
+/* @brief Searches for the client's network receive function
+ *
+ * @return Pointer to the memory address of the client's network receive function
+ */
 Client::ClientRecvFunction Client::FindRecvFunction()
 {
   unsigned char* pReturnAddress = NULL;
@@ -258,6 +301,10 @@ Client::ClientRecvFunction Client::FindRecvFunction()
   return reinterpret_cast<ClientRecvFunction>(pReturnAddress);
 }
 
+/* @brief Searches for the client's network manager
+ *
+ * @return Pointer to the memory address of the client's network manager
+ */
 void** Client::FindNetworkStructureInstance()
 {
   void** pNetworkObject = NULL;
@@ -280,12 +327,20 @@ void** Client::FindNetworkStructureInstance()
   return pNetworkObject;
 }
 
+/* @brief Searches for the client's Map Dimension Structure. The Map Dimension Structure contains the map dimensions and wrapping coordinates for each client map. 
+ *
+ * @return Pointer to the memory address of the client's Map Dimension Structure
+ */
 MapTileDefinition* Client::FindMapDimensionStructure()
 {
   return reinterpret_cast<MapTileDefinition*>(MasterControlUtils::FindSignatureOffset(BASE_ADDRESS, CLIENT_IMAGE_MAX_SIZE, g_mapDimensionSignature, sizeof(g_mapDimensionSignature)));
 }
 #pragma endregion
 
+/* @brief Checks to see if the resulting pointer exists in the memory space of the client.
+ *
+ * @return True if the memory address is valid, false otherwise
+ */
 bool Client::checkLookupResult(void* pAddress)
 {
   bool success = true;
@@ -304,6 +359,8 @@ bool Client::checkLookupResult(void* pAddress)
   return success;
 }
 
+/* @brief Client class constructor
+ */
 Client::Client()
   : m_pNetworkStructureInstance(NULL),
   m_pRecvFunction(NULL),
@@ -323,9 +380,10 @@ Client::Client()
   //do nothing
 }
 
-/*
-*   Search out all internal structure addresses.  Return true if all are found successfully. Return false otherwise.
-*/
+/* @Brief Search out all internal structure addresses.
+ * 
+ * @return true if all pointers and internal structures are found
+ */
 bool Client::LookupClientInternalStructuresAndFunctions()
 {
   Logger::g_pLogger->LogPrint("Checking to see if this client is compatible...\n");
@@ -380,22 +438,31 @@ bool Client::LookupClientInternalStructuresAndFunctions()
   return success;
 }
 
+/* @brief Getter for client's Receive Function pointer
+*/
 Client::ClientRecvFunction& Client::getRecvFunction()
 {
   return m_pRecvFunction;
 }
 
+/* @brief Getter for client's Send Function pointer
+*/
 Client::ClientSendFunction& Client::getSendFunction()
 {
   return m_pSendFunction;
 }
 
+/* @brief Getter for client's Update Statics Blocks Function pointer
+*/
 Client::ClientUpdateStaticBlocksFunction& Client::getUpdatesStaticBlocksFunction()
 {
   return m_pUpdateBlocksFunction;
 }
 
-
+/* @brief Refreshes statics on the client screen for a given block
+ *
+ * @param blockNumber block number to refresh
+ */
 void Client::refreshClientStatics(uint32_t blockNumber)
 {
   Logger::g_pLogger->LogPrint("Refreshing Client View: %i\n", blockNumber);
@@ -429,6 +496,8 @@ void Client::refreshClientStatics(uint32_t blockNumber)
   ClientRedirections::OnUpdateStaticBlocks();
 }
 
+/* @brief Refreshes all map files on the client screen
+*/
 void Client::refreshClientLand()
 {
   for (int x = 0; x < 64; ++x)
@@ -453,32 +522,56 @@ void Client::refreshClientLand()
   }
 }
 
+/* @brief Sends an array of bytes to the server using the clients send function
+ *
+ * @param pBuffer pointer to byte array
+ */
 void Client::SendPacketToServer(unsigned char* pBuffer)
 {
   m_pSendFunction(*m_pNetworkStructureInstance, pBuffer);
 }
 
+/* @brief Sends an array of bytes to the client using the clients receive function
+ *
+ * @param pBuffer pointer to byte array
+ */
 void Client::SendPacketToClient(unsigned char* pBuffer)
 {
   Logger::g_pLogger->LogPrint("Sending Packet to Client!\n");
   m_pRecvFunction(*m_pNetworkStructureInstance, pBuffer);
 }
 
+/* @brief Updates the client's map dimensions
+ *
+ * @param definition New map definition set
+ */
 void Client::SetMapDimensions(MapTileDefinition definition)
 {
   *m_pMapDimensionsStructure = definition;
 }
 
+/* @brief Getter for the pointer to the client Player structure
+ *
+ * @return Client Player Structure Pointer
+ */
 CPlayerMobile* Client::getPlayerMobile()
 {
   return m_pPlayerStructure;
 }
 
+/* @brief Getter for the client Network Manager Pointer
+ *
+ * @return pointer to the client's Network Manager
+ */
 NetworkManager* Client::GetNetworkManager()
 {
   return m_pNetworkManager;
 }
 
+/* @brief Getter for the pointer to the client's File Manager
+ *
+ * @return pointer to the client's File Manager
+ */
 BaseFileManager* Client::GetFileManager()
 {
   return m_pFileManager;

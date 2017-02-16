@@ -35,6 +35,10 @@
 #include <string>
 #include <Windows.h>
 
+/* @class Logger
+ *
+ * @brief Abstract class that handles all logging.
+ */
 class Logger
 {
   public:
@@ -55,12 +59,18 @@ class Logger
 
     virtual void InitializeLogger() = 0;
   
-    static Logger* g_pLogger;
+    static Logger* g_pLogger; //!< Global Logger Instance
 }; 
 
+/* @class ConsoleLogger
+ *
+ * @brief ConsoleLogger class handles console allocation, and all logging going to the console.
+ */
 class ConsoleLogger : public Logger
 {
   public:
+    /*  @brief Flags corresponding to console color
+	 */
     enum Color { DARKBLUE = 1, DARKGREEN, DARKTEAL, DARKRED, DARKPINK, DARKYELLOW, GRAY, DARKGRAY, BLUE, GREEN, TEAL, RED, PINK, YELLOW, WHITE };
 
   #ifdef DEBUG
@@ -96,7 +106,7 @@ class ConsoleLogger : public Logger
   #endif 
 
   private:
-    HANDLE m_hConOut;
+    HANDLE m_hConOut; //!< Console Handle
     void printCurrentDateTime();
 };
 

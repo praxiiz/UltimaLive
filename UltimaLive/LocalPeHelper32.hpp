@@ -75,7 +75,10 @@
  *   10 BeginPaint
  *   35 CharUpperA
  */
-
+/* @class LocalPeHelper32
+ *
+ * @brief Utility class for manipulating and patching the local (current process) modules's Import and Export table
+ */
 class LocalPeHelper32
 {
   public:
@@ -98,13 +101,13 @@ private:
     IMAGE_IMPORT_DESCRIPTOR* matchImportDescriptor(std::string dllName);
     IMAGE_EXPORT_DIRECTORY* matchExportDirectory(std::string dllName);
     
-    bool m_initialized;
-    BYTE* m_pBaseAddress;
-    std::string m_moduleName;
-    IMAGE_DOS_HEADER* m_pDosHeader;
-    IMAGE_NT_HEADERS* m_pNtHeader;
-    IMAGE_EXPORT_DIRECTORY* m_pExportDirectory;
-    IMAGE_IMPORT_DESCRIPTOR* m_pImportDescriptor;
+    bool m_initialized;       //!< Indicates that the class instance has found function pointers and has completed internal initialization
+    BYTE* m_pBaseAddress;     //!< Base address of the current process
+    std::string m_moduleName; //!< Module name of the current process
+    IMAGE_DOS_HEADER* m_pDosHeader; //!< Pointer to the MSDOS Legacy Header
+    IMAGE_NT_HEADERS* m_pNtHeader;  //!< Pointer to the NT Legacy Header
+    IMAGE_EXPORT_DIRECTORY* m_pExportDirectory;   //!< Pointer to the current module's export address table (EAT)
+    IMAGE_IMPORT_DESCRIPTOR* m_pImportDescriptor; //!< Pointer to the current module's import address table (IAT)
 };
 
 #endif //_PE_HELPER_H

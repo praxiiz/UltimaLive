@@ -29,12 +29,16 @@
 #include "Utils.h"
 #include "Debug.h"
 
+/* @class CIgr_pinger
+ *
+ * @brief CIgr_pinger class mimics the original class and provides the redirection to inject UltimaLive into the client
+ */
 class CIgr_pinger
 {
   public:
    __declspec(dllexport) CIgr_pinger();
    __declspec(dllexport) CIgr_pinger& __thiscall operator=(CIgr_pinger const &rOther);
-   static bool g_firstRun;
+   static bool g_firstRun; //!< Keeps track of the first time that UltimaLive has been injected so that it only gets injected once
 };
 
 #endif

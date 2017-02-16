@@ -29,6 +29,10 @@
 #include "FileSystem\BaseFileManager.h"
 #include "LocalPeHelper32.hpp"
 
+/* @class ClientRedirections
+ *
+ * @brief ClientsRedirections contains redirected client functions.
+ */
 class ClientRedirections
 {
   public:
@@ -53,7 +57,8 @@ class ClientRedirections
 
     static void __fastcall OnReceivePacket(void* This, void* edx, unsigned char *pBuffer);
     static int __fastcall OnSendPacket(void* This, void* edx, unsigned char* pBuffer);
-    static HANDLE g_UpdateStaticBlocksMutex;
+
+    static HANDLE g_UpdateStaticBlocksMutex;  //!< Mutex for the redirected UpdateStaticBlocksMutex function
 };
 
 #endif

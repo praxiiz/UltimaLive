@@ -1,0 +1,41 @@
+<map id="UltimaLiveHashQueryHandler" name="UltimaLiveHashQueryHandler">
+<area shape="rect" id="node2" href="$classBasePacketHandler.html" title="BasePacketHandler" alt="" coords="2141,547,2279,573"/>
+<area shape="rect" id="node3" href="$classNetworkManager.html" title="NetworkManager" alt="" coords="2978,487,3097,513"/>
+<area shape="rect" id="node8" href="$classClient.html" title="Client" alt="" coords="3352,899,3407,925"/>
+<area shape="rect" id="node5" href="$classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="2508,739,2651,781"/>
+<area shape="rect" id="node6" href="$classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="2124,776,2296,803"/>
+<area shape="rect" id="node42" href="$classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="2768,806,2911,847"/>
+<area shape="rect" id="node9" href="$structMapTileDefinition.html" title="MapTileDefinition" alt="" coords="2977,785,3097,812"/>
+<area shape="rect" id="node10" href="$classBaseFileManager.html" title="BaseFileManager" alt="" coords="2976,949,3099,976"/>
+<area shape="rect" id="node12" href="$classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="2142,860,2278,887"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="1834,912,1914,939"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="1486,905,1613,946"/>
+<area shape="rect" id="node15" href="$classProgressBarDialog.html" title="ProgressBarDialog" alt="" coords="2514,923,2645,949"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="2530,1036,2629,1063"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="2142,1025,2278,1066"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="1807,1025,1941,1066"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="1472,1032,1627,1059"/>
+<area shape="rect" id="node20" href="$structMapMinDisplay.html" title="MapMinDisplay" alt="" coords="2982,899,3093,925"/>
+<area shape="rect" id="node21" href="$structCStaticObject.html" title="CStaticObject" alt="" coords="731,1333,834,1360"/>
+<area shape="rect" id="node22" href="$structCStaticObjectMembers.html" title="CStaticObjectMembers" alt="" coords="1087,1293,1244,1320"/>
+<area shape="rect" id="node34" href="$structCItemMembers.html" title="CItemMembers" alt="" coords="1819,1291,1929,1317"/>
+<area shape="rect" id="node29" href="$structCPlayerMobile.html" title="CPlayerMobile" alt="" coords="2984,1256,3091,1283"/>
+<area shape="rect" id="node33" href="$structCItem.html" title="CItem" alt="" coords="1521,1296,1577,1323"/>
+<area shape="rect" id="node40" href="$structCMobile.html" title="CMobile" alt="" coords="2175,1440,2245,1467"/>
+<area shape="rect" id="node23" href="$structCDrawItemMembers.html" title="CDrawItemMembers" alt="" coords="414,1435,553,1461"/>
+<area shape="rect" id="node24" href="$structCDrawItem.html" title="CDrawItem" alt="" coords="740,1488,825,1515"/>
+<area shape="rect" id="node31" href="$structCBigMobComponent.html" title="CBigMobComponent" alt="" coords="712,1621,853,1648"/>
+<area shape="rect" id="node25" href="$structCDrawItemVtable.html" title="CDrawItemVtable" alt="" coords="422,1589,545,1616"/>
+<area shape="rect" id="node26" href="$structCDrawItemVtableMembers.html" title="CDrawItemVtableMembers" alt="" coords="15,1567,191,1593"/>
+<area shape="rect" id="node27" href="$structCStaticObjectVtable.html" title="CStaticObjectVtable" alt="" coords="413,1368,553,1395"/>
+<area shape="rect" id="node35" href="$structCItemVtable.html" title="CItemVtable" alt="" coords="437,1317,530,1344"/>
+<area shape="rect" id="node37" href="$structCMobileVtable.html" title="CMobileVtable" alt="" coords="430,1697,537,1724"/>
+<area shape="rect" id="node28" href="$structCStaticObjectVtableMembers.html" title="CStaticObjectVtableMembers" alt="" coords="5,1363,200,1389"/>
+<area shape="rect" id="node30" href="$structCContainerMembers.html" title="CContainerMembers" alt="" coords="1804,1380,1944,1407"/>
+<area shape="rect" id="node32" href="$structCBigMobComponentMembers.html" title="CBigMobComponentMembers" alt="" coords="1068,1637,1263,1664"/>
+<area shape="rect" id="node36" href="$structCItemVtableMembers.html" title="CItemVtableMembers" alt="" coords="29,1635,176,1661"/>
+<area shape="rect" id="node38" href="$structCMobileVtableMembers.html" title="CMobileVtableMembers" alt="" coords="23,1725,183,1752"/>
+<area shape="rect" id="node39" href="$structCMobileMembers.html" title="CMobileMembers" alt="" coords="2518,1385,2641,1412"/>
+<area shape="rect" id="node41" href="$structCPlayerMobileMembers.html" title="CPlayerMobileMembers" alt="" coords="2499,1460,2659,1487"/>
+<area shape="rect" id="node43" href="$classDotNetHost.html" title="DotNetHost" alt="" coords="2993,1307,3082,1333"/>
+</map>

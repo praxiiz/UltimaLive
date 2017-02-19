@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['networkmanager',['NetworkManager',['../class_network_manager.html',1,'']]]
+  ['networkmanager',['NetworkManager',['../classNetworkManager.html',1,'']]]
 ];

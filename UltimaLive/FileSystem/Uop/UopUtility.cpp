@@ -1,28 +1,38 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/**
+ * @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "UopUtility.h"
 #include "..\..\ProgressBarDialog.h"
 
+/**
+ * @brief Converts a UOP Map into a MUL File
+ *  
+ * @param uopSourceFilename source file name
+ * @param uopDestFilename destination file name
+ * @param pProgress pointer to a progress bar
+ */
 void UopUtility::convertUopMapToMul(std::string uopSourceFilename, std::string uopDestFilename, ProgressBarDialog* pProgress)
 {
   std::ifstream uopSourceFile;
@@ -109,9 +119,11 @@ void UopUtility::convertUopMapToMul(std::string uopSourceFilename, std::string u
   }
 }
 
-/*
-  This method assumes that there is only one file table.
-*/
+/**
+ * @brief Retrieves map size from UOP file. This method assumes that there is only one file table.
+ * 
+ * @param filename filename of the UOP file 
+ */
 uint32_t UopUtility::getUopMapSizeInBytes(std::string filename)
 {
   uint32_t totalBytes = 0;
@@ -154,6 +166,14 @@ uint32_t UopUtility::getUopMapSizeInBytes(std::string filename)
   return totalBytes;
 }
 
+/**
+ * @brief zero pads a number
+ *
+ * @param num number to convert and zero pad
+ * @param fieldWidth width of the formatted number
+ *
+ * @return string containing the zero padded number
+ */
 std::string ZeroPadNumber(int num, int fieldWidth)
 {
 	std::stringstream ss;
@@ -170,6 +190,14 @@ std::string ZeroPadNumber(int num, int fieldWidth)
 	return ret;
 }
 
+/**
+ * @brief gets hashes corresponding to an internal map filename
+ *
+ * @param count Number of maps
+ * @param pattern filename and folder pattern
+ *
+ * @return Map containing map number and hash for each map
+ */
 std::map<uint32_t, uint64_t>* UopUtility::getMapHashes(int count, std::string pattern)
 {
   std::map<uint32_t, uint64_t>* pHashes = new std::map<uint32_t, uint64_t>();
@@ -192,6 +220,12 @@ std::map<uint32_t, uint64_t>* UopUtility::getMapHashes(int count, std::string pa
   return pHashes;
 }
 
+/**
+ * @brief Calculates a hash based on the filename
+ * Information here obtained from UODEV.DE
+ *
+ * @return hash
+ */
 uint64_t UopUtility::HashFileName(std::string s)
 {
   uint32_t esi = (uint32_t)s.length() + 0xDEADBEEF;

@@ -1,24 +1,27 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 
 /*
 
@@ -61,6 +64,12 @@
 
 class UltimaLive;
 class Client;
+
+/**
+ * @class NetworkManager
+ *
+ * @brief Handles network packets going to/from the server/client
+ */
 class NetworkManager
 {
   public:
@@ -102,42 +111,39 @@ class NetworkManager
 
   private:
 #ifdef DEBUG
-  static std::string PACKET_NAMES[];
-  static std::string EXTENDED_PACKET_NAMES[];
-	static std::string ULTIMA_LIVE_PACKET_NAMES[];
+  static std::string PACKET_NAMES[]; //!< Array of regular packet names
+  static std::string EXTENDED_PACKET_NAMES[]; //!< Array of extended packet names
+  static std::string ULTIMA_LIVE_PACKET_NAMES[]; //!< Array of UltimaLive packet names
 #endif
     //ultima live events - for now there's a max of one subscriber
-    std::vector<std::function<void(std::vector<MapDefinition>)>> m_onMapDefinitionUpdateSubscribers;
-    std::vector<std::function<void(uint8_t, uint32_t, uint8_t*)>> m_onLandUpdateSubscriber;
-    std::vector<std::function<void(uint8_t, uint32_t, uint8_t*, uint32_t)>> m_onStaticsUpdateSubscriber;
-    std::vector<std::function<void()>> m_onRefreshClientViewSubscriber;
-    std::vector<std::function<void(uint32_t, uint8_t)>> m_onBlockQueryRequestSubscriber;
-    std::vector<std::function<void(std::string)>> m_onUltimaLiveLoginCompleteSubscriber;
+    std::vector<std::function<void(std::vector<MapDefinition>)>> m_onMapDefinitionUpdateSubscribers;     //!< MapDefinitionUpdate event subscriber list 
+    std::vector<std::function<void(uint8_t, uint32_t, uint8_t*)>> m_onLandUpdateSubscriber;              //!< LandUpdate event subscriber list
+    std::vector<std::function<void(uint8_t, uint32_t, uint8_t*, uint32_t)>> m_onStaticsUpdateSubscriber; //!< StaticsUpdate event subscriber list
+    std::vector<std::function<void()>> m_onRefreshClientViewSubscriber;                                  //!< RefreshClientView event subscriber list
+    std::vector<std::function<void(uint32_t, uint8_t)>> m_onBlockQueryRequestSubscriber;				 //!< BlockQueryRequest event subscriber list
+    std::vector<std::function<void(std::string)>> m_onUltimaLiveLoginCompleteSubscriber;				 //!< UltimaLive LoginComplete event subscriber list
 
     //regular game logic
-    std::vector<std::function<void()>> m_onServerMobileUpdateSubscribers;
-    std::vector<std::function<void(uint8_t*)>> m_onLoginConfirmSubscribers;
-    std::vector<std::function<void()>> m_onLoginCompleteSubscribers;
-    std::vector<std::function<void(uint8_t&)>> m_onBeforeMapChangeSubscribers;
-    std::vector<std::function<void(uint8_t&)>> m_onChangeMapSubscribers;
-    std::vector<std::function<void()>> m_onLogoutSubscribers;
+    std::vector<std::function<void()>> m_onServerMobileUpdateSubscribers;      //!< MobileUpdate event subscriber list
+    std::vector<std::function<void(uint8_t*)>> m_onLoginConfirmSubscribers;    //!< LoginConfirm event subscriber list
+    std::vector<std::function<void()>> m_onLoginCompleteSubscribers;		   //!< LoginComplete event subscriber list
+    std::vector<std::function<void(uint8_t&)>> m_onBeforeMapChangeSubscribers; //!< BeforeMapChange event subscriber list
+    std::vector<std::function<void(uint8_t&)>> m_onChangeMapSubscribers;	   //!< ChangeMap event subscriber list
+    std::vector<std::function<void()>> m_onLogoutSubscribers;				   //!< Logout event subscriber list
 
     //packet handler maps
-    std::map<uint8_t, BasePacketHandler*> m_ultimaLiveHandlers;
-    std::map<uint8_t, BasePacketHandler*> m_sendPacketHandlers;
-    std::map<uint8_t, BasePacketHandler*> m_recvPacketHandlers;
-    std::map<uint8_t, BasePacketHandler*> m_sendExtendedPacketHandlers;
-    std::map<uint8_t, BasePacketHandler*> m_recvExtendedPacketHandlers;
+    std::map<uint8_t, BasePacketHandler*> m_ultimaLiveHandlers;         //!< UltimaLive Packet Handlers
+    std::map<uint8_t, BasePacketHandler*> m_sendPacketHandlers;			//!< Client to Server Packet Handlers
+    std::map<uint8_t, BasePacketHandler*> m_recvPacketHandlers;			//!< Server to Client Packet Handlers
+    std::map<uint8_t, BasePacketHandler*> m_sendExtendedPacketHandlers;	//!< Client to Server Extended Packet Handlers
+    std::map<uint8_t, BasePacketHandler*> m_recvExtendedPacketHandlers;	//!< Server to Client Extended Packet Handlers
 
-    Client* m_pClient;
+    Client* m_pClient; //!< Local reference to the global client class instance
 
     //extended packet handler redirection and ultima live packet handler redirection
     bool OnReceiveServerUltimaLivePacket(unsigned char *pBuffer);
     bool OnReceiveExtendedPacket(unsigned char *pBuffer);
     bool OnSendExtendedPacket(unsigned char *pBuffer);
-
-    //move to individual file
-    void ParseAndRegisterMapDefinitions(unsigned char *pBuffer);
 
   #pragma region Self Registration
   public:
@@ -145,7 +151,7 @@ class NetworkManager
     static void Configure();
 
   private:
-    static SelfRegisteringClass <NetworkManager> m_registration;
+    static SelfRegisteringClass <NetworkManager> m_registration; //!< Self Registering Class mechanism
   #pragma endregion
 };
 

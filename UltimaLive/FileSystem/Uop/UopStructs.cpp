@@ -1,27 +1,35 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/**
+ * @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "UopStructs.h"
 
+/**
+ * @brief Unmarshals a UOP header
+ *
+ * @param pData pointer to UOP header data
+ */
 void UopHeader::unmarshal(uint8_t* pData)
 {
   FileIdentifier = *reinterpret_cast<uint32_t*>(pData);  //myp\0
@@ -33,6 +41,11 @@ void UopHeader::unmarshal(uint8_t* pData)
   NumFileTables = *reinterpret_cast<uint32_t*>(pData + 28);
 }
 
+/**
+ * @brief Unmarshals a UOP file entry
+ *
+ * @param pData pointer to UOP file entry data
+ */
 void FileEntry::unmarshal(uint8_t* pData)
 {
   UopFileOffset = *reinterpret_cast<uint64_t*>(pData);
@@ -44,6 +57,11 @@ void FileEntry::unmarshal(uint8_t* pData)
   CompressionMethod = *reinterpret_cast<uint16_t*>(pData + 32);
 }
 
+/**
+ * @brief Unmarshals a UOP file table
+ *
+ * @param pData pointer to UOP file table data
+ */
 void FileTable::unmarshal(uint8_t* pData)
 {
     //uint32_t Capacity  = *reinterpret_cast<uint32_t*>(pData);

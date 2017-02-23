@@ -1,29 +1,33 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/** 
+ * @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "LocalPeHelper32.hpp"
 using namespace std;
 
-/* @brief Constructor for LocalPeHelper32
+/**
+ * @brief Constructor for LocalPeHelper32
  * 
  * @param moduleName name of the module, e.g. "kernel32.dll:
  */
@@ -39,6 +43,13 @@ LocalPeHelper32::LocalPeHelper32(std::string moduleName)
   //do nothing
 }
 
+/**
+ * @brief converts a string to uppercase
+ *
+ * @param s String to convert
+ *
+ * @return Uppercase string
+ */
 std::string toUpper(const std::string & s)
 {
     std::string ret(s.size(), char());
@@ -47,9 +58,10 @@ std::string toUpper(const std::string & s)
     return ret;
 }
 
-/* @brief Searches for the module and upon finding it, sets pointers to the regular PE structures.
+/**
+ * @brief Searches for the module and upon finding it, sets pointers to the regular PE structures.
  *        Sets a flag true if the module has been found and the pointers set.
-*/
+ */
 bool LocalPeHelper32::Init()
 {
   m_initialized = false;
@@ -78,7 +90,8 @@ bool LocalPeHelper32::Init()
   return m_initialized;
 }
 
-/* @brief Prints out a memory location in hex editor style.
+/**
+ * @brief Prints out a memory location in hex editor style.
  * 
  * @param buffer Pointer to the memory to print (unsigned char)
  * @param size Length of memory to print
@@ -144,7 +157,8 @@ void LocalPeHelper32::HexPrint(unsigned char* buffer, int size)
   Logger::g_pLogger->LogPrint("\n");
 }
 
-/* @brief Prints out a memory location in hex editor style.
+/**
+ * @brief Prints out a memory location in hex editor style.
  *
  * @param buffer Pointer to the memory to print (char*)
  * @param size Length of memory to print
@@ -191,7 +205,8 @@ void LocalPeHelper32::HexPrint(char* buffer, int size)
   Logger::g_pLogger->LogPrint("\n");
 }
 
-/* @brief Gets a list of modules loaded and linked to this module.
+/**
+ * @brief Gets a list of modules loaded and linked to this module.
  *
  * @return List of Module Entries
  */
@@ -217,7 +232,8 @@ std::list<MODULEENTRY32> LocalPeHelper32::GetLocalModuleList()
   return resultList;
 }
 
-/* @brief searches the Import Address Table (IAT) for the memory address of a function that has been imported in a given DLL
+/**
+ * @brief searches the Import Address Table (IAT) for the memory address of a function that has been imported in a given DLL
  *
  * @param dllName Name of the Dynamic Link Library function
  * @param functionName Name of the function
@@ -253,7 +269,8 @@ DWORD LocalPeHelper32::getImportedFunctionAddress(std::string dllName, std::stri
   return result;
 }
 
-/* @brief searches the export table for the memory address of a function that has been exported by a given DLL
+/**
+ * @brief searches the export table for the memory address of a function that has been exported by a given DLL
  *
  * @param dllName Name of the Dynamic Link Library function
  * @param functionName Name of the function
@@ -285,7 +302,8 @@ DWORD LocalPeHelper32::getExportedFunctionAddress(std::string dllName, std::stri
   return addressValue;
 }
 
-/* @brief Patches an imported address in a DLL
+/**
+ * @brief Patches an imported address in a DLL
  *
  * @param dllName Name of the Dynamic Link Library function
  * @param functionName Name of the function
@@ -326,7 +344,8 @@ bool LocalPeHelper32::PatchImportedFunctionAddress(std::string dllName, std::str
   return result;
 }
 
-/* @brief Sets a section of memory writable in the current process
+/**
+ * @brief Sets a section of memory writable in the current process
  *
  * @param startingAddress starting address of the memory section 
  *
@@ -369,7 +388,8 @@ DWORD LocalPeHelper32::SetMemoryWritable(DWORD startingAddress)
 	return errorCode;
 }
 
-/* @brief Find the import descriptor in the current process for a given DLL
+/**
+ * @brief Find the import descriptor in the current process for a given DLL
  *
  * @param dllName DLL Name to search
  *
@@ -392,7 +412,8 @@ IMAGE_IMPORT_DESCRIPTOR* LocalPeHelper32::matchImportDescriptor(std::string dllN
   return pResult;
 }
 
-/* @brief Gets a list of all exported functions in the current module
+/**
+ * @brief Gets a list of all exported functions in the current module
  * 
  * @return list of strings with exported function names
  */
@@ -417,7 +438,8 @@ list<string> LocalPeHelper32::getExportedFunctionNames()
   return functionNames;
 }
 
-/* @brief Gets a list of all imported function names in a given DLL
+/**
+ * @brief Gets a list of all imported function names in a given DLL
  *
  * @param dllName Name of the DLL to search
  *

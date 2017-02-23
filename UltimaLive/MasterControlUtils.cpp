@@ -1,4 +1,6 @@
-/* Copyright (C) 2012 Matthew Geyer
+/* @file
+ *
+ * Copyright (C) 2012 Matthew Geyer
  * Copyright (C) 2016 UltimaLive
  * 
  * This file is part of MasterControl.
@@ -21,7 +23,16 @@
 unsigned char MasterControlUtils::g_functionStartSig1[] = { 0x55, 0x8B, 0xEC };
 unsigned char MasterControlUtils::g_functionStartSig2[] = { 0x90, 0x90, 0x6A };
 
-
+/**
+ * @brief Does a reverse search for a series of bytes
+ *
+ * @param pData Pointer of data to be searched
+ * @param searchLen Maximum number of bytes to search
+ * @param sigBuffer Array of bytes to search
+ * @param sigLen Length of search array in bytes
+ *
+ * @return Pointer to memory address 
+ */
 void* MasterControlUtils::FindSignatureOffsetBackwards(void* pData, unsigned int searchLen, unsigned char *sigBuffer, unsigned int sigLen)
 {
   unsigned char* pBuffer = static_cast<unsigned char *>(static_cast<unsigned char*>(pData) - searchLen - 1);
@@ -51,6 +62,16 @@ void* MasterControlUtils::FindSignatureOffsetBackwards(void* pData, unsigned int
 	return 0;
 }
 
+/**
+ * @brief Does a forward search for a function
+ *
+ * @param pBuffer Pointer of data to be searched
+ * @param bufferSize Maximum number of bytes to search
+ * @param pSignature Array of bytes to search
+ * @param signatureSize Length of search array in bytes
+ *
+ * @return Pointer to function
+ */
 void* MasterControlUtils::FindFunctionCall(void* pBuffer, int bufferSize, unsigned char* pSignature, int signatureSize)
 {
   void* pAddress = 0;
@@ -73,6 +94,19 @@ void* MasterControlUtils::FindFunctionCall(void* pBuffer, int bufferSize, unsign
   return pAddress;
 }
 
+/**
+ * @brief Does a forward search for an structure containing a pointer
+ * 
+ * @param pBuffer             Pointer of data to be searched
+ * @param bufferSize          Maximum number of bytes to search
+ * @param pSignature          Array of bytes to search
+ * @param signatureSize       Length of search array in bytes
+ * @param offset              Offset from search result to structure
+ * @param structureSizeOut    reference to the structure size
+ * @param structureSizeOffset offset to apply to the structure base address
+ *
+ * @return Pointer to function
+ */
 void* MasterControlUtils::FindSignature (void* pBuffer, int bufferSize, unsigned char* pSignature, int signatureSize, int offset, int& structureSizeOut, int structureSizeOffset)
 {
   unsigned char* retValue = 0;
@@ -87,6 +121,17 @@ void* MasterControlUtils::FindSignature (void* pBuffer, int bufferSize, unsigned
   return retValue;
 }
 
+/**
+* @brief Does a forward search for an array of bytes
+*
+* @param pBuffer             Pointer of data to be searched
+* @param bufferSize          Maximum number of bytes to search
+* @param pSignature          Array of bytes to search
+* @param signatureSize       Length of search array in bytes
+* @param offset              Offset to add to result
+*
+* @return Pointer to function
+*/
 void* MasterControlUtils::FindSignature (void* pBuffer, int bufferSize, unsigned char* pSignature, int signatureSize, int offset)
 {
   unsigned char* retValue = 0;
@@ -101,11 +146,18 @@ void* MasterControlUtils::FindSignature (void* pBuffer, int bufferSize, unsigned
   return retValue;
 }
 
-/*********************************************************************************************************************************************
- * Search memory for specified byte signature.  Note that 0xCC is a wildcard byte, it matches anything.  A more proper way to do this is
- * one pointer to a signature and another pointer to wildcard flags, but this is simpler and works well.
- * Returns a pointer to the beginning of the signature match.  Returns 0 on no match.
- *********************************************************************************************************************************************/
+/**
+ * @brief Search memory for specified byte signature.  Note that 0xCC is a wildcard byte, it matches anything.  A more proper way to do this is
+ *        one pointer to a signature and another pointer to wildcard flags, but this is simpler and works well.
+ *        Returns a pointer to the beginning of the signature match.  Returns 0 on no match.
+ *
+ * @param pBuffer    Pointer of data to be searched
+ * @param bufferLen  Maximum number of bytes to search
+ * @param sigBuffer  Array of bytes to search
+ * @param sigLen     Length of search array in bytes
+ *
+ * @return Pointer to function
+ */
 void* MasterControlUtils::FindSignatureOffset(void* pBuffer, unsigned int bufferLen, unsigned char *sigBuffer, unsigned int sigLen)
 {
 	bool found = false;

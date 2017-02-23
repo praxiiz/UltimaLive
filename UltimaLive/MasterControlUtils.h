@@ -1,4 +1,6 @@
-/* Copyright (C) 2012 Matthew Geyer
+/* @file 
+ *
+ * Copyright (C) 2012 Matthew Geyer
  * Copyright (C) 2016 UltimaLive
  *
  * This file is part of MasterControl.
@@ -25,6 +27,11 @@
 #include "Debug.h"
 #include "Client.h"
 
+/**
+ * @class MasterControlUtils
+ *
+ * @brief Utility class for searching for a process's internal structures
+ */
 class MasterControlUtils
 {
   public:
@@ -35,9 +42,8 @@ class MasterControlUtils
     static void* FindSignature (void* pBuffer, int bufferSize, unsigned char* pSignature, int signatureSize, int offset);
 
   private:
-    static unsigned char g_functionStartSig1[];
-    static unsigned char g_functionStartSig2[];
-
+    static unsigned char g_functionStartSig1[]; //!< Function signature
+    static unsigned char g_functionStartSig2[]; //!< Function signature
 };
 
 #endif

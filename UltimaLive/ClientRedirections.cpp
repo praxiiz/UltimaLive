@@ -1,28 +1,32 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 
 #include "ClientRedirections.h"
 
-/* @brief Installs function hooks into the client to redirect client functions to ClientRedirections functions
+/**
+ * @brief Installs function hooks into the client to redirect client functions to ClientRedirections functions
  * 
  * @return true if successful
  */
@@ -142,14 +146,17 @@ bool ClientRedirections::InstallClientHooks()
   return success;
 }
 
-/* @brief Mutex for the OnUpdateStaticBlocks function.
-*/
 HANDLE ClientRedirections::g_UpdateStaticBlocksMutex = CreateMutex(NULL, false, NULL);
 
-/* @brief This function is called in place of the client's network receive function. It  
+/**
+ * @brief This function is called in place of the client's network receive function. It  
  * passes control to the UltimaLive network manager which gives its subscribers the chance
  * to alter/process each network packet before the client.  It then calls the clients 
  * receive function.
+ *
+ * @param This Instance pointer
+ * @param edx unknown
+ * @param pBuffer Pointer to packet data
  */
 void __fastcall ClientRedirections::OnReceivePacket(void* This, void*, unsigned char* pBuffer)
 {
@@ -159,11 +166,18 @@ void __fastcall ClientRedirections::OnReceivePacket(void* This, void*, unsigned 
   }
 }
 
-/* @brief This function is called in place of the client's network send function. It
-* passes control to the UltimaLive network manager which gives its subscribers the chance
-* to alter/process each network packet before they are sent to the server.  It then calls 
-* the clients receive function.
-*/
+/**
+ * @brief This function is called in place of the client's network send function. It
+ * passes control to the UltimaLive network manager which gives its subscribers the chance
+ * to alter/process each network packet before they are sent to the server.  It then calls 
+ * the clients receive function.
+ * 
+ * @param This Pointer to class instance
+ * @param edx unknown
+ * @param pBuffer Pointer to packet data
+ *
+ * @return 0
+ */
 int __fastcall ClientRedirections::OnSendPacket(void* This, void*, unsigned char* pBuffer)
 {
   if (UltimaLive::g_pUltimaLive->m_pClient->GetNetworkManager()->OnSendPacket(pBuffer) == true)
@@ -176,7 +190,8 @@ int __fastcall ClientRedirections::OnSendPacket(void* This, void*, unsigned char
   return 0;
 }
 
-/* @brief This function adds a mutex around the updates static blocks function in the
+/**
+ * @brief This function adds a mutex around the updates static blocks function in the
  * client to avoid issues caused by the client calling this function at the same time
  * as UltimaLive.
  */
@@ -187,7 +202,8 @@ void ClientRedirections::OnUpdateStaticBlocks()
   ReleaseMutex(g_UpdateStaticBlocksMutex);
 }
 
-/* @brief This function is hooked into the client by the Igrping.dll's main function.  It  
+/**
+ * @brief This function is hooked into the client by the Igrping.dll's main function.  It  
  * executes once and calls the startup of UltimaLive.  UltimaLive in turn rehooks this 
  * function with the permanent one.  
  *
@@ -223,7 +239,8 @@ HANDLE WINAPI ClientRedirections::OnCreateFileARunOnce(
   return CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
 }
 
-/* @brief This function is hooked by UltimaLive's startup function. It relays the CreateFileA function to the UltimaLive 
+/**
+ * @brief This function is hooked by UltimaLive's startup function. It relays the CreateFileA function to the UltimaLive 
  * file manager, which in turn relays it to any UltimaLive subscribers to process before optionally calling the original 
  * function.
  *
@@ -256,7 +273,8 @@ HANDLE WINAPI ClientRedirections::OnCreateFileA(
   return CreateFileA(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile);
 }
 
-/* This method is hooked into the client's MapViewOfFile function. It relays control to one of UltimaLive's 
+/**
+ * This method is hooked into the client's MapViewOfFile function. It relays control to one of UltimaLive's 
  * concrete file managers.  
  *
  * @param hFileMappingObject     A handle to a file mapping object.
@@ -285,7 +303,8 @@ LPVOID WINAPI ClientRedirections::OnMapViewOfFile(
   return MapViewOfFile(hFileMappingObject, dwDesiredAccess, dwFileOffsetHigh, dwFileOffsetLow, dwNumberOfBytesToMap);
 }
 
-/* @brief This method is hooked into the client's MessageBox function.
+/**
+ * @brief This method is hooked into the client's MessageBox function.
  *
  * @param hWnd       A handle to the owner window of the message box to be created.
  * @param lpText     The message to be displayed.
@@ -312,7 +331,8 @@ int WINAPI ClientRedirections::OnMessageBox(
   return IDOK;
 }
 
-/* @brief This method is hooked into the client's CreateFileMapping function. It redirects control to one of 
+/**
+ * @brief This method is hooked into the client's CreateFileMapping function. It redirects control to one of 
  *        UltimaLive's concrete FileManager classes.
  * 
  * @param hFile              A handle to the file from which to create a file mapping object.
@@ -343,10 +363,11 @@ HANDLE WINAPI ClientRedirections::OnCreateFileMappingA(
   return CreateFileMappingA(hFile, lpAttributes, flProtect, dwMaximumSizeHigh, dwMaximumSizeLow, lpName);
 }
 
-/* @brief This method is hooked into the client's CloseHandle function.  It redirects control to one of
+/**
+ * @brief This method is hooked into the client's CloseHandle function.  It redirects control to one of
  *        UltimaLive's concrete FileManager classes.
  *
- * @param A valid handle to an open object.
+ * @param hObject A valid handle to an open object.
  *
  * @return If the function succeeds, the return value is nonzero.
  */

@@ -1,24 +1,27 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 
 #include "NetworkManager.h"
 #include "..\UltimaLive.h"
@@ -26,13 +29,20 @@
 #pragma region Self Registration
 SelfRegisteringClass <NetworkManager> NetworkManager::m_registration;
 
-
+/**
+ * @brief Creates global instance of network manager and register it with UltimaLive
+ */
 void NetworkManager::Configure()
 {
   Logger::g_pLogger->LogPrint("NetworkManager configure\n");
   UltimaLive::g_pUltimaLive->Register("NetworkManager", new NetworkManager());
 }
 
+/**
+ * @brief Called by self registering class construct. Generate packets handlers using Packet Handler Factories
+ *
+ * @return True on success
+ */
 bool NetworkManager::Initialize()
 {
   NetworkManager* pManager = static_cast<NetworkManager*>(UltimaLive::g_pUltimaLive->Lookup("NetworkManager"));
@@ -93,16 +103,29 @@ bool NetworkManager::Initialize()
 
 #pragma endregion
 
+/**
+ * @brief Sends a packet to the client using the client class
+ *
+ * @param pBuffer Pointer to packet data
+ */
 void NetworkManager::sendPacketToClient(uint8_t* pBuffer)
 {
   m_pClient->SendPacketToClient(pBuffer);
 }
 
+/**
+ * @brief Sends a packet to the server using the client class
+ *
+ * @param pBuffer Pointer to packet data
+ */
 void NetworkManager::sendPacketToServer(uint8_t* pBuffer)
 {
   m_pClient->SendPacketToServer(pBuffer);
 }
 
+/**
+ * @brief NetworkManager constructor
+ */
 NetworkManager::NetworkManager()
   : m_onMapDefinitionUpdateSubscribers(),
   m_onLandUpdateSubscriber(),
@@ -126,6 +149,11 @@ NetworkManager::NetworkManager()
   //do nothing
 }
 
+/**
+ * @brief Called to handle UltimaLive packets. Calls packet handlers in turn.
+ *
+ * @return False (does not forward packets to client)
+ */
 bool NetworkManager::OnReceiveServerUltimaLivePacket(unsigned char* pBuffer)
 {
   bool retVal = false;
@@ -146,6 +174,13 @@ bool NetworkManager::OnReceiveServerUltimaLivePacket(unsigned char* pBuffer)
   return retVal;
 }
 
+/**
+ * @brief Called to handle server packets. Calls packet handlers in turn.
+ *
+ * @param pBuffer Pointer to packet data
+ *
+ * @return Returns the return code from the called packet handler. If false, do not forward packets to client.
+ */
 bool NetworkManager::OnReceivePacket(unsigned char *pBuffer)
 {
   bool retVal = true;
@@ -193,6 +228,13 @@ bool NetworkManager::OnReceivePacket(unsigned char *pBuffer)
   return retVal;
 }
 
+/**
+ * @brief Calls packet handlers on an outgoing packet
+ *
+ * @param pBuffer Pointer to packet data
+ *
+ * @return true to forward the packet onto the server
+ */
 bool NetworkManager::OnSendPacket(unsigned char *pBuffer)
 {
   bool retVal = true;
@@ -225,6 +267,13 @@ bool NetworkManager::OnSendPacket(unsigned char *pBuffer)
   return retVal;
 }
 
+/**
+ * @brief Handles extended packets from the server
+ *
+ * @param pBuffer Pointer to packet data
+ *
+ * @return True to pass packet onto server
+ */
 bool NetworkManager::OnReceiveExtendedPacket(unsigned char *pBuffer)
 {
   bool retVal = true;
@@ -246,6 +295,13 @@ bool NetworkManager::OnReceiveExtendedPacket(unsigned char *pBuffer)
   return retVal;
 }
 
+/**
+ * @brief Handles extended packets before they are sent to the server
+ *
+ * @param pBuffer Pointer to data packet
+ *
+ * @return True to pass data onto server
+ */
 bool NetworkManager::OnSendExtendedPacket(unsigned char *pBuffer)
 {
   uint8_t command = static_cast<uint8_t>(ntohs(*reinterpret_cast<uint16_t*>(pBuffer + 3)));
@@ -266,66 +322,131 @@ bool NetworkManager::OnSendExtendedPacket(unsigned char *pBuffer)
   return retVal;
 }
 
+/**
+ * @brief Subscribes to the UltimaLive update map definitions packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToMapDefinitionUpdate(std::function<void(std::vector<MapDefinition>)> pCallback)
 {
   m_onMapDefinitionUpdateSubscribers.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the UltimaLive update land packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToLandUpdate(std::function<void(uint8_t, uint32_t, uint8_t*)> pCallback)
 {
   m_onLandUpdateSubscriber.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the UltimaLive update statics packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToStaticsUpdate(std::function<void(uint8_t, uint32_t, uint8_t*, uint32_t)> pCallback)
 {
   m_onStaticsUpdateSubscriber.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the UltimaLive refresh client packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToRefreshClient(std::function<void()> pCallback)
 {
   m_onRefreshClientViewSubscriber.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the UltimaLive block query packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToBlockQueryRequest(std::function<void(int32_t, uint8_t)> pCallback)
 {
   m_onBlockQueryRequestSubscriber.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the UltimaLive login complete packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToUltimaLiveLoginComplete(std::function<void(std::string)> pCallback)
 {
   m_onUltimaLiveLoginCompleteSubscriber.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the Update Mobile packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToServerMobileUpdate(std::function<void()> pCallback)
 {
   m_onServerMobileUpdateSubscribers.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the Login Confirm packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToLoginConfirm(std::function<void(uint8_t*)> pCallback)
 {
   m_onLoginConfirmSubscribers.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the Login Complete packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToLoginComplete(std::function<void()> pCallback)
 {
   m_onLoginCompleteSubscribers.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to on before Map Change packet event
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToOnBeforeMapChange(std::function<void(uint8_t&)> pCallback)
 {
   m_onBeforeMapChangeSubscribers.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the Map Change packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToOnMapChange(std::function<void(uint8_t&)> pCallback)
 {
   m_onChangeMapSubscribers.push_back(pCallback);
 }
 
+/**
+ * @brief Subscribes to the Logout packet
+ *
+ * @param pCallback Packet handler function
+ */
 void NetworkManager::subscribeToLogout(std::function<void()> pCallback)
 {
   m_onLogoutSubscribers.push_back(pCallback);
 }
 
+/**
+ * @brief Fires the update map definitions event
+ *
+ * @param definitions Map Definitions
+ */
 void NetworkManager::onMapDefinitionUpdate(std::vector<MapDefinition> definitions)
 {
   for (std::vector<std::function<void(std::vector<MapDefinition>)>>::iterator itr = m_onMapDefinitionUpdateSubscribers.begin(); itr != m_onMapDefinitionUpdateSubscribers.end(); itr++)
@@ -334,6 +455,13 @@ void NetworkManager::onMapDefinitionUpdate(std::vector<MapDefinition> definition
   }
 }
 
+/**
+ * @brief Fires the update land event
+ *
+ * @param mapNumber Map Number
+ * @param blockNumber Block Number
+ * @param pLandData pointer to land data
+ */
 void NetworkManager::onLandUpdate(uint8_t mapNumber, uint32_t blockNumber, uint8_t* pLandData)
 {
   for (std::vector<std::function<void(uint8_t, uint32_t, uint8_t*)>>::iterator itr = m_onLandUpdateSubscriber.begin(); itr != m_onLandUpdateSubscriber.end(); itr++)
@@ -342,6 +470,14 @@ void NetworkManager::onLandUpdate(uint8_t mapNumber, uint32_t blockNumber, uint8
   }
 }
 
+/**
+ * @brief Fires the update statics event
+ *
+ * @param mapNumber Map Number
+ * @param blockNumber Block Number
+ * @param pStaticsData Pointer to statics data
+ * @param length of statics data in bytes
+ */
 void NetworkManager::onStaticsUpdate(uint8_t mapNumber, uint32_t blockNumber, uint8_t* pStaticsData, uint32_t length)
 {
   for (std::vector<std::function<void(uint8_t, uint32_t, uint8_t*, uint32_t)>>::iterator itr = m_onStaticsUpdateSubscriber.begin(); itr != m_onStaticsUpdateSubscriber.end(); itr++)
@@ -350,6 +486,9 @@ void NetworkManager::onStaticsUpdate(uint8_t mapNumber, uint32_t blockNumber, ui
   }
 }
 
+/**
+ * @brief Fires the refresh client event
+ */
 void NetworkManager::onRefreshClient()
 {
   for(std::vector<std::function<void()>>::iterator itr = m_onRefreshClientViewSubscriber.begin(); itr != m_onRefreshClientViewSubscriber.end(); itr++)
@@ -358,6 +497,12 @@ void NetworkManager::onRefreshClient()
   }
 }
 
+/**
+ * @brief Fires the block query request event
+ *
+ * @param blockNumber Block Number
+ * @param mapNumber Map Number
+ */
 void NetworkManager::onBlockQueryRequest(int32_t blockNumber, uint8_t mapNumber)
 {
   for (std::vector<std::function<void(uint32_t, uint8_t)>>::iterator itr = m_onBlockQueryRequestSubscriber.begin(); itr != m_onBlockQueryRequestSubscriber.end(); itr++)
@@ -366,6 +511,11 @@ void NetworkManager::onBlockQueryRequest(int32_t blockNumber, uint8_t mapNumber)
   }
 }
 
+/**
+* @brief Fires the Ultaima Live Login Complete event
+*
+* @param shardIdentifier Unique Shard Identifier
+*/
 void NetworkManager::onUltimaLiveLoginComplete(std::string shardIdentifier)
 {
   for (std::vector<std::function<void(std::string)>>::iterator itr = m_onUltimaLiveLoginCompleteSubscriber.begin(); itr != m_onUltimaLiveLoginCompleteSubscriber.end(); itr++)
@@ -374,6 +524,9 @@ void NetworkManager::onUltimaLiveLoginComplete(std::string shardIdentifier)
   }
 }
 
+/**
+* @brief Fires the Server Mobile Update event
+*/
 void NetworkManager::onServerMobileUpdate()
 {
   for (std::vector<std::function<void()>>::iterator itr = m_onServerMobileUpdateSubscribers.begin(); itr != m_onServerMobileUpdateSubscribers.end(); itr++)
@@ -382,6 +535,11 @@ void NetworkManager::onServerMobileUpdate()
   }
 }
 
+/**
+* @brief Fires the Login Confirm event
+*
+* @param pData Pointer packet data
+*/
 void NetworkManager::onLoginConfirm(uint8_t* pData)
 {
   for(std::vector<std::function<void(uint8_t*)>>::iterator itr = m_onLoginConfirmSubscribers.begin(); itr != m_onLoginConfirmSubscribers.end(); itr++)
@@ -390,6 +548,9 @@ void NetworkManager::onLoginConfirm(uint8_t* pData)
   }
 }
 
+/**
+* @brief Fires the Login Complete event
+*/
 void NetworkManager::onLoginComplete()
 {
   for (std::vector<std::function<void()>>::iterator itr = m_onLoginCompleteSubscribers.begin(); itr != m_onLoginCompleteSubscribers.end(); itr++)
@@ -398,6 +559,11 @@ void NetworkManager::onLoginComplete()
   }
 }
 
+/**
+* @brief Fires the Before Map Change event
+*
+* @param mapNumber Map Number
+*/
 void NetworkManager::onBeforeMapChange(uint8_t& mapNumber) //return true to let specific handler code run
 {
   for(std::vector<std::function<void(uint8_t&)>>::iterator itr = m_onBeforeMapChangeSubscribers.begin(); itr != m_onBeforeMapChangeSubscribers.end(); itr++)
@@ -406,6 +572,11 @@ void NetworkManager::onBeforeMapChange(uint8_t& mapNumber) //return true to let 
   }
 }
 
+/**
+* @brief Fires the Map Change event
+*
+* @param mapNumber Map Number
+*/
 void NetworkManager::onMapChange(uint8_t& mapNumber) //return true to allow regular map change packet to go through
 {
   for(std::vector<std::function<void(uint8_t&)>>::iterator itr = m_onChangeMapSubscribers.begin(); itr != m_onChangeMapSubscribers.end(); itr++)
@@ -414,6 +585,9 @@ void NetworkManager::onMapChange(uint8_t& mapNumber) //return true to allow regu
   }
 }
 
+/**
+* @brief Fires the Log Out event
+*/
 void NetworkManager::onLogout()
 {
   for(std::vector<std::function<void()>>::iterator itr = m_onLogoutSubscribers.begin(); itr != m_onLogoutSubscribers.end(); itr++)

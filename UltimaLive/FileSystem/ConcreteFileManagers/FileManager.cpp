@@ -1,24 +1,26 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "FileManager.h"
 #include <cstdio>
@@ -26,6 +28,9 @@
 #include "..\Uop\UopUtility.h"
 #include "..\..\Maps\MapDefinition.h"
 
+/**
+ * @brief FileManager constructor
+ */
 FileManager::FileManager()
   : BaseFileManager(),
     m_neededFiles()
@@ -55,6 +60,11 @@ FileManager::FileManager()
   m_neededFiles["statics5.mul"] = 0;
 }
 
+/**
+ * @brief    Loads a map specified by number into the shared memory space in the client
+ *
+ * @param mapNumber Number corresponding to the map that the client should load (map0.mul, etc)
+ */
 void FileManager::LoadMap(uint8_t mapNumber)
 {
   if (m_pMapFileStream->is_open())
@@ -148,6 +158,21 @@ void FileManager::LoadMap(uint8_t mapNumber)
   Logger::g_pLogger->LogPrint("Finished Loading Map!\n");
 }
 
+/**
+ *
+ * @brief Creates the shared memory spaces for map files, static files and indices
+ *        This method is called in place of the client's original MapViewOfFile. Instead of mapping a view
+ *        of each file that the client needs, a single shared space is mapped so that UltimaLive can dynamically
+ *        load and unload maps as needed.
+ * 
+ * @param hFileMappingObject   A handle to a file mapping object.
+ * @param dwDesiredAccess      The type of access to a file mapping object, which determines the protection of the pages.
+ * @param dwFileOffsetHigh     A high-order DWORD of the file offset where the view begins.
+ * @param dwFileOffsetLow      A low-order DWORD of the file offset where the view is to begin.
+ * @param dwNumberOfBytesToMap The number of bytes of a file mapping to map to the view.
+ *
+ * @return The starting address of the mapped view
+ */
 LPVOID WINAPI FileManager::OnMapViewOfFile(
   __in  HANDLE hFileMappingObject,
   __in  DWORD dwDesiredAccess,
@@ -203,86 +228,25 @@ LPVOID WINAPI FileManager::OnMapViewOfFile(
 	return handleToReturn;
 }
 
+/**
+ * @brief Finds a memory location corresponding to a block number
+ *
+ * @param mapNumber Map Number
+ * @param blockNum Block Number to seek
+ *
+ * @return pointer to the block data 
+ */
 unsigned char* FileManager::seekLandBlock(uint8_t, uint32_t blockNum)
 {
   uint8_t* pData = reinterpret_cast<unsigned char*>(m_pMapPool + (blockNum * 196) + 4);
   return pData;
 }
 
-unsigned char* FileManager::readLandBlock(uint8_t mapNumber, uint32_t blockNum)
-{
-  unsigned char* pBlockPosition = seekLandBlock(mapNumber, blockNum);
-
-  unsigned char* pData = new uint8_t[192];
-
-  if (pBlockPosition != NULL)
-  {
-    for (int i = 0; i < 192; ++i)
-    {
-      pData[i] = reinterpret_cast<unsigned char*>(pBlockPosition)[i];
-    }
-  }
-
-  return pData;
-}
- 
-bool FileManager::updateLandBlock(uint8_t mapNumber, uint32_t blockNum, uint8_t* pLandData)
-{
-  //update block in memory
-  unsigned char* pBlockPosition = seekLandBlock(mapNumber, blockNum);
-
-  Logger::g_pLogger->LogPrint("Land Block Memory Location: 0x%x\n", (int)pBlockPosition);
-
-
-  if (pBlockPosition != NULL)
-  {
-    for (int i = 0; i < 192; ++i)
-    {
-      pBlockPosition[i] = pLandData[i];
-    }
-  }
-  else
-  {
-    Logger::g_pLogger->LogPrint("Unable to update land block!\n");
-  }
-
-  if (m_pMapFileStream->is_open())
-  {
-    //update block on disk
-    uint32_t blockSeekLocation = (blockNum * 196) + 4;
-    Logger::g_pLogger->LogPrint("Updating Land block on disk at location: 0x%x\n", blockSeekLocation);
-    m_pMapFileStream->seekp(blockSeekLocation, std::ios::beg);
-  
-#ifdef DEBUG
-    if (m_pMapFileStream->bad())
-    {
-      Logger::g_pLogger->LogPrint("Failed to Seek!!!!!!!!!!!!!! (%i)\n", GetLastError());
-    }
-    else
-    {
-      Logger::g_pLogger->LogPrint("Seek successful\n");
-    }
-#endif
-  
-    m_pMapFileStream->write(const_cast<const char*>(reinterpret_cast<char*>(pLandData)), 192);
-#ifdef DEBUG  
-    if (m_pMapFileStream->bad())
-    {
-      Logger::g_pLogger->LogPrint("Failed to Write!!!!!!!!!!!!!! (%i)\n", GetLastError());
-    }
-    else
-    {
-      Logger::g_pLogger->LogPrint("Wrote successfully\n");
-    }
-#endif
-  }
-
-  m_pMapFileStream->flush();
-  Logger::g_pLogger->LogPrint("Flushed successfully\n");
-
-  return true;
-}
-
+/**
+ * @brief Initialization function for the FileManager
+ * 
+ * @return True on success
+ */
 bool FileManager::Initialize()
 {
   Logger::g_pLogger->LogPrint("Initializing MUL File Manager!\n");

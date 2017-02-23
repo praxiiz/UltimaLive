@@ -1,24 +1,26 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "PacketHandlerFactory.h"
 #include "ConcretePacketHandlers\ChangeMapHandler.h"
@@ -35,6 +37,15 @@
 #include "ConcretePacketHandlers\ServerVersionRequestHandler.h"
 #include "ConcretePacketHandlers\ClientCrashPacketHandler.h"
 
+/**
+ * @brief Factory method that generates client to server packet handlers
+ *
+ * @param pManager Pointer to Network Manager Instance
+ * @param versionMajor Client Major Version
+ * @param versionMinor Client Minor Version
+ * 
+ * @return Map of packet IDs to packet handlers
+ */
 std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateClientPacketHandlers (uint32_t, uint32_t, NetworkManager* pManager)
 {
   std::map<uint8_t, BasePacketHandler*> handlers;
@@ -47,6 +58,15 @@ std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateClientPacket
   return handlers;
 }
 
+/**
+ * @brief Factory method that generates UltimaLive server to client packet handlers
+ *
+ * @param versionMajor Client major version
+ * @param versionMinor Client minor version
+ * @param pManager Pointer to Network Manager Instance
+ *
+ * @return Map of packet IDs to packet handlers
+ */
 std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateUltimaLiveServerPacketHandlers (uint32_t, uint32_t, NetworkManager* pManager)
 {
   std::map<uint8_t, BasePacketHandler*> handlers;
@@ -59,6 +79,15 @@ std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateUltimaLiveSe
   return handlers;
 }
 
+/**
+ * @brief Factory method that generates client to server extended packet handlers
+ *
+ * @param versionMajor Client major version
+ * @param versionMinor Client minor version
+ * @param pManager Pointer to Network Manager Instance
+ *
+ * @return Map of packet IDs to packet handlers
+ */
 std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateClientExtendedPacketHandlers (uint32_t, uint32_t, NetworkManager*)
 {
   std::map<uint8_t, BasePacketHandler*> handlers;
@@ -66,6 +95,15 @@ std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateClientExtend
   return handlers;
 }
 
+/**
+ * @brief Factory method that generates server to client packet handlers
+ *
+ * @param versionMajor Client major version
+ * @param versionMinor Client minor version
+ * @param pManager Pointer to Network Manager Instance
+ *
+ * @return Map of packet IDs to packet handlers
+ */
 std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateServerPacketHandlers (uint32_t, uint32_t, NetworkManager* pManager)
 {
   std::map<uint8_t, BasePacketHandler*> handlers;
@@ -78,6 +116,15 @@ std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateServerPacket
   return handlers;
 }
 
+/**
+ * @brief Factory method that generates server to client extended packet handlers
+ *
+ * @param versionMajor Client major version
+ * @param versionMinor Client minor version
+ * @param pManager Pointer to Network Manager Instance
+ *
+ * @return Map of packet IDs to packet handlers
+ */
 std::map<uint8_t, BasePacketHandler*> PacketHandlerFactory::GenerateServerExtendedPacketHandlers (uint32_t, uint32_t, NetworkManager* pManager)
 {
   std::map<uint8_t, BasePacketHandler*> handlers;

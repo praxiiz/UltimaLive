@@ -1,24 +1,27 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/** 
+ * @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "BaseFileManager.h"
 
@@ -27,6 +30,105 @@
 #include "shlobj.h"
 #include "..\Maps\MapDefinition.h"
 
+/** 
+ * @brief Reads a land block and returns a pointer to the newly allocated memory. Caller is responsible for memory cleanup.
+ *
+ * @param mapNumber number corresponding to the map to search
+ * @param blockNum number corresponding to the block in the map
+ *
+ * @return Pointer to the block memory
+ */
+unsigned char* BaseFileManager::readLandBlock(uint8_t mapNumber, uint32_t blockNum)
+{
+	unsigned char* pBlockPosition = seekLandBlock(mapNumber, blockNum);
+	unsigned char* pData = new uint8_t[192];
+
+	if (pBlockPosition != NULL)
+	{
+		for (int i = 0; i < 192; ++i)
+		{
+			pData[i] = reinterpret_cast<unsigned char*>(pBlockPosition)[i];
+		}
+	}
+
+	return pData;
+}
+
+/** 
+ * @brief updates a land block in memory and in UltimaLive's map cache on disk
+ *
+ * @param mapNumber number corresponding to the map (e.g. map0.mul)
+ * @param blockNum number corresponding to the map block to be updated
+ * @param pLandData pointer to new data to replace the existing land data
+ *
+ * @return True on success
+ */
+bool BaseFileManager::updateLandBlock(uint8_t mapNumber, uint32_t blockNum, uint8_t* pLandData)
+{
+	//update block in memory
+	unsigned char* pBlockPosition = seekLandBlock(mapNumber, blockNum);
+
+	Logger::g_pLogger->LogPrint("Land Block Memory Location: 0x%x\n", (int)pBlockPosition);
+
+
+	if (pBlockPosition != NULL)
+	{
+		for (int i = 0; i < 192; ++i)
+		{
+			pBlockPosition[i] = pLandData[i];
+		}
+	}
+	else
+	{
+		Logger::g_pLogger->LogPrint("Unable to update land block!\n");
+	}
+
+	if (m_pMapFileStream->is_open())
+	{
+		//update block on disk
+		uint32_t blockSeekLocation = (blockNum * 196) + 4;
+		Logger::g_pLogger->LogPrint("Updating Land block on disk at location: 0x%x\n", blockSeekLocation);
+		m_pMapFileStream->seekp(blockSeekLocation, std::ios::beg);
+
+#ifdef DEBUG
+		if (m_pMapFileStream->bad())
+		{
+			Logger::g_pLogger->LogPrint("Failed to Seek!!!!!!!!!!!!!! (%i)\n", GetLastError());
+		}
+		else
+		{
+			Logger::g_pLogger->LogPrint("Seek successful\n");
+		}
+#endif
+
+		m_pMapFileStream->write(const_cast<const char*>(reinterpret_cast<char*>(pLandData)), 192);
+#ifdef DEBUG  
+		if (m_pMapFileStream->bad())
+		{
+			Logger::g_pLogger->LogPrint("Failed to Write!!!!!!!!!!!!!! (%i)\n", GetLastError());
+		}
+		else
+		{
+			Logger::g_pLogger->LogPrint("Wrote successfully\n");
+		}
+#endif
+	}
+
+	m_pMapFileStream->flush();
+	Logger::g_pLogger->LogPrint("Flushed successfully\n");
+
+	return true;
+}
+
+/** 
+ * @brief reads data corresponding to all statics contained in one map block
+ *
+ * @param mapNumber Map Number
+ * @param blockNum Block Number
+ * @param rNumberOfBytesOut number of bytes read
+ * 
+ * @return pointer to memory containing statics in the block
+ */
 unsigned char* BaseFileManager::readStaticsBlock(uint32_t, uint32_t blockNum, uint32_t& rNumberOfBytesOut)
 {
   uint8_t* pBlockIdx = m_pStaidxPool;
@@ -52,6 +154,16 @@ unsigned char* BaseFileManager::readStaticsBlock(uint32_t, uint32_t blockNum, ui
   return pRawStaticData;
 }
 
+/** 
+ * @brief Writes data corresponding to the statics in a map block out to memory and to the UltimaLive file cache
+ *
+ * @param mapNumber Map Number
+ * @param blockNum Block number
+ * @param pBlockData Pointer tot he new block data
+ * @param updatedStaticsLength Number of bytes in the new data
+ *
+ * @return true on success
+ */
 bool BaseFileManager::writeStaticsBlock(uint8_t, uint32_t blockNum, uint8_t* pBlockData, uint32_t updatedStaticsLength)
 {
   Logger::g_pLogger->LogPrint("Writing statics: %i\n", blockNum);
@@ -139,6 +251,11 @@ bool BaseFileManager::writeStaticsBlock(uint8_t, uint32_t blockNum, uint8_t* pBl
   return true;
 }
 
+/** 
+ * @brief Initializes the BaseFileManager by allocating memory internally in the client for maps, statics, and indices
+ * 
+ * @return true on success
+ */
 bool BaseFileManager::Initialize()
 {
   CreateDirectoryA(getUltimaLiveSavePath().c_str(), NULL);
@@ -170,6 +287,9 @@ bool BaseFileManager::Initialize()
   return success;
 }
 
+/** 
+ * @brief handles client logout and prepares UltimaLive for a new login
+ */
 void BaseFileManager::onLogout()
 {
   Logger::g_pLogger->LogPrint("Closing map, staidx, statics file streams\n");
@@ -193,6 +313,16 @@ void BaseFileManager::onLogout()
   }
 }
 
+/** 
+ * @brief Creates a new blank map in the map store from scratch
+ * 
+ * @param pathWithoutFilename location to save file
+ * @param mapNumber  Number to be appended to the new filename
+ * @param numHorizontalBlocks Number of horizontal blocks for the new map
+ * @param numVerticalBlocks Number of vertical blocks for the new map
+ *
+ * @return true on success
+ */
 bool BaseFileManager::createNewPersistentMap(std::string pathWithoutFilename, uint8_t mapNumber, uint32_t numHorizontalBlocks, uint32_t numVerticalBlocks)
 {
   //create file names
@@ -269,6 +399,13 @@ bool BaseFileManager::createNewPersistentMap(std::string pathWithoutFilename, ui
   return true;
 }
 
+/**
+ * @brief Copy a file from one location to another
+ * 
+ * @param sourceFilePath source path
+ * @param destFilePath destination path
+ * @param pProgress progress bar handle
+ */
 void BaseFileManager::copyFile(std::string sourceFilePath, std::string destFilePath, ProgressBarDialog* pProgress)
 {
   std::ifstream sourceFile(sourceFilePath, std::ifstream::binary);
@@ -322,6 +459,12 @@ void BaseFileManager::copyFile(std::string sourceFilePath, std::string destFileP
   fclose(pDest);
 }
 
+/**
+ * @brief Initializes a shards maps by creating or copying new maps into the UltimaLive file cache
+ * 
+ * @param shardIdentifier Unique shard identifier
+ * @param mapDefinitions Map definitions for the shard
+ */
 void BaseFileManager::InitializeShardMaps(std::string shardIdentifier, std::map<uint32_t, MapDefinition> mapDefinitions)
 {
   m_pProgressDlg = new ProgressBarDialog();
@@ -445,6 +588,11 @@ void BaseFileManager::InitializeShardMaps(std::string shardIdentifier, std::map<
   m_pProgressDlg = NULL;
 }
 
+/**
+ * @brief Gets the UltimaLive cache path for the platform
+ *
+ * @return UltimaLive cache path
+ */
 std::string BaseFileManager::getUltimaLiveSavePath()
 {
   char szPath[MAX_PATH];
@@ -457,6 +605,9 @@ std::string BaseFileManager::getUltimaLiveSavePath()
   return std::string(szPath);
 }
 
+/**
+ * @brief BaseFileManager constructor
+ */
 BaseFileManager::BaseFileManager()
   : m_files(),
   m_pMapPool(NULL),
@@ -473,6 +624,13 @@ BaseFileManager::BaseFileManager()
   //do nothing
 }
 
+/**
+ * @brief Called when the client calls its CloseHandle function. Removes filenames from the list of open handles.
+ * 
+ * @param hObject Object Handle
+ * 
+ * @return true on success
+ */
 BOOL WINAPI BaseFileManager::OnCloseHandle(_In_ HANDLE hObject)
 {
   for (std::map<std::string, ClientFileHandleSet*>::const_iterator iterator = m_files.begin(); iterator != m_files.end(); iterator++)
@@ -487,6 +645,19 @@ BOOL WINAPI BaseFileManager::OnCloseHandle(_In_ HANDLE hObject)
   return true;
 }
 
+/**
+ * @brief Called when the client calls CreateFileA. Caches object handles needed by filemanagers. 
+ *
+ * @param lpFileName             The name of the file or device to be created or opened.
+ * @param dwDesiredAccess        The requested access to the file or device, which can be summarized as read, write, both or neither.
+ * @param dwShareMode            The requested sharing mode of the file or device, which can be read, write, both, delete, all of these, or none.
+ * @param lpSecurityAttributes   A pointer to a SECURITY_ATTRIBUTES structure that contains two separate but related data members.
+ * @param dwCreationDisposition  An action to take on a file or device that exists or does not exist.
+ * @param dwFlagsAndAttributes   The file or device attributes and flags, FILE_ATTRIBUTE_NORMAL being the most common default value for files.
+ * @param hTemplateFile          A valid handle to a template file with the GENERIC_READ access right.
+ *
+ * @return Object Handle
+ */
 HANDLE WINAPI BaseFileManager::OnCreateFileA(
   __in      LPCSTR lpFileName,
   __in      DWORD dwDesiredAccess,
@@ -513,6 +684,18 @@ HANDLE WINAPI BaseFileManager::OnCreateFileA(
   return handleToBeReturned;
 }
 
+/**
+ * @brief Called when the client calls createfilemapping. Stores a file mapping with a matching fileset if its a file UltimaLive Tracks.
+ *
+ * @param hFile              A handle to the file from which to create a file mapping object.
+ * @param lpAttributes       A pointer to a SECURITY_ATTRIBUTES structure that determines whether a returned handle can be inherited by child processes.
+ * @param flProtect          Specifies the page protection of the file mapping object.
+ * @param dwMaximumSizeHigh  The high-order DWORD of the maximum size of the file mapping object.
+ * @param dwMaximumSizeLow   The low-order DWORD of the maximum size of the file mapping object.
+ * @param lpName             The name of the file mapping object.
+ *
+ * @return New File's Handle
+ */
 HANDLE WINAPI BaseFileManager::OnCreateFileMappingA(
   __in      HANDLE hFile,
   __in_opt  LPSECURITY_ATTRIBUTES lpAttributes,
@@ -543,6 +726,17 @@ HANDLE WINAPI BaseFileManager::OnCreateFileMappingA(
 	return handleToReturn;
 }
 
+/**
+ * @brief Called in place of client's MapViewOfFile. Stores mapping address if it corresponds to a file that UltimaLive uses.
+ *
+ * @param hFileMappingObject     A handle to a file mapping object.
+ * @param dwDesiredAccess        The type of access to a file mapping object, which determines the protection of the pages.
+ * @param dwFileOffsetHigh       A high-order DWORD of the file offset where the view begins.
+ * @param dwFileOffsetLow        A low-order DWORD of the file offset where the view is to begin.
+ * @param dwNumberOfBytesToMap   The number of bytes of a file mapping to map to the view.
+ *
+ * @return The starting address of the mapped view
+ */
 LPVOID WINAPI BaseFileManager::OnMapViewOfFile(
   __in  HANDLE hFileMappingObject,
   __in  DWORD dwDesiredAccess,
@@ -572,6 +766,11 @@ LPVOID WINAPI BaseFileManager::OnMapViewOfFile(
 	return handleToReturn;
 }
 
+/**
+ * @brief Checks to see if UltimaLive has allocated a valid pool of memory
+ *
+ * @return true on success
+ */
 bool BaseFileManager::checkValidMemoryAllocated(void*)
 {
   bool success = true;

@@ -1,24 +1,27 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 
 #include "Client.h"
 using namespace std;
@@ -28,7 +31,8 @@ void* Client::BASE_ADDRESS = reinterpret_cast<void*>(0x400000);
 #pragma region Self Registration
 SelfRegisteringClass <Client> Client::m_registration;
 
-/* @brief Self Registering Class Configure Method.  This function is called first  
+/**
+ * @brief Self Registering Class Configure Method.  This function is called first  
  * to create an instance of this class and make it available for other
  * class instances to find.
  */
@@ -40,7 +44,8 @@ void Client::Configure()
   UltimaLive::g_pUltimaLive->m_pClient = pClient;
 }
 
-/* @brief Self Registering Class Initialize Method. Searches for client internal structures and pointers. 
+/**
+ * @brief Self Registering Class Initialize Method. Searches for client internal structures and pointers. 
  *
  * @return True if all client structures are found
  */
@@ -121,7 +126,8 @@ unsigned char Client::g_masterStaticsListSig2[] = { 0x68, 0x40, 0xF9, 0x2F, 0x00
 
 #pragma region Lookup Methods for Client Internals
 
-/* @brief Looks up the client's DrawMapThingie Structure
+/**
+ * @brief Looks up the client's DrawMapThingie Structure
  *
  * @return Memory pointer to client's DrawMapThingie Structure
  */
@@ -136,7 +142,8 @@ unsigned char* Client::FindDrawMapThingieTable()
   return drawMapThingieTableAddress;
 }
 
-/* @brief Searches for the client's Master Statics List Structure
+/**
+ * @brief Searches for the client's Master Statics List Structure
  *
  * @return Memory pointer to the Master Statics List Structure
  */
@@ -151,7 +158,8 @@ CStaticObject** Client::FindMasterStaticsList()
   return masterStaticListAddress;
 }
 
-/* @brief Searches for the client's Structure that holds the minimum coords to display on screen
+/**
+ * @brief Searches for the client's Structure that holds the minimum coords to display on screen
  *
  * @return Memory pointer to the Minimum Coord Display Structure
  */
@@ -172,7 +180,8 @@ MapMinDisplay* Client::FindMapMinCoordDisplayStructure()
   return reinterpret_cast<MapMinDisplay*>(minClientDisplayX);
 }
 
-/* @brief Searches for the client's Display Blocks Table.  This table contains a 64x64 array of blocks.
+/**
+ * @brief Searches for the client's Display Blocks Table.  This table contains a 64x64 array of blocks.
  *
  * @return Pointer to an the clients Display Blocks Table
  */
@@ -198,7 +207,8 @@ int* Client::FindClientDisplayedBlocksTable()
   return static_cast<int*>(minClientDisplayX);
 }
 
-/* @brief Searches for the client function that updates onscreen statics
+/**
+ * @brief Searches for the client function that updates onscreen statics
  *
  * @return Pointer to the UpdateBlocks client function
  */
@@ -214,7 +224,8 @@ Client::ClientUpdateStaticBlocksFunction Client::FindUpdateBlocksFunction()
   return static_cast<ClientUpdateStaticBlocksFunction>(updateBlock);
 }
 
-/* @brief Searches for the client function that refreshes the onscreen map graphics.
+/**
+ * @brief Searches for the client function that refreshes the onscreen map graphics.
  *
  * @return Pointer to the refresh terrain client function
  */
@@ -233,7 +244,8 @@ Client::RefreshTerrainFunction Client::FindRefreshTerrainFunction()
   return reinterpret_cast<Client::RefreshTerrainFunction>(pRefreshFunction);
 }
 
-/* @brief Searches for the client Player structure memory address
+/**
+ * @brief Searches for the client Player structure memory address
  *
  * @return Pointer to the memory address of the client player structure
  */
@@ -249,7 +261,8 @@ CPlayerMobile* Client::FindPlayerStructure()
   return reinterpret_cast<CPlayerMobile*>(static_cast<char*>(pOffset) + 6);
 }
 
-/* @brief Searches for the client's network send function
+/**
+ * @brief Searches for the client's network send function
  *
  * @return Pointer to the memory address of the client's network send function
  */
@@ -275,7 +288,8 @@ Client::ClientSendFunction Client::FindSendFunction()
   return reinterpret_cast<ClientSendFunction>(pReturnAddress);
 }
 
-/* @brief Searches for the client's network receive function
+/**
+ * @brief Searches for the client's network receive function
  *
  * @return Pointer to the memory address of the client's network receive function
  */
@@ -301,7 +315,8 @@ Client::ClientRecvFunction Client::FindRecvFunction()
   return reinterpret_cast<ClientRecvFunction>(pReturnAddress);
 }
 
-/* @brief Searches for the client's network manager
+/**
+ * @brief Searches for the client's network manager
  *
  * @return Pointer to the memory address of the client's network manager
  */
@@ -327,7 +342,8 @@ void** Client::FindNetworkStructureInstance()
   return pNetworkObject;
 }
 
-/* @brief Searches for the client's Map Dimension Structure. The Map Dimension Structure contains the map dimensions and wrapping coordinates for each client map. 
+/**
+ * @brief Searches for the client's Map Dimension Structure. The Map Dimension Structure contains the map dimensions and wrapping coordinates for each client map. 
  *
  * @return Pointer to the memory address of the client's Map Dimension Structure
  */
@@ -337,7 +353,8 @@ MapTileDefinition* Client::FindMapDimensionStructure()
 }
 #pragma endregion
 
-/* @brief Checks to see if the resulting pointer exists in the memory space of the client.
+/**
+ * @brief Checks to see if the resulting pointer exists in the memory space of the client.
  *
  * @return True if the memory address is valid, false otherwise
  */
@@ -359,7 +376,8 @@ bool Client::checkLookupResult(void* pAddress)
   return success;
 }
 
-/* @brief Client class constructor
+/**
+ * @brief Client class constructor
  */
 Client::Client()
   : m_pNetworkStructureInstance(NULL),
@@ -380,7 +398,8 @@ Client::Client()
   //do nothing
 }
 
-/* @Brief Search out all internal structure addresses.
+/**
+ * @brief Search out all internal structure addresses.
  * 
  * @return true if all pointers and internal structures are found
  */
@@ -438,28 +457,32 @@ bool Client::LookupClientInternalStructuresAndFunctions()
   return success;
 }
 
-/* @brief Getter for client's Receive Function pointer
-*/
+/**
+ * @brief Getter for client's Receive Function pointer
+ */
 Client::ClientRecvFunction& Client::getRecvFunction()
 {
   return m_pRecvFunction;
 }
 
-/* @brief Getter for client's Send Function pointer
-*/
+/**
+ * @brief Getter for client's Send Function pointer
+ */
 Client::ClientSendFunction& Client::getSendFunction()
 {
   return m_pSendFunction;
 }
 
-/* @brief Getter for client's Update Statics Blocks Function pointer
-*/
+/**
+ * @brief Getter for client's Update Statics Blocks Function pointer
+ */
 Client::ClientUpdateStaticBlocksFunction& Client::getUpdatesStaticBlocksFunction()
 {
   return m_pUpdateBlocksFunction;
 }
 
-/* @brief Refreshes statics on the client screen for a given block
+/**
+ * @brief Refreshes statics on the client screen for a given block
  *
  * @param blockNumber block number to refresh
  */
@@ -496,8 +519,9 @@ void Client::refreshClientStatics(uint32_t blockNumber)
   ClientRedirections::OnUpdateStaticBlocks();
 }
 
-/* @brief Refreshes all map files on the client screen
-*/
+/**
+ * @brief Refreshes the land tiles on the client screen
+ */
 void Client::refreshClientLand()
 {
   for (int x = 0; x < 64; ++x)
@@ -522,7 +546,8 @@ void Client::refreshClientLand()
   }
 }
 
-/* @brief Sends an array of bytes to the server using the clients send function
+/**
+ * @brief Sends an array of bytes to the server using the clients send function
  *
  * @param pBuffer pointer to byte array
  */
@@ -531,7 +556,8 @@ void Client::SendPacketToServer(unsigned char* pBuffer)
   m_pSendFunction(*m_pNetworkStructureInstance, pBuffer);
 }
 
-/* @brief Sends an array of bytes to the client using the clients receive function
+/**
+ * @brief Sends an array of bytes to the client using the clients receive function
  *
  * @param pBuffer pointer to byte array
  */
@@ -541,7 +567,8 @@ void Client::SendPacketToClient(unsigned char* pBuffer)
   m_pRecvFunction(*m_pNetworkStructureInstance, pBuffer);
 }
 
-/* @brief Updates the client's map dimensions
+/** 
+ * @brief Updates the client's map dimensions
  *
  * @param definition New map definition set
  */
@@ -550,7 +577,8 @@ void Client::SetMapDimensions(MapTileDefinition definition)
   *m_pMapDimensionsStructure = definition;
 }
 
-/* @brief Getter for the pointer to the client Player structure
+/**
+ * @brief Getter for the pointer to the client Player structure
  *
  * @return Client Player Structure Pointer
  */
@@ -559,7 +587,8 @@ CPlayerMobile* Client::getPlayerMobile()
   return m_pPlayerStructure;
 }
 
-/* @brief Getter for the client Network Manager Pointer
+/**
+ * @brief Getter for the client Network Manager Pointer
  *
  * @return pointer to the client's Network Manager
  */
@@ -568,7 +597,8 @@ NetworkManager* Client::GetNetworkManager()
   return m_pNetworkManager;
 }
 
-/* @brief Getter for the pointer to the client's File Manager
+/** 
+ * @brief Getter for the pointer to the client's File Manager
  *
  * @return pointer to the client's File Manager
  */

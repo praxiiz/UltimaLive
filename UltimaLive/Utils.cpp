@@ -1,28 +1,38 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 
 #include "Utils.h"
 using namespace std;
 
+/**
+ * @brief converts standard string to wstring
+ *
+ * @param s string to convert
+ *
+ * @return converted wstring 
+ */
 std::wstring Utils::s2ws(const std::string& s)
 {
     int len;
@@ -35,6 +45,11 @@ std::wstring Utils::s2ws(const std::string& s)
     return r;
 }
 
+/**
+ * @brief Gets the name of the current module
+ *
+ * @return Name of current module
+ */
 std::string Utils::GetCurrentModuleName()
 {
   char fullPath[MAX_PATH_LENGTH]; 
@@ -52,7 +67,11 @@ std::string Utils::GetCurrentModuleName()
   return std::string(pBaseName);
 }
 
-
+/**
+ * @brief Gets the path to the current process without the filename
+ *
+ * @return Path to the current process
+ */
 std::string Utils::GetCurrentPathWithoutFilename()
 {
   char buffer[MAX_PATH];
@@ -61,7 +80,11 @@ std::string Utils::GetCurrentPathWithoutFilename()
   return string( buffer ).substr( 0, pos);
 }
 
-
+/**
+ * @brief Gets the path to the current process including the filename
+ *
+ * @return Path to the current process including process name
+ */
 std::string Utils::GetCurrentModuleFullPath()
 {
   char fullPath[MAX_PATH_LENGTH]; 
@@ -69,6 +92,11 @@ std::string Utils::GetCurrentModuleFullPath()
   return std::string(fullPath);
 }
 
+/**
+ * @brief Returns the version information  for the current module
+ *
+ * @return File version info
+ */
 VS_FIXEDFILEINFO* getFileInfo()
 {
   //get file info
@@ -94,6 +122,11 @@ VS_FIXEDFILEINFO* getFileInfo()
   return pVersionFileInfo;
 }
 
+/**
+ * @brief Getter for UltimaLive major version
+ *
+ * @return Major Version
+ */
 int Utils::getModuleMinorVersionLower()
 {
   int returnValue = 0;
@@ -107,7 +140,11 @@ int Utils::getModuleMinorVersionLower()
   return returnValue;
 }
 
-int Utils::getModuleMinorVersionUpper()
+/**
+* @brief Getter for UltimaLive minor version
+*
+* @return Minor Version
+*/int Utils::getModuleMinorVersionUpper()
 {
   int returnValue = 0;
   VS_FIXEDFILEINFO* pVersionFileInfo = getFileInfo();
@@ -121,8 +158,12 @@ int Utils::getModuleMinorVersionUpper()
 }
 
 
-
-//taken from http://stackoverflow.com/questions/8046097/how-to-check-if-a-process-has-the-admin-rights
+/**
+ * @brief Check to see if the current process has admin rights
+ *        verbose Taken from http://stackoverflow.com/questions/8046097/how-to-check-if-a-process-has-the-admin-rights
+ *
+ * @return True if process has admin rights
+ */
 bool Utils::IsElevated( ) 
 {
     bool fRet = false;
@@ -145,6 +186,13 @@ bool Utils::IsElevated( )
     return fRet;
 }
 
+/**
+ * @brief Gets the base filename without the extension from a given path
+ *
+ * @param filename File path
+ *
+ * @return basefilename without the extension
+ */
 std::string Utils::getBaseFilenameWithoutExtension(std::string filename)
 {
   std::string filenameToReturn(filename);
@@ -168,6 +216,13 @@ std::string Utils::getBaseFilenameWithoutExtension(std::string filename)
   return filenameToReturn;
 }
 
+/**
+* @brief Returns a filename with the extension from a path string
+*
+* @param path Path with filename
+*
+* @return Filename with extention
+*/
 std::string Utils::getFilenameFromPath(std::string path)
 {
   std::string filenameToReturn;

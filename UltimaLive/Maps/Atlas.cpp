@@ -1,24 +1,26 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "Atlas.h"
 #include "..\UltimaLive.h"
@@ -28,13 +30,21 @@
 #pragma region Self Registration
 SelfRegisteringClass <Atlas> Atlas::m_registration;
 
-
+/**
+ * @brief Class Registration Configuration function that creates the Atlas global and registers it
+ *
+ */
 void Atlas::Configure()
 {
   Logger::g_pLogger->LogPrint("Atlas configure\n");
   UltimaLive::g_pUltimaLive->Register("Atlas", new Atlas());
 }
 
+/**
+ * @brief Initializes Atlas class. Gets pointers to the client global pointer and subscribes to packets.
+ *
+ * @return true on success
+ */
 bool Atlas::Initialize()
 {
   bool success = true;
@@ -91,6 +101,9 @@ bool Atlas::Initialize()
 }
 #pragma endregion
 
+/**
+ * @brief Atlast Constructor
+ */
 Atlas::Atlas()
   : m_pNetworkManager(NULL),
   m_pFileManager(NULL),
@@ -103,16 +116,29 @@ Atlas::Atlas()
   //do nothing
 }
 
+/**
+ * @brief setter for Shard Identifier
+ *
+ * @param shardIdentifier 
+ */
 void Atlas::onShardIdentifierUpdate(std::string shardIdentifier)
 {
   m_shardIdentifier = shardIdentifier;
 }
 
+/**
+ * @brief Calls file manager logout handler
+ */
 void Atlas::onLogout()
 {
   m_pFileManager->onLogout();
 }
 
+/**
+ * @brief Loads a map based on map number
+ *
+ * @param map Map Number
+ */
 void Atlas::LoadMap(uint8_t map)
 {
   Logger::g_pLogger->LogPrint("ON BEFORE LOAD MAP: %i\n", map);
@@ -149,6 +175,14 @@ void Atlas::LoadMap(uint8_t map)
 #endif
 }
 
+/**
+ * @brief Updates a static block by calling the filemanager and then refreshes the client
+ *
+ * @param mapNumber Map Number
+ * @param blockNumber Statics Block Number
+ * @param pData Pointer to the new memory block containing the statics data
+ * @param length Length of the new memory block
+ */
 void Atlas::onUpdateStatics(uint8_t mapNumber, uint32_t blockNumber, uint8_t* pData, uint32_t length)
 {
   Logger::g_pLogger->LogPrint("Block: %i Map Number: %i Length: %i\n", blockNumber, mapNumber, length);
@@ -156,12 +190,25 @@ void Atlas::onUpdateStatics(uint8_t mapNumber, uint32_t blockNumber, uint8_t* pD
   m_pClient->refreshClientStatics(blockNumber);
 }
 
+/**
+* @brief @ Updates a land block on a given map
+*
+* @param mapNumber Map Number
+* @param blockNumber Land Block Number
+* @param pLandData Pointer to the new land data which is of fixed size
+*/
 void Atlas::onUpdateLand(uint8_t mapNumber, uint32_t blockNumber, uint8_t* pLandData)
 {
   m_pFileManager->updateLandBlock(mapNumber, blockNumber, pLandData);
   m_pClient->refreshClientLand();
 }
 
+/**
+ * @brief Responds to a server hash query for a particular map block (land and statics)
+ *
+ * @param blockNumber Map Block Number
+ * @param mapNumber Map Number
+ */
 void Atlas::onHashQuery(uint32_t blockNumber, uint8_t mapNumber)
 {
   Logger::g_pLogger->LogPrint("Atlas: Got Hash Query\n");
@@ -193,6 +240,11 @@ void Atlas::onHashQuery(uint32_t blockNumber, uint8_t mapNumber)
   delete pResponse;
 }
 
+/**
+* @brief Updates map definitions as received from the server
+*
+* @param definitions New map definitions
+*/
 void Atlas::onUpdateMapDefinitions(std::vector<MapDefinition> definitions)
 {
   m_mapDefinitions.clear();
@@ -204,6 +256,9 @@ void Atlas::onUpdateMapDefinitions(std::vector<MapDefinition> definitions)
   }
 }
 
+/**
+* @brief Refreshes the client's view to match the current state of the map
+*/
 void Atlas::onRefreshClientView()
 {
   Logger::g_pLogger->LogPrint("Atlas: Refreshing Client View\n");
@@ -225,6 +280,10 @@ void Atlas::onRefreshClientView()
   m_pNetworkManager->sendPacketToClient(aPacketData2);
 }
 
+/**
+ * @brief Changes the client's map to map1 so that the client will load a map0 and refresh the view
+ *        Map0 and Map1 point to the same place internally. This is a way of making sure the client actually performs the load.
+ */
 void Atlas::onBeforeMapChange(uint8_t&)
 {
   //send a packet to tell the client to change to map 1
@@ -238,6 +297,11 @@ void Atlas::onBeforeMapChange(uint8_t&)
   m_pNetworkManager->sendPacketToClient(packet);
 }
 
+/**
+ * @brief Loads the specified map
+ *
+ * @param rMap Map number to load
+ */
 void Atlas::onMapChange(uint8_t& rMap)
 {
   //modify map change packet to point to map 0
@@ -245,11 +309,25 @@ void Atlas::onMapChange(uint8_t& rMap)
   rMap = 0x00;
 }
 
+/**
+ * @brief Getter for the current map number
+ *
+ * @return Current map number
+ */
 uint8_t Atlas::getCurrentMap()
 {
   return m_currentMap;
 }
 
+/**
+ * @brief Calculates a CRC using the combined land and statics data
+ *
+ * @param pBlockData Pointer to the memory containing land data
+ * @param pStaticsData Pointer to the memory containing statics data
+ * @param staticsLength Number of bytes in the statics data
+ *
+ * @ return 16 bit CRC
+ */
 uint16_t Atlas::fletcher16(uint8_t* pBlockData, uint8_t* pStaticsData, uint32_t staticsLength)
 {
   uint16_t sum1 = 0;
@@ -278,6 +356,14 @@ uint16_t Atlas::fletcher16(uint8_t* pBlockData, uint8_t* pStaticsData, uint32_t 
 
 int32_t Atlas::BLOCK_POSITION_OFFSETS[5] = { -2, -1, 0, 1, 2 };
 
+/**
+ * @brief Gets CRCs for the 25 blocks surrounding the current players position
+ *
+ * @param mapNumber Map Number
+ * @param blockNumber Number of the block containing the current player position
+ * 
+ * @return Array of 25 block numbers
+ */
 uint16_t* Atlas::GetGroupOfBlockCrcs(uint32_t mapNumber, uint32_t blockNumber)
 {
   uint16_t* pCrcs = NULL;
@@ -356,6 +442,12 @@ uint16_t* Atlas::GetGroupOfBlockCrcs(uint32_t mapNumber, uint32_t blockNumber)
   return pCrcs;
 }
 
+/**
+ * @brief Looks up the memory blocks for a specified block number and map number, returns the CRC of the block
+ *
+ * @param mapNumber Map Number
+ * @param blockNumber Block Number
+ */
 uint16_t Atlas::getBlockCrc(uint32_t mapNumber, uint32_t blockNumber)
 {
   uint16_t crc = 0; 

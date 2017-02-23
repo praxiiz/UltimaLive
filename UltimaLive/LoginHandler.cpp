@@ -1,24 +1,28 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/**
+ * @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 
 #include "LoginHandler.h"
 #include "Network\NetworkManager.h"
@@ -27,16 +31,18 @@
 #pragma region Self Registration
 SelfRegisteringClass <LoginHandler> LoginHandler::m_registration;
 
-/* @brief Self Registering Class Configure function that registeres this class with the UltimaLive application state
-*/
+/**
+ * @brief Self Registering Class Configure function that registeres this class with the UltimaLive application state
+ */
 void LoginHandler::Configure()
 {
   Logger::g_pLogger->LogPrint("LoginHandler configure\n");
   UltimaLive::g_pUltimaLive->Register("LoginHandler", new LoginHandler());
 }
 
-/* @brief Self Registering Class Initialize function that sets up packet subscriptions with the network manager
-*/
+/**
+ * @brief Self Registering Class Initialize function that sets up packet subscriptions with the network manager
+ */
 bool LoginHandler::Initialize()
 {
   Logger::g_pLogger->LogPrint("Initializing LoginHandler!\n"); 
@@ -74,8 +80,9 @@ bool LoginHandler::Initialize()
 
 #pragma endregion
 
-/* @brief LoginHandler constructor
-*/
+/**
+ * @brief LoginHandler constructor
+ */
 LoginHandler::LoginHandler()
   : m_pManager(NULL),
   m_needToSendCachedLoginPacket(false),
@@ -86,7 +93,8 @@ LoginHandler::LoginHandler()
   //do nothing
 }
 
-/* @brief This function is called when the server sends map definitions to the client. It is responsible for setting the first mobile update flag.
+/**
+ * @brief This function is called when the server sends map definitions to the client. It is responsible for setting the first mobile update flag.
  *
  * @param definitions Vector of MapDefinitions received from the server
  */
@@ -95,9 +103,9 @@ void LoginHandler::onUpdateMapDefinitions(std::vector<MapDefinition> definitions
   m_firstMobileUpdateFromServer = true;
 }
 
-/* @brief This function is called when the server sends its mobile update to the client. 
- * 
- * @verbose This functions performs a refresh client prior to the client receiving its first update.  This only happens once. 
+/**
+ * @brief This function is called when the server sends its mobile update to the client. 
+ * This functions performs a refresh client prior to the client receiving its first update.  This only happens once. 
  */
 void LoginHandler::onServerMobileUpdate()
 {
@@ -110,7 +118,8 @@ void LoginHandler::onServerMobileUpdate()
   }
 }
 
-/* @brief This function is called each time that the server changes which map the client is on.
+/**
+ * @brief This function is called each time that the server changes which map the client is on.
  */
 void LoginHandler::onBeforeMapChange(uint8_t&)
 {
@@ -126,7 +135,8 @@ void LoginHandler::onBeforeMapChange(uint8_t&)
   }
 }
 
-/* @brief Handles the login confirmation packet sent from the server. Caches the packet to be used to complete login in the proper order.
+/**
+ * @brief Handles the login confirmation packet sent from the server. Caches the packet to be used to complete login in the proper order.
  *
  * @param pPacketData pointer to the packet data
  */
@@ -141,7 +151,8 @@ void LoginHandler::onLoginConfirm(uint8_t* pPacketData)
   memcpy(m_pCachedLoginPacket, pPacketData, 37);
 }
 
-/* @brief Builds a unicode message that can be sent to the client
+/** 
+ * @brief Builds a unicode message that can be sent to the client
  *
  * @param serial       Mobile serial number
  * @param messageMode  0x00 - Regular, 0x01 - Broadcast, 0x02 - Emote, 0x06 - System, 0x07 - Message, 0x08 - Whisper, 0x09 - Yell
@@ -186,8 +197,9 @@ uint8_t* BuildUnicodeMessagePacket(uint32_t serial, uint8_t messageMode, uint16_
     return pUnicodePacket;
 }
 
-/* @brief Sends the UltimaLive message to the client when the login confirmation packet has been received
-*/
+/**
+ * @brief Sends the UltimaLive message to the client when the login confirmation packet has been received
+ */
 void LoginHandler::onLoginComplete()
 {
   Logger::g_pLogger->LogPrint("LOGIN HANDLER RECEIVED LOGIN COMPLETE\n");
@@ -206,8 +218,9 @@ void LoginHandler::onLoginComplete()
   Logger::g_pLogger->LogPrint("%s\n", welcomeMessageBuff);
 }
 
-/* @brief Cleans up when the client receives a logout request.
-*/
+/**
+ * @brief Cleans up when the client receives a logout request.
+ */
 void LoginHandler::onLogoutRequest()
 {
   Logger::g_pLogger->LogPrint("LoginHandler received logout request!\n");

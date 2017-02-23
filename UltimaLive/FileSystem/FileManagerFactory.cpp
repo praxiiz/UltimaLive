@@ -1,24 +1,26 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "FileManagerFactory.h"
 #include "ConcreteFileManagers\FileManager_7_0_29_2.h"
@@ -27,7 +29,9 @@
 #pragma region Self Registration
 SelfRegisteringClass <FileManagerFactory> FileManagerFactory::m_registration;
 
-
+/**
+ * @brief Configure method for class registration. Creates the concrete factory class and adds it to the factory registry.
+ */
 void FileManagerFactory::Configure()
 {
   Logger::g_pLogger->LogPrint("BaseFileManager configure\n");
@@ -47,6 +51,11 @@ void FileManagerFactory::Configure()
   }
 }
 
+/**
+ * @brief Initialize method for class registration. Calls the concrete class's initialize method.
+ * 
+ * @return true on success
+ */
 bool FileManagerFactory::Initialize()
 {
   BaseFileManager* pManager = static_cast<BaseFileManager*>(UltimaLive::g_pUltimaLive->Lookup("FileManager"));
@@ -71,6 +80,14 @@ bool FileManagerFactory::Initialize()
 
 #pragma endregion
 
+/**
+ * @brief Creates a concrete filemanager (packet factory) based on client version
+ *
+ * @param versionMajor Client Major Version 
+ * @param versionMinor Client Minor Version
+ * 
+ * @return Pointer to the concrete filemanager
+ */
 BaseFileManager* FileManagerFactory::CreateFileManager(uint32_t versionMajor, uint32_t versionMinor)
 {
   int a = (int)(versionMajor >> 16);

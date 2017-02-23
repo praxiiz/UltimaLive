@@ -1,24 +1,26 @@
-/* Copyright(c) 2016 UltimaLive
-*
-* Permission is hereby granted, free of charge, to any person obtaining
-* a copy of this software and associated documentation files (the
-* "Software"), to deal in the Software without restriction, including
-* without limitation the rights to use, copy, modify, merge, publish,
-* distribute, sublicense, and/or sell copies of the Software, and to
-* permit persons to whom the Software is furnished to do so, subject to
-* the following conditions:
-*
-* The above copyright notice and this permission notice shall be included
-* in all copies or substantial portions of the Software.
-*
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-* IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-* CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-* TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+/* @file
+ *
+ * Copyright(c) 2016 UltimaLive
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #ifndef _CLIENT_STRUCTURES_H
 #define _CLIENT_STRUCTURES_H
@@ -66,122 +68,173 @@ struct CPlayerMobileMembers;
 
 #pragma region CDrawItem
 
+/**
+ * @class CDrawItemMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CDrawItemMembers
 {
-  uint32_t bitPattern;
-  uint32_t rect_x1; //field 8
-  uint32_t rect_y1; //field c
-  uint32_t rect_x2; //field 10
-  uint32_t rect_y2; //field 14
-  CDrawItem* pNextDraw;
-  CDrawItem* pPrevDraw;
-  uint32_t inDrawList;
-  uint16_t x;
-  uint16_t y;
-  uint16_t z;
+  uint32_t bitPattern;  //!< Unknown
+  uint32_t rect_x1;     //!< Unknown
+  uint32_t rect_y1;     //!< Unknown
+  uint32_t rect_x2;     //!< Unknown
+  uint32_t rect_y2;     //!< Unknown
+  CDrawItem* pNextDraw; //!< Unknown
+  CDrawItem* pPrevDraw; //!< Unknown
+  uint32_t inDrawList;  //!< Unknown
+  uint16_t x;		    //!< Unknown
+  uint16_t y;		    //!< Unknown
+  uint16_t z;		    //!< Unknown
 };
 
+/**
+ * @class CDrawItemVtableMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CDrawItemVtableMembers
 {
-  CDrawItem *(__thiscall *Destroy)(void*, DWORD);
-  int32_t (__thiscall *Release)(void*);
-  int32_t DrawClip;
-  int32_t DrawSomething;
-  int32_t (__thiscall *AddToDrawList)(void*);
+  CDrawItem *(__thiscall *Destroy)(void*, DWORD);           //!< Unknown
+  int32_t (__thiscall *Release)(void*);						//!< Unknown
+  int32_t DrawClip;											//!< Unknown
+  int32_t DrawSomething;									//!< Unknown
+  int32_t (__thiscall *AddToDrawList)(void*);				//!< Unknown
+
+  /**
+   * @brief Remove an item from the draw list
+   */
   void (__thiscall *RemoveFromDrawList)(void*);
-  int32_t (__thiscall *IsStatic)(void*);
-  int32_t (__thiscall *IsTerrain)(void*);
-  int32_t (__thiscall *IsTextTerrain)(void*);
-  int32_t (__thiscall *IsMobile)(void*);
-  int32_t (__thiscall *IsPlayerMobile)(void*);
-  int32_t (__thiscall *IsDynamic)(void*);
+  int32_t (__thiscall *IsStatic)(void*);					//!< Unknown
+  int32_t (__thiscall *IsTerrain)(void*);					//!< Unknown
+  int32_t (__thiscall *IsTextTerrain)(void*);				//!< Unknown
+  int32_t (__thiscall *IsMobile)(void*);					//!< Unknown
+  int32_t (__thiscall *IsPlayerMobile)(void*);				//!< Unknown
+  int32_t (__thiscall *IsDynamic)(void*);					//!< Unknown
+  /**
+   * @brief Is Container getter
+   */
   void (__thiscall *IsContainer)(void*, int);
-  int32_t (__thiscall *IsGumpArt)(void*);
-  int32_t (__thiscall *IsBigMobComponent)(void*);
-  int32_t (__thiscall *CheckShouldDrawTransparent)(void*);
-  int32_t (__thiscall *GetFlags)(void*);
-  int32_t (__thiscall *GetTopZ)(void*);
-  int32_t GetOtherZ;
-  int32_t getOtherZZ;
+  int32_t (__thiscall *IsGumpArt)(void*);					//!< Unknown
+  int32_t (__thiscall *IsBigMobComponent)(void*);			//!< Unknown
+  int32_t (__thiscall *CheckShouldDrawTransparent)(void*);	//!< Unknown
+  int32_t (__thiscall *GetFlags)(void*);					//!< Unknown
+  int32_t (__thiscall *GetTopZ)(void*);						//!< Unknown
+  int32_t GetOtherZ;										//!< Unknown
+  int32_t getOtherZZ;										//!< Unknown
+
+  /**
+   * @brief Unequip an item
+   */
   void (__thiscall *Unequip)(void*);
-  int32_t (__stdcall *field_54)(DWORD, DWORD, DWORD);
-  int32_t (__thiscall *field_58)(DWORD, DWORD);
-  int32_t (__thiscall *field_5C)(DWORD);
+  int32_t (__stdcall *field_54)(DWORD, DWORD, DWORD);		//!< Unknown
+  int32_t (__thiscall *field_58)(DWORD, DWORD);				//!< Unknown
+  int32_t (__thiscall *field_5C)(DWORD);					//!< Unknown
 };
 
-
+/**
+ * @class CDrawItemVtable
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CDrawItemVtable
 {
-  /* 0x00 */ CDrawItemVtableMembers drawItemVtableMembers;
+  /* 0x00 */ CDrawItemVtableMembers drawItemVtableMembers; //!< Unknown
 };
 
+/**
+ * @class CDrawItem
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CDrawItem
 {
-  CDrawItemVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
+  CDrawItemVtable* pVtable;			//!< Unknown
+  CDrawItemMembers drawItemMembers; //!< Unknown
 };
 #pragma endregion
 
+
 #pragma region CBigMobComponent
+/**
+ * @class CBigMobComponentMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CBigMobComponentMembers
 {
-  int field_0;
-  int field_4;
-  int field_8;
-  char gap_C[12];
-  int field_18;
-  int field_1C;
-  CContainer* pMyOwner;
-  CBigMobComponent *pNextMobComp;
-  CBigMobComponent *pPrevMobComp;
+  int field_0;					  //!< Unknown
+  int field_4;					  //!< Unknown
+  int field_8;					  //!< Unknown
+  char gap_C[12];				  //!< Unknown
+  int field_18;					  //!< Unknown
+  int field_1C;					  //!< Unknown
+  CContainer* pMyOwner;			  //!< Unknown
+  CBigMobComponent *pNextMobComp; //!< Unknown
+  CBigMobComponent *pPrevMobComp; //!< Unknown
 };
 
+/**
+ * @class CBigMobComponent
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CBigMobComponent
 {
-  CDrawItemVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  CBigMobComponentMembers bigMobComponentMembers;
+  CDrawItemVtable* pVtable;						  //!< Unknown
+  CDrawItemMembers drawItemMembers;				  //!< Unknown
+  CBigMobComponentMembers bigMobComponentMembers; //!< Unknown
 };
 #pragma endregion
 
+/**
+ * @class CTerrain
+ *
+ * @brief Unknown
+ */
 #pragma region Terrain
 struct CTerrain
 {
-  CDrawItemVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  int32_t xPlusMapWidthMinusY;
-  int32_t xPlusY;
-  int32_t zOrder;
-  char gap_36[4];
-  int16_t graphicID;
-  int16_t field_3C;
+  CDrawItemVtable* pVtable;         //!< Unknown
+  CDrawItemMembers drawItemMembers;	//!< Unknown
+  int32_t xPlusMapWidthMinusY;		//!< Unknown
+  int32_t xPlusY;					//!< Unknown
+  int32_t zOrder;					//!< Unknown
+  char gap_36[4];					//!< Unknown
+  int16_t graphicID;				//!< Unknown
+  int16_t field_3C;					//!< Unknown
 };
 
+/**
+ * @class CTextTerrain
+ *
+ * @brief Unknown
+ */
 struct CTextTerrain
 {
-  CDrawItemVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  int32_t xPlusMapWidthMinusY;
-  int32_t xPlusY;
-  int32_t zOrder;
-  char gap_36[4];
-  int field_3A;
-  char field_3E;
-  char gap_3F[15];
-  int firstTriangleIdx0;
-  int firstTriangleIdx1;
-  int firstTriangleIdx2;
-  int secondTriangleIdx0;
-  int secondTriangleIdx1;
-  int secondTriangleIdx2;
-  int field_66;
-  int field_6A;
+  CDrawItemVtable* pVtable;         //!< Unknown
+  CDrawItemMembers drawItemMembers;	//!< Unknown
+  int32_t xPlusMapWidthMinusY;		//!< Unknown
+  int32_t xPlusY;					//!< Unknown
+  int32_t zOrder;					//!< Unknown
+  char gap_36[4];					//!< Unknown
+  int field_3A;						//!< Unknown
+  char field_3E;					//!< Unknown
+  char gap_3F[15];					//!< Unknown
+  int firstTriangleIdx0;			//!< Unknown
+  int firstTriangleIdx1;			//!< Unknown
+  int firstTriangleIdx2;			//!< Unknown
+  int secondTriangleIdx0;			//!< Unknown
+  int secondTriangleIdx1;			//!< Unknown
+  int secondTriangleIdx2;			//!< Unknown
+  int field_66;						//!< Unknown
+  int field_6A;						//!< Unknown
   //TODO: Define TileCorners
   //TileCorners Corners;
   //char field_72a;
@@ -194,283 +247,391 @@ struct CTextTerrain
 #pragma endregion
 
 #pragma region StaticObject
+/**
+ * @class CStaticObjectMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CStaticObjectMembers
 {
-  uint32_t xPlusMapWidthMinusY;
-  uint32_t xPlusY;
-  uint32_t zOrder;
-  uint32_t field36;
-  uint16_t itemID;
-  uint16_t originalItemID;
-  uint8_t  stackID;
-  uint8_t amount;
-  //uint8_t field16  */
-  uint16_t hue;
-  uint16_t unknown10;
-  CStaticObject* pNextStaticObject;
-  CStaticObject* pPrevStaticObject;
-  CStaticObject* pNextLightSource;
-  CStaticObject* pPrevLightSource;
-  CStaticObject* pNextAnimationStatic;
-  CStaticObject* pPrevAnimationStatic;
-  CStaticObject* pNextCanopyStaticObject;
-  CStaticObject* pPrevCanopyStaticObject;
-  CStaticObject* pNextMultiComponent;
-  CStaticObject* pPrevMultiComponent;
+  uint32_t xPlusMapWidthMinusY;			  //!< Unknown
+  uint32_t xPlusY;						  //!< Unknown
+  uint32_t zOrder;						  //!< Unknown
+  uint32_t field36;						  //!< Unknown
+  uint16_t itemID;						  //!< Unknown
+  uint16_t originalItemID;				  //!< Unknown
+  uint8_t  stackID;						  //!< Unknown
+  uint8_t amount;						  //!< Unknown
+  //uint8_t field16  */					  //!< Unknown
+  uint16_t hue;							  //!< Unknown
+  uint16_t unknown10;					  //!< Unknown
+  CStaticObject* pNextStaticObject;		  //!< Unknown
+  CStaticObject* pPrevStaticObject;		  //!< Unknown
+  CStaticObject* pNextLightSource;		  //!< Unknown
+  CStaticObject* pPrevLightSource;		  //!< Unknown
+  CStaticObject* pNextAnimationStatic;	  //!< Unknown
+  CStaticObject* pPrevAnimationStatic;	  //!< Unknown
+  CStaticObject* pNextCanopyStaticObject; //!< Unknown
+  CStaticObject* pPrevCanopyStaticObject; //!< Unknown
+  CStaticObject* pNextMultiComponent;	  //!< Unknown
+  CStaticObject* pPrevMultiComponent;     //!< Unknown
 };
 
+/**
+ * @class CStaticObjectVtableMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CStaticObjectVtableMembers
 {
-  int(__thiscall *Unknown8)(void*);
-  int(__thiscall *Unknown9)(void*);
-  int(__thiscall *Unknown10)(void*);
-  int(__thiscall *IsEquipped)(void* This);
+  int(__thiscall *Unknown8)(void*);		   //!< Unknown
+  int(__thiscall *Unknown9)(void*);		   //!< Unknown
+  int(__thiscall *Unknown10)(void*);	   //!< Unknown
+  int(__thiscall *IsEquipped)(void* This); //!< Unknown
 };
 
+/**
+ * @class CStaticObjectVtable
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CStaticObjectVtable
 {
-  CDrawItemVtableMembers drawItemVtableMembers;
-  CStaticObjectVtableMembers staticObjectVtableMembers;
+  CDrawItemVtableMembers drawItemVtableMembers;			//!< Unknown
+  CStaticObjectVtableMembers staticObjectVtableMembers; //!< Unknown
 };
 
+/**
+ * @class CStaticObject
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CStaticObject
 {
-  CStaticObjectVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  CStaticObjectMembers staticObjectMembers;
+  CStaticObjectVtable* pVtable;				//!< Unknown
+  CDrawItemMembers drawItemMembers;			//!< Unknown
+  CStaticObjectMembers staticObjectMembers; //!< Unknown
 };
 #pragma endregion
 
 #pragma region CItem
+/**
+ * @class CItemMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CItemMembers
 {
-  int32_t serial;
-  CItem* pParent;
-  CItem* pParentContainer;
-  CItem* pNext_CItem;
-  CItem* pPrev_CItem;
-  int32_t field_10;
-  int32_t field_14;
-  CStaticObject* pField_18_multiComponent;
-  char flags;
-  char equipmentPosition;
-  int32_t lightLevel;
-  char* pName;
-  int32_t price;
+  int32_t serial;                           //!< Unknown
+  CItem* pParent;							//!< Unknown
+  CItem* pParentContainer;					//!< Unknown
+  CItem* pNext_CItem;						//!< Unknown
+  CItem* pPrev_CItem;						//!< Unknown
+  int32_t field_10;							//!< Unknown
+  int32_t field_14;							//!< Unknown
+  CStaticObject* pField_18_multiComponent;	//!< Unknown
+  char flags;								//!< Unknown
+  char equipmentPosition;					//!< Unknown
+  int32_t lightLevel;						//!< Unknown
+  char* pName;								//!< Unknown
+  int32_t price;							//!< Unknown
 };
 
+/**
+ * @class CItemVtableMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CItemVtableMembers
 {
-  int field_0;
+  int field_0; //!< Unknown
 };
 
+/**
+ * @class CItemVtable
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CItemVtable
 {
-  CDrawItemVtableMembers drawItemVtableMembers;
-  CStaticObjectVtableMembers staticObjectVtableMembers;
-  CItemVtableMembers itemVtableMembers;
+  CDrawItemVtableMembers drawItemVtableMembers;         //!< Unknown
+  CStaticObjectVtableMembers staticObjectVtableMembers;	//!< Unknown
+  CItemVtableMembers itemVtableMembers;					//!< Unknown
 };
 
+/**
+ * @class CItem
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CItem
 {
-  CItemVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  CStaticObjectMembers staticObjectMembers;
-  CItemMembers itemMembers;
+  CItemVtable* pVtable;                     //!< Unknown
+  CDrawItemMembers drawItemMembers;			//!< Unknown
+  CStaticObjectMembers staticObjectMembers;	//!< Unknown
+  CItemMembers itemMembers;					//!< Unknown
 };
 #pragma endregion
 
 #pragma region CContainer
+/**
+ * @class CContainerVtable
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CContainerVtable
 {
-  CDrawItemVtableMembers drawItemVtableMembers;
-  CStaticObjectVtableMembers staticObjectVtableMembers;
-  CItemVtableMembers itemVtableMembers;
+  CDrawItemVtableMembers drawItemVtableMembers;         //!< Unknown
+  CStaticObjectVtableMembers staticObjectVtableMembers;	//!< Unknown
+  CItemVtableMembers itemVtableMembers;					//!< Unknown
 };
 
+/**
+ * @class CContainerMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CContainerMembers
 {
-  CItem* pShopContents;
-  CContainer* pSecureTradeContents;
-  CBigMobComponent* pBigMobComponents;
-  int field_unknown;
-  int field_C;
+  CItem* pShopContents;                 //!< Unknown
+  CContainer* pSecureTradeContents;		//!< Unknown
+  CBigMobComponent* pBigMobComponents;	//!< Unknown
+  int field_unknown;					//!< Unknown
+  int field_C;							//!< Unknown
 };
 
+/**
+ * @class CContainerObj
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CContainerObj
 {
-  CContainerVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  CStaticObjectMembers staticObjectMembers;
-  CItemMembers itemMembers;
-  CContainerMembers containerMembers;
+  CContainerVtable* pVtable;                //!< Unknown
+  CDrawItemMembers drawItemMembers;			//!< Unknown
+  CStaticObjectMembers staticObjectMembers;	//!< Unknown
+  CItemMembers itemMembers;					//!< Unknown
+  CContainerMembers containerMembers;		//!< Unknown
 };
 #pragma endregion
 
 #pragma region CCorpseContainer
+/**
+ * @class CCorpseContainerMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CCorpseContainerMembers
 {
-  int32_t field_B1;
-  int32_t field_B5;
-  int32_t field_B9;
-  int32_t field_BD;
-  int32_t aCorpseEquipmentLayerSerials[27];
+  int32_t field_B1;						    //!< Unknown
+  int32_t field_B5;						    //!< Unknown
+  int32_t field_B9;						    //!< Unknown
+  int32_t field_BD;						    //!< Unknown
+  int32_t aCorpseEquipmentLayerSerials[27]; //!< Unknown
 };
 
+/**
+ * @class CCorpseContainer
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CCorpseContainer
 {
-  CContainerVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  CStaticObjectMembers staticObjectMembers;
-  CItemMembers itemMembers;
-  CContainerMembers containerMembers;
-  CCorpseContainerMembers corpseContainerMembers;
+  CContainerVtable* pVtable;                      //!< Unknown
+  CDrawItemMembers drawItemMembers;				  //!< Unknown
+  CStaticObjectMembers staticObjectMembers;		  //!< Unknown
+  CItemMembers itemMembers;						  //!< Unknown
+  CContainerMembers containerMembers;			  //!< Unknown
+  CCorpseContainerMembers corpseContainerMembers; //!< Unknown
 };
 #pragma endregion
 
 #pragma region CMobile
 
+/**
+ * @class CMobileMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CMobileMembers
 {
-  CMobile *pNextMobile;
-  CMobile *pPrevMobile;
-  void* aEquippedItems[30];
-  int32_t field_80;
-  int32_t field_84;
-  int32_t field_88;
-  int32_t field_8C;
-  int32_t field_90;
-  int32_t field_94;
-  char vectorOfFour;
-  char aGap_99[39];
-  char field_C0;
-  char aGap_C1[5];
-  int32_t field_C6;
-  char aGap_CA[8];
-  int32_t field_D2;
-  int32_t field_D6;
-  int32_t field_DA;
-  char aGap_DE[4];
-  char field_E2;
-  int32_t field_E3;
-  int16_t field_E7;
-  int16_t field_E9;
-  int16_t field_EB;
-  char aGap_ED[10];
-  int16_t field_F7;
-  int32_t field_F9;
-  int32_t field_FD;
-  int32_t field_101;
-  int32_t field_105;
-  int32_t field_109;
-  int32_t field_10D;
-  int32_t field_111;
-  int32_t notorietyHighlightColor;
-  int32_t field_119;
+  CMobile *pNextMobile;            //!< Unknown
+  CMobile *pPrevMobile;			   //!<	Unknown
+  void* aEquippedItems[30];		   //!<	Unknown
+  int32_t field_80;				   //!<	Unknown
+  int32_t field_84;				   //!<	Unknown
+  int32_t field_88;				   //!<	Unknown
+  int32_t field_8C;				   //!<	Unknown
+  int32_t field_90;				   //!<	Unknown
+  int32_t field_94;				   //!<	Unknown
+  char vectorOfFour;			   //!<	Unknown
+  char aGap_99[39];				   //!<	Unknown
+  char field_C0;				   //!<	Unknown
+  char aGap_C1[5];				   //!<	Unknown
+  int32_t field_C6;				   //!<	Unknown
+  char aGap_CA[8];				   //!<	Unknown
+  int32_t field_D2;				   //!<	Unknown
+  int32_t field_D6;				   //!<	Unknown
+  int32_t field_DA;				   //!<	Unknown
+  char aGap_DE[4];				   //!<	Unknown
+  char field_E2;				   //!<	Unknown
+  int32_t field_E3;				   //!<	Unknown
+  int16_t field_E7;				   //!<	Unknown
+  int16_t field_E9;				   //!<	Unknown
+  int16_t field_EB;				   //!<	Unknown
+  char aGap_ED[10];				   //!<	Unknown
+  int16_t field_F7;				   //!<	Unknown
+  int32_t field_F9;				   //!<	Unknown
+  int32_t field_FD;				   //!<	Unknown
+  int32_t field_101;			   //!<	Unknown
+  int32_t field_105;			   //!<	Unknown
+  int32_t field_109;			   //!<	Unknown
+  int32_t field_10D;			   //!<	Unknown
+  int32_t field_111;			   //!<	Unknown
+  int32_t notorietyHighlightColor; //!<	Unknown
+  int32_t field_119;			   //!<	Unknown
 };
 
+/**
+ * @class CMobileVtableMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CMobileVtableMembers
 {
-  int field_1;
-  int field_2;
-  int field_3;
-  void (__thiscall *field_4)(DWORD);
-  int32_t (__thiscall *field_5)(DWORD);
-  int field_6;
-  void (__thiscall *UpdateNotoriety)(DWORD, DWORD);
-  int IsNotInnocent;
-  int IsNotBadGuy;
+  int field_1;                                      //!< Unknown
+  int field_2;										//!< Unknown
+  int field_3;										//!< Unknown
+  void (__thiscall *field_4)(DWORD);				//!< Unknown
+  int32_t (__thiscall *field_5)(DWORD);				//!< Unknown
+  int field_6;										//!< Unknown
+  /**
+  * @brief Updates Notoriety
+  */
+  void (__thiscall *UpdateNotoriety)(DWORD, DWORD);	//!< Unknown
+  int IsNotInnocent;								//!< Unknown
+  int IsNotBadGuy;									//!< Unknown
 };
 
+/**
+ * @class CMobileVtable
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CMobileVtable
 {
-  CDrawItemVtableMembers drawItemVtableMembers;
-  CStaticObjectVtableMembers staticObjectVtableMembers;
-  CItemVtableMembers itemVtableMembers;
-  CMobileVtableMembers mobileVtableMembers; 
+  CDrawItemVtableMembers drawItemVtableMembers;         //!< Unknown
+  CStaticObjectVtableMembers staticObjectVtableMembers;	//!< Unknown
+  CItemVtableMembers itemVtableMembers;					//!< Unknown
+  CMobileVtableMembers mobileVtableMembers; 			//!< Unknown
 };
 
+/**
+ * @class CMobile
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CMobile
 {
-  CMobileVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  CStaticObjectMembers staticObjectMembers;
-  CItemMembers itemMembers;
-  CContainerMembers containerMembers;
-  CMobileMembers mobileMembers;
+  CMobileVtable* pVtable;                   //!< Unknown
+  CDrawItemMembers drawItemMembers;		    //!< Unknown
+  CStaticObjectMembers staticObjectMembers; //!< Unknown
+  CItemMembers itemMembers;				    //!< Unknown
+  CContainerMembers containerMembers;	    //!< Unknown
+  CMobileMembers mobileMembers;			    //!< Unknown
 };
 #pragma endregion
 
 #pragma region CPlayerMobile
 
+/**
+ * @class CPlayerMobileMembers
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CPlayerMobileMembers
 {
-  int32_t hitpoints;
-  int32_t maxHitpoints;
-  int32_t mana;
-  int32_t maxMana;
-  int32_t stamina;
-  int32_t maxStamina;
-  int32_t strength;
-  int32_t dexterity;
-  int32_t intelligence;
-  CMobile *pAttackingMobile;
-  int32_t followingMobile;
-  int32_t field_2C;
-  int32_t field_30;
-  int32_t field_34;
-  int32_t field_38;
-  int32_t field_3C;
-  int32_t field_40;
-  int32_t walkKeys[5];
-  char field_58;
+  int32_t hitpoints;         //!< Unknown
+  int32_t maxHitpoints;		 //!< Unknown
+  int32_t mana;				 //!< Unknown
+  int32_t maxMana;			 //!< Unknown
+  int32_t stamina;			 //!< Unknown
+  int32_t maxStamina;		 //!< Unknown
+  int32_t strength;			 //!< Unknown
+  int32_t dexterity;		 //!< Unknown
+  int32_t intelligence;		 //!< Unknown
+  CMobile *pAttackingMobile; //!< Unknown
+  int32_t followingMobile;	 //!< Unknown
+  int32_t field_2C;			 //!< Unknown
+  int32_t field_30;			 //!< Unknown
+  int32_t field_34;			 //!< Unknown
+  int32_t field_38;			 //!< Unknown
+  int32_t field_3C;			 //!< Unknown
+  int32_t field_40;			 //!< Unknown
+  int32_t walkKeys[5];		 //!< Unknown
+  char field_58;			 //!< Unknown
 };
 
+/**
+ * @class CPlayerMobile
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct CPlayerMobile
 {
-  CMobileVtable* pVtable;
-  CDrawItemMembers drawItemMembers;
-  CStaticObjectMembers staticObjectMembers;
-  CItemMembers itemMembers;
-  CContainerMembers containerMembers;
-  CMobileMembers mobileMembers;
-  CPlayerMobileMembers playerMobileMembers;
+  CMobileVtable* pVtable;                   //!< Unknown
+  CDrawItemMembers drawItemMembers;			//!< Unknown
+  CStaticObjectMembers staticObjectMembers;	//!< Unknown
+  CItemMembers itemMembers;					//!< Unknown
+  CContainerMembers containerMembers;		//!< Unknown
+  CMobileMembers mobileMembers;				//!< Unknown
+  CPlayerMobileMembers playerMobileMembers;	//!< Unknown
 };
 #pragma endregion
 
+/**
+ * @class MapTileDefinition
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct MapTileDefinition
 {
-    uint32_t mapWidthInTiles;
-    uint32_t mapHeightInTiles;
-    uint32_t mapWrapWidthInTiles;
-    uint32_t mapWrapHeightInTiles;
+    uint32_t mapWidthInTiles;	   //!< Unknown
+    uint32_t mapHeightInTiles;	   //!< Unknown
+    uint32_t mapWrapWidthInTiles;  //!<	Unknown
+    uint32_t mapWrapHeightInTiles; //!<	Unknown
 };
 
+/**
+ * @class MapMinDisplay
+ *
+ * @brief Unknown
+ */
 #pragma pack(1)
 struct MapMinDisplay
 {
-    uint32_t minClientDisplayX;
-    uint32_t minClientDisplayY;
+    uint32_t minClientDisplayX; //!< Unknown
+    uint32_t minClientDisplayY; //!< Unknown
 };
 
 #endif

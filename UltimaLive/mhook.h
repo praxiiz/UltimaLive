@@ -1,3 +1,4 @@
+// @file
 //Copyright (c) 2007-2008, Marton Anka
 //
 //Permission is hereby granted, free of charge, to any person obtaining a 
@@ -23,8 +24,21 @@
 #elif defined _M_X64
 #define _M_IX86_X64
 #endif
-
+/**
+ * @brief Hooks a function
+ *
+ * @param ppSystemFunction Pointer to function to be hooked
+ * @param pHookFunction Pointer to function to hook
+ * 
+ * @return True on success
+ */
 BOOL Mhook_SetHook(PVOID *ppSystemFunction, PVOID pHookFunction);
+
+/**
+ * @brief Unhooks a function
+ *
+ * @param ppHookedFunction Pointer of function to unhook
+ */
 BOOL Mhook_Unhook(PVOID *ppHookedFunction);
 
 #define MHOOKS_MAX_SUPPORTED_HOOKS	64

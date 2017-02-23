@@ -7,7 +7,6 @@ var searchData=
   ['ultimaliveupdatelandblockhandler',['UltimaLiveUpdateLandBlockHandler',['../classUltimaLiveUpdateLandBlockHandler.html',1,'']]],
   ['ultimaliveupdatemapdefinitionshandler',['UltimaLiveUpdateMapDefinitionsHandler',['../classUltimaLiveUpdateMapDefinitionsHandler.html',1,'']]],
   ['ultimaliveupdatestaticshandler',['UltimaLiveUpdateStaticsHandler',['../classUltimaLiveUpdateStaticsHandler.html',1,'']]],
-  ['uoliveappstate',['UoLiveAppState',['../classUoLiveAppState.html',1,'']]],
   ['uopfile',['UopFile',['../classUopFile.html',1,'']]],
   ['uopheader',['UopHeader',['../classUopHeader.html',1,'']]],
   ['uopmetadata',['UopMetaData',['../classUopMetaData.html',1,'']]],

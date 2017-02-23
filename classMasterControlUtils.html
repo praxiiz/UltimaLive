@@ -67,45 +67,406 @@ $(function() {
 <div class="title">MasterControlUtils Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Utility class for searching for a process's internal structures.  
+ <a href="classMasterControlUtils.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="MasterControlUtils_8h_source.html">MasterControlUtils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a448aabafcc51a3be2ebba4c0c0ca079e"><td class="memItemLeft" align="right" valign="top"><a id="a448aabafcc51a3be2ebba4c0c0ca079e"></a>
-static void *&#160;</td><td class="memItemRight" valign="bottom"><b>FindSignatureOffset</b> (void *pBuffer, unsigned int bufferLen, unsigned char *sigBuffer, unsigned int sigLen)</td></tr>
+<tr class="memitem:a448aabafcc51a3be2ebba4c0c0ca079e"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterControlUtils.html#a448aabafcc51a3be2ebba4c0c0ca079e">FindSignatureOffset</a> (void *pBuffer, unsigned int bufferLen, unsigned char *sigBuffer, unsigned int sigLen)</td></tr>
+<tr class="memdesc:a448aabafcc51a3be2ebba4c0c0ca079e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search memory for specified byte signature. Note that 0xCC is a wildcard byte, it matches anything. A more proper way to do this is one pointer to a signature and another pointer to wildcard flags, but this is simpler and works well. Returns a pointer to the beginning of the signature match. Returns 0 on no match.  <a href="#a448aabafcc51a3be2ebba4c0c0ca079e">More...</a><br /></td></tr>
 <tr class="separator:a448aabafcc51a3be2ebba4c0c0ca079e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a78bf45657a1d8e3db867bed477fba2"><td class="memItemLeft" align="right" valign="top"><a id="a3a78bf45657a1d8e3db867bed477fba2"></a>
-static void *&#160;</td><td class="memItemRight" valign="bottom"><b>FindFunctionCall</b> (void *pBuffer, int bufferSize, unsigned char *pSignature, int signatureSize)</td></tr>
+<tr class="memitem:a3a78bf45657a1d8e3db867bed477fba2"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterControlUtils.html#a3a78bf45657a1d8e3db867bed477fba2">FindFunctionCall</a> (void *pBuffer, int bufferSize, unsigned char *pSignature, int signatureSize)</td></tr>
+<tr class="memdesc:a3a78bf45657a1d8e3db867bed477fba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a forward search for a function.  <a href="#a3a78bf45657a1d8e3db867bed477fba2">More...</a><br /></td></tr>
 <tr class="separator:a3a78bf45657a1d8e3db867bed477fba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a"><td class="memItemLeft" align="right" valign="top"><a id="ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a"></a>
-static void *&#160;</td><td class="memItemRight" valign="bottom"><b>FindSignatureOffsetBackwards</b> (void *pData, unsigned int searchLen, unsigned char *sigBuffer, unsigned int sigLen)</td></tr>
+<tr class="memitem:ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterControlUtils.html#ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a">FindSignatureOffsetBackwards</a> (void *pData, unsigned int searchLen, unsigned char *sigBuffer, unsigned int sigLen)</td></tr>
+<tr class="memdesc:ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a reverse search for a series of bytes.  <a href="#ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a">More...</a><br /></td></tr>
 <tr class="separator:ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf5402048a646700d6154f1b25b8ea20"><td class="memItemLeft" align="right" valign="top"><a id="adf5402048a646700d6154f1b25b8ea20"></a>
-static void *&#160;</td><td class="memItemRight" valign="bottom"><b>FindSignature</b> (void *pBuffer, int bufferSize, unsigned char *pSignature, int signatureSize, int offset, int &amp;structureSizeOut, int structureSizeOffset)</td></tr>
+<tr class="memitem:adf5402048a646700d6154f1b25b8ea20"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterControlUtils.html#adf5402048a646700d6154f1b25b8ea20">FindSignature</a> (void *pBuffer, int bufferSize, unsigned char *pSignature, int signatureSize, int offset, int &amp;structureSizeOut, int structureSizeOffset)</td></tr>
+<tr class="memdesc:adf5402048a646700d6154f1b25b8ea20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a forward search for an structure containing a pointer.  <a href="#adf5402048a646700d6154f1b25b8ea20">More...</a><br /></td></tr>
 <tr class="separator:adf5402048a646700d6154f1b25b8ea20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a3e22b971fd8f5fbb3170e7577093ef"><td class="memItemLeft" align="right" valign="top"><a id="a7a3e22b971fd8f5fbb3170e7577093ef"></a>
-static void *&#160;</td><td class="memItemRight" valign="bottom"><b>FindSignature</b> (void *pBuffer, int bufferSize, unsigned char *pSignature, int signatureSize, int offset)</td></tr>
+<tr class="memitem:a7a3e22b971fd8f5fbb3170e7577093ef"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterControlUtils.html#a7a3e22b971fd8f5fbb3170e7577093ef">FindSignature</a> (void *pBuffer, int bufferSize, unsigned char *pSignature, int signatureSize, int offset)</td></tr>
+<tr class="memdesc:a7a3e22b971fd8f5fbb3170e7577093ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does a forward search for an array of bytes.  <a href="#a7a3e22b971fd8f5fbb3170e7577093ef">More...</a><br /></td></tr>
 <tr class="separator:a7a3e22b971fd8f5fbb3170e7577093ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:abbc7e7da1f846d2e983db49f9ae3f39b"><td class="memItemLeft" align="right" valign="top"><a id="abbc7e7da1f846d2e983db49f9ae3f39b"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_functionStartSig1</b> [] = { 0x55, 0x8B, 0xEC }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterControlUtils.html#abbc7e7da1f846d2e983db49f9ae3f39b">g_functionStartSig1</a> [] = { 0x55, 0x8B, 0xEC }</td></tr>
+<tr class="memdesc:abbc7e7da1f846d2e983db49f9ae3f39b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function signature. <br /></td></tr>
 <tr class="separator:abbc7e7da1f846d2e983db49f9ae3f39b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92efe9b65841030845ab312a759a60b0"><td class="memItemLeft" align="right" valign="top"><a id="a92efe9b65841030845ab312a759a60b0"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_functionStartSig2</b> [] = { 0x90, 0x90, 0x6A }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMasterControlUtils.html#a92efe9b65841030845ab312a759a60b0">g_functionStartSig2</a> [] = { 0x90, 0x90, 0x6A }</td></tr>
+<tr class="memdesc:a92efe9b65841030845ab312a759a60b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function signature. <br /></td></tr>
 <tr class="separator:a92efe9b65841030845ab312a759a60b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="MasterControlUtils_8h_source.html#l00030">30</a> of file <a class="el" href="MasterControlUtils_8h_source.html">MasterControlUtils.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Utility class for searching for a process's internal structures. </p>
+
+<p class="definition">Definition at line <a class="el" href="MasterControlUtils_8h_source.html#l00035">35</a> of file <a class="el" href="MasterControlUtils_8h_source.html">MasterControlUtils.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3a78bf45657a1d8e3db867bed477fba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a78bf45657a1d8e3db867bed477fba2">&#9670;&nbsp;</a></span>FindFunctionCall()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MasterControlUtils::FindFunctionCall </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bufferSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>pSignature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>signatureSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does a forward search for a function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pBuffer</td><td>Pointer of data to be searched </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Maximum number of bytes to search </td></tr>
+    <tr><td class="paramname">pSignature</td><td>Array of bytes to search </td></tr>
+    <tr><td class="paramname">signatureSize</td><td>Length of search array in bytes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to function </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MasterControlUtils_8cpp_source.html#l00075">75</a> of file <a class="el" href="MasterControlUtils_8cpp_source.html">MasterControlUtils.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">FindSignatureOffset()</a>, <a class="el" href="MasterControlUtils_8cpp_source.html#l00036">FindSignatureOffsetBackwards()</a>, <a class="el" href="MasterControlUtils_8h_source.html#l00045">g_functionStartSig1</a>, and <a class="el" href="MasterControlUtils_8h_source.html#l00046">g_functionStartSig2</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00215">Client::FindUpdateBlocksFunction()</a>.</p>
+
+</div>
+</div>
+<a id="adf5402048a646700d6154f1b25b8ea20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf5402048a646700d6154f1b25b8ea20">&#9670;&nbsp;</a></span>FindSignature() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MasterControlUtils::FindSignature </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bufferSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>pSignature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>signatureSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>structureSizeOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>structureSizeOffset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does a forward search for an structure containing a pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pBuffer</td><td>Pointer of data to be searched </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Maximum number of bytes to search </td></tr>
+    <tr><td class="paramname">pSignature</td><td>Array of bytes to search </td></tr>
+    <tr><td class="paramname">signatureSize</td><td>Length of search array in bytes </td></tr>
+    <tr><td class="paramname">offset</td><td>Offset from search result to structure </td></tr>
+    <tr><td class="paramname">structureSizeOut</td><td>reference to the structure size </td></tr>
+    <tr><td class="paramname">structureSizeOffset</td><td>offset to apply to the structure base address</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to function </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MasterControlUtils_8cpp_source.html#l00110">110</a> of file <a class="el" href="MasterControlUtils_8cpp_source.html">MasterControlUtils.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">FindSignatureOffset()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00188">Client::FindClientDisplayedBlocksTable()</a>, <a class="el" href="Client_8cpp_source.html#l00134">Client::FindDrawMapThingieTable()</a>, <a class="el" href="Client_8cpp_source.html#l00166">Client::FindMapMinCoordDisplayStructure()</a>, and <a class="el" href="Client_8cpp_source.html#l00150">Client::FindMasterStaticsList()</a>.</p>
+
+</div>
+</div>
+<a id="a7a3e22b971fd8f5fbb3170e7577093ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3e22b971fd8f5fbb3170e7577093ef">&#9670;&nbsp;</a></span>FindSignature() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MasterControlUtils::FindSignature </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bufferSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>pSignature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>signatureSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does a forward search for an array of bytes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pBuffer</td><td>Pointer of data to be searched </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Maximum number of bytes to search </td></tr>
+    <tr><td class="paramname">pSignature</td><td>Array of bytes to search </td></tr>
+    <tr><td class="paramname">signatureSize</td><td>Length of search array in bytes </td></tr>
+    <tr><td class="paramname">offset</td><td>Offset to add to result</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to function </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MasterControlUtils_8cpp_source.html#l00135">135</a> of file <a class="el" href="MasterControlUtils_8cpp_source.html">MasterControlUtils.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">FindSignatureOffset()</a>.</p>
+
+</div>
+</div>
+<a id="a448aabafcc51a3be2ebba4c0c0ca079e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a448aabafcc51a3be2ebba4c0c0ca079e">&#9670;&nbsp;</a></span>FindSignatureOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MasterControlUtils::FindSignatureOffset </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>bufferLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>sigBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>sigLen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Search memory for specified byte signature. Note that 0xCC is a wildcard byte, it matches anything. A more proper way to do this is one pointer to a signature and another pointer to wildcard flags, but this is simpler and works well. Returns a pointer to the beginning of the signature match. Returns 0 on no match. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pBuffer</td><td>Pointer of data to be searched </td></tr>
+    <tr><td class="paramname">bufferLen</td><td>Maximum number of bytes to search </td></tr>
+    <tr><td class="paramname">sigBuffer</td><td>Array of bytes to search </td></tr>
+    <tr><td class="paramname">sigLen</td><td>Length of search array in bytes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to function </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">161</a> of file <a class="el" href="MasterControlUtils_8cpp_source.html">MasterControlUtils.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="MasterControlUtils_8cpp_source.html#l00075">FindFunctionCall()</a>, <a class="el" href="Client_8cpp_source.html#l00350">Client::FindMapDimensionStructure()</a>, <a class="el" href="Client_8cpp_source.html#l00323">Client::FindNetworkStructureInstance()</a>, <a class="el" href="Client_8cpp_source.html#l00252">Client::FindPlayerStructure()</a>, <a class="el" href="Client_8cpp_source.html#l00296">Client::FindRecvFunction()</a>, <a class="el" href="Client_8cpp_source.html#l00232">Client::FindRefreshTerrainFunction()</a>, <a class="el" href="Client_8cpp_source.html#l00269">Client::FindSendFunction()</a>, and <a class="el" href="MasterControlUtils_8cpp_source.html#l00110">FindSignature()</a>.</p>
+
+</div>
+</div>
+<a id="ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20ac3e4a5f5e3fbf7b6e4f9aaa7675a">&#9670;&nbsp;</a></span>FindSignatureOffsetBackwards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * MasterControlUtils::FindSignatureOffsetBackwards </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>searchLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>sigBuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>sigLen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Does a reverse search for a series of bytes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pData</td><td>Pointer of data to be searched </td></tr>
+    <tr><td class="paramname">searchLen</td><td>Maximum number of bytes to search </td></tr>
+    <tr><td class="paramname">sigBuffer</td><td>Array of bytes to search </td></tr>
+    <tr><td class="paramname">sigLen</td><td>Length of search array in bytes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to memory address </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MasterControlUtils_8cpp_source.html#l00036">36</a> of file <a class="el" href="MasterControlUtils_8cpp_source.html">MasterControlUtils.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="MasterControlUtils_8cpp_source.html#l00075">FindFunctionCall()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>UltimaLive/<a class="el" href="MasterControlUtils_8h_source.html">MasterControlUtils.h</a></li>
 <li>UltimaLive/<a class="el" href="MasterControlUtils_8cpp_source.html">MasterControlUtils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

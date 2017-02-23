@@ -69,12 +69,17 @@ $(function() {
 <div class="title">ConsoleLogger Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classConsoleLogger.html" title="ConsoleLogger class handles console allocation, and all logging going to the console. ">ConsoleLogger</a> class handles console allocation, and all logging going to the console.  
+ <a href="classConsoleLogger.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Debug_8h_source.html">Debug.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ConsoleLogger:</div>
 <div class="dyncontent">
 <div class="center"><img src="classConsoleLogger__inherit__graph.png" border="0" usemap="#ConsoleLogger_inherit__map" alt="Inheritance graph"/></div>
 <map name="ConsoleLogger_inherit__map" id="ConsoleLogger_inherit__map">
-<area shape="rect" id="node2" href="classLogger.html" title="Logger" alt="" coords="29,5,90,32"/>
+<area shape="rect" id="node2" href="classLogger.html" title="Abstract class that handles all logging. " alt="" coords="29,5,90,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -82,13 +87,13 @@ Collaboration diagram for ConsoleLogger:</div>
 <div class="dyncontent">
 <div class="center"><img src="classConsoleLogger__coll__graph.png" border="0" usemap="#ConsoleLogger_coll__map" alt="Collaboration graph"/></div>
 <map name="ConsoleLogger_coll__map" id="ConsoleLogger_coll__map">
-<area shape="rect" id="node2" href="classLogger.html" title="Logger" alt="" coords="29,5,90,32"/>
+<area shape="rect" id="node2" href="classLogger.html" title="Abstract class that handles all logging. " alt="" coords="29,5,90,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a3a322890ce34ac851e28d5ce98d5556b"><td class="memItemLeft" align="right" valign="top"><a id="a3a322890ce34ac851e28d5ce98d5556b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Color</b> { <br />
+<tr class="memitem:a3a322890ce34ac851e28d5ce98d5556b"><td class="memItemLeft" align="right" valign="top"><a id="a3a322890ce34ac851e28d5ce98d5556b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a3a322890ce34ac851e28d5ce98d5556b">Color</a> { <br />
 &#160;&#160;<b>DARKBLUE</b> = 1, 
 <b>DARKGREEN</b>, 
 <b>DARKTEAL</b>, 
@@ -108,82 +113,96 @@ Public Types</h2></td></tr>
 <b>YELLOW</b>, 
 <b>WHITE</b>
 <br />
- }</td></tr>
+ }<tr class="memdesc:a3a322890ce34ac851e28d5ce98d5556b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags corresponding to console color. <br /></td></tr>
+</td></tr>
 <tr class="separator:a3a322890ce34ac851e28d5ce98d5556b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a25ff16d50aefee8a6bf546510e5259bf"><td class="memItemLeft" align="right" valign="top"><a id="a25ff16d50aefee8a6bf546510e5259bf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrint</b> (const char *,...)</td></tr>
+<tr class="memitem:a25ff16d50aefee8a6bf546510e5259bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a25ff16d50aefee8a6bf546510e5259bf">LogPrint</a> (const char *,...)</td></tr>
+<tr class="memdesc:a25ff16d50aefee8a6bf546510e5259bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the console log with an [INFO] printed in front of it.  <a href="#a25ff16d50aefee8a6bf546510e5259bf">More...</a><br /></td></tr>
 <tr class="separator:a25ff16d50aefee8a6bf546510e5259bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab35dfaaac66113c4883eb290ddf7f6b2"><td class="memItemLeft" align="right" valign="top"><a id="ab35dfaaac66113c4883eb290ddf7f6b2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintWarning</b> (const char *,...)</td></tr>
+<tr class="memitem:ab35dfaaac66113c4883eb290ddf7f6b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#ab35dfaaac66113c4883eb290ddf7f6b2">LogPrintWarning</a> (const char *,...)</td></tr>
+<tr class="memdesc:ab35dfaaac66113c4883eb290ddf7f6b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the console log with an [WARNING] printed in front of it.  <a href="#ab35dfaaac66113c4883eb290ddf7f6b2">More...</a><br /></td></tr>
 <tr class="separator:ab35dfaaac66113c4883eb290ddf7f6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58159514d1b7dc34c0797d7323ca9b4b"><td class="memItemLeft" align="right" valign="top"><a id="a58159514d1b7dc34c0797d7323ca9b4b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintError</b> (const char *,...)</td></tr>
+<tr class="memitem:a58159514d1b7dc34c0797d7323ca9b4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a58159514d1b7dc34c0797d7323ca9b4b">LogPrintError</a> (const char *,...)</td></tr>
+<tr class="memdesc:a58159514d1b7dc34c0797d7323ca9b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the console log with an [ERROR] printed in front of it.  <a href="#a58159514d1b7dc34c0797d7323ca9b4b">More...</a><br /></td></tr>
 <tr class="separator:a58159514d1b7dc34c0797d7323ca9b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d4645be7e06687e3cc8a49b71d91084"><td class="memItemLeft" align="right" valign="top"><a id="a8d4645be7e06687e3cc8a49b71d91084"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPacketToServer</b> (const char *,...)</td></tr>
+<tr class="memitem:a8d4645be7e06687e3cc8a49b71d91084"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a8d4645be7e06687e3cc8a49b71d91084">LogPacketToServer</a> (const char *,...)</td></tr>
+<tr class="memdesc:a8d4645be7e06687e3cc8a49b71d91084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a packet to the console with appropriate colors.  <a href="#a8d4645be7e06687e3cc8a49b71d91084">More...</a><br /></td></tr>
 <tr class="separator:a8d4645be7e06687e3cc8a49b71d91084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6085988edd2fe5e9c39e688c042b50dc"><td class="memItemLeft" align="right" valign="top"><a id="a6085988edd2fe5e9c39e688c042b50dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPacketToClient</b> (const char *,...)</td></tr>
+<tr class="memitem:a6085988edd2fe5e9c39e688c042b50dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a6085988edd2fe5e9c39e688c042b50dc">LogPacketToClient</a> (const char *,...)</td></tr>
+<tr class="memdesc:a6085988edd2fe5e9c39e688c042b50dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a packet to the console with appropriate colors.  <a href="#a6085988edd2fe5e9c39e688c042b50dc">More...</a><br /></td></tr>
 <tr class="separator:a6085988edd2fe5e9c39e688c042b50dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab61bcf2f6fd02d9f1c213f91da01d0dd"><td class="memItemLeft" align="right" valign="top"><a id="ab61bcf2f6fd02d9f1c213f91da01d0dd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogLastErrorMessage</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#ab61bcf2f6fd02d9f1c213f91da01d0dd">LogLastErrorMessage</a> ()</td></tr>
+<tr class="memdesc:ab61bcf2f6fd02d9f1c213f91da01d0dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs the last error message reported by Windows with a [WINDOWS ERROR] printed in front of it. <br /></td></tr>
 <tr class="separator:ab61bcf2f6fd02d9f1c213f91da01d0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a953814981684316ff89ea8cebe31df39"><td class="memItemLeft" align="right" valign="top"><a id="a953814981684316ff89ea8cebe31df39"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintWithoutDate</b> (const char *,...)</td></tr>
+<tr class="memitem:a953814981684316ff89ea8cebe31df39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a953814981684316ff89ea8cebe31df39">LogPrintWithoutDate</a> (const char *,...)</td></tr>
+<tr class="memdesc:a953814981684316ff89ea8cebe31df39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the console log without any logger decoration.  <a href="#a953814981684316ff89ea8cebe31df39">More...</a><br /></td></tr>
 <tr class="separator:a953814981684316ff89ea8cebe31df39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a794258140b0c592176085e656e53f884"><td class="memItemLeft" align="right" valign="top"><a id="a794258140b0c592176085e656e53f884"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintWithoutDateWarning</b> (const char *,...)</td></tr>
+<tr class="memitem:a794258140b0c592176085e656e53f884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a794258140b0c592176085e656e53f884">LogPrintWithoutDateWarning</a> (const char *,...)</td></tr>
+<tr class="memdesc:a794258140b0c592176085e656e53f884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a warning message to the console log without date information.  <a href="#a794258140b0c592176085e656e53f884">More...</a><br /></td></tr>
 <tr class="separator:a794258140b0c592176085e656e53f884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75f1a6f06673bd132351f37e3f6729e2"><td class="memItemLeft" align="right" valign="top"><a id="a75f1a6f06673bd132351f37e3f6729e2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintWithoutDateError</b> (const char *,...)</td></tr>
+<tr class="memitem:a75f1a6f06673bd132351f37e3f6729e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a75f1a6f06673bd132351f37e3f6729e2">LogPrintWithoutDateError</a> (const char *,...)</td></tr>
+<tr class="memdesc:a75f1a6f06673bd132351f37e3f6729e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an error message to the console log without date information.  <a href="#a75f1a6f06673bd132351f37e3f6729e2">More...</a><br /></td></tr>
 <tr class="separator:a75f1a6f06673bd132351f37e3f6729e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55ccffef345a7edffca83b6836530134"><td class="memItemLeft" align="right" valign="top"><a id="a55ccffef345a7edffca83b6836530134"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintTaskStatusResult</b> (bool status)</td></tr>
+<tr class="memitem:a55ccffef345a7edffca83b6836530134"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a55ccffef345a7edffca83b6836530134">LogPrintTaskStatusResult</a> (bool status)</td></tr>
+<tr class="memdesc:a55ccffef345a7edffca83b6836530134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message with a success or failure status message.  <a href="#a55ccffef345a7edffca83b6836530134">More...</a><br /></td></tr>
 <tr class="separator:a55ccffef345a7edffca83b6836530134"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff844bbb566747a49b8ade27451eb6e9"><td class="memItemLeft" align="right" valign="top"><a id="aff844bbb566747a49b8ade27451eb6e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeLogger</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#aff844bbb566747a49b8ade27451eb6e9">InitializeLogger</a> ()</td></tr>
+<tr class="memdesc:aff844bbb566747a49b8ade27451eb6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a console window if one does not exist. Redirects stdout to the console. <br /></td></tr>
 <tr class="separator:aff844bbb566747a49b8ade27451eb6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25ff16d50aefee8a6bf546510e5259bf"><td class="memItemLeft" align="right" valign="top"><a id="a25ff16d50aefee8a6bf546510e5259bf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrint</b> (const char *,...)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a25ff16d50aefee8a6bf546510e5259bf">LogPrint</a> (const char *,...)</td></tr>
+<tr class="memdesc:a25ff16d50aefee8a6bf546510e5259bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the console log with an [INFO] printed in front of it. <br /></td></tr>
 <tr class="separator:a25ff16d50aefee8a6bf546510e5259bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab35dfaaac66113c4883eb290ddf7f6b2"><td class="memItemLeft" align="right" valign="top"><a id="ab35dfaaac66113c4883eb290ddf7f6b2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintWarning</b> (const char *,...)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#ab35dfaaac66113c4883eb290ddf7f6b2">LogPrintWarning</a> (const char *,...)</td></tr>
+<tr class="memdesc:ab35dfaaac66113c4883eb290ddf7f6b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the console log with an [WARNING] printed in front of it. <br /></td></tr>
 <tr class="separator:ab35dfaaac66113c4883eb290ddf7f6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58159514d1b7dc34c0797d7323ca9b4b"><td class="memItemLeft" align="right" valign="top"><a id="a58159514d1b7dc34c0797d7323ca9b4b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintError</b> (const char *,...)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a58159514d1b7dc34c0797d7323ca9b4b">LogPrintError</a> (const char *,...)</td></tr>
+<tr class="memdesc:a58159514d1b7dc34c0797d7323ca9b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the console log with an [ERROR] printed in front of it. <br /></td></tr>
 <tr class="separator:a58159514d1b7dc34c0797d7323ca9b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d4645be7e06687e3cc8a49b71d91084"><td class="memItemLeft" align="right" valign="top"><a id="a8d4645be7e06687e3cc8a49b71d91084"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPacketToServer</b> (const char *,...)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a8d4645be7e06687e3cc8a49b71d91084">LogPacketToServer</a> (const char *,...)</td></tr>
+<tr class="memdesc:a8d4645be7e06687e3cc8a49b71d91084"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a packet to the console with appropriate colors. <br /></td></tr>
 <tr class="separator:a8d4645be7e06687e3cc8a49b71d91084"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6085988edd2fe5e9c39e688c042b50dc"><td class="memItemLeft" align="right" valign="top"><a id="a6085988edd2fe5e9c39e688c042b50dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPacketToClient</b> (const char *,...)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a6085988edd2fe5e9c39e688c042b50dc">LogPacketToClient</a> (const char *,...)</td></tr>
+<tr class="memdesc:a6085988edd2fe5e9c39e688c042b50dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a packet to the console with appropriate colors. <br /></td></tr>
 <tr class="separator:a6085988edd2fe5e9c39e688c042b50dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab61bcf2f6fd02d9f1c213f91da01d0dd"><td class="memItemLeft" align="right" valign="top"><a id="ab61bcf2f6fd02d9f1c213f91da01d0dd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogLastErrorMessage</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#ab61bcf2f6fd02d9f1c213f91da01d0dd">LogLastErrorMessage</a> ()</td></tr>
+<tr class="memdesc:ab61bcf2f6fd02d9f1c213f91da01d0dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs the last error message reported by Windows with a [WINDOWS ERROR] printed in front of it. <br /></td></tr>
 <tr class="separator:ab61bcf2f6fd02d9f1c213f91da01d0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a953814981684316ff89ea8cebe31df39"><td class="memItemLeft" align="right" valign="top"><a id="a953814981684316ff89ea8cebe31df39"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintWithoutDate</b> (const char *,...)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a953814981684316ff89ea8cebe31df39">LogPrintWithoutDate</a> (const char *,...)</td></tr>
+<tr class="memdesc:a953814981684316ff89ea8cebe31df39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message to the console log without any logger decoration. <br /></td></tr>
 <tr class="separator:a953814981684316ff89ea8cebe31df39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a794258140b0c592176085e656e53f884"><td class="memItemLeft" align="right" valign="top"><a id="a794258140b0c592176085e656e53f884"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintWithoutDateWarning</b> (const char *,...)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a794258140b0c592176085e656e53f884">LogPrintWithoutDateWarning</a> (const char *,...)</td></tr>
+<tr class="memdesc:a794258140b0c592176085e656e53f884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a warning message to the console log without date information. <br /></td></tr>
 <tr class="separator:a794258140b0c592176085e656e53f884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75f1a6f06673bd132351f37e3f6729e2"><td class="memItemLeft" align="right" valign="top"><a id="a75f1a6f06673bd132351f37e3f6729e2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintWithoutDateError</b> (const char *,...)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a75f1a6f06673bd132351f37e3f6729e2">LogPrintWithoutDateError</a> (const char *,...)</td></tr>
+<tr class="memdesc:a75f1a6f06673bd132351f37e3f6729e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs an error message to the console log without date information. <br /></td></tr>
 <tr class="separator:a75f1a6f06673bd132351f37e3f6729e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a8b55fbcf42b1be989f73e7fcc28086"><td class="memItemLeft" align="right" valign="top"><a id="a9a8b55fbcf42b1be989f73e7fcc28086"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LogPrintTaskStatusResult</b> (bool)</td></tr>
+<tr class="memitem:a9a8b55fbcf42b1be989f73e7fcc28086"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a9a8b55fbcf42b1be989f73e7fcc28086">LogPrintTaskStatusResult</a> (bool)</td></tr>
+<tr class="memdesc:a9a8b55fbcf42b1be989f73e7fcc28086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a message with a success or failure status message.  <a href="#a9a8b55fbcf42b1be989f73e7fcc28086">More...</a><br /></td></tr>
 <tr class="separator:a9a8b55fbcf42b1be989f73e7fcc28086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff844bbb566747a49b8ade27451eb6e9"><td class="memItemLeft" align="right" valign="top"><a id="aff844bbb566747a49b8ade27451eb6e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InitializeLogger</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#aff844bbb566747a49b8ade27451eb6e9">InitializeLogger</a> ()</td></tr>
+<tr class="memdesc:aff844bbb566747a49b8ade27451eb6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a console window if one does not exist. Redirects stdout to the console. <br /></td></tr>
 <tr class="separator:aff844bbb566747a49b8ade27451eb6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a86903afa9dc50c727bb61920caf8aded"><td class="memItemLeft" align="right" valign="top"><a id="a86903afa9dc50c727bb61920caf8aded"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>printCurrentDateTime</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConsoleLogger.html#a86903afa9dc50c727bb61920caf8aded">printCurrentDateTime</a> ()</td></tr>
+<tr class="memdesc:a86903afa9dc50c727bb61920caf8aded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs the current date and time to the console. <br /></td></tr>
 <tr class="separator:a86903afa9dc50c727bb61920caf8aded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -198,20 +217,508 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_attribs_classLogger"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_classLogger')"><img src="closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="classLogger.html">Logger</a></td></tr>
 <tr class="memitem:a126ac5933e943b37f49bf0fb0b6e1e8f inherit pub_static_attribs_classLogger"><td class="memItemLeft" align="right" valign="top"><a id="a126ac5933e943b37f49bf0fb0b6e1e8f"></a>
 static <a class="el" href="classLogger.html">Logger</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogger.html#a126ac5933e943b37f49bf0fb0b6e1e8f">g_pLogger</a> = new <a class="el" href="classConsoleLogger.html">ConsoleLogger</a>()</td></tr>
-<tr class="memdesc:a126ac5933e943b37f49bf0fb0b6e1e8f inherit pub_static_attribs_classLogger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global <a class="el" href="classLogger.html">Logger</a> Instance. <br /></td></tr>
+<tr class="memdesc:a126ac5933e943b37f49bf0fb0b6e1e8f inherit pub_static_attribs_classLogger"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global <a class="el" href="classLogger.html" title="Abstract class that handles all logging. ">Logger</a> Instance. <br /></td></tr>
 <tr class="separator:a126ac5933e943b37f49bf0fb0b6e1e8f inherit pub_static_attribs_classLogger"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Debug_8h_source.html#l00075">75</a> of file <a class="el" href="Debug_8h_source.html">Debug.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p><a class="el" href="classConsoleLogger.html" title="ConsoleLogger class handles console allocation, and all logging going to the console. ">ConsoleLogger</a> class handles console allocation, and all logging going to the console. </p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8h_source.html#l00118">118</a> of file <a class="el" href="Debug_8h_source.html">Debug.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6085988edd2fe5e9c39e688c042b50dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6085988edd2fe5e9c39e688c042b50dc">&#9670;&nbsp;</a></span>LogPacketToClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPacketToClient </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a packet to the console with appropriate colors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Printf format for the log statement </td></tr>
+    <tr><td class="paramname">...</td><td>arguments to be passed to the printf command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a65a8cf994801095ca970edc89e4315e4">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00081">81</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>, and <a class="el" href="Debug_8cpp_source.html#l00339">printCurrentDateTime()</a>.</p>
+
+</div>
+</div>
+<a id="a8d4645be7e06687e3cc8a49b71d91084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4645be7e06687e3cc8a49b71d91084">&#9670;&nbsp;</a></span>LogPacketToServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPacketToServer </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a packet to the console with appropriate colors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Printf format for the log statement </td></tr>
+    <tr><td class="paramname">...</td><td>arguments to be passed to the printf command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a7f51856934f332ccc4506a2459ed0cf7">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00106">106</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>, and <a class="el" href="Debug_8cpp_source.html#l00339">printCurrentDateTime()</a>.</p>
+
+</div>
+</div>
+<a id="a25ff16d50aefee8a6bf546510e5259bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ff16d50aefee8a6bf546510e5259bf">&#9670;&nbsp;</a></span>LogPrint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPrint </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a message to the console log with an [INFO] printed in front of it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Printf format for the log statement </td></tr>
+    <tr><td class="paramname">...</td><td>arguments to be passed to the printf command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00131">131</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>, and <a class="el" href="Debug_8cpp_source.html#l00339">printCurrentDateTime()</a>.</p>
+
+</div>
+</div>
+<a id="a58159514d1b7dc34c0797d7323ca9b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58159514d1b7dc34c0797d7323ca9b4b">&#9670;&nbsp;</a></span>LogPrintError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPrintError </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a message to the console log with an [ERROR] printed in front of it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Printf format for the log statement </td></tr>
+    <tr><td class="paramname">...</td><td>arguments to be passed to the printf command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a5d08e73b13c0bade3be70a12c6ccabe2">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00183">183</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>, and <a class="el" href="Debug_8cpp_source.html#l00339">printCurrentDateTime()</a>.</p>
+
+</div>
+</div>
+<a id="a55ccffef345a7edffca83b6836530134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ccffef345a7edffca83b6836530134">&#9670;&nbsp;</a></span>LogPrintTaskStatusResult() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPrintTaskStatusResult </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a message with a success or failure status message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>True for success, false for failure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a88385ddd15152239e0010cc4ef631f92">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00308">308</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>.</p>
+
+</div>
+</div>
+<a id="a9a8b55fbcf42b1be989f73e7fcc28086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a8b55fbcf42b1be989f73e7fcc28086">&#9670;&nbsp;</a></span>LogPrintTaskStatusResult() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPrintTaskStatusResult </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a message with a success or failure status message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">status</td><td>True for success, false for failure </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a88385ddd15152239e0010cc4ef631f92">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8h_source.html#l00154">154</a> of file <a class="el" href="Debug_8h_source.html">Debug.h</a>.</p>
+
+</div>
+</div>
+<a id="ab35dfaaac66113c4883eb290ddf7f6b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35dfaaac66113c4883eb290ddf7f6b2">&#9670;&nbsp;</a></span>LogPrintWarning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPrintWarning </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a message to the console log with an [WARNING] printed in front of it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Printf format for the log statement </td></tr>
+    <tr><td class="paramname">...</td><td>arguments to be passed to the printf command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#ad3907d417b05cb3c754042488ef189cf">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00156">156</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>, and <a class="el" href="Debug_8cpp_source.html#l00339">printCurrentDateTime()</a>.</p>
+
+</div>
+</div>
+<a id="a953814981684316ff89ea8cebe31df39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a953814981684316ff89ea8cebe31df39">&#9670;&nbsp;</a></span>LogPrintWithoutDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPrintWithoutDate </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a message to the console log without any logger decoration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Printf format for the log statement </td></tr>
+    <tr><td class="paramname">...</td><td>arguments to be passed to the printf command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a9ee915d2b364756f10e95ef9565d5903">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00240">240</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>.</p>
+
+</div>
+</div>
+<a id="a75f1a6f06673bd132351f37e3f6729e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f1a6f06673bd132351f37e3f6729e2">&#9670;&nbsp;</a></span>LogPrintWithoutDateError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPrintWithoutDateError </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs an error message to the console log without date information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Printf format for the log statement </td></tr>
+    <tr><td class="paramname">...</td><td>arguments to be passed to the printf command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#a1ae29487e2a825b8ded7663e69f2ec56">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00286">286</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>.</p>
+
+</div>
+</div>
+<a id="a794258140b0c592176085e656e53f884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a794258140b0c592176085e656e53f884">&#9670;&nbsp;</a></span>LogPrintWithoutDateWarning()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConsoleLogger::LogPrintWithoutDateWarning </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fmt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a warning message to the console log without date information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fmt</td><td>Printf format for the log statement </td></tr>
+    <tr><td class="paramname">...</td><td>arguments to be passed to the printf command </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classLogger.html#aeaf2009a49193186f85c3a578ea77e37">Logger</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Debug_8cpp_source.html#l00263">263</a> of file <a class="el" href="Debug_8cpp_source.html">Debug.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00155">m_hConOut</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>UltimaLive/<a class="el" href="Debug_8h_source.html">Debug.h</a></li>
 <li>UltimaLive/<a class="el" href="Debug_8cpp_source.html">Debug.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -1,19 +1,19 @@
 <map id="BasePacketHandler" name="BasePacketHandler">
-<area shape="rect" id="node2" href="$classChangeMapHandler.html" title="ChangeMapHandler" alt="" coords="229,5,363,32"/>
-<area shape="rect" id="node3" href="$classChangeMapHandler__7__0__29__2.html" title="ChangeMapHandler_7\l_0_29_2" alt="" coords="221,57,371,98"/>
-<area shape="rect" id="node4" href="$classLoginCompleteHandler.html" title="LoginCompleteHandler" alt="" coords="220,123,372,149"/>
-<area shape="rect" id="node5" href="$classLoginCompleteHandler__7__0__29__2.html" title="LoginCompleteHandler\l_7_0_29_2" alt="" coords="220,174,372,215"/>
-<area shape="rect" id="node6" href="$classLoginConfirmHandler.html" title="LoginConfirmHandler" alt="" coords="225,240,367,267"/>
-<area shape="rect" id="node7" href="$classLoginConfirmHandler__7__0__29__2.html" title="LoginConfirmHandler\l_7_0_29_2" alt="" coords="225,291,367,333"/>
-<area shape="rect" id="node8" href="$classLogoutRequestHandler.html" title="LogoutRequestHandler" alt="" coords="219,357,373,384"/>
-<area shape="rect" id="node9" href="$classLogoutRequestHandler__7__0__29__2.html" title="LogoutRequestHandler\l_7_0_29_2" alt="" coords="219,409,373,450"/>
-<area shape="rect" id="node10" href="$classServerMobileStatusHandler.html" title="ServerMobileStatusHandler" alt="" coords="207,475,385,501"/>
-<area shape="rect" id="node11" href="$classServerMobileStatusHandler__7__0__29__2.html" title="ServerMobileStatusHandler\l_7_0_29_2" alt="" coords="207,526,385,567"/>
-<area shape="rect" id="node12" href="$classServerVersionRequestHandler.html" title="ServerVersionRequestHandler" alt="" coords="199,592,393,619"/>
-<area shape="rect" id="node13" href="$classUltimaLiveHashQueryHandler.html" title="UltimaLiveHashQueryHandler" alt="" coords="201,643,391,669"/>
-<area shape="rect" id="node14" href="$classUltimaLiveLoginCompleteHandler.html" title="UltimaLiveLoginCompleteHandler" alt="" coords="191,693,401,720"/>
-<area shape="rect" id="node15" href="$classUltimaLiveRefreshClientViewHandler.html" title="UltimaLiveRefreshClientView\lHandler" alt="" coords="203,745,389,786"/>
-<area shape="rect" id="node16" href="$classUltimaLiveUpdateLandBlockHandler.html" title="UltimaLiveUpdateLandBlock\lHandler" alt="" coords="205,810,387,851"/>
-<area shape="rect" id="node17" href="$classUltimaLiveUpdateMapDefinitionsHandler.html" title="UltimaLiveUpdateMapDefinitions\lHandler" alt="" coords="193,875,399,917"/>
-<area shape="rect" id="node18" href="$classUltimaLiveUpdateStaticsHandler.html" title="UltimaLiveUpdateStaticsHandler" alt="" coords="193,941,399,968"/>
+<area shape="rect" id="node2" href="$classChangeMapHandler.html" title="Decommutates Change Map Packets. " alt="" coords="229,5,363,32"/>
+<area shape="rect" id="node3" href="$classChangeMapHandler__7__0__29__2.html" title="Decommutates Change Map Packets. " alt="" coords="221,57,371,98"/>
+<area shape="rect" id="node4" href="$classLoginCompleteHandler.html" title="Decommutates Login Complete packets. " alt="" coords="220,123,372,149"/>
+<area shape="rect" id="node5" href="$classLoginCompleteHandler__7__0__29__2.html" title="Decommutates Login Complete packets. " alt="" coords="220,174,372,215"/>
+<area shape="rect" id="node6" href="$classLoginConfirmHandler.html" title="Decommutates Login confirmation packets. " alt="" coords="225,240,367,267"/>
+<area shape="rect" id="node7" href="$classLoginConfirmHandler__7__0__29__2.html" title="Decommutates login confirmation packets. " alt="" coords="225,291,367,333"/>
+<area shape="rect" id="node8" href="$classLogoutRequestHandler.html" title="Decommutates Logout Packets. " alt="" coords="219,357,373,384"/>
+<area shape="rect" id="node9" href="$classLogoutRequestHandler__7__0__29__2.html" title="Decommutates Logout Request Packets. " alt="" coords="219,409,373,450"/>
+<area shape="rect" id="node10" href="$classServerMobileStatusHandler.html" title="Decommutates Mobile Status Packet. " alt="" coords="207,475,385,501"/>
+<area shape="rect" id="node11" href="$classServerMobileStatusHandler__7__0__29__2.html" title="Decommutates Mobile Status Packet. " alt="" coords="207,526,385,567"/>
+<area shape="rect" id="node12" href="$classServerVersionRequestHandler.html" title="Handles the UltimaLive server request for version number. " alt="" coords="199,592,393,619"/>
+<area shape="rect" id="node13" href="$classUltimaLiveHashQueryHandler.html" title="Decommutates UltimaLive HashQuery packets. " alt="" coords="201,643,391,669"/>
+<area shape="rect" id="node14" href="$classUltimaLiveLoginCompleteHandler.html" title="Decommutates Server Unique Identifier. " alt="" coords="191,693,401,720"/>
+<area shape="rect" id="node15" href="$classUltimaLiveRefreshClientViewHandler.html" title="Triggers the RefreshClientView event. " alt="" coords="203,745,389,786"/>
+<area shape="rect" id="node16" href="$classUltimaLiveUpdateLandBlockHandler.html" title="Decommutates UltimaLive Update Land Block Packet. " alt="" coords="205,810,387,851"/>
+<area shape="rect" id="node17" href="$classUltimaLiveUpdateMapDefinitionsHandler.html" title="Decommutates UltimaLive Update Map Definitions Packet. " alt="" coords="193,875,399,917"/>
+<area shape="rect" id="node18" href="$classUltimaLiveUpdateStaticsHandler.html" title="Decommutates UltimaLive UpdateStatics Packets. " alt="" coords="193,941,399,968"/>
 </map>

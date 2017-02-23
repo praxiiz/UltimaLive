@@ -75,7 +75,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aea22afdeef3808b904bc08af62daf8c1"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUopUtility.html#aea22afdeef3808b904bc08af62daf8c1">HashFileName</a> (std::string s)</td></tr>
-<tr class="memdesc:aea22afdeef3808b904bc08af62daf8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a hash based on the filename.  <a href="#aea22afdeef3808b904bc08af62daf8c1">More...</a><br /></td></tr>
+<tr class="memdesc:aea22afdeef3808b904bc08af62daf8c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a hash based on the filename Information here obtained from UODEV.DE.  <a href="#aea22afdeef3808b904bc08af62daf8c1">More...</a><br /></td></tr>
 <tr class="separator:aea22afdeef3808b904bc08af62daf8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d235a61bcbfc543981a75018d3d5ac6"><td class="memItemLeft" align="right" valign="top">static std::map&lt; uint32_t, uint64_t &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUopUtility.html#a5d235a61bcbfc543981a75018d3d5ac6">getMapHashes</a> (int count, std::string pattern)</td></tr>
 <tr class="memdesc:a5d235a61bcbfc543981a75018d3d5ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets hashes corresponding to an internal map filename  <a href="#a5d235a61bcbfc543981a75018d3d5ac6">More...</a><br /></td></tr>
@@ -144,7 +144,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="UopUtility_8cpp_source.html#l00036">36</a> of file <a class="el" href="UopUtility_8cpp_source.html">UopUtility.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8h_source.html#l00068">Logger::g_pLogger</a>, <a class="el" href="UopUtility_8cpp_source.html#l00201">getMapHashes()</a>, and <a class="el" href="UopStructs_8cpp_source.html#l00049">FileEntry::unmarshal()</a>.</p>
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="Utils_8cpp_source.html#l00196">Utils::getBaseFilenameWithoutExtension()</a>, <a class="el" href="Utils_8cpp_source.html#l00226">Utils::getFilenameFromPath()</a>, <a class="el" href="UopUtility_8cpp_source.html#l00201">getMapHashes()</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="UopStructs_8h_source.html#l00070">FileEntry::MetaDataSize</a>, <a class="el" href="UopStructs_8h_source.html#l00073">FileEntry::PathChecksum</a>, <a class="el" href="ProgressBarDialog_8cpp_source.html#l00073">ProgressBarDialog::setProgress()</a>, <a class="el" href="UopStructs_8h_source.html#l00072">FileEntry::UncompressedDataSize</a>, <a class="el" href="UopStructs_8cpp_source.html#l00049">FileEntry::unmarshal()</a>, and <a class="el" href="UopStructs_8h_source.html#l00069">FileEntry::UopFileOffset</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FileManager__7__0__29__2_8cpp_source.html#l00331">FileManager_7_0_29_2::InitializeShardMaps()</a>.</p>
 
 </div>
 </div>
@@ -194,9 +196,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="UopUtility_8cpp_source.html#l00201">201</a> of file <a class="el" href="UopUtility_8cpp_source.html">UopUtility.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UopUtility_8cpp_source.html#l00230">HashFileName()</a>, and <a class="el" href="UopUtility_8cpp_source.html#l00177">ZeroPadNumber()</a>.</p>
+<p class="reference">References <a class="el" href="UopUtility_8cpp_source.html#l00229">HashFileName()</a>, and <a class="el" href="UopUtility_8cpp_source.html#l00177">ZeroPadNumber()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UopUtility_8cpp_source.html#l00036">convertUopMapToMul()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UopUtility_8cpp_source.html#l00036">convertUopMapToMul()</a>, and <a class="el" href="FileManager__7__0__29__2_8cpp_source.html#l00262">FileManager_7_0_29_2::parseMapFile()</a>.</p>
 
 </div>
 </div>
@@ -234,7 +236,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="UopUtility_8cpp_source.html#l00127">127</a> of file <a class="el" href="UopUtility_8cpp_source.html">UopUtility.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Debug_8h_source.html#l00068">Logger::g_pLogger</a>, and <a class="el" href="UopStructs_8cpp_source.html#l00049">FileEntry::unmarshal()</a>.</p>
+<p class="reference">References <a class="el" href="UopStructs_8h_source.html#l00071">FileEntry::CompressedDataSize</a>, <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="UopStructs_8h_source.html#l00072">FileEntry::UncompressedDataSize</a>, and <a class="el" href="UopStructs_8cpp_source.html#l00049">FileEntry::unmarshal()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FileManager__7__0__29__2_8cpp_source.html#l00331">FileManager_7_0_29_2::InitializeShardMaps()</a>.</p>
 
 </div>
 </div>
@@ -262,11 +266,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Calculates a hash based on the filename. </p>
-<p>Information here obtained from UODEV.DE</p>
+<p>Calculates a hash based on the filename Information here obtained from UODEV.DE. </p>
 <dl class="section return"><dt>Returns</dt><dd>hash </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UopUtility_8cpp_source.html#l00230">230</a> of file <a class="el" href="UopUtility_8cpp_source.html">UopUtility.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UopUtility_8cpp_source.html#l00229">229</a> of file <a class="el" href="UopUtility_8cpp_source.html">UopUtility.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="UopUtility_8cpp_source.html#l00201">getMapHashes()</a>.</p>
 
@@ -279,7 +282,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:43 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

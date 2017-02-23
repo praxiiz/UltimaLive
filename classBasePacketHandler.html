@@ -67,28 +67,33 @@ $(function() {
 <div class="title">BasePacketHandler Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base class for all packet handlers.  
+ <a href="classBasePacketHandler.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="BasePacketHandler_8h_source.html">BasePacketHandler.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for BasePacketHandler:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBasePacketHandler__inherit__graph.png" border="0" usemap="#BasePacketHandler_inherit__map" alt="Inheritance graph"/></div>
 <map name="BasePacketHandler_inherit__map" id="BasePacketHandler_inherit__map">
-<area shape="rect" id="node2" href="classChangeMapHandler.html" title="ChangeMapHandler" alt="" coords="229,5,363,32"/>
-<area shape="rect" id="node3" href="classChangeMapHandler__7__0__29__2.html" title="ChangeMapHandler_7\l_0_29_2" alt="" coords="221,57,371,98"/>
-<area shape="rect" id="node4" href="classLoginCompleteHandler.html" title="LoginCompleteHandler" alt="" coords="220,123,372,149"/>
-<area shape="rect" id="node5" href="classLoginCompleteHandler__7__0__29__2.html" title="LoginCompleteHandler\l_7_0_29_2" alt="" coords="220,174,372,215"/>
-<area shape="rect" id="node6" href="classLoginConfirmHandler.html" title="LoginConfirmHandler" alt="" coords="225,240,367,267"/>
-<area shape="rect" id="node7" href="classLoginConfirmHandler__7__0__29__2.html" title="LoginConfirmHandler\l_7_0_29_2" alt="" coords="225,291,367,333"/>
-<area shape="rect" id="node8" href="classLogoutRequestHandler.html" title="LogoutRequestHandler" alt="" coords="219,357,373,384"/>
-<area shape="rect" id="node9" href="classLogoutRequestHandler__7__0__29__2.html" title="LogoutRequestHandler\l_7_0_29_2" alt="" coords="219,409,373,450"/>
-<area shape="rect" id="node10" href="classServerMobileStatusHandler.html" title="ServerMobileStatusHandler" alt="" coords="207,475,385,501"/>
-<area shape="rect" id="node11" href="classServerMobileStatusHandler__7__0__29__2.html" title="ServerMobileStatusHandler\l_7_0_29_2" alt="" coords="207,526,385,567"/>
-<area shape="rect" id="node12" href="classServerVersionRequestHandler.html" title="ServerVersionRequestHandler" alt="" coords="199,592,393,619"/>
-<area shape="rect" id="node13" href="classUltimaLiveHashQueryHandler.html" title="UltimaLiveHashQueryHandler" alt="" coords="201,643,391,669"/>
-<area shape="rect" id="node14" href="classUltimaLiveLoginCompleteHandler.html" title="UltimaLiveLoginCompleteHandler" alt="" coords="191,693,401,720"/>
-<area shape="rect" id="node15" href="classUltimaLiveRefreshClientViewHandler.html" title="UltimaLiveRefreshClientView\lHandler" alt="" coords="203,745,389,786"/>
-<area shape="rect" id="node16" href="classUltimaLiveUpdateLandBlockHandler.html" title="UltimaLiveUpdateLandBlock\lHandler" alt="" coords="205,810,387,851"/>
-<area shape="rect" id="node17" href="classUltimaLiveUpdateMapDefinitionsHandler.html" title="UltimaLiveUpdateMapDefinitions\lHandler" alt="" coords="193,875,399,917"/>
-<area shape="rect" id="node18" href="classUltimaLiveUpdateStaticsHandler.html" title="UltimaLiveUpdateStaticsHandler" alt="" coords="193,941,399,968"/>
+<area shape="rect" id="node2" href="classChangeMapHandler.html" title="Decommutates Change Map Packets. " alt="" coords="229,5,363,32"/>
+<area shape="rect" id="node3" href="classChangeMapHandler__7__0__29__2.html" title="Decommutates Change Map Packets. " alt="" coords="221,57,371,98"/>
+<area shape="rect" id="node4" href="classLoginCompleteHandler.html" title="Decommutates Login Complete packets. " alt="" coords="220,123,372,149"/>
+<area shape="rect" id="node5" href="classLoginCompleteHandler__7__0__29__2.html" title="Decommutates Login Complete packets. " alt="" coords="220,174,372,215"/>
+<area shape="rect" id="node6" href="classLoginConfirmHandler.html" title="Decommutates Login confirmation packets. " alt="" coords="225,240,367,267"/>
+<area shape="rect" id="node7" href="classLoginConfirmHandler__7__0__29__2.html" title="Decommutates login confirmation packets. " alt="" coords="225,291,367,333"/>
+<area shape="rect" id="node8" href="classLogoutRequestHandler.html" title="Decommutates Logout Packets. " alt="" coords="219,357,373,384"/>
+<area shape="rect" id="node9" href="classLogoutRequestHandler__7__0__29__2.html" title="Decommutates Logout Request Packets. " alt="" coords="219,409,373,450"/>
+<area shape="rect" id="node10" href="classServerMobileStatusHandler.html" title="Decommutates Mobile Status Packet. " alt="" coords="207,475,385,501"/>
+<area shape="rect" id="node11" href="classServerMobileStatusHandler__7__0__29__2.html" title="Decommutates Mobile Status Packet. " alt="" coords="207,526,385,567"/>
+<area shape="rect" id="node12" href="classServerVersionRequestHandler.html" title="Handles the UltimaLive server request for version number. " alt="" coords="199,592,393,619"/>
+<area shape="rect" id="node13" href="classUltimaLiveHashQueryHandler.html" title="Decommutates UltimaLive HashQuery packets. " alt="" coords="201,643,391,669"/>
+<area shape="rect" id="node14" href="classUltimaLiveLoginCompleteHandler.html" title="Decommutates Server Unique Identifier. " alt="" coords="191,693,401,720"/>
+<area shape="rect" id="node15" href="classUltimaLiveRefreshClientViewHandler.html" title="Triggers the RefreshClientView event. " alt="" coords="203,745,389,786"/>
+<area shape="rect" id="node16" href="classUltimaLiveUpdateLandBlockHandler.html" title="Decommutates UltimaLive Update Land Block Packet. " alt="" coords="205,810,387,851"/>
+<area shape="rect" id="node17" href="classUltimaLiveUpdateMapDefinitionsHandler.html" title="Decommutates UltimaLive Update Map Definitions Packet. " alt="" coords="193,875,399,917"/>
+<area shape="rect" id="node18" href="classUltimaLiveUpdateStaticsHandler.html" title="Decommutates UltimaLive UpdateStatics Packets. " alt="" coords="193,941,399,968"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -96,74 +101,119 @@ Collaboration diagram for BasePacketHandler:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBasePacketHandler__coll__graph.png" border="0" usemap="#BasePacketHandler_coll__map" alt="Collaboration graph"/></div>
 <map name="BasePacketHandler_coll__map" id="BasePacketHandler_coll__map">
-<area shape="rect" id="node2" href="classNetworkManager.html" title="NetworkManager" alt="" coords="2978,1045,3097,1072"/>
-<area shape="rect" id="node7" href="classClient.html" title="Client" alt="" coords="3352,753,3407,780"/>
-<area shape="rect" id="node4" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="2508,1065,2651,1106"/>
-<area shape="rect" id="node5" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="2124,1424,2296,1451"/>
-<area shape="rect" id="node42" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="2768,1539,2911,1581"/>
-<area shape="rect" id="node8" href="structMapTileDefinition.html" title="MapTileDefinition" alt="" coords="2977,547,3097,573"/>
-<area shape="rect" id="node9" href="classBaseFileManager.html" title="BaseFileManager" alt="" coords="2976,105,3099,132"/>
-<area shape="rect" id="node11" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="2142,107,2278,133"/>
-<area shape="rect" id="node12" title="STL class. " alt="" coords="1834,45,1914,72"/>
-<area shape="rect" id="node13" title="STL class. " alt="" coords="1486,38,1613,79"/>
-<area shape="rect" id="node14" href="classProgressBarDialog.html" title="ProgressBarDialog" alt="" coords="2514,111,2645,137"/>
-<area shape="rect" id="node15" title="STL class. " alt="" coords="2530,175,2629,201"/>
-<area shape="rect" id="node16" title="STL class. " alt="" coords="2142,162,2278,203"/>
-<area shape="rect" id="node17" title="STL class. " alt="" coords="1807,162,1941,203"/>
-<area shape="rect" id="node18" title="STL class. " alt="" coords="1472,169,1627,196"/>
-<area shape="rect" id="node19" title="STL class. " alt="" coords="1115,169,1215,196"/>
-<area shape="rect" id="node20" href="structMapMinDisplay.html" title="MapMinDisplay" alt="" coords="2982,703,3093,729"/>
-<area shape="rect" id="node21" href="structCStaticObject.html" title="CStaticObject" alt="" coords="731,531,834,557"/>
-<area shape="rect" id="node22" href="structCStaticObjectMembers.html" title="CStaticObjectMembers" alt="" coords="1087,548,1244,575"/>
-<area shape="rect" id="node34" href="structCItemMembers.html" title="CItemMembers" alt="" coords="1819,459,1929,485"/>
-<area shape="rect" id="node29" href="structCPlayerMobile.html" title="CPlayerMobile" alt="" coords="2984,597,3091,624"/>
-<area shape="rect" id="node33" href="structCItem.html" title="CItem" alt="" coords="1521,548,1577,575"/>
-<area shape="rect" id="node40" href="structCMobile.html" title="CMobile" alt="" coords="2175,399,2245,425"/>
-<area shape="rect" id="node23" href="structCDrawItemMembers.html" title="CDrawItemMembers" alt="" coords="414,659,553,685"/>
-<area shape="rect" id="node24" href="structCDrawItem.html" title="CDrawItem" alt="" coords="740,652,825,679"/>
-<area shape="rect" id="node31" href="structCBigMobComponent.html" title="CBigMobComponent" alt="" coords="712,828,853,855"/>
-<area shape="rect" id="node25" href="structCDrawItemVtable.html" title="CDrawItemVtable" alt="" coords="422,737,545,764"/>
-<area shape="rect" id="node26" href="structCDrawItemVtableMembers.html" title="CDrawItemVtableMembers" alt="" coords="15,551,191,577"/>
-<area shape="rect" id="node27" href="structCStaticObjectVtable.html" title="CStaticObjectVtable" alt="" coords="413,508,553,535"/>
-<area shape="rect" id="node35" href="structCItemVtable.html" title="CItemVtable" alt="" coords="437,369,530,396"/>
-<area shape="rect" id="node37" href="structCMobileVtable.html" title="CMobileVtable" alt="" coords="430,264,537,291"/>
-<area shape="rect" id="node28" href="structCStaticObjectVtableMembers.html" title="CStaticObjectVtableMembers" alt="" coords="5,392,200,419"/>
-<area shape="rect" id="node30" href="structCContainerMembers.html" title="CContainerMembers" alt="" coords="1804,595,1944,621"/>
-<area shape="rect" id="node32" href="structCBigMobComponentMembers.html" title="CBigMobComponentMembers" alt="" coords="1068,807,1263,833"/>
-<area shape="rect" id="node36" href="structCItemVtableMembers.html" title="CItemVtableMembers" alt="" coords="29,301,176,328"/>
-<area shape="rect" id="node38" href="structCMobileVtableMembers.html" title="CMobileVtableMembers" alt="" coords="23,211,183,237"/>
-<area shape="rect" id="node39" href="structCMobileMembers.html" title="CMobileMembers" alt="" coords="2518,417,2641,444"/>
-<area shape="rect" id="node41" href="structCPlayerMobileMembers.html" title="CPlayerMobileMembers" alt="" coords="2499,468,2659,495"/>
-<area shape="rect" id="node43" href="classDotNetHost.html" title="DotNetHost" alt="" coords="2993,1159,3082,1185"/>
+<area shape="rect" id="node2" href="classNetworkManager.html" title="Handles network packets going to/from the server/client. " alt="" coords="1455,444,1574,471"/>
+<area shape="rect" id="node7" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ..." alt="" coords="1751,776,1805,803"/>
+<area shape="rect" id="node4" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="985,498,1128,539"/>
+<area shape="rect" id="node5" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="611,700,783,727"/>
+<area shape="rect" id="node19" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="1245,769,1388,810"/>
+<area shape="rect" id="node8" href="classBaseFileManager.html" title="The responsibility of the file manager is to handle the custom file formats that the client may emplo..." alt="" coords="1453,857,1576,884"/>
+<area shape="rect" id="node10" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="629,880,765,907"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="385,880,465,907"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="169,873,295,914"/>
+<area shape="rect" id="node13" href="classProgressBarDialog.html" title="Displays a progress bar. " alt="" coords="991,877,1122,904"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="1007,1001,1106,1028"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="629,994,765,1035"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="359,994,492,1035"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="155,1001,309,1028"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="5,1001,105,1028"/>
+<area shape="rect" id="node20" href="classDotNetHost.html" title="Class used to host the .NET common language runtime (CLR) " alt="" coords="1470,908,1559,935"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a42808ab85c4976e4073a23ede0d0486e"><td class="memItemLeft" align="right" valign="top"><a id="a42808ab85c4976e4073a23ede0d0486e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BasePacketHandler</b> (<a class="el" href="classNetworkManager.html">NetworkManager</a> *pManager)</td></tr>
+<tr class="memitem:a42808ab85c4976e4073a23ede0d0486e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBasePacketHandler.html#a42808ab85c4976e4073a23ede0d0486e">BasePacketHandler</a> (<a class="el" href="classNetworkManager.html">NetworkManager</a> *pManager)</td></tr>
+<tr class="memdesc:a42808ab85c4976e4073a23ede0d0486e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classBasePacketHandler.html" title="Base class for all packet handlers. ">BasePacketHandler</a> baseclass constructor.  <a href="#a42808ab85c4976e4073a23ede0d0486e">More...</a><br /></td></tr>
 <tr class="separator:a42808ab85c4976e4073a23ede0d0486e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1580958e2400413bb0df5af7f211292e"><td class="memItemLeft" align="right" valign="top"><a id="a1580958e2400413bb0df5af7f211292e"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>handlePacket</b> (uint8_t *pPacketData)=0</td></tr>
+<tr class="memitem:a1580958e2400413bb0df5af7f211292e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBasePacketHandler.html#a1580958e2400413bb0df5af7f211292e">handlePacket</a> (uint8_t *pPacketData)=0</td></tr>
+<tr class="memdesc:a1580958e2400413bb0df5af7f211292e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract virtual packet handler.  <a href="#a1580958e2400413bb0df5af7f211292e">More...</a><br /></td></tr>
 <tr class="separator:a1580958e2400413bb0df5af7f211292e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a4659cfcc6cd1f059f97c57996fcf3c87"><td class="memItemLeft" align="right" valign="top"><a id="a4659cfcc6cd1f059f97c57996fcf3c87"></a>
-<a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pManager</b></td></tr>
+<a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBasePacketHandler.html#a4659cfcc6cd1f059f97c57996fcf3c87">m_pManager</a></td></tr>
+<tr class="memdesc:a4659cfcc6cd1f059f97c57996fcf3c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the Network Manager Instance. <br /></td></tr>
 <tr class="separator:a4659cfcc6cd1f059f97c57996fcf3c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="BasePacketHandler_8h_source.html#l00033">33</a> of file <a class="el" href="BasePacketHandler_8h_source.html">BasePacketHandler.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Base class for all packet handlers. </p>
+
+<p class="definition">Definition at line <a class="el" href="BasePacketHandler_8h_source.html#l00038">38</a> of file <a class="el" href="BasePacketHandler_8h_source.html">BasePacketHandler.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a42808ab85c4976e4073a23ede0d0486e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42808ab85c4976e4073a23ede0d0486e">&#9670;&nbsp;</a></span>BasePacketHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BasePacketHandler::BasePacketHandler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td>
+          <td class="paramname"><em>pManager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classBasePacketHandler.html" title="Base class for all packet handlers. ">BasePacketHandler</a> baseclass constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pManager</td><td>Network Manager instance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="BasePacketHandler_8cpp_source.html#l00033">33</a> of file <a class="el" href="BasePacketHandler_8cpp_source.html">BasePacketHandler.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1580958e2400413bb0df5af7f211292e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1580958e2400413bb0df5af7f211292e">&#9670;&nbsp;</a></span>handlePacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool BasePacketHandler::handlePacket </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>pPacketData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Abstract virtual packet handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPacketData</td><td>Pointer to packet data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classChangeMapHandler__7__0__29__2.html#a17e7126dedf5f3878796d9500b61851d">ChangeMapHandler_7_0_29_2</a>, <a class="el" href="classServerMobileStatusHandler.html#a978604344d5e447ed16c7100d4ccc99c">ServerMobileStatusHandler</a>, <a class="el" href="classServerMobileStatusHandler__7__0__29__2.html#a3195d1efe105165e8fac1019acb1f2bf">ServerMobileStatusHandler_7_0_29_2</a>, <a class="el" href="classServerVersionRequestHandler.html#a8121729c502e58715ed6f873d1d705da">ServerVersionRequestHandler</a>, <a class="el" href="classUltimaLiveUpdateLandBlockHandler.html#ac3d1db25f70ff20bd559a2258175e87e">UltimaLiveUpdateLandBlockHandler</a>, <a class="el" href="classUltimaLiveUpdateMapDefinitionsHandler.html#a33f593e831f227df4d10d9c75e4dcc43">UltimaLiveUpdateMapDefinitionsHandler</a>, <a class="el" href="classUltimaLiveUpdateStaticsHandler.html#a935139faf92c0a7f357de9e7608abadf">UltimaLiveUpdateStaticsHandler</a>, <a class="el" href="classChangeMapHandler.html#a5c9737c3bb52017de4d2010dd2645494">ChangeMapHandler</a>, <a class="el" href="classLoginCompleteHandler.html#a3206e204e89765e2257e1ba7736d8dd8">LoginCompleteHandler</a>, <a class="el" href="classLoginCompleteHandler__7__0__29__2.html#ab335017fa3179a14ce4d201be685f4e8">LoginCompleteHandler_7_0_29_2</a>, <a class="el" href="classLoginConfirmHandler.html#abf0fc8a79a772f323a01bd74aa31bfb4">LoginConfirmHandler</a>, <a class="el" href="classLoginConfirmHandler__7__0__29__2.html#a8b18a49461094f9fd7a3b68a066f2c3e">LoginConfirmHandler_7_0_29_2</a>, <a class="el" href="classUltimaLiveHashQueryHandler.html#aef90b8971102db0f2c0bbd49fca8b5e9">UltimaLiveHashQueryHandler</a>, <a class="el" href="classUltimaLiveLoginCompleteHandler.html#a12833328cb3a66ddb00dd483e227634c">UltimaLiveLoginCompleteHandler</a>, <a class="el" href="classUltimaLiveRefreshClientViewHandler.html#a49189ac8f67ff94d968cd242bc120237">UltimaLiveRefreshClientViewHandler</a>, <a class="el" href="classLogoutRequestHandler.html#aec4ebcebc5d777dda142aef8796f5b3b">LogoutRequestHandler</a>, and <a class="el" href="classLogoutRequestHandler__7__0__29__2.html#a20a00905f22fd15a384f3faadd4d3cc3">LogoutRequestHandler_7_0_29_2</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>UltimaLive/Network/<a class="el" href="BasePacketHandler_8h_source.html">BasePacketHandler.h</a></li>
 <li>UltimaLive/Network/<a class="el" href="BasePacketHandler_8cpp_source.html">BasePacketHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

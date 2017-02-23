@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classLogger.html" title="Logger" alt="" coords="5,5,67,32"/>
-<area shape="rect" id="node2" href="$classConsoleLogger.html" title="ConsoleLogger" alt="" coords="115,5,223,32"/>
+<area shape="rect" id="node1" href="$classLogger.html" title="Abstract class that handles all logging. " alt="" coords="5,5,67,32"/>
+<area shape="rect" id="node2" href="$classConsoleLogger.html" title="ConsoleLogger class handles console allocation, and all logging going to the console. " alt="" coords="115,5,223,32"/>
 </map>

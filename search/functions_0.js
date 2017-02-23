@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['basefilemanager',['BaseFileManager',['../classBaseFileManager.html#a8722427a38564667e7b835b2543928d1',1,'BaseFileManager']]],
-  ['baseselfregisteringclass',['BaseSelfRegisteringClass',['../classBaseSelfRegisteringClass.html#aa26b2c04ff71d6a0f16376f20a6650c9',1,'BaseSelfRegisteringClass']]]
+  ['_5f_5fdeclspec',['__declspec',['../classCIgr__pinger.html#a8e8f561ff135ed1ea02670809a7db131',1,'CIgr_pinger::__declspec(dllexport) CIgr_pinger()'],['../classCIgr__pinger.html#a40a15c7f4455d0bd76fdb7185d0927b0',1,'CIgr_pinger::__declspec(dllexport) CIgr_pinger &amp;__thiscall operator']]]
 ];

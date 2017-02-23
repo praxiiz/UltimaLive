@@ -1,3 +1,3 @@
 <map id="LoginCompleteHandler" name="LoginCompleteHandler">
-<area shape="rect" id="node2" href="$classBasePacketHandler.html" title="BasePacketHandler" alt="" coords="13,5,150,32"/>
+<area shape="rect" id="node2" href="$classBasePacketHandler.html" title="Base class for all packet handlers. " alt="" coords="13,5,150,32"/>
 </map>

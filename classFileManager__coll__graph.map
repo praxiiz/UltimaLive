@@ -1,9 +1,9 @@
 <map id="FileManager" name="FileManager">
-<area shape="rect" id="node2" href="$classBaseFileManager.html" title="BaseFileManager" alt="" coords="1280,122,1403,149"/>
+<area shape="rect" id="node2" href="$classBaseFileManager.html" title="The responsibility of the file manager is to handle the custom file formats that the client may emplo..." alt="" coords="1280,122,1403,149"/>
 <area shape="rect" id="node4" href="$classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="611,177,747,203"/>
 <area shape="rect" id="node5" title="STL class. " alt="" coords="385,90,465,117"/>
 <area shape="rect" id="node6" title="STL class. " alt="" coords="169,83,295,124"/>
-<area shape="rect" id="node7" href="$classProgressBarDialog.html" title="ProgressBarDialog" alt="" coords="955,181,1085,207"/>
+<area shape="rect" id="node7" href="$classProgressBarDialog.html" title="Displays a progress bar. " alt="" coords="955,181,1085,207"/>
 <area shape="rect" id="node8" title="STL class. " alt="" coords="971,249,1069,275"/>
 <area shape="rect" id="node9" title="STL class. " alt="" coords="611,241,747,283"/>
 <area shape="rect" id="node10" title="STL class. " alt="" coords="359,241,492,283"/>

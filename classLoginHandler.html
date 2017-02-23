@@ -60,6 +60,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -69,84 +70,78 @@ $(function() {
 <div class="title">LoginHandler Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Handles the Ultima <a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a>'s Login.  
+ <a href="classLoginHandler.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="LoginHandler_8h_source.html">LoginHandler.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for LoginHandler:</div>
 <div class="dyncontent">
 <div class="center"><img src="classLoginHandler__coll__graph.png" border="0" usemap="#LoginHandler_coll__map" alt="Collaboration graph"/></div>
 <map name="LoginHandler_coll__map" id="LoginHandler_coll__map">
-<area shape="rect" id="node2" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; LoginHandler \&gt;" alt="" coords="2740,8,2883,49"/>
-<area shape="rect" id="node3" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="2096,343,2268,370"/>
-<area shape="rect" id="node6" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="2480,336,2623,377"/>
-<area shape="rect" id="node41" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="2740,676,2883,717"/>
-<area shape="rect" id="node4" href="classNetworkManager.html" title="NetworkManager" alt="" coords="2950,382,3069,408"/>
-<area shape="rect" id="node8" href="classClient.html" title="Client" alt="" coords="3395,966,3450,992"/>
-<area shape="rect" id="node49" href="classBasePacketHandler.html" title="BasePacketHandler" alt="" coords="3354,426,3491,452"/>
-<area shape="rect" id="node9" href="structMapTileDefinition.html" title="MapTileDefinition" alt="" coords="2949,1262,3069,1288"/>
-<area shape="rect" id="node10" href="classBaseFileManager.html" title="BaseFileManager" alt="" coords="2948,1379,3071,1406"/>
-<area shape="rect" id="node12" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="2114,1436,2250,1463"/>
-<area shape="rect" id="node13" title="STL class. " alt="" coords="1806,1436,1886,1463"/>
-<area shape="rect" id="node14" title="STL class. " alt="" coords="1472,1429,1599,1470"/>
-<area shape="rect" id="node15" href="classProgressBarDialog.html" title="ProgressBarDialog" alt="" coords="2486,1430,2617,1456"/>
-<area shape="rect" id="node16" title="STL class. " alt="" coords="2502,1326,2601,1352"/>
-<area shape="rect" id="node17" title="STL class. " alt="" coords="2114,1313,2250,1354"/>
-<area shape="rect" id="node18" title="STL class. " alt="" coords="1779,1313,1913,1354"/>
-<area shape="rect" id="node19" href="structMapMinDisplay.html" title="MapMinDisplay" alt="" coords="2954,915,3065,942"/>
-<area shape="rect" id="node20" href="structCStaticObject.html" title="CStaticObject" alt="" coords="731,1114,834,1140"/>
-<area shape="rect" id="node21" href="structCStaticObjectMembers.html" title="CStaticObjectMembers" alt="" coords="1087,1059,1244,1086"/>
-<area shape="rect" id="node33" href="structCItemMembers.html" title="CItemMembers" alt="" coords="1791,1026,1901,1052"/>
-<area shape="rect" id="node28" href="structCPlayerMobile.html" title="CPlayerMobile" alt="" coords="2956,1016,3063,1043"/>
-<area shape="rect" id="node32" href="structCItem.html" title="CItem" alt="" coords="1507,896,1563,923"/>
-<area shape="rect" id="node39" href="structCMobile.html" title="CMobile" alt="" coords="2147,963,2217,990"/>
-<area shape="rect" id="node22" href="structCDrawItemMembers.html" title="CDrawItemMembers" alt="" coords="414,739,553,766"/>
-<area shape="rect" id="node23" href="structCDrawItem.html" title="CDrawItem" alt="" coords="740,544,825,571"/>
-<area shape="rect" id="node30" href="structCBigMobComponent.html" title="CBigMobComponent" alt="" coords="712,635,853,662"/>
-<area shape="rect" id="node24" href="structCDrawItemVtable.html" title="CDrawItemVtable" alt="" coords="422,590,545,616"/>
-<area shape="rect" id="node25" href="structCDrawItemVtableMembers.html" title="CDrawItemVtableMembers" alt="" coords="15,891,191,918"/>
-<area shape="rect" id="node26" href="structCStaticObjectVtable.html" title="CStaticObjectVtable" alt="" coords="413,1114,553,1140"/>
-<area shape="rect" id="node34" href="structCItemVtable.html" title="CItemVtable" alt="" coords="437,932,530,959"/>
-<area shape="rect" id="node36" href="structCMobileVtable.html" title="CMobileVtable" alt="" coords="430,1208,537,1235"/>
-<area shape="rect" id="node27" href="structCStaticObjectVtableMembers.html" title="CStaticObjectVtableMembers" alt="" coords="5,1140,200,1167"/>
-<area shape="rect" id="node29" href="structCContainerMembers.html" title="CContainerMembers" alt="" coords="1776,794,1916,820"/>
-<area shape="rect" id="node31" href="structCBigMobComponentMembers.html" title="CBigMobComponentMembers" alt="" coords="1068,602,1263,628"/>
-<area shape="rect" id="node35" href="structCItemVtableMembers.html" title="CItemVtableMembers" alt="" coords="29,1047,176,1074"/>
-<area shape="rect" id="node37" href="structCMobileVtableMembers.html" title="CMobileVtableMembers" alt="" coords="23,1231,183,1258"/>
-<area shape="rect" id="node38" href="structCMobileMembers.html" title="CMobileMembers" alt="" coords="2490,966,2613,992"/>
-<area shape="rect" id="node40" href="structCPlayerMobileMembers.html" title="CPlayerMobileMembers" alt="" coords="2471,1016,2631,1043"/>
-<area shape="rect" id="node42" href="classDotNetHost.html" title="DotNetHost" alt="" coords="2965,966,3054,992"/>
+<area shape="rect" id="node2" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; LoginHandler \&gt;" alt="" coords="1245,13,1388,55"/>
+<area shape="rect" id="node3" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="611,479,783,506"/>
+<area shape="rect" id="node6" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="985,472,1128,513"/>
+<area shape="rect" id="node20" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="1245,677,1388,719"/>
+<area shape="rect" id="node4" href="classNetworkManager.html" title="Handles network packets going to/from the server/client. " alt="" coords="1455,382,1574,409"/>
+<area shape="rect" id="node8" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ..." alt="" coords="1822,685,1877,711"/>
+<area shape="rect" id="node28" href="classBasePacketHandler.html" title="Base class for all packet handlers. " alt="" coords="1781,299,1918,326"/>
+<area shape="rect" id="node9" href="classBaseFileManager.html" title="The responsibility of the file manager is to handle the custom file formats that the client may emplo..." alt="" coords="1453,766,1576,793"/>
+<area shape="rect" id="node11" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="629,802,765,829"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="385,802,465,829"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="169,795,295,836"/>
+<area shape="rect" id="node14" href="classProgressBarDialog.html" title="Displays a progress bar. " alt="" coords="991,735,1122,762"/>
+<area shape="rect" id="node15" title="STL class. " alt="" coords="1007,917,1106,943"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="629,909,765,951"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="359,909,492,951"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="155,917,309,943"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="5,917,105,943"/>
+<area shape="rect" id="node21" href="classDotNetHost.html" title="Class used to host the .NET common language runtime (CLR) " alt="" coords="1470,817,1559,843"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9a417487c1362c431e79eebd7422e88d"><td class="memItemLeft" align="right" valign="top"><a id="a9a417487c1362c431e79eebd7422e88d"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#a9a417487c1362c431e79eebd7422e88d">LoginHandler</a> ()</td></tr>
+<tr class="memdesc:a9a417487c1362c431e79eebd7422e88d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classLoginHandler.html" title="Handles the Ultima Client&#39;s Login. ">LoginHandler</a> constructor. <br /></td></tr>
+<tr class="separator:a9a417487c1362c431e79eebd7422e88d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad00e44c0d0126a89b2899c16ab5b8409"><td class="memItemLeft" align="right" valign="top"><a id="ad00e44c0d0126a89b2899c16ab5b8409"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> ()</td></tr>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#ad00e44c0d0126a89b2899c16ab5b8409">Initialize</a> ()</td></tr>
+<tr class="memdesc:ad00e44c0d0126a89b2899c16ab5b8409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self Registering Class Initialize function that sets up packet subscriptions with the network manager. <br /></td></tr>
 <tr class="separator:ad00e44c0d0126a89b2899c16ab5b8409"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf035f84650d1563076d75911472335a"><td class="memItemLeft" align="right" valign="top"><a id="aaf035f84650d1563076d75911472335a"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Configure</b> ()</td></tr>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#aaf035f84650d1563076d75911472335a">Configure</a> ()</td></tr>
+<tr class="memdesc:aaf035f84650d1563076d75911472335a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self Registering Class Configure function that registeres this class with the <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> application state. <br /></td></tr>
 <tr class="separator:aaf035f84650d1563076d75911472335a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a5a7ee56a7e110b5c9dc70bddb2199424"><td class="memItemLeft" align="right" valign="top"><a id="a5a7ee56a7e110b5c9dc70bddb2199424"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onLogoutRequest</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#a5a7ee56a7e110b5c9dc70bddb2199424">onLogoutRequest</a> ()</td></tr>
+<tr class="memdesc:a5a7ee56a7e110b5c9dc70bddb2199424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up when the client receives a logout request. <br /></td></tr>
 <tr class="separator:a5a7ee56a7e110b5c9dc70bddb2199424"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afac93e2ab2257f80340a29cc44e88372"><td class="memItemLeft" align="right" valign="top"><a id="afac93e2ab2257f80340a29cc44e88372"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onLoginConfirm</b> (uint8_t *pPacketData)</td></tr>
+<tr class="memitem:afac93e2ab2257f80340a29cc44e88372"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#afac93e2ab2257f80340a29cc44e88372">onLoginConfirm</a> (uint8_t *pPacketData)</td></tr>
+<tr class="memdesc:afac93e2ab2257f80340a29cc44e88372"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the login confirmation packet sent from the server. Caches the packet to be used to complete login in the proper order.  <a href="#afac93e2ab2257f80340a29cc44e88372">More...</a><br /></td></tr>
 <tr class="separator:afac93e2ab2257f80340a29cc44e88372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb95768271fb09aba39e56b39dcc54f5"><td class="memItemLeft" align="right" valign="top"><a id="afb95768271fb09aba39e56b39dcc54f5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onLoginComplete</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#afb95768271fb09aba39e56b39dcc54f5">onLoginComplete</a> ()</td></tr>
+<tr class="memdesc:afb95768271fb09aba39e56b39dcc54f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> message to the client when the login confirmation packet has been received. <br /></td></tr>
 <tr class="separator:afb95768271fb09aba39e56b39dcc54f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fa6ff7ca9c53b1eba5b4f2aa43ca2a3"><td class="memItemLeft" align="right" valign="top"><a id="a8fa6ff7ca9c53b1eba5b4f2aa43ca2a3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onBeforeMapChange</b> (uint8_t &amp;rMap)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#a8fa6ff7ca9c53b1eba5b4f2aa43ca2a3">onBeforeMapChange</a> (uint8_t &amp;rMap)</td></tr>
+<tr class="memdesc:a8fa6ff7ca9c53b1eba5b4f2aa43ca2a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called each time that the server changes which map the client is on. <br /></td></tr>
 <tr class="separator:a8fa6ff7ca9c53b1eba5b4f2aa43ca2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b97dac671f5eebccf687ef2c5667917"><td class="memItemLeft" align="right" valign="top"><a id="a7b97dac671f5eebccf687ef2c5667917"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onHashQuery</b> (uint32_t blockNumber, uint8_t mapNumber)</td></tr>
-<tr class="separator:a7b97dac671f5eebccf687ef2c5667917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77c2f0697a3540e2f8f8e45391e65007"><td class="memItemLeft" align="right" valign="top"><a id="a77c2f0697a3540e2f8f8e45391e65007"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onServerMobileUpdate</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#a77c2f0697a3540e2f8f8e45391e65007">onServerMobileUpdate</a> ()</td></tr>
+<tr class="memdesc:a77c2f0697a3540e2f8f8e45391e65007"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when the server sends its mobile update to the client. This functions performs a refresh client prior to the client receiving its first update. This only happens once. <br /></td></tr>
 <tr class="separator:a77c2f0697a3540e2f8f8e45391e65007"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a219f885bca45c11ec142d4ccb6b2938f"><td class="memItemLeft" align="right" valign="top"><a id="a219f885bca45c11ec142d4ccb6b2938f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onUpdateMapDefinitions</b> (std::vector&lt; <a class="el" href="classMapDefinition.html">MapDefinition</a> &gt; definitions)</td></tr>
+<tr class="memitem:a219f885bca45c11ec142d4ccb6b2938f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginHandler.html#a219f885bca45c11ec142d4ccb6b2938f">onUpdateMapDefinitions</a> (std::vector&lt; <a class="el" href="classMapDefinition.html">MapDefinition</a> &gt; definitions)</td></tr>
+<tr class="memdesc:a219f885bca45c11ec142d4ccb6b2938f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when the server sends map definitions to the client. It is responsible for setting the first mobile update flag.  <a href="#a219f885bca45c11ec142d4ccb6b2938f">More...</a><br /></td></tr>
 <tr class="separator:a219f885bca45c11ec142d4ccb6b2938f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -180,16 +175,98 @@ static <a class="el" href="classSelfRegisteringClass.html">SelfRegisteringClass<
 <tr class="separator:a589e25f40e639b4874331d1651e660fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="LoginHandler_8h_source.html#l00044">44</a> of file <a class="el" href="LoginHandler_8h_source.html">LoginHandler.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Handles the Ultima <a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a>'s Login. </p>
+
+<p class="definition">Definition at line <a class="el" href="LoginHandler_8h_source.html#l00045">45</a> of file <a class="el" href="LoginHandler_8h_source.html">LoginHandler.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="afac93e2ab2257f80340a29cc44e88372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afac93e2ab2257f80340a29cc44e88372">&#9670;&nbsp;</a></span>onLoginConfirm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginHandler::onLoginConfirm </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>pPacketData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles the login confirmation packet sent from the server. Caches the packet to be used to complete login in the proper order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pPacketData</td><td>pointer to the packet data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="LoginHandler_8cpp_source.html#l00143">143</a> of file <a class="el" href="LoginHandler_8cpp_source.html">LoginHandler.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, and <a class="el" href="LoginHandler_8h_source.html#l00062">m_pCachedLoginPacket</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LoginHandler_8cpp_source.html#l00046">Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="a219f885bca45c11ec142d4ccb6b2938f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a219f885bca45c11ec142d4ccb6b2938f">&#9670;&nbsp;</a></span>onUpdateMapDefinitions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginHandler::onUpdateMapDefinitions </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classMapDefinition.html">MapDefinition</a> &gt;&#160;</td>
+          <td class="paramname"><em>definitions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function is called when the server sends map definitions to the client. It is responsible for setting the first mobile update flag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">definitions</td><td>Vector of MapDefinitions received from the server </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="LoginHandler_8cpp_source.html#l00101">101</a> of file <a class="el" href="LoginHandler_8cpp_source.html">LoginHandler.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="LoginHandler_8h_source.html#l00063">m_firstMobileUpdateFromServer</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LoginHandler_8cpp_source.html#l00046">Initialize()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>UltimaLive/<a class="el" href="LoginHandler_8h_source.html">LoginHandler.h</a></li>
 <li>UltimaLive/<a class="el" href="LoginHandler_8cpp_source.html">LoginHandler.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

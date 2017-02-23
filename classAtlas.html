@@ -71,159 +71,697 @@ $(function() {
 <div class="title">Atlas Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Manages changing client maps.  
+ <a href="classAtlas.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Atlas_8h_source.html">Atlas.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Atlas:</div>
 <div class="dyncontent">
 <div class="center"><img src="classAtlas__coll__graph.png" border="0" usemap="#Atlas_coll__map" alt="Collaboration graph"/></div>
 <map name="Atlas_coll__map" id="Atlas_coll__map">
-<area shape="rect" id="node2" href="classBaseFileManager.html" title="BaseFileManager" alt="" coords="2691,271,2814,297"/>
-<area shape="rect" id="node14" href="classClient.html" title="Client" alt="" coords="3173,424,3228,451"/>
-<area shape="rect" id="node4" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="2032,176,2168,203"/>
-<area shape="rect" id="node5" title="STL class. " alt="" coords="1742,203,1822,229"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="1394,195,1521,237"/>
-<area shape="rect" id="node7" href="classProgressBarDialog.html" title="ProgressBarDialog" alt="" coords="2349,240,2479,267"/>
-<area shape="rect" id="node8" title="STL class. " alt="" coords="2365,353,2463,380"/>
-<area shape="rect" id="node9" title="STL class. " alt="" coords="2032,342,2168,383"/>
-<area shape="rect" id="node10" title="STL class. " alt="" coords="1715,342,1849,383"/>
-<area shape="rect" id="node11" title="STL class. " alt="" coords="1380,349,1535,376"/>
-<area shape="rect" id="node13" href="classMapDefinition.html" title="MapDefinition" alt="" coords="3151,57,3251,84"/>
-<area shape="rect" id="node17" href="classNetworkManager.html" title="NetworkManager" alt="" coords="3605,507,3724,533"/>
-<area shape="rect" id="node15" href="structMapTileDefinition.html" title="MapTileDefinition" alt="" coords="2693,399,2813,425"/>
-<area shape="rect" id="node16" href="structMapMinDisplay.html" title="MapMinDisplay" alt="" coords="2697,449,2808,476"/>
-<area shape="rect" id="node28" href="classBasePacketHandler.html" title="BasePacketHandler" alt="" coords="3937,417,4074,444"/>
-<area shape="rect" id="node19" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="2879,143,3022,185"/>
-<area shape="rect" id="node20" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="2328,123,2500,149"/>
-<area shape="rect" id="node48" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="2681,194,2824,235"/>
-<area shape="rect" id="node50" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Atlas \&gt;" alt="" coords="3389,115,3532,157"/>
-<area shape="rect" id="node30" href="structCStaticObject.html" title="CStaticObject" alt="" coords="712,743,815,769"/>
-<area shape="rect" id="node31" href="structCStaticObjectMembers.html" title="CStaticObjectMembers" alt="" coords="1013,724,1171,751"/>
-<area shape="rect" id="node41" href="structCItemMembers.html" title="CItemMembers" alt="" coords="1727,656,1837,683"/>
-<area shape="rect" id="node37" href="structCPlayerMobile.html" title="CPlayerMobile" alt="" coords="2699,631,2806,657"/>
-<area shape="rect" id="node40" href="structCItem.html" title="CItem" alt="" coords="1429,724,1485,751"/>
-<area shape="rect" id="node46" href="structCMobile.html" title="CMobile" alt="" coords="2065,767,2135,793"/>
-<area shape="rect" id="node32" href="structCDrawItemMembers.html" title="CDrawItemMembers" alt="" coords="414,892,553,919"/>
-<area shape="rect" id="node33" href="structCDrawItem.html" title="CDrawItem" alt="" coords="721,1015,806,1041"/>
-<area shape="rect" id="node39" href="structCBigMobComponent.html" title="CBigMobComponent" alt="" coords="843,892,985,919"/>
-<area shape="rect" id="node34" href="structCStaticObjectVtable.html" title="CStaticObjectVtable" alt="" coords="413,499,553,525"/>
-<area shape="rect" id="node35" href="structCDrawItemVtableMembers.html" title="CDrawItemVtableMembers" alt="" coords="15,433,191,460"/>
-<area shape="rect" id="node42" href="structCMobileVtable.html" title="CMobileVtable" alt="" coords="430,408,537,435"/>
-<area shape="rect" id="node36" href="structCStaticObjectVtableMembers.html" title="CStaticObjectVtableMembers" alt="" coords="5,524,200,551"/>
-<area shape="rect" id="node38" href="structCContainerMembers.html" title="CContainerMembers" alt="" coords="1712,819,1852,845"/>
-<area shape="rect" id="node43" href="structCMobileVtableMembers.html" title="CMobileVtableMembers" alt="" coords="23,312,183,339"/>
-<area shape="rect" id="node44" href="structCItemVtableMembers.html" title="CItemVtableMembers" alt="" coords="29,363,176,389"/>
-<area shape="rect" id="node45" href="structCMobileMembers.html" title="CMobileMembers" alt="" coords="2353,707,2475,733"/>
-<area shape="rect" id="node47" href="structCPlayerMobileMembers.html" title="CPlayerMobileMembers" alt="" coords="2334,781,2494,808"/>
-<area shape="rect" id="node49" href="classDotNetHost.html" title="DotNetHost" alt="" coords="2708,971,2797,997"/>
+<area shape="rect" id="node2" href="classBaseFileManager.html" title="The responsibility of the file manager is to handle the custom file formats that the client may emplo..." alt="" coords="1261,171,1383,197"/>
+<area shape="rect" id="node15" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ..." alt="" coords="1680,419,1735,445"/>
+<area shape="rect" id="node4" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="611,5,747,32"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="385,88,465,115"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="169,81,295,122"/>
+<area shape="rect" id="node7" href="classProgressBarDialog.html" title="Displays a progress bar. " alt="" coords="918,169,1049,196"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="934,220,1033,247"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="611,206,747,247"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="359,206,492,247"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="155,213,309,240"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="5,213,105,240"/>
+<area shape="rect" id="node14" href="classMapDefinition.html" title="Contains basic map definition data (number of tiles, map index, etc) " alt="" coords="1657,331,1757,357"/>
+<area shape="rect" id="node16" href="classNetworkManager.html" title="Handles network packets going to/from the server/client. " alt="" coords="2112,651,2231,677"/>
+<area shape="rect" id="node27" href="classBasePacketHandler.html" title="Base class for all packet handlers. " alt="" coords="2443,797,2581,824"/>
+<area shape="rect" id="node18" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="1417,530,1560,571"/>
+<area shape="rect" id="node19" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="897,537,1069,564"/>
+<area shape="rect" id="node29" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="1251,411,1393,453"/>
+<area shape="rect" id="node31" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Atlas \&gt;" alt="" coords="1896,1077,2039,1118"/>
+<area shape="rect" id="node30" href="classDotNetHost.html" title="Class used to host the .NET common language runtime (CLR) " alt="" coords="1277,477,1367,504"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8f4793e6a39e7ad19050d6e3b238b269"><td class="memItemLeft" align="right" valign="top"><a id="a8f4793e6a39e7ad19050d6e3b238b269"></a>
-uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><b>GetGroupOfBlockCrcs</b> (uint32_t mapNumber, uint32_t blockNumber)</td></tr>
+<tr class="memitem:ad4c05a8d7d15fb18bffa97f11a0e3d46"><td class="memItemLeft" align="right" valign="top"><a id="ad4c05a8d7d15fb18bffa97f11a0e3d46"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#ad4c05a8d7d15fb18bffa97f11a0e3d46">Atlas</a> ()</td></tr>
+<tr class="memdesc:ad4c05a8d7d15fb18bffa97f11a0e3d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atlast Constructor. <br /></td></tr>
+<tr class="separator:ad4c05a8d7d15fb18bffa97f11a0e3d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f4793e6a39e7ad19050d6e3b238b269"><td class="memItemLeft" align="right" valign="top">uint16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a8f4793e6a39e7ad19050d6e3b238b269">GetGroupOfBlockCrcs</a> (uint32_t mapNumber, uint32_t blockNumber)</td></tr>
+<tr class="memdesc:a8f4793e6a39e7ad19050d6e3b238b269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets CRCs for the 25 blocks surrounding the current players position.  <a href="#a8f4793e6a39e7ad19050d6e3b238b269">More...</a><br /></td></tr>
 <tr class="separator:a8f4793e6a39e7ad19050d6e3b238b269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e9e2720719a494f1984b0d4d1e6b3d0"><td class="memItemLeft" align="right" valign="top"><a id="a9e9e2720719a494f1984b0d4d1e6b3d0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RegisterMapDefinitions</b> (<a class="el" href="classMapDefinition.html">MapDefinition</a> *aDefinitions, uint32_t numDefinitions)</td></tr>
-<tr class="separator:a9e9e2720719a494f1984b0d4d1e6b3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55237da45ebb7eb87c54721116daa7e4"><td class="memItemLeft" align="right" valign="top"><a id="a55237da45ebb7eb87c54721116daa7e4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadMap</b> (uint8_t map)</td></tr>
+<tr class="memitem:a55237da45ebb7eb87c54721116daa7e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a55237da45ebb7eb87c54721116daa7e4">LoadMap</a> (uint8_t map)</td></tr>
+<tr class="memdesc:a55237da45ebb7eb87c54721116daa7e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a map based on map number.  <a href="#a55237da45ebb7eb87c54721116daa7e4">More...</a><br /></td></tr>
 <tr class="separator:a55237da45ebb7eb87c54721116daa7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04012c2fbc08214a0625a2947a512bfd"><td class="memItemLeft" align="right" valign="top"><a id="a04012c2fbc08214a0625a2947a512bfd"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentMap</b> ()</td></tr>
+<tr class="memitem:a04012c2fbc08214a0625a2947a512bfd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a04012c2fbc08214a0625a2947a512bfd">getCurrentMap</a> ()</td></tr>
+<tr class="memdesc:a04012c2fbc08214a0625a2947a512bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current map number.  <a href="#a04012c2fbc08214a0625a2947a512bfd">More...</a><br /></td></tr>
 <tr class="separator:a04012c2fbc08214a0625a2947a512bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a5a8a6854d62dc6f7ce543bb093c37725"><td class="memItemLeft" align="right" valign="top"><a id="a5a8a6854d62dc6f7ce543bb093c37725"></a>
-static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>fletcher16</b> (uint8_t *pBlockData, uint8_t *pStaticsData, uint32_t staticsLength)</td></tr>
+<tr class="memitem:a5a8a6854d62dc6f7ce543bb093c37725"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a5a8a6854d62dc6f7ce543bb093c37725">fletcher16</a> (uint8_t *pBlockData, uint8_t *pStaticsData, uint32_t staticsLength)</td></tr>
+<tr class="memdesc:a5a8a6854d62dc6f7ce543bb093c37725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates a CRC using the combined land and statics data.  <a href="#a5a8a6854d62dc6f7ce543bb093c37725">More...</a><br /></td></tr>
 <tr class="separator:a5a8a6854d62dc6f7ce543bb093c37725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a252df0474b1fd914dfc44e4be98a79ad"><td class="memItemLeft" align="right" valign="top"><a id="a252df0474b1fd914dfc44e4be98a79ad"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> ()</td></tr>
+<tr class="memitem:a252df0474b1fd914dfc44e4be98a79ad"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a252df0474b1fd914dfc44e4be98a79ad">Initialize</a> ()</td></tr>
+<tr class="memdesc:a252df0474b1fd914dfc44e4be98a79ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes <a class="el" href="classAtlas.html" title="Manages changing client maps. ">Atlas</a> class. Gets pointers to the client global pointer and subscribes to packets.  <a href="#a252df0474b1fd914dfc44e4be98a79ad">More...</a><br /></td></tr>
 <tr class="separator:a252df0474b1fd914dfc44e4be98a79ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8926a8e3e6c8753f56cf9c3893137b44"><td class="memItemLeft" align="right" valign="top"><a id="a8926a8e3e6c8753f56cf9c3893137b44"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Configure</b> ()</td></tr>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a8926a8e3e6c8753f56cf9c3893137b44">Configure</a> ()</td></tr>
+<tr class="memdesc:a8926a8e3e6c8753f56cf9c3893137b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class Registration Configuration function that creates the <a class="el" href="classAtlas.html" title="Manages changing client maps. ">Atlas</a> global and registers it. <br /></td></tr>
 <tr class="separator:a8926a8e3e6c8753f56cf9c3893137b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a66b43ac43d7c8254f76fc68256e8c0f2"><td class="memItemLeft" align="right" valign="top"><a id="a66b43ac43d7c8254f76fc68256e8c0f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onBeforeMapChange</b> (uint8_t &amp;rMap)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a66b43ac43d7c8254f76fc68256e8c0f2">onBeforeMapChange</a> (uint8_t &amp;rMap)</td></tr>
+<tr class="memdesc:a66b43ac43d7c8254f76fc68256e8c0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the client's map to map1 so that the client will load a map0 and refresh the view Map0 and Map1 point to the same place internally. This is a way of making sure the client actually performs the load. <br /></td></tr>
 <tr class="separator:a66b43ac43d7c8254f76fc68256e8c0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1dea59c15606731ed5672f0c0ea3a3a"><td class="memItemLeft" align="right" valign="top"><a id="ad1dea59c15606731ed5672f0c0ea3a3a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onMapChange</b> (uint8_t &amp;rMap)</td></tr>
+<tr class="memitem:ad1dea59c15606731ed5672f0c0ea3a3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#ad1dea59c15606731ed5672f0c0ea3a3a">onMapChange</a> (uint8_t &amp;rMap)</td></tr>
+<tr class="memdesc:ad1dea59c15606731ed5672f0c0ea3a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the specified map.  <a href="#ad1dea59c15606731ed5672f0c0ea3a3a">More...</a><br /></td></tr>
 <tr class="separator:ad1dea59c15606731ed5672f0c0ea3a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a143b86b02976d38126dc74b81009387a"><td class="memItemLeft" align="right" valign="top"><a id="a143b86b02976d38126dc74b81009387a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onHashQuery</b> (uint32_t blockNumber, uint8_t mapNumber)</td></tr>
+<tr class="memitem:a143b86b02976d38126dc74b81009387a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a143b86b02976d38126dc74b81009387a">onHashQuery</a> (uint32_t blockNumber, uint8_t mapNumber)</td></tr>
+<tr class="memdesc:a143b86b02976d38126dc74b81009387a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Responds to a server hash query for a particular map block (land and statics)  <a href="#a143b86b02976d38126dc74b81009387a">More...</a><br /></td></tr>
 <tr class="separator:a143b86b02976d38126dc74b81009387a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a2a539a761f4fb58064e47d4cc47e9a"><td class="memItemLeft" align="right" valign="top"><a id="a1a2a539a761f4fb58064e47d4cc47e9a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onRefreshClientView</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a1a2a539a761f4fb58064e47d4cc47e9a">onRefreshClientView</a> ()</td></tr>
+<tr class="memdesc:a1a2a539a761f4fb58064e47d4cc47e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the client's view to match the current state of the map. <br /></td></tr>
 <tr class="separator:a1a2a539a761f4fb58064e47d4cc47e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf9ceaf792a588433084718a4f6caca7"><td class="memItemLeft" align="right" valign="top"><a id="adf9ceaf792a588433084718a4f6caca7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onUpdateMapDefinitions</b> (std::vector&lt; <a class="el" href="classMapDefinition.html">MapDefinition</a> &gt; definitions)</td></tr>
+<tr class="memitem:adf9ceaf792a588433084718a4f6caca7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#adf9ceaf792a588433084718a4f6caca7">onUpdateMapDefinitions</a> (std::vector&lt; <a class="el" href="classMapDefinition.html">MapDefinition</a> &gt; definitions)</td></tr>
+<tr class="memdesc:adf9ceaf792a588433084718a4f6caca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates map definitions as received from the server.  <a href="#adf9ceaf792a588433084718a4f6caca7">More...</a><br /></td></tr>
 <tr class="separator:adf9ceaf792a588433084718a4f6caca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0091fec6c61a599038587e3efb2bd8d"><td class="memItemLeft" align="right" valign="top"><a id="ad0091fec6c61a599038587e3efb2bd8d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onUpdateStatics</b> (uint8_t mapNumber, uint32_t blockNumber, uint8_t *pData, uint32_t length)</td></tr>
+<tr class="memitem:ad0091fec6c61a599038587e3efb2bd8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#ad0091fec6c61a599038587e3efb2bd8d">onUpdateStatics</a> (uint8_t mapNumber, uint32_t blockNumber, uint8_t *pData, uint32_t length)</td></tr>
+<tr class="memdesc:ad0091fec6c61a599038587e3efb2bd8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a static block by calling the filemanager and then refreshes the client.  <a href="#ad0091fec6c61a599038587e3efb2bd8d">More...</a><br /></td></tr>
 <tr class="separator:ad0091fec6c61a599038587e3efb2bd8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ffe7737b89031e02188215a6847bc08"><td class="memItemLeft" align="right" valign="top"><a id="a9ffe7737b89031e02188215a6847bc08"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onShardIdentifierUpdate</b> (std::string shardIdentifier)</td></tr>
+<tr class="memitem:a9ffe7737b89031e02188215a6847bc08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a9ffe7737b89031e02188215a6847bc08">onShardIdentifierUpdate</a> (std::string shardIdentifier)</td></tr>
+<tr class="memdesc:a9ffe7737b89031e02188215a6847bc08"><td class="mdescLeft">&#160;</td><td class="mdescRight">setter for Shard Identifier  <a href="#a9ffe7737b89031e02188215a6847bc08">More...</a><br /></td></tr>
 <tr class="separator:a9ffe7737b89031e02188215a6847bc08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dd1af6d3e4f10eb7c4138d66c3b365e"><td class="memItemLeft" align="right" valign="top"><a id="a6dd1af6d3e4f10eb7c4138d66c3b365e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onUpdateLand</b> (uint8_t mapNumber, uint32_t blockNumber, uint8_t *pLandData)</td></tr>
+<tr class="memitem:a6dd1af6d3e4f10eb7c4138d66c3b365e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a6dd1af6d3e4f10eb7c4138d66c3b365e">onUpdateLand</a> (uint8_t mapNumber, uint32_t blockNumber, uint8_t *pLandData)</td></tr>
+<tr class="memdesc:a6dd1af6d3e4f10eb7c4138d66c3b365e"><td class="mdescLeft">&#160;</td><td class="mdescRight">@ Updates a land block on a given map  <a href="#a6dd1af6d3e4f10eb7c4138d66c3b365e">More...</a><br /></td></tr>
 <tr class="separator:a6dd1af6d3e4f10eb7c4138d66c3b365e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f93a81e940215584afa73c540f28a13"><td class="memItemLeft" align="right" valign="top"><a id="a8f93a81e940215584afa73c540f28a13"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onLogout</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a8f93a81e940215584afa73c540f28a13">onLogout</a> ()</td></tr>
+<tr class="memdesc:a8f93a81e940215584afa73c540f28a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls file manager logout handler. <br /></td></tr>
 <tr class="separator:a8f93a81e940215584afa73c540f28a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a298956e0515fd6668d53635503c7b092"><td class="memItemLeft" align="right" valign="top"><a id="a298956e0515fd6668d53635503c7b092"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>getBlockCrc</b> (uint32_t mapNumber, uint32_t blockNumber)</td></tr>
+<tr class="memitem:a298956e0515fd6668d53635503c7b092"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a298956e0515fd6668d53635503c7b092">getBlockCrc</a> (uint32_t mapNumber, uint32_t blockNumber)</td></tr>
+<tr class="memdesc:a298956e0515fd6668d53635503c7b092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up the memory blocks for a specified block number and map number, returns the CRC of the block.  <a href="#a298956e0515fd6668d53635503c7b092">More...</a><br /></td></tr>
 <tr class="separator:a298956e0515fd6668d53635503c7b092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:afbf2dbdc2652011605cfab6a816a4f58"><td class="memItemLeft" align="right" valign="top"><a id="afbf2dbdc2652011605cfab6a816a4f58"></a>
-std::map&lt; uint32_t, <a class="el" href="classMapDefinition.html">MapDefinition</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_mapDefinitions</b></td></tr>
+std::map&lt; uint32_t, <a class="el" href="classMapDefinition.html">MapDefinition</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#afbf2dbdc2652011605cfab6a816a4f58">m_mapDefinitions</a></td></tr>
+<tr class="memdesc:afbf2dbdc2652011605cfab6a816a4f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map linking map indices to map definitions. <br /></td></tr>
 <tr class="separator:afbf2dbdc2652011605cfab6a816a4f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedc0df33cc3efa5f9ae19c38d30de42f"><td class="memItemLeft" align="right" valign="top"><a id="aedc0df33cc3efa5f9ae19c38d30de42f"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>m_currentMap</b></td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#aedc0df33cc3efa5f9ae19c38d30de42f">m_currentMap</a></td></tr>
+<tr class="memdesc:aedc0df33cc3efa5f9ae19c38d30de42f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current map in client memory. <br /></td></tr>
 <tr class="separator:aedc0df33cc3efa5f9ae19c38d30de42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32ac39c29a2702ad7a5aa576d52776f4"><td class="memItemLeft" align="right" valign="top"><a id="a32ac39c29a2702ad7a5aa576d52776f4"></a>
-<a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pNetworkManager</b></td></tr>
+<a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a32ac39c29a2702ad7a5aa576d52776f4">m_pNetworkManager</a></td></tr>
+<tr class="memdesc:a32ac39c29a2702ad7a5aa576d52776f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to Network Manager. <br /></td></tr>
 <tr class="separator:a32ac39c29a2702ad7a5aa576d52776f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4934eefc888e462f558089e3ba5a941"><td class="memItemLeft" align="right" valign="top"><a id="ae4934eefc888e462f558089e3ba5a941"></a>
-<a class="el" href="classBaseFileManager.html">BaseFileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pFileManager</b></td></tr>
+<a class="el" href="classBaseFileManager.html">BaseFileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#ae4934eefc888e462f558089e3ba5a941">m_pFileManager</a></td></tr>
+<tr class="memdesc:ae4934eefc888e462f558089e3ba5a941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to File Manager. <br /></td></tr>
 <tr class="separator:ae4934eefc888e462f558089e3ba5a941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a525e56b85f3f023023be274e33d524ed"><td class="memItemLeft" align="right" valign="top"><a id="a525e56b85f3f023023be274e33d524ed"></a>
-<a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pClient</b></td></tr>
+<a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a525e56b85f3f023023be274e33d524ed">m_pClient</a></td></tr>
+<tr class="memdesc:a525e56b85f3f023023be274e33d524ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to <a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> Manager. <br /></td></tr>
 <tr class="separator:a525e56b85f3f023023be274e33d524ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e6eeabc27acbda451dffa9752b2a209"><td class="memItemLeft" align="right" valign="top"><a id="a7e6eeabc27acbda451dffa9752b2a209"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_shardIdentifier</b></td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a7e6eeabc27acbda451dffa9752b2a209">m_shardIdentifier</a></td></tr>
+<tr class="memdesc:a7e6eeabc27acbda451dffa9752b2a209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique Shard Identifier. <br /></td></tr>
 <tr class="separator:a7e6eeabc27acbda451dffa9752b2a209"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06d5c8921700aa849aa1dec322b60ede"><td class="memItemLeft" align="right" valign="top"><a id="a06d5c8921700aa849aa1dec322b60ede"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_firstMapLoad</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a06d5c8921700aa849aa1dec322b60ede">m_firstMapLoad</a></td></tr>
+<tr class="memdesc:a06d5c8921700aa849aa1dec322b60ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the map has been loaded in the past. <br /></td></tr>
 <tr class="separator:a06d5c8921700aa849aa1dec322b60ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:a4ff8164d23b45a3b5a12b6a6ccfde6b3"><td class="memItemLeft" align="right" valign="top"><a id="a4ff8164d23b45a3b5a12b6a6ccfde6b3"></a>
-static int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLOCK_POSITION_OFFSETS</b> [5] = { -2, -1, 0, 1, 2 }</td></tr>
+static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#a4ff8164d23b45a3b5a12b6a6ccfde6b3">BLOCK_POSITION_OFFSETS</a> [5] = { -2, -1, 0, 1, 2 }</td></tr>
+<tr class="memdesc:a4ff8164d23b45a3b5a12b6a6ccfde6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of offsets used when calculating hashes. <br /></td></tr>
 <tr class="separator:a4ff8164d23b45a3b5a12b6a6ccfde6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:ad5c4b9573bd6f907c03c9d7cbb78676e"><td class="memItemLeft" align="right" valign="top"><a id="ad5c4b9573bd6f907c03c9d7cbb78676e"></a>
-static <a class="el" href="classSelfRegisteringClass.html">SelfRegisteringClass</a>&lt; <a class="el" href="classAtlas.html">Atlas</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_registration</b></td></tr>
+static <a class="el" href="classSelfRegisteringClass.html">SelfRegisteringClass</a>&lt; <a class="el" href="classAtlas.html">Atlas</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAtlas.html#ad5c4b9573bd6f907c03c9d7cbb78676e">m_registration</a></td></tr>
+<tr class="memdesc:ad5c4b9573bd6f907c03c9d7cbb78676e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class Self Registration mechanism. <br /></td></tr>
 <tr class="separator:ad5c4b9573bd6f907c03c9d7cbb78676e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Atlas_8h_source.html#l00046">46</a> of file <a class="el" href="Atlas_8h_source.html">Atlas.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Manages changing client maps. </p>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8h_source.html#l00050">50</a> of file <a class="el" href="Atlas_8h_source.html">Atlas.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5a8a6854d62dc6f7ce543bb093c37725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a8a6854d62dc6f7ce543bb093c37725">&#9670;&nbsp;</a></span>fletcher16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Atlas::fletcher16 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>pBlockData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>pStaticsData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>staticsLength</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates a CRC using the combined land and statics data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pBlockData</td><td>Pointer to the memory containing land data </td></tr>
+    <tr><td class="paramname">pStaticsData</td><td>Pointer to the memory containing statics data </td></tr>
+    <tr><td class="paramname">staticsLength</td><td>Number of bytes in the statics data</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>@ return 16 bit CRC </p>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00331">331</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Atlas_8h_source.html#l00076">BLOCK_POSITION_OFFSETS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00451">getBlockCrc()</a>.</p>
+
+</div>
+</div>
+<a id="a298956e0515fd6668d53635503c7b092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a298956e0515fd6668d53635503c7b092">&#9670;&nbsp;</a></span>getBlockCrc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t Atlas::getBlockCrc </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mapNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>blockNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Looks up the memory blocks for a specified block number and map number, returns the CRC of the block. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapNumber</td><td>Map Number </td></tr>
+    <tr><td class="paramname">blockNumber</td><td>Block Number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00451">451</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Atlas_8cpp_source.html#l00331">fletcher16()</a>, <a class="el" href="Atlas_8h_source.html#l00081">m_mapDefinitions</a>, <a class="el" href="Atlas_8h_source.html#l00085">m_pFileManager</a>, <a class="el" href="BaseFileManager_8cpp_source.html#l00041">BaseFileManager::readLandBlock()</a>, and <a class="el" href="BaseFileManager_8cpp_source.html#l00132">BaseFileManager::readStaticsBlock()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00367">GetGroupOfBlockCrcs()</a>.</p>
+
+</div>
+</div>
+<a id="a04012c2fbc08214a0625a2947a512bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04012c2fbc08214a0625a2947a512bfd">&#9670;&nbsp;</a></span>getCurrentMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Atlas::getCurrentMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the current map number. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current map number </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00317">317</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Atlas_8h_source.html#l00082">m_currentMap</a>.</p>
+
+</div>
+</div>
+<a id="a8f4793e6a39e7ad19050d6e3b238b269"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4793e6a39e7ad19050d6e3b238b269">&#9670;&nbsp;</a></span>GetGroupOfBlockCrcs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t * Atlas::GetGroupOfBlockCrcs </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mapNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>blockNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets CRCs for the 25 blocks surrounding the current players position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapNumber</td><td>Map Number </td></tr>
+    <tr><td class="paramname">blockNumber</td><td>Number of the block containing the current player position</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Array of 25 block numbers </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00367">367</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Atlas_8cpp_source.html#l00451">getBlockCrc()</a>, <a class="el" href="Atlas_8h_source.html#l00081">m_mapDefinitions</a>, <a class="el" href="MapDefinition_8h_source.html#l00040">MapDefinition::mapHeightInTiles</a>, <a class="el" href="MapDefinition_8h_source.html#l00039">MapDefinition::mapWidthInTiles</a>, <a class="el" href="MapDefinition_8h_source.html#l00042">MapDefinition::mapWrapHeightInTiles</a>, and <a class="el" href="MapDefinition_8h_source.html#l00041">MapDefinition::mapWrapWidthInTiles</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00212">onHashQuery()</a>.</p>
+
+</div>
+</div>
+<a id="a252df0474b1fd914dfc44e4be98a79ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a252df0474b1fd914dfc44e4be98a79ad">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Atlas::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes <a class="el" href="classAtlas.html" title="Manages changing client maps. ">Atlas</a> class. Gets pointers to the client global pointer and subscribes to packets. </p>
+<dl class="section return"><dt>Returns</dt><dd>true on success </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00048">48</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="UltimaLive_8h_source.html#l00048">UltimaLive::g_pUltimaLive</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="classLogger.html#a5d08e73b13c0bade3be70a12c6ccabe2">Logger::LogPrintError()</a>, <a class="el" href="UltimaLive_8cpp_source.html#l00200">UltimaLive::Lookup()</a>, <a class="el" href="Atlas_8h_source.html#l00086">m_pClient</a>, <a class="el" href="Atlas_8h_source.html#l00085">m_pFileManager</a>, <a class="el" href="Atlas_8h_source.html#l00084">m_pNetworkManager</a>, <a class="el" href="Atlas_8cpp_source.html#l00287">onBeforeMapChange()</a>, <a class="el" href="Atlas_8cpp_source.html#l00212">onHashQuery()</a>, <a class="el" href="Atlas_8cpp_source.html#l00132">onLogout()</a>, <a class="el" href="Atlas_8cpp_source.html#l00305">onMapChange()</a>, <a class="el" href="Atlas_8cpp_source.html#l00262">onRefreshClientView()</a>, <a class="el" href="Atlas_8cpp_source.html#l00124">onShardIdentifierUpdate()</a>, <a class="el" href="Atlas_8cpp_source.html#l00200">onUpdateLand()</a>, <a class="el" href="Atlas_8cpp_source.html#l00248">onUpdateMapDefinitions()</a>, <a class="el" href="Atlas_8cpp_source.html#l00186">onUpdateStatics()</a>, <a class="el" href="NetworkManager_8cpp_source.html#l00370">NetworkManager::subscribeToBlockQueryRequest()</a>, <a class="el" href="NetworkManager_8cpp_source.html#l00340">NetworkManager::subscribeToLandUpdate()</a>, <a class="el" href="NetworkManager_8cpp_source.html#l00440">NetworkManager::subscribeToLogout()</a>, <a class="el" href="NetworkManager_8cpp_source.html#l00330">NetworkManager::subscribeToMapDefinitionUpdate()</a>, <a class="el" href="NetworkManager_8cpp_source.html#l00420">NetworkManager::subscribeToOnBeforeMapChange()</a>, <a class="el" href="NetworkManager_8cpp_source.html#l00430">NetworkManager::subscribeToOnMapChange()</a>, <a class="el" href="NetworkManager_8cpp_source.html#l00360">NetworkManager::subscribeToRefreshClient()</a>, <a class="el" href="NetworkManager_8cpp_source.html#l00350">NetworkManager::subscribeToStaticsUpdate()</a>, and <a class="el" href="NetworkManager_8cpp_source.html#l00380">NetworkManager::subscribeToUltimaLiveLoginComplete()</a>.</p>
+
+</div>
+</div>
+<a id="a55237da45ebb7eb87c54721116daa7e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55237da45ebb7eb87c54721116daa7e4">&#9670;&nbsp;</a></span>LoadMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Atlas::LoadMap </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>map</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads a map based on map number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>Map Number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00142">142</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="BaseFileManager_8cpp_source.html#l00468">BaseFileManager::InitializeShardMaps()</a>, <a class="el" href="classBaseFileManager.html#a9cd12afcc8dcff37b056e8d3a68503bd">BaseFileManager::LoadMap()</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="Atlas_8h_source.html#l00082">m_currentMap</a>, <a class="el" href="Atlas_8h_source.html#l00089">m_firstMapLoad</a>, <a class="el" href="Atlas_8h_source.html#l00081">m_mapDefinitions</a>, <a class="el" href="Atlas_8h_source.html#l00086">m_pClient</a>, <a class="el" href="Atlas_8h_source.html#l00085">m_pFileManager</a>, <a class="el" href="Atlas_8h_source.html#l00088">m_shardIdentifier</a>, and <a class="el" href="Client_8cpp_source.html#l00575">Client::SetMapDimensions()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00305">onMapChange()</a>.</p>
+
+</div>
+</div>
+<a id="a143b86b02976d38126dc74b81009387a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143b86b02976d38126dc74b81009387a">&#9670;&nbsp;</a></span>onHashQuery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Atlas::onHashQuery </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>blockNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mapNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Responds to a server hash query for a particular map block (land and statics) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockNumber</td><td>Map Block Number </td></tr>
+    <tr><td class="paramname">mapNumber</td><td>Map Number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00212">212</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="Atlas_8cpp_source.html#l00367">GetGroupOfBlockCrcs()</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="Atlas_8h_source.html#l00084">m_pNetworkManager</a>, and <a class="el" href="NetworkManager_8cpp_source.html#l00121">NetworkManager::sendPacketToServer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00048">Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="ad1dea59c15606731ed5672f0c0ea3a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1dea59c15606731ed5672f0c0ea3a3a">&#9670;&nbsp;</a></span>onMapChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Atlas::onMapChange </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t &amp;&#160;</td>
+          <td class="paramname"><em>rMap</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the specified map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rMap</td><td>Map number to load </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00305">305</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Atlas_8cpp_source.html#l00142">LoadMap()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00048">Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="a9ffe7737b89031e02188215a6847bc08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ffe7737b89031e02188215a6847bc08">&#9670;&nbsp;</a></span>onShardIdentifierUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Atlas::onShardIdentifierUpdate </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>shardIdentifier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setter for Shard Identifier </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shardIdentifier</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00124">124</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Atlas_8h_source.html#l00088">m_shardIdentifier</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00048">Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="a6dd1af6d3e4f10eb7c4138d66c3b365e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd1af6d3e4f10eb7c4138d66c3b365e">&#9670;&nbsp;</a></span>onUpdateLand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Atlas::onUpdateLand </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mapNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>blockNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>pLandData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>@ Updates a land block on a given map </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapNumber</td><td>Map Number </td></tr>
+    <tr><td class="paramname">blockNumber</td><td>Land Block Number </td></tr>
+    <tr><td class="paramname">pLandData</td><td>Pointer to the new land data which is of fixed size </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00200">200</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Atlas_8h_source.html#l00086">m_pClient</a>, <a class="el" href="Atlas_8h_source.html#l00085">m_pFileManager</a>, <a class="el" href="Client_8cpp_source.html#l00525">Client::refreshClientLand()</a>, and <a class="el" href="BaseFileManager_8cpp_source.html#l00066">BaseFileManager::updateLandBlock()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00048">Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="adf9ceaf792a588433084718a4f6caca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf9ceaf792a588433084718a4f6caca7">&#9670;&nbsp;</a></span>onUpdateMapDefinitions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Atlas::onUpdateMapDefinitions </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classMapDefinition.html">MapDefinition</a> &gt;&#160;</td>
+          <td class="paramname"><em>definitions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates map definitions as received from the server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">definitions</td><td>New map definitions </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00248">248</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, and <a class="el" href="Atlas_8h_source.html#l00081">m_mapDefinitions</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00048">Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="ad0091fec6c61a599038587e3efb2bd8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0091fec6c61a599038587e3efb2bd8d">&#9670;&nbsp;</a></span>onUpdateStatics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Atlas::onUpdateStatics </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mapNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>blockNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>pData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates a static block by calling the filemanager and then refreshes the client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapNumber</td><td>Map Number </td></tr>
+    <tr><td class="paramname">blockNumber</td><td>Statics Block Number </td></tr>
+    <tr><td class="paramname">pData</td><td>Pointer to the new memory block containing the statics data </td></tr>
+    <tr><td class="paramname">length</td><td>Length of the new memory block </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Atlas_8cpp_source.html#l00186">186</a> of file <a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="Atlas_8h_source.html#l00086">m_pClient</a>, <a class="el" href="Atlas_8h_source.html#l00085">m_pFileManager</a>, <a class="el" href="Client_8cpp_source.html#l00489">Client::refreshClientStatics()</a>, and <a class="el" href="BaseFileManager_8cpp_source.html#l00167">BaseFileManager::writeStaticsBlock()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00048">Initialize()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>UltimaLive/Maps/<a class="el" href="Atlas_8h_source.html">Atlas.h</a></li>
 <li>UltimaLive/Maps/<a class="el" href="Atlas_8cpp_source.html">Atlas.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

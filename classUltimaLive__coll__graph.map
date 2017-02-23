@@ -1,40 +1,19 @@
 <map id="UltimaLive" name="UltimaLive">
-<area shape="rect" id="node3" title="STL class. " alt="" coords="1806,186,1886,213"/>
-<area shape="rect" id="node7" href="$classBaseFileManager.html" title="BaseFileManager" alt="" coords="2790,122,2913,149"/>
-<area shape="rect" id="node9" href="$classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="2096,219,2232,246"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="1472,179,1599,220"/>
-<area shape="rect" id="node5" href="$classClient.html" title="Client" alt="" coords="3272,223,3327,250"/>
-<area shape="rect" id="node15" href="$classNetworkManager.html" title="NetworkManager" alt="" coords="3696,357,3815,383"/>
-<area shape="rect" id="node6" href="$structMapTileDefinition.html" title="MapTileDefinition" alt="" coords="2791,173,2911,199"/>
-<area shape="rect" id="node10" href="$classProgressBarDialog.html" title="ProgressBarDialog" alt="" coords="2447,118,2578,145"/>
-<area shape="rect" id="node11" title="STL class. " alt="" coords="2463,66,2562,93"/>
-<area shape="rect" id="node12" title="STL class. " alt="" coords="2096,52,2232,93"/>
-<area shape="rect" id="node13" title="STL class. " alt="" coords="1779,52,1913,93"/>
-<area shape="rect" id="node14" href="$structMapMinDisplay.html" title="MapMinDisplay" alt="" coords="2796,290,2907,317"/>
-<area shape="rect" id="node26" href="$classBasePacketHandler.html" title="BasePacketHandler" alt="" coords="3973,401,4110,427"/>
-<area shape="rect" id="node17" href="$classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="2978,335,3121,376"/>
-<area shape="rect" id="node18" href="$classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="2427,303,2599,330"/>
-<area shape="rect" id="node49" href="$classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="2780,224,2923,265"/>
-<area shape="rect" id="node28" href="$structCStaticObject.html" title="CStaticObject" alt="" coords="731,590,834,617"/>
-<area shape="rect" id="node29" href="$structCStaticObjectMembers.html" title="CStaticObjectMembers" alt="" coords="1087,590,1244,617"/>
-<area shape="rect" id="node41" href="$structCItemMembers.html" title="CItemMembers" alt="" coords="1791,638,1901,665"/>
-<area shape="rect" id="node36" href="$structCPlayerMobile.html" title="CPlayerMobile" alt="" coords="2798,559,2905,586"/>
-<area shape="rect" id="node40" href="$structCItem.html" title="CItem" alt="" coords="1507,593,1563,619"/>
-<area shape="rect" id="node47" href="$structCMobile.html" title="CMobile" alt="" coords="2129,641,2199,667"/>
-<area shape="rect" id="node30" href="$structCDrawItemMembers.html" title="CDrawItemMembers" alt="" coords="414,374,553,401"/>
-<area shape="rect" id="node31" href="$structCDrawItem.html" title="CDrawItem" alt="" coords="740,222,825,249"/>
-<area shape="rect" id="node38" href="$structCBigMobComponent.html" title="CBigMobComponent" alt="" coords="712,273,853,299"/>
-<area shape="rect" id="node32" href="$structCDrawItemVtable.html" title="CDrawItemVtable" alt="" coords="422,179,545,206"/>
-<area shape="rect" id="node33" href="$structCDrawItemVtableMembers.html" title="CDrawItemVtableMembers" alt="" coords="15,595,191,622"/>
-<area shape="rect" id="node34" href="$structCStaticObjectVtable.html" title="CStaticObjectVtable" alt="" coords="413,590,553,617"/>
-<area shape="rect" id="node42" href="$structCItemVtable.html" title="CItemVtable" alt="" coords="437,690,530,717"/>
-<area shape="rect" id="node44" href="$structCMobileVtable.html" title="CMobileVtable" alt="" coords="430,870,537,897"/>
-<area shape="rect" id="node35" href="$structCStaticObjectVtableMembers.html" title="CStaticObjectVtableMembers" alt="" coords="5,689,200,715"/>
-<area shape="rect" id="node37" href="$structCContainerMembers.html" title="CContainerMembers" alt="" coords="1776,439,1916,466"/>
-<area shape="rect" id="node39" href="$structCBigMobComponentMembers.html" title="CBigMobComponentMembers" alt="" coords="1068,305,1263,331"/>
-<area shape="rect" id="node43" href="$structCItemVtableMembers.html" title="CItemVtableMembers" alt="" coords="29,802,176,829"/>
-<area shape="rect" id="node45" href="$structCMobileVtableMembers.html" title="CMobileVtableMembers" alt="" coords="23,915,183,942"/>
-<area shape="rect" id="node46" href="$structCMobileMembers.html" title="CMobileMembers" alt="" coords="2451,589,2574,615"/>
-<area shape="rect" id="node48" href="$structCPlayerMobileMembers.html" title="CPlayerMobileMembers" alt="" coords="2433,663,2593,690"/>
-<area shape="rect" id="node50" href="$classDotNetHost.html" title="DotNetHost" alt="" coords="2807,71,2896,98"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="385,90,465,117"/>
+<area shape="rect" id="node6" href="$classBaseFileManager.html" title="The responsibility of the file manager is to handle the custom file formats that the client may emplo..." alt="" coords="1305,138,1427,165"/>
+<area shape="rect" id="node8" href="$classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="611,177,747,203"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="169,83,295,124"/>
+<area shape="rect" id="node5" href="$classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ..." alt="" coords="1724,190,1779,217"/>
+<area shape="rect" id="node15" href="$classNetworkManager.html" title="Handles network packets going to/from the server/client. " alt="" coords="2148,485,2267,511"/>
+<area shape="rect" id="node9" href="$classProgressBarDialog.html" title="Displays a progress bar. " alt="" coords="962,181,1093,207"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="978,242,1077,269"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="611,235,747,276"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="359,235,492,276"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="155,242,309,269"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="5,242,105,269"/>
+<area shape="rect" id="node26" href="$classBasePacketHandler.html" title="Base class for all packet handlers. " alt="" coords="2425,529,2562,555"/>
+<area shape="rect" id="node17" href="$classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="1461,312,1604,353"/>
+<area shape="rect" id="node18" href="$classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="941,306,1113,333"/>
+<area shape="rect" id="node28" href="$classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="1295,189,1437,231"/>
+<area shape="rect" id="node29" href="$classDotNetHost.html" title="Class used to host the .NET common language runtime (CLR) " alt="" coords="1321,255,1411,282"/>
 </map>

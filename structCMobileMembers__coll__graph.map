@@ -1,20 +1,20 @@
 <map id="CMobileMembers" name="CMobileMembers">
-<area shape="rect" id="node2" href="$structCMobile.html" title="CMobile" alt="" coords="2005,267,2075,293"/>
-<area shape="rect" id="node3" href="$structCContainerMembers.html" title="CContainerMembers" alt="" coords="1705,267,1845,293"/>
-<area shape="rect" id="node4" href="$structCBigMobComponent.html" title="CBigMobComponent" alt="" coords="712,73,853,100"/>
-<area shape="rect" id="node9" href="$structCBigMobComponentMembers.html" title="CBigMobComponentMembers" alt="" coords="1068,116,1263,143"/>
-<area shape="rect" id="node5" href="$structCDrawItemMembers.html" title="CDrawItemMembers" alt="" coords="414,204,553,231"/>
-<area shape="rect" id="node6" href="$structCDrawItem.html" title="CDrawItem" alt="" coords="740,124,825,151"/>
-<area shape="rect" id="node10" href="$structCItem.html" title="CItem" alt="" coords="1472,475,1528,501"/>
-<area shape="rect" id="node12" href="$structCStaticObject.html" title="CStaticObject" alt="" coords="731,284,834,311"/>
-<area shape="rect" id="node7" href="$structCDrawItemVtable.html" title="CDrawItemVtable" alt="" coords="422,31,545,57"/>
-<area shape="rect" id="node8" href="$structCDrawItemVtableMembers.html" title="CDrawItemVtableMembers" alt="" coords="15,411,191,437"/>
-<area shape="rect" id="node13" href="$structCStaticObjectVtable.html" title="CStaticObjectVtable" alt="" coords="413,521,553,548"/>
-<area shape="rect" id="node16" href="$structCItemVtable.html" title="CItemVtable" alt="" coords="437,572,530,599"/>
-<area shape="rect" id="node18" href="$structCMobileVtable.html" title="CMobileVtable" alt="" coords="430,623,537,649"/>
-<area shape="rect" id="node15" href="$structCItemMembers.html" title="CItemMembers" alt="" coords="1720,409,1831,436"/>
-<area shape="rect" id="node11" href="$structCStaticObjectMembers.html" title="CStaticObjectMembers" alt="" coords="1087,365,1244,392"/>
-<area shape="rect" id="node14" href="$structCStaticObjectVtableMembers.html" title="CStaticObjectVtableMembers" alt="" coords="5,569,200,596"/>
-<area shape="rect" id="node17" href="$structCItemVtableMembers.html" title="CItemVtableMembers" alt="" coords="29,680,176,707"/>
-<area shape="rect" id="node19" href="$structCMobileVtableMembers.html" title="CMobileVtableMembers" alt="" coords="23,751,183,777"/>
+<area shape="rect" id="node2" href="$structCMobile.html" title="Unknown. " alt="" coords="2005,267,2075,293"/>
+<area shape="rect" id="node3" href="$structCContainerMembers.html" title="Unknown. " alt="" coords="1705,267,1845,293"/>
+<area shape="rect" id="node4" href="$structCBigMobComponent.html" title="Unknown. " alt="" coords="712,73,853,100"/>
+<area shape="rect" id="node9" href="$structCBigMobComponentMembers.html" title="Unknown. " alt="" coords="1068,116,1263,143"/>
+<area shape="rect" id="node5" href="$structCDrawItemMembers.html" title="Unknown. " alt="" coords="414,204,553,231"/>
+<area shape="rect" id="node6" href="$structCDrawItem.html" title="Unknown. " alt="" coords="740,124,825,151"/>
+<area shape="rect" id="node10" href="$structCItem.html" title="Unknown. " alt="" coords="1472,475,1528,501"/>
+<area shape="rect" id="node12" href="$structCStaticObject.html" title="Unknown. " alt="" coords="731,284,834,311"/>
+<area shape="rect" id="node7" href="$structCDrawItemVtable.html" title="Unknown. " alt="" coords="422,31,545,57"/>
+<area shape="rect" id="node8" href="$structCDrawItemVtableMembers.html" title="Unknown. " alt="" coords="15,411,191,437"/>
+<area shape="rect" id="node13" href="$structCStaticObjectVtable.html" title="Unknown. " alt="" coords="413,521,553,548"/>
+<area shape="rect" id="node16" href="$structCItemVtable.html" title="Unknown. " alt="" coords="437,572,530,599"/>
+<area shape="rect" id="node18" href="$structCMobileVtable.html" title="Unknown. " alt="" coords="430,623,537,649"/>
+<area shape="rect" id="node15" href="$structCItemMembers.html" title="Unknown. " alt="" coords="1720,409,1831,436"/>
+<area shape="rect" id="node11" href="$structCStaticObjectMembers.html" title="Unknown. " alt="" coords="1087,365,1244,392"/>
+<area shape="rect" id="node14" href="$structCStaticObjectVtableMembers.html" title="Unknown. " alt="" coords="5,569,200,596"/>
+<area shape="rect" id="node17" href="$structCItemVtableMembers.html" title="Unknown. " alt="" coords="29,680,176,707"/>
+<area shape="rect" id="node19" href="$structCMobileVtableMembers.html" title="Unknown. " alt="" coords="23,751,183,777"/>
 </map>

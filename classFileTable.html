@@ -84,25 +84,28 @@ Collaboration diagram for FileTable:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa94e56f629675d1ca11e635fee7f6fe4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileTable.html#aa94e56f629675d1ca11e635fee7f6fe4">unmarshal</a> (uint8_t *pData)</td></tr>
-<tr class="memdesc:aa94e56f629675d1ca11e635fee7f6fe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmarshals a UOP file table.  <a href="#aa94e56f629675d1ca11e635fee7f6fe4">More...</a><br /></td></tr>
+<tr class="memdesc:aa94e56f629675d1ca11e635fee7f6fe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unmarshal a file table.  <a href="#aa94e56f629675d1ca11e635fee7f6fe4">More...</a><br /></td></tr>
 <tr class="separator:aa94e56f629675d1ca11e635fee7f6fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ac5439b4ce73baada54105c4d97f8a6ca"><td class="memItemLeft" align="right" valign="top"><a id="ac5439b4ce73baada54105c4d97f8a6ca"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>Capacity</b></td></tr>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileTable.html#ac5439b4ce73baada54105c4d97f8a6ca">Capacity</a></td></tr>
+<tr class="memdesc:ac5439b4ce73baada54105c4d97f8a6ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">UOP File table capacity. <br /></td></tr>
 <tr class="separator:ac5439b4ce73baada54105c4d97f8a6ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3881456d756c6b3e8b97c7a7fdbbcbb1"><td class="memItemLeft" align="right" valign="top"><a id="a3881456d756c6b3e8b97c7a7fdbbcbb1"></a>
-uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>OffsetOfNextFileTable</b></td></tr>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileTable.html#a3881456d756c6b3e8b97c7a7fdbbcbb1">OffsetOfNextFileTable</a></td></tr>
+<tr class="memdesc:a3881456d756c6b3e8b97c7a7fdbbcbb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset to the next UOP file table. <br /></td></tr>
 <tr class="separator:a3881456d756c6b3e8b97c7a7fdbbcbb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5134456f810fbbc6ef0fa6df12e1e8fd"><td class="memItemLeft" align="right" valign="top"><a id="a5134456f810fbbc6ef0fa6df12e1e8fd"></a>
-<a class="el" href="classFileEntry.html">FileEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pEntries</b></td></tr>
+<a class="el" href="classFileEntry.html">FileEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFileTable.html#a5134456f810fbbc6ef0fa6df12e1e8fd">pEntries</a></td></tr>
+<tr class="memdesc:a5134456f810fbbc6ef0fa6df12e1e8fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to first file entry. <br /></td></tr>
 <tr class="separator:a5134456f810fbbc6ef0fa6df12e1e8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>UOP <a class="el" href="classFileTable.html" title="UOP FileTable. ">FileTable</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="UopStructs_8h_source.html#l00073">73</a> of file <a class="el" href="UopStructs_8h_source.html">UopStructs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UopStructs_8h_source.html#l00083">83</a> of file <a class="el" href="UopStructs_8h_source.html">UopStructs.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa94e56f629675d1ca11e635fee7f6fe4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa94e56f629675d1ca11e635fee7f6fe4">&#9670;&nbsp;</a></span>unmarshal()</h2>
@@ -120,15 +123,19 @@ uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>OffsetOfNextFileT
       </table>
 </div><div class="memdoc">
 
-<p>Unmarshals a UOP file table. </p>
+<p>Unmarshal a file table. </p>
+<p>Unmarshals a UOP file table.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">pData</td><td>Pointer to file table data</td></tr>
     <tr><td class="paramname">pData</td><td>pointer to UOP file table data </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="UopStructs_8cpp_source.html#l00065">65</a> of file <a class="el" href="UopStructs_8cpp_source.html">UopStructs.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FileManager__7__0__29__2_8cpp_source.html#l00262">FileManager_7_0_29_2::parseMapFile()</a>.</p>
 
 </div>
 </div>
@@ -139,7 +146,7 @@ uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>OffsetOfNextFileT
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -67,57 +67,373 @@ $(function() {
 <div class="title">Utils Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Utility class for <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a>.  
+ <a href="classUtils.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Utils_8h_source.html">Utils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1155f0b7585d16e3437691039543b471"><td class="memItemLeft" align="right" valign="top"><a id="a1155f0b7585d16e3437691039543b471"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentModuleName</b> ()</td></tr>
+<tr class="memitem:a1155f0b7585d16e3437691039543b471"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a1155f0b7585d16e3437691039543b471">GetCurrentModuleName</a> ()</td></tr>
+<tr class="memdesc:a1155f0b7585d16e3437691039543b471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the current module.  <a href="#a1155f0b7585d16e3437691039543b471">More...</a><br /></td></tr>
 <tr class="separator:a1155f0b7585d16e3437691039543b471"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a295544f6bc913b279173f0e39e6eee09"><td class="memItemLeft" align="right" valign="top"><a id="a295544f6bc913b279173f0e39e6eee09"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentModuleFullPath</b> ()</td></tr>
+<tr class="memitem:a295544f6bc913b279173f0e39e6eee09"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a295544f6bc913b279173f0e39e6eee09">GetCurrentModuleFullPath</a> ()</td></tr>
+<tr class="memdesc:a295544f6bc913b279173f0e39e6eee09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path to the current process including the filename.  <a href="#a295544f6bc913b279173f0e39e6eee09">More...</a><br /></td></tr>
 <tr class="separator:a295544f6bc913b279173f0e39e6eee09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f59009e4252f94fb5ba32eabbc6e08"><td class="memItemLeft" align="right" valign="top"><a id="a42f59009e4252f94fb5ba32eabbc6e08"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentPathWithoutFilename</b> ()</td></tr>
+<tr class="memitem:a42f59009e4252f94fb5ba32eabbc6e08"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a42f59009e4252f94fb5ba32eabbc6e08">GetCurrentPathWithoutFilename</a> ()</td></tr>
+<tr class="memdesc:a42f59009e4252f94fb5ba32eabbc6e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path to the current process without the filename.  <a href="#a42f59009e4252f94fb5ba32eabbc6e08">More...</a><br /></td></tr>
 <tr class="separator:a42f59009e4252f94fb5ba32eabbc6e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaeb2fe997d6d35de55ecefb3e3f4576"><td class="memItemLeft" align="right" valign="top"><a id="aaaeb2fe997d6d35de55ecefb3e3f4576"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsElevated</b> ()</td></tr>
+<tr class="memitem:aaaeb2fe997d6d35de55ecefb3e3f4576"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#aaaeb2fe997d6d35de55ecefb3e3f4576">IsElevated</a> ()</td></tr>
+<tr class="memdesc:aaaeb2fe997d6d35de55ecefb3e3f4576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if the current process has admin rights verbose Taken from <a href="http://stackoverflow.com/questions/8046097/how-to-check-if-a-process-has-the-admin-rights">http://stackoverflow.com/questions/8046097/how-to-check-if-a-process-has-the-admin-rights</a>.  <a href="#aaaeb2fe997d6d35de55ecefb3e3f4576">More...</a><br /></td></tr>
 <tr class="separator:aaaeb2fe997d6d35de55ecefb3e3f4576"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32d7743e29ad95dbd97108302fb79fd8"><td class="memItemLeft" align="right" valign="top"><a id="a32d7743e29ad95dbd97108302fb79fd8"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getFilenameFromPath</b> (std::string path)</td></tr>
+<tr class="memitem:a32d7743e29ad95dbd97108302fb79fd8"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a32d7743e29ad95dbd97108302fb79fd8">getFilenameFromPath</a> (std::string path)</td></tr>
+<tr class="memdesc:a32d7743e29ad95dbd97108302fb79fd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a filename with the extension from a path string.  <a href="#a32d7743e29ad95dbd97108302fb79fd8">More...</a><br /></td></tr>
 <tr class="separator:a32d7743e29ad95dbd97108302fb79fd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67f42e07b1dcc84035f8eb87aa20298"><td class="memItemLeft" align="right" valign="top"><a id="ae67f42e07b1dcc84035f8eb87aa20298"></a>
-static std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getBaseFilenameWithoutExtension</b> (std::string filename)</td></tr>
+<tr class="memitem:ae67f42e07b1dcc84035f8eb87aa20298"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#ae67f42e07b1dcc84035f8eb87aa20298">getBaseFilenameWithoutExtension</a> (std::string filename)</td></tr>
+<tr class="memdesc:ae67f42e07b1dcc84035f8eb87aa20298"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the base filename without the extension from a given path.  <a href="#ae67f42e07b1dcc84035f8eb87aa20298">More...</a><br /></td></tr>
 <tr class="separator:ae67f42e07b1dcc84035f8eb87aa20298"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ed7ace2655b55fed99f6eeeaa43a495"><td class="memItemLeft" align="right" valign="top"><a id="a4ed7ace2655b55fed99f6eeeaa43a495"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>getModuleMinorVersionLower</b> ()</td></tr>
+<tr class="memitem:a4ed7ace2655b55fed99f6eeeaa43a495"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a4ed7ace2655b55fed99f6eeeaa43a495">getModuleMinorVersionLower</a> ()</td></tr>
+<tr class="memdesc:a4ed7ace2655b55fed99f6eeeaa43a495"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> major version.  <a href="#a4ed7ace2655b55fed99f6eeeaa43a495">More...</a><br /></td></tr>
 <tr class="separator:a4ed7ace2655b55fed99f6eeeaa43a495"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae516bc5be52b7d626adb346ce39456d8"><td class="memItemLeft" align="right" valign="top"><a id="ae516bc5be52b7d626adb346ce39456d8"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>getModuleMinorVersionUpper</b> ()</td></tr>
+<tr class="memitem:ae516bc5be52b7d626adb346ce39456d8"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#ae516bc5be52b7d626adb346ce39456d8">getModuleMinorVersionUpper</a> ()</td></tr>
+<tr class="memdesc:ae516bc5be52b7d626adb346ce39456d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> minor version.  <a href="#ae516bc5be52b7d626adb346ce39456d8">More...</a><br /></td></tr>
 <tr class="separator:ae516bc5be52b7d626adb346ce39456d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1f8affd508d6b3057e13ff869ad49a4"><td class="memItemLeft" align="right" valign="top"><a id="ad1f8affd508d6b3057e13ff869ad49a4"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>displaySplashScreen</b> ()</td></tr>
-<tr class="separator:ad1f8affd508d6b3057e13ff869ad49a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a095ea5d2596e112d565004faddd85aa3"><td class="memItemLeft" align="right" valign="top"><a id="a095ea5d2596e112d565004faddd85aa3"></a>
-static std::wstring&#160;</td><td class="memItemRight" valign="bottom"><b>s2ws</b> (const std::string &amp;s)</td></tr>
+<tr class="memitem:a095ea5d2596e112d565004faddd85aa3"><td class="memItemLeft" align="right" valign="top">static std::wstring&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#a095ea5d2596e112d565004faddd85aa3">s2ws</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a095ea5d2596e112d565004faddd85aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts standard string to wstring  <a href="#a095ea5d2596e112d565004faddd85aa3">More...</a><br /></td></tr>
 <tr class="separator:a095ea5d2596e112d565004faddd85aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:ae2b3cda9f0850f45ffdbc3eedccb41b7"><td class="memItemLeft" align="right" valign="top"><a id="ae2b3cda9f0850f45ffdbc3eedccb41b7"></a>
-static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_PATH_LENGTH</b> = 2048</td></tr>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUtils.html#ae2b3cda9f0850f45ffdbc3eedccb41b7">MAX_PATH_LENGTH</a> = 2048</td></tr>
+<tr class="memdesc:ae2b3cda9f0850f45ffdbc3eedccb41b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length Constant. <br /></td></tr>
 <tr class="separator:ae2b3cda9f0850f45ffdbc3eedccb41b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Utils_8h_source.html#l00045">45</a> of file <a class="el" href="Utils_8h_source.html">Utils.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Utility class for <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8h_source.html#l00050">50</a> of file <a class="el" href="Utils_8h_source.html">Utils.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae67f42e07b1dcc84035f8eb87aa20298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67f42e07b1dcc84035f8eb87aa20298">&#9670;&nbsp;</a></span>getBaseFilenameWithoutExtension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Utils::getBaseFilenameWithoutExtension </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the base filename without the extension from a given path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>File path</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>basefilename without the extension </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00196">196</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UopUtility_8cpp_source.html#l00036">UopUtility::convertUopMapToMul()</a>.</p>
+
+</div>
+</div>
+<a id="a295544f6bc913b279173f0e39e6eee09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a295544f6bc913b279173f0e39e6eee09">&#9670;&nbsp;</a></span>GetCurrentModuleFullPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Utils::GetCurrentModuleFullPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the path to the current process including the filename. </p>
+<dl class="section return"><dt>Returns</dt><dd>Path to the current process including process name </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00088">88</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, and <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UltimaLive_8cpp_source.html#l00034">UltimaLive::UltimaLive()</a>.</p>
+
+</div>
+</div>
+<a id="a1155f0b7585d16e3437691039543b471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1155f0b7585d16e3437691039543b471">&#9670;&nbsp;</a></span>GetCurrentModuleName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Utils::GetCurrentModuleName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the name of the current module. </p>
+<dl class="section return"><dt>Returns</dt><dd>Name of current module </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00053">53</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ClientRedirections_8cpp_source.html#l00033">ClientRedirections::InstallClientHooks()</a>, and <a class="el" href="UltimaLive_8cpp_source.html#l00080">UltimaLive::Start()</a>.</p>
+
+</div>
+</div>
+<a id="a42f59009e4252f94fb5ba32eabbc6e08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f59009e4252f94fb5ba32eabbc6e08">&#9670;&nbsp;</a></span>GetCurrentPathWithoutFilename()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Utils::GetCurrentPathWithoutFilename </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the path to the current process without the filename. </p>
+<dl class="section return"><dt>Returns</dt><dd>Path to the current process </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00075">75</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FileManager__7__0__29__2_8cpp_source.html#l00331">FileManager_7_0_29_2::InitializeShardMaps()</a>, and <a class="el" href="BaseFileManager_8cpp_source.html#l00468">BaseFileManager::InitializeShardMaps()</a>.</p>
+
+</div>
+</div>
+<a id="a32d7743e29ad95dbd97108302fb79fd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d7743e29ad95dbd97108302fb79fd8">&#9670;&nbsp;</a></span>getFilenameFromPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Utils::getFilenameFromPath </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a filename with the extension from a path string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Path with filename</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Filename with extention </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00226">226</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UopUtility_8cpp_source.html#l00036">UopUtility::convertUopMapToMul()</a>, <a class="el" href="BaseFileManager_8cpp_source.html#l00661">BaseFileManager::OnCreateFileA()</a>, <a class="el" href="FileManager_8cpp_source.html#l00176">FileManager::OnMapViewOfFile()</a>, and <a class="el" href="FileManager__7__0__29__2_8cpp_source.html#l00182">FileManager_7_0_29_2::OnMapViewOfFile()</a>.</p>
+
+</div>
+</div>
+<a id="a4ed7ace2655b55fed99f6eeeaa43a495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed7ace2655b55fed99f6eeeaa43a495">&#9670;&nbsp;</a></span>getModuleMinorVersionLower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Utils::getModuleMinorVersionLower </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> major version. </p>
+<dl class="section return"><dt>Returns</dt><dd>Major Version </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00130">130</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Utils_8cpp_source.html#l00147">getModuleMinorVersionUpper()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ServerVersionRequestHandler_8cpp_source.html#l00043">ServerVersionRequestHandler::handlePacket()</a>, and <a class="el" href="LoginHandler_8cpp_source.html#l00203">LoginHandler::onLoginComplete()</a>.</p>
+
+</div>
+</div>
+<a id="ae516bc5be52b7d626adb346ce39456d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae516bc5be52b7d626adb346ce39456d8">&#9670;&nbsp;</a></span>getModuleMinorVersionUpper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Utils::getModuleMinorVersionUpper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> minor version. </p>
+<dl class="section return"><dt>Returns</dt><dd>Minor Version </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00147">147</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Utils_8cpp_source.html#l00130">getModuleMinorVersionLower()</a>, <a class="el" href="ServerVersionRequestHandler_8cpp_source.html#l00043">ServerVersionRequestHandler::handlePacket()</a>, and <a class="el" href="LoginHandler_8cpp_source.html#l00203">LoginHandler::onLoginComplete()</a>.</p>
+
+</div>
+</div>
+<a id="aaaeb2fe997d6d35de55ecefb3e3f4576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaeb2fe997d6d35de55ecefb3e3f4576">&#9670;&nbsp;</a></span>IsElevated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Utils::IsElevated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check to see if the current process has admin rights verbose Taken from <a href="http://stackoverflow.com/questions/8046097/how-to-check-if-a-process-has-the-admin-rights">http://stackoverflow.com/questions/8046097/how-to-check-if-a-process-has-the-admin-rights</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if process has admin rights </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00167">167</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a095ea5d2596e112d565004faddd85aa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a095ea5d2596e112d565004faddd85aa3">&#9670;&nbsp;</a></span>s2ws()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::wstring Utils::s2ws </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>converts standard string to wstring </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>string to convert</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>converted wstring </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Utils_8cpp_source.html#l00036">36</a> of file <a class="el" href="Utils_8cpp_source.html">Utils.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="DotNetHost_8cpp_source.html#l00053">DotNetHost::LaunchNetAssembly()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>UltimaLive/<a class="el" href="Utils_8h_source.html">Utils.h</a></li>
 <li>UltimaLive/<a class="el" href="Utils_8cpp_source.html">Utils.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:43 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

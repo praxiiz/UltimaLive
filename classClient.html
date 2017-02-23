@@ -73,286 +73,988 @@ $(function() {
 <div class="title">Client Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class knows about the client internals. This class assumes that it shares memory space with the actual client, therefor no calls to get memory from an external process are used.  
+ <a href="classClient.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Client_8h_source.html">Client.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Client:</div>
 <div class="dyncontent">
 <div class="center"><img src="classClient__coll__graph.png" border="0" usemap="#Client_coll__map" alt="Collaboration graph"/></div>
 <map name="Client_coll__map" id="Client_coll__map">
-<area shape="rect" id="node15" href="classNetworkManager.html" title="NetworkManager" alt="" coords="3689,863,3808,889"/>
-<area shape="rect" id="node2" href="structMapTileDefinition.html" title="MapTileDefinition" alt="" coords="2785,137,2905,164"/>
-<area shape="rect" id="node3" href="classBaseFileManager.html" title="BaseFileManager" alt="" coords="2783,188,2906,215"/>
-<area shape="rect" id="node5" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="2124,75,2260,101"/>
-<area shape="rect" id="node6" title="STL class. " alt="" coords="1834,127,1914,153"/>
-<area shape="rect" id="node7" title="STL class. " alt="" coords="1486,119,1613,161"/>
-<area shape="rect" id="node8" href="classProgressBarDialog.html" title="ProgressBarDialog" alt="" coords="2441,19,2571,45"/>
-<area shape="rect" id="node9" title="STL class. " alt="" coords="2457,69,2555,96"/>
-<area shape="rect" id="node10" title="STL class. " alt="" coords="2124,9,2260,50"/>
-<area shape="rect" id="node11" title="STL class. " alt="" coords="1807,9,1941,50"/>
-<area shape="rect" id="node12" title="STL class. " alt="" coords="1472,16,1627,43"/>
-<area shape="rect" id="node13" title="STL class. " alt="" coords="1115,16,1215,43"/>
-<area shape="rect" id="node14" href="structMapMinDisplay.html" title="MapMinDisplay" alt="" coords="2789,531,2900,557"/>
-<area shape="rect" id="node26" href="classBasePacketHandler.html" title="BasePacketHandler" alt="" coords="3966,907,4103,933"/>
-<area shape="rect" id="node17" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="2971,879,3114,921"/>
-<area shape="rect" id="node18" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="2420,888,2592,915"/>
-<area shape="rect" id="node49" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="2773,830,2916,871"/>
-<area shape="rect" id="node28" href="structCStaticObject.html" title="CStaticObject" alt="" coords="731,677,834,704"/>
-<area shape="rect" id="node29" href="structCStaticObjectMembers.html" title="CStaticObjectMembers" alt="" coords="1087,627,1244,653"/>
-<area shape="rect" id="node41" href="structCItemMembers.html" title="CItemMembers" alt="" coords="1819,593,1929,620"/>
-<area shape="rect" id="node36" href="structCPlayerMobile.html" title="CPlayerMobile" alt="" coords="2791,581,2898,608"/>
-<area shape="rect" id="node40" href="structCItem.html" title="CItem" alt="" coords="1521,457,1577,484"/>
-<area shape="rect" id="node47" href="structCMobile.html" title="CMobile" alt="" coords="2157,531,2227,557"/>
-<area shape="rect" id="node30" href="structCDrawItemMembers.html" title="CDrawItemMembers" alt="" coords="414,285,553,312"/>
-<area shape="rect" id="node31" href="structCDrawItem.html" title="CDrawItem" alt="" coords="740,101,825,128"/>
-<area shape="rect" id="node38" href="structCBigMobComponent.html" title="CBigMobComponent" alt="" coords="712,271,853,297"/>
-<area shape="rect" id="node32" href="structCDrawItemVtable.html" title="CDrawItemVtable" alt="" coords="422,147,545,173"/>
-<area shape="rect" id="node33" href="structCDrawItemVtableMembers.html" title="CDrawItemVtableMembers" alt="" coords="15,433,191,460"/>
-<area shape="rect" id="node34" href="structCStaticObjectVtable.html" title="CStaticObjectVtable" alt="" coords="413,677,553,704"/>
-<area shape="rect" id="node42" href="structCItemVtable.html" title="CItemVtable" alt="" coords="437,499,530,525"/>
-<area shape="rect" id="node44" href="structCMobileVtable.html" title="CMobileVtable" alt="" coords="430,751,537,777"/>
-<area shape="rect" id="node35" href="structCStaticObjectVtableMembers.html" title="CStaticObjectVtableMembers" alt="" coords="5,683,200,709"/>
-<area shape="rect" id="node37" href="structCContainerMembers.html" title="CContainerMembers" alt="" coords="1804,311,1944,337"/>
-<area shape="rect" id="node39" href="structCBigMobComponentMembers.html" title="CBigMobComponentMembers" alt="" coords="1068,239,1263,265"/>
-<area shape="rect" id="node43" href="structCItemVtableMembers.html" title="CItemVtableMembers" alt="" coords="29,589,176,616"/>
-<area shape="rect" id="node45" href="structCMobileVtableMembers.html" title="CMobileVtableMembers" alt="" coords="23,773,183,800"/>
-<area shape="rect" id="node46" href="structCMobileMembers.html" title="CMobileMembers" alt="" coords="2445,581,2567,608"/>
-<area shape="rect" id="node48" href="structCPlayerMobileMembers.html" title="CPlayerMobileMembers" alt="" coords="2426,504,2586,531"/>
-<area shape="rect" id="node50" href="classDotNetHost.html" title="DotNetHost" alt="" coords="2800,87,2889,113"/>
+<area shape="rect" id="node13" href="classNetworkManager.html" title="Handles network packets going to/from the server/client. " alt="" coords="2104,300,2223,327"/>
+<area shape="rect" id="node2" href="classBaseFileManager.html" title="The responsibility of the file manager is to handle the custom file formats that the client may emplo..." alt="" coords="1261,192,1383,219"/>
+<area shape="rect" id="node4" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="611,251,747,277"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="385,189,465,216"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="169,182,295,223"/>
+<area shape="rect" id="node7" href="classProgressBarDialog.html" title="Displays a progress bar. " alt="" coords="918,255,1049,281"/>
+<area shape="rect" id="node8" title="STL class. " alt="" coords="934,312,1033,339"/>
+<area shape="rect" id="node9" title="STL class. " alt="" coords="611,305,747,346"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="359,305,492,346"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="155,312,309,339"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="5,312,105,339"/>
+<area shape="rect" id="node24" href="classBasePacketHandler.html" title="Base class for all packet handlers. " alt="" coords="2381,211,2518,237"/>
+<area shape="rect" id="node15" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="1417,73,1560,114"/>
+<area shape="rect" id="node16" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="897,79,1069,105"/>
+<area shape="rect" id="node26" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="1251,122,1393,163"/>
+<area shape="rect" id="node27" href="classDotNetHost.html" title="Class used to host the .NET common language runtime (CLR) " alt="" coords="1277,243,1367,269"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a37368dfba1e6a0d6fb0796191b418bb8"><td class="memItemLeft" align="right" valign="top"><a id="a37368dfba1e6a0d6fb0796191b418bb8"></a>
-typedef void(__thiscall *&#160;</td><td class="memItemRight" valign="bottom"><b>ClientRecvFunction</b>) (void *This, unsigned char *pBuffer)</td></tr>
-<tr class="separator:a37368dfba1e6a0d6fb0796191b418bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdbb3fc140e7deb2a286f41395cc1b48"><td class="memItemLeft" align="right" valign="top"><a id="acdbb3fc140e7deb2a286f41395cc1b48"></a>
-typedef int(__thiscall *&#160;</td><td class="memItemRight" valign="bottom"><b>ClientSendFunction</b>) (void *This, unsigned char *pBuffer)</td></tr>
-<tr class="separator:acdbb3fc140e7deb2a286f41395cc1b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad83973410b6210e1d4e2261290d16bbd"><td class="memItemLeft" align="right" valign="top"><a id="ad83973410b6210e1d4e2261290d16bbd"></a>
-typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><b>ClientUpdateStaticBlocksFunction</b>) ()</td></tr>
-<tr class="separator:ad83973410b6210e1d4e2261290d16bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a382f153d7726182d1c158117980ee7b7"><td class="memItemLeft" align="right" valign="top"><a id="a382f153d7726182d1c158117980ee7b7"></a>
-typedef int(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><b>RefreshTerrainFunction</b>) ()</td></tr>
-<tr class="separator:a382f153d7726182d1c158117980ee7b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155b7973b181e0193772f57e405d812a"><td class="memItemLeft" align="right" valign="top"><a id="a155b7973b181e0193772f57e405d812a"></a>
+typedef void(__thiscall *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a155b7973b181e0193772f57e405d812a">ClientRecvFunction</a>) (void *This, unsigned char *pBuffer)</td></tr>
+<tr class="memdesc:a155b7973b181e0193772f57e405d812a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> Receive Function type. <br /></td></tr>
+<tr class="separator:a155b7973b181e0193772f57e405d812a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08bfbf70068b37445236cec242fdba4"><td class="memItemLeft" align="right" valign="top"><a id="ae08bfbf70068b37445236cec242fdba4"></a>
+typedef int(__thiscall *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ae08bfbf70068b37445236cec242fdba4">ClientSendFunction</a>) (void *This, unsigned char *pBuffer)</td></tr>
+<tr class="memdesc:ae08bfbf70068b37445236cec242fdba4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> Send Function type. <br /></td></tr>
+<tr class="separator:ae08bfbf70068b37445236cec242fdba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad668ba7cf25f6e5878fd3c6112fb97e4"><td class="memItemLeft" align="right" valign="top"><a id="ad668ba7cf25f6e5878fd3c6112fb97e4"></a>
+typedef void(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ad668ba7cf25f6e5878fd3c6112fb97e4">ClientUpdateStaticBlocksFunction</a>) ()</td></tr>
+<tr class="memdesc:ad668ba7cf25f6e5878fd3c6112fb97e4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> Update Statics Block function type. <br /></td></tr>
+<tr class="separator:ad668ba7cf25f6e5878fd3c6112fb97e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad83aee240ec2d11460f4fe243871b39"><td class="memItemLeft" align="right" valign="top"><a id="aad83aee240ec2d11460f4fe243871b39"></a>
+typedef int(__cdecl *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aad83aee240ec2d11460f4fe243871b39">RefreshTerrainFunction</a>) ()</td></tr>
+<tr class="memdesc:aad83aee240ec2d11460f4fe243871b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh Terrain Function type. <br /></td></tr>
+<tr class="separator:aad83aee240ec2d11460f4fe243871b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9ff79c4db77861d361711fceb3c9c381"><td class="memItemLeft" align="right" valign="top"><a id="a9ff79c4db77861d361711fceb3c9c381"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SendPacketToServer</b> (unsigned char *pBuffer)</td></tr>
+<tr class="memitem:ae51af7aa6b8f591496a8f6a4a87a14bf"><td class="memItemLeft" align="right" valign="top"><a id="ae51af7aa6b8f591496a8f6a4a87a14bf"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ae51af7aa6b8f591496a8f6a4a87a14bf">Client</a> ()</td></tr>
+<tr class="memdesc:ae51af7aa6b8f591496a8f6a4a87a14bf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> class constructor. <br /></td></tr>
+<tr class="separator:ae51af7aa6b8f591496a8f6a4a87a14bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ff79c4db77861d361711fceb3c9c381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9ff79c4db77861d361711fceb3c9c381">SendPacketToServer</a> (unsigned char *pBuffer)</td></tr>
+<tr class="memdesc:a9ff79c4db77861d361711fceb3c9c381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an array of bytes to the server using the clients send function.  <a href="#a9ff79c4db77861d361711fceb3c9c381">More...</a><br /></td></tr>
 <tr class="separator:a9ff79c4db77861d361711fceb3c9c381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8d755c2f62f3c32601001aec46f90fa"><td class="memItemLeft" align="right" valign="top"><a id="ab8d755c2f62f3c32601001aec46f90fa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SendPacketToClient</b> (unsigned char *pBuffer)</td></tr>
+<tr class="memitem:ab8d755c2f62f3c32601001aec46f90fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ab8d755c2f62f3c32601001aec46f90fa">SendPacketToClient</a> (unsigned char *pBuffer)</td></tr>
+<tr class="memdesc:ab8d755c2f62f3c32601001aec46f90fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends an array of bytes to the client using the clients receive function.  <a href="#ab8d755c2f62f3c32601001aec46f90fa">More...</a><br /></td></tr>
 <tr class="separator:ab8d755c2f62f3c32601001aec46f90fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3be4396c29cad031c9fa10e90381f4fa"><td class="memItemLeft" align="right" valign="top"><a id="a3be4396c29cad031c9fa10e90381f4fa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>refreshClientLand</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a3be4396c29cad031c9fa10e90381f4fa">refreshClientLand</a> ()</td></tr>
+<tr class="memdesc:a3be4396c29cad031c9fa10e90381f4fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes the land tiles on the client screen. <br /></td></tr>
 <tr class="separator:a3be4396c29cad031c9fa10e90381f4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a142dfb15e7f5d3fc47b72095e8ca93f3"><td class="memItemLeft" align="right" valign="top"><a id="a142dfb15e7f5d3fc47b72095e8ca93f3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>refreshClientStatics</b> (uint32_t blockNumber)</td></tr>
+<tr class="memitem:a142dfb15e7f5d3fc47b72095e8ca93f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a142dfb15e7f5d3fc47b72095e8ca93f3">refreshClientStatics</a> (uint32_t blockNumber)</td></tr>
+<tr class="memdesc:a142dfb15e7f5d3fc47b72095e8ca93f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refreshes statics on the client screen for a given block.  <a href="#a142dfb15e7f5d3fc47b72095e8ca93f3">More...</a><br /></td></tr>
 <tr class="separator:a142dfb15e7f5d3fc47b72095e8ca93f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6b381a96226578b49f495703f56a3b3"><td class="memItemLeft" align="right" valign="top"><a id="aa6b381a96226578b49f495703f56a3b3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetMapDimensions</b> (<a class="el" href="structMapTileDefinition.html">MapTileDefinition</a> definition)</td></tr>
+<tr class="memitem:aa6b381a96226578b49f495703f56a3b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aa6b381a96226578b49f495703f56a3b3">SetMapDimensions</a> (MapTileDefinition definition)</td></tr>
+<tr class="memdesc:aa6b381a96226578b49f495703f56a3b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the client's map dimensions.  <a href="#aa6b381a96226578b49f495703f56a3b3">More...</a><br /></td></tr>
 <tr class="separator:aa6b381a96226578b49f495703f56a3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e56496bded89052e0b1dce55491818a"><td class="memItemLeft" align="right" valign="top"><a id="a2e56496bded89052e0b1dce55491818a"></a>
-<a class="el" href="structCPlayerMobile.html">CPlayerMobile</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayerMobile</b> ()</td></tr>
+<tr class="memitem:a2e56496bded89052e0b1dce55491818a"><td class="memItemLeft" align="right" valign="top">CPlayerMobile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a2e56496bded89052e0b1dce55491818a">getPlayerMobile</a> ()</td></tr>
+<tr class="memdesc:a2e56496bded89052e0b1dce55491818a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the pointer to the client Player structure.  <a href="#a2e56496bded89052e0b1dce55491818a">More...</a><br /></td></tr>
 <tr class="separator:a2e56496bded89052e0b1dce55491818a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5933dc04be85f80660ca2d2d56b0e45"><td class="memItemLeft" align="right" valign="top"><a id="af5933dc04be85f80660ca2d2d56b0e45"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>LookupClientInternalStructuresAndFunctions</b> ()</td></tr>
+<tr class="memitem:af5933dc04be85f80660ca2d2d56b0e45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#af5933dc04be85f80660ca2d2d56b0e45">LookupClientInternalStructuresAndFunctions</a> ()</td></tr>
+<tr class="memdesc:af5933dc04be85f80660ca2d2d56b0e45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search out all internal structure addresses.  <a href="#af5933dc04be85f80660ca2d2d56b0e45">More...</a><br /></td></tr>
 <tr class="separator:af5933dc04be85f80660ca2d2d56b0e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08817fefbd1bb6deb62ead75d2dac3a4"><td class="memItemLeft" align="right" valign="top"><a id="a08817fefbd1bb6deb62ead75d2dac3a4"></a>
-ClientRecvFunction &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRecvFunction</b> ()</td></tr>
+<a class="el" href="classClient.html#a155b7973b181e0193772f57e405d812a">ClientRecvFunction</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a08817fefbd1bb6deb62ead75d2dac3a4">getRecvFunction</a> ()</td></tr>
+<tr class="memdesc:a08817fefbd1bb6deb62ead75d2dac3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for client's Receive Function pointer. <br /></td></tr>
 <tr class="separator:a08817fefbd1bb6deb62ead75d2dac3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f221e15c85ef9147e4542bd5866021c"><td class="memItemLeft" align="right" valign="top"><a id="a0f221e15c85ef9147e4542bd5866021c"></a>
-ClientSendFunction &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getSendFunction</b> ()</td></tr>
+<a class="el" href="classClient.html#ae08bfbf70068b37445236cec242fdba4">ClientSendFunction</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a0f221e15c85ef9147e4542bd5866021c">getSendFunction</a> ()</td></tr>
+<tr class="memdesc:a0f221e15c85ef9147e4542bd5866021c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for client's Send Function pointer. <br /></td></tr>
 <tr class="separator:a0f221e15c85ef9147e4542bd5866021c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8da786ae19c8b32710b9ab4abdb63086"><td class="memItemLeft" align="right" valign="top"><a id="a8da786ae19c8b32710b9ab4abdb63086"></a>
-ClientUpdateStaticBlocksFunction &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getUpdatesStaticBlocksFunction</b> ()</td></tr>
+<a class="el" href="classClient.html#ad668ba7cf25f6e5878fd3c6112fb97e4">ClientUpdateStaticBlocksFunction</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a8da786ae19c8b32710b9ab4abdb63086">getUpdatesStaticBlocksFunction</a> ()</td></tr>
+<tr class="memdesc:a8da786ae19c8b32710b9ab4abdb63086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for client's Update Statics Blocks Function pointer. <br /></td></tr>
 <tr class="separator:a8da786ae19c8b32710b9ab4abdb63086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af703752126ba5c00bbaaea9864aa8dfe"><td class="memItemLeft" align="right" valign="top"><a id="af703752126ba5c00bbaaea9864aa8dfe"></a>
-<a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetNetworkManager</b> ()</td></tr>
+<tr class="memitem:af703752126ba5c00bbaaea9864aa8dfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#af703752126ba5c00bbaaea9864aa8dfe">GetNetworkManager</a> ()</td></tr>
+<tr class="memdesc:af703752126ba5c00bbaaea9864aa8dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the client Network Manager Pointer.  <a href="#af703752126ba5c00bbaaea9864aa8dfe">More...</a><br /></td></tr>
 <tr class="separator:af703752126ba5c00bbaaea9864aa8dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7353ecda90d4e5822b32660248a7182c"><td class="memItemLeft" align="right" valign="top"><a id="a7353ecda90d4e5822b32660248a7182c"></a>
-<a class="el" href="classBaseFileManager.html">BaseFileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>GetFileManager</b> ()</td></tr>
+<tr class="memitem:a7353ecda90d4e5822b32660248a7182c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBaseFileManager.html">BaseFileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a7353ecda90d4e5822b32660248a7182c">GetFileManager</a> ()</td></tr>
+<tr class="memdesc:a7353ecda90d4e5822b32660248a7182c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the pointer to the client's File Manager.  <a href="#a7353ecda90d4e5822b32660248a7182c">More...</a><br /></td></tr>
 <tr class="separator:a7353ecda90d4e5822b32660248a7182c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a69d32303db0a4aa7364838e5b61a2f12"><td class="memItemLeft" align="right" valign="top"><a id="a69d32303db0a4aa7364838e5b61a2f12"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>Initialize</b> ()</td></tr>
+<tr class="memitem:a69d32303db0a4aa7364838e5b61a2f12"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a69d32303db0a4aa7364838e5b61a2f12">Initialize</a> ()</td></tr>
+<tr class="memdesc:a69d32303db0a4aa7364838e5b61a2f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self Registering Class Initialize Method. Searches for client internal structures and pointers.  <a href="#a69d32303db0a4aa7364838e5b61a2f12">More...</a><br /></td></tr>
 <tr class="separator:a69d32303db0a4aa7364838e5b61a2f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e4e0a23fde0bb27d872e573f2e58f96"><td class="memItemLeft" align="right" valign="top"><a id="a9e4e0a23fde0bb27d872e573f2e58f96"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>Configure</b> ()</td></tr>
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9e4e0a23fde0bb27d872e573f2e58f96">Configure</a> ()</td></tr>
+<tr class="memdesc:a9e4e0a23fde0bb27d872e573f2e58f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self Registering Class Configure Method. This function is called first to create an instance of this class and make it available for other class instances to find. <br /></td></tr>
 <tr class="separator:a9e4e0a23fde0bb27d872e573f2e58f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aca094aab4fd324a791dfca47771344b9"><td class="memItemLeft" align="right" valign="top"><a id="aca094aab4fd324a791dfca47771344b9"></a>
-ClientRecvFunction&#160;</td><td class="memItemRight" valign="bottom"><b>m_pRecvFunction</b></td></tr>
+<a class="el" href="classClient.html#a155b7973b181e0193772f57e405d812a">ClientRecvFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aca094aab4fd324a791dfca47771344b9">m_pRecvFunction</a></td></tr>
+<tr class="memdesc:aca094aab4fd324a791dfca47771344b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's receive function. <br /></td></tr>
 <tr class="separator:aca094aab4fd324a791dfca47771344b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09216f1e8a49a3462381cbcc37f23936"><td class="memItemLeft" align="right" valign="top"><a id="a09216f1e8a49a3462381cbcc37f23936"></a>
-ClientSendFunction&#160;</td><td class="memItemRight" valign="bottom"><b>m_pSendFunction</b></td></tr>
+<a class="el" href="classClient.html#ae08bfbf70068b37445236cec242fdba4">ClientSendFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a09216f1e8a49a3462381cbcc37f23936">m_pSendFunction</a></td></tr>
+<tr class="memdesc:a09216f1e8a49a3462381cbcc37f23936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's send function. <br /></td></tr>
 <tr class="separator:a09216f1e8a49a3462381cbcc37f23936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7ff091ca8afe5f2d35abb7063a05919"><td class="memItemLeft" align="right" valign="top"><a id="ad7ff091ca8afe5f2d35abb7063a05919"></a>
-ClientUpdateStaticBlocksFunction&#160;</td><td class="memItemRight" valign="bottom"><b>m_pUpdateBlocksFunction</b></td></tr>
+<a class="el" href="classClient.html#ad668ba7cf25f6e5878fd3c6112fb97e4">ClientUpdateStaticBlocksFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ad7ff091ca8afe5f2d35abb7063a05919">m_pUpdateBlocksFunction</a></td></tr>
+<tr class="memdesc:ad7ff091ca8afe5f2d35abb7063a05919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's update blocks function. <br /></td></tr>
 <tr class="separator:ad7ff091ca8afe5f2d35abb7063a05919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a745f27064f298f72afe22ca35fc06de8"><td class="memItemLeft" align="right" valign="top"><a id="a745f27064f298f72afe22ca35fc06de8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkLookupResult</b> (void *address)</td></tr>
+<tr class="memitem:a745f27064f298f72afe22ca35fc06de8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a745f27064f298f72afe22ca35fc06de8">checkLookupResult</a> (void *address)</td></tr>
+<tr class="memdesc:a745f27064f298f72afe22ca35fc06de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks to see if the resulting pointer exists in the memory space of the client.  <a href="#a745f27064f298f72afe22ca35fc06de8">More...</a><br /></td></tr>
 <tr class="separator:a745f27064f298f72afe22ca35fc06de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:ab805df18f0485d0a40179924ccc7c643"><td class="memItemLeft" align="right" valign="top"><a id="ab805df18f0485d0a40179924ccc7c643"></a>
-static void **&#160;</td><td class="memItemRight" valign="bottom"><b>FindNetworkStructureInstance</b> ()</td></tr>
+<tr class="memitem:ab805df18f0485d0a40179924ccc7c643"><td class="memItemLeft" align="right" valign="top">static void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ab805df18f0485d0a40179924ccc7c643">FindNetworkStructureInstance</a> ()</td></tr>
+<tr class="memdesc:ab805df18f0485d0a40179924ccc7c643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client's network manager.  <a href="#ab805df18f0485d0a40179924ccc7c643">More...</a><br /></td></tr>
 <tr class="separator:ab805df18f0485d0a40179924ccc7c643"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedd57470833d77e1946f548eb8accf93"><td class="memItemLeft" align="right" valign="top"><a id="aedd57470833d77e1946f548eb8accf93"></a>
-static ClientRecvFunction&#160;</td><td class="memItemRight" valign="bottom"><b>FindRecvFunction</b> ()</td></tr>
+<tr class="memitem:aedd57470833d77e1946f548eb8accf93"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classClient.html#a155b7973b181e0193772f57e405d812a">ClientRecvFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aedd57470833d77e1946f548eb8accf93">FindRecvFunction</a> ()</td></tr>
+<tr class="memdesc:aedd57470833d77e1946f548eb8accf93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client's network receive function.  <a href="#aedd57470833d77e1946f548eb8accf93">More...</a><br /></td></tr>
 <tr class="separator:aedd57470833d77e1946f548eb8accf93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a380b0460c87a6d507327dafb79c2dbec"><td class="memItemLeft" align="right" valign="top"><a id="a380b0460c87a6d507327dafb79c2dbec"></a>
-static ClientSendFunction&#160;</td><td class="memItemRight" valign="bottom"><b>FindSendFunction</b> ()</td></tr>
+<tr class="memitem:a380b0460c87a6d507327dafb79c2dbec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classClient.html#ae08bfbf70068b37445236cec242fdba4">ClientSendFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a380b0460c87a6d507327dafb79c2dbec">FindSendFunction</a> ()</td></tr>
+<tr class="memdesc:a380b0460c87a6d507327dafb79c2dbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client's network send function.  <a href="#a380b0460c87a6d507327dafb79c2dbec">More...</a><br /></td></tr>
 <tr class="separator:a380b0460c87a6d507327dafb79c2dbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7923bdba756ed0b485f5b1094dd11c9"><td class="memItemLeft" align="right" valign="top"><a id="ac7923bdba756ed0b485f5b1094dd11c9"></a>
-static unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><b>FindDrawMapThingieTable</b> ()</td></tr>
+<tr class="memitem:ac7923bdba756ed0b485f5b1094dd11c9"><td class="memItemLeft" align="right" valign="top">static unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ac7923bdba756ed0b485f5b1094dd11c9">FindDrawMapThingieTable</a> ()</td></tr>
+<tr class="memdesc:ac7923bdba756ed0b485f5b1094dd11c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up the client's DrawMapThingie Structure.  <a href="#ac7923bdba756ed0b485f5b1094dd11c9">More...</a><br /></td></tr>
 <tr class="separator:ac7923bdba756ed0b485f5b1094dd11c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9562300a6b27c585268c7caf8ee6fd70"><td class="memItemLeft" align="right" valign="top"><a id="a9562300a6b27c585268c7caf8ee6fd70"></a>
-static <a class="el" href="structMapTileDefinition.html">MapTileDefinition</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindMapDimensionStructure</b> ()</td></tr>
+<tr class="memitem:a9562300a6b27c585268c7caf8ee6fd70"><td class="memItemLeft" align="right" valign="top">static MapTileDefinition *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9562300a6b27c585268c7caf8ee6fd70">FindMapDimensionStructure</a> ()</td></tr>
+<tr class="memdesc:a9562300a6b27c585268c7caf8ee6fd70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client's Map Dimension Structure. The Map Dimension Structure contains the map dimensions and wrapping coordinates for each client map.  <a href="#a9562300a6b27c585268c7caf8ee6fd70">More...</a><br /></td></tr>
 <tr class="separator:a9562300a6b27c585268c7caf8ee6fd70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad603a9b894dbf224909e11881e01b91b"><td class="memItemLeft" align="right" valign="top"><a id="ad603a9b894dbf224909e11881e01b91b"></a>
-static <a class="el" href="structMapMinDisplay.html">MapMinDisplay</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindMapMinCoordDisplayStructure</b> ()</td></tr>
+<tr class="memitem:ad603a9b894dbf224909e11881e01b91b"><td class="memItemLeft" align="right" valign="top">static MapMinDisplay *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ad603a9b894dbf224909e11881e01b91b">FindMapMinCoordDisplayStructure</a> ()</td></tr>
+<tr class="memdesc:ad603a9b894dbf224909e11881e01b91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client's Structure that holds the minimum coords to display on screen.  <a href="#ad603a9b894dbf224909e11881e01b91b">More...</a><br /></td></tr>
 <tr class="separator:ad603a9b894dbf224909e11881e01b91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57c86f85a47d2c4619a6971aaa299a64"><td class="memItemLeft" align="right" valign="top"><a id="a57c86f85a47d2c4619a6971aaa299a64"></a>
-static int *&#160;</td><td class="memItemRight" valign="bottom"><b>FindClientDisplayedBlocksTable</b> ()</td></tr>
+<tr class="memitem:a57c86f85a47d2c4619a6971aaa299a64"><td class="memItemLeft" align="right" valign="top">static int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a57c86f85a47d2c4619a6971aaa299a64">FindClientDisplayedBlocksTable</a> ()</td></tr>
+<tr class="memdesc:a57c86f85a47d2c4619a6971aaa299a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client's Display Blocks Table. This table contains a 64x64 array of blocks.  <a href="#a57c86f85a47d2c4619a6971aaa299a64">More...</a><br /></td></tr>
 <tr class="separator:a57c86f85a47d2c4619a6971aaa299a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33cccaa05561a96470ba7a6238b64ec9"><td class="memItemLeft" align="right" valign="top"><a id="a33cccaa05561a96470ba7a6238b64ec9"></a>
-static <a class="el" href="structCPlayerMobile.html">CPlayerMobile</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FindPlayerStructure</b> ()</td></tr>
+<tr class="memitem:a33cccaa05561a96470ba7a6238b64ec9"><td class="memItemLeft" align="right" valign="top">static CPlayerMobile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a33cccaa05561a96470ba7a6238b64ec9">FindPlayerStructure</a> ()</td></tr>
+<tr class="memdesc:a33cccaa05561a96470ba7a6238b64ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client Player structure memory address.  <a href="#a33cccaa05561a96470ba7a6238b64ec9">More...</a><br /></td></tr>
 <tr class="separator:a33cccaa05561a96470ba7a6238b64ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafc9f186d109c578f3a6c904e1d6dcd2"><td class="memItemLeft" align="right" valign="top"><a id="aafc9f186d109c578f3a6c904e1d6dcd2"></a>
-static ClientUpdateStaticBlocksFunction&#160;</td><td class="memItemRight" valign="bottom"><b>FindUpdateBlocksFunction</b> ()</td></tr>
+<tr class="memitem:aafc9f186d109c578f3a6c904e1d6dcd2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classClient.html#ad668ba7cf25f6e5878fd3c6112fb97e4">ClientUpdateStaticBlocksFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aafc9f186d109c578f3a6c904e1d6dcd2">FindUpdateBlocksFunction</a> ()</td></tr>
+<tr class="memdesc:aafc9f186d109c578f3a6c904e1d6dcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client function that updates onscreen statics.  <a href="#aafc9f186d109c578f3a6c904e1d6dcd2">More...</a><br /></td></tr>
 <tr class="separator:aafc9f186d109c578f3a6c904e1d6dcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0afdffb8ad86f6db62b826ba29f26f15"><td class="memItemLeft" align="right" valign="top"><a id="a0afdffb8ad86f6db62b826ba29f26f15"></a>
-static RefreshTerrainFunction&#160;</td><td class="memItemRight" valign="bottom"><b>FindRefreshTerrainFunction</b> ()</td></tr>
+<tr class="memitem:a0afdffb8ad86f6db62b826ba29f26f15"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classClient.html#aad83aee240ec2d11460f4fe243871b39">RefreshTerrainFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a0afdffb8ad86f6db62b826ba29f26f15">FindRefreshTerrainFunction</a> ()</td></tr>
+<tr class="memdesc:a0afdffb8ad86f6db62b826ba29f26f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client function that refreshes the onscreen map graphics.  <a href="#a0afdffb8ad86f6db62b826ba29f26f15">More...</a><br /></td></tr>
 <tr class="separator:a0afdffb8ad86f6db62b826ba29f26f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78ce3c4771debf330014c6199fc6f9a6"><td class="memItemLeft" align="right" valign="top"><a id="a78ce3c4771debf330014c6199fc6f9a6"></a>
-static <a class="el" href="structCStaticObject.html">CStaticObject</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>FindMasterStaticsList</b> ()</td></tr>
+<tr class="memitem:a78ce3c4771debf330014c6199fc6f9a6"><td class="memItemLeft" align="right" valign="top">static CStaticObject **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a78ce3c4771debf330014c6199fc6f9a6">FindMasterStaticsList</a> ()</td></tr>
+<tr class="memdesc:a78ce3c4771debf330014c6199fc6f9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for the client's Master Statics List Structure.  <a href="#a78ce3c4771debf330014c6199fc6f9a6">More...</a><br /></td></tr>
 <tr class="separator:a78ce3c4771debf330014c6199fc6f9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ab7298b0ec9dccad04c7a38923733a798"><td class="memItemLeft" align="right" valign="top"><a id="ab7298b0ec9dccad04c7a38923733a798"></a>
-void **&#160;</td><td class="memItemRight" valign="bottom"><b>m_pNetworkStructureInstance</b></td></tr>
+void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ab7298b0ec9dccad04c7a38923733a798">m_pNetworkStructureInstance</a></td></tr>
+<tr class="memdesc:ab7298b0ec9dccad04c7a38923733a798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's Network Structure instance. <br /></td></tr>
 <tr class="separator:ab7298b0ec9dccad04c7a38923733a798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc026af8de9d5e1e532c77a6f851b1dc"><td class="memItemLeft" align="right" valign="top"><a id="abc026af8de9d5e1e532c77a6f851b1dc"></a>
-unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pMapThingieTable</b></td></tr>
+unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#abc026af8de9d5e1e532c77a6f851b1dc">m_pMapThingieTable</a></td></tr>
+<tr class="memdesc:abc026af8de9d5e1e532c77a6f851b1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's mapDrawThingie[64][64] (CDrawItem*)*. <br /></td></tr>
 <tr class="separator:abc026af8de9d5e1e532c77a6f851b1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a339a7a4bfe9800de7b054e75f0ec8cd9"><td class="memItemLeft" align="right" valign="top"><a id="a339a7a4bfe9800de7b054e75f0ec8cd9"></a>
-<a class="el" href="structMapTileDefinition.html">MapTileDefinition</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pMapDimensionsStructure</b></td></tr>
+MapTileDefinition *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a339a7a4bfe9800de7b054e75f0ec8cd9">m_pMapDimensionsStructure</a></td></tr>
+<tr class="memdesc:a339a7a4bfe9800de7b054e75f0ec8cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's Map Dimension Structure instance. <br /></td></tr>
 <tr class="separator:a339a7a4bfe9800de7b054e75f0ec8cd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3e60ddfa0fae72b13a4861fa5492166"><td class="memItemLeft" align="right" valign="top"><a id="aa3e60ddfa0fae72b13a4861fa5492166"></a>
-<a class="el" href="structMapMinDisplay.html">MapMinDisplay</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pMapMinCoordDisplayStructure</b></td></tr>
+MapMinDisplay *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aa3e60ddfa0fae72b13a4861fa5492166">m_pMapMinCoordDisplayStructure</a></td></tr>
+<tr class="memdesc:aa3e60ddfa0fae72b13a4861fa5492166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's Mininum Coordinate Display Structure. <br /></td></tr>
 <tr class="separator:aa3e60ddfa0fae72b13a4861fa5492166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c27e36dec851424165a174841e9aec3"><td class="memItemLeft" align="right" valign="top"><a id="a5c27e36dec851424165a174841e9aec3"></a>
-int *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pClientDisplayedBlocksTable</b></td></tr>
+int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a5c27e36dec851424165a174841e9aec3">m_pClientDisplayedBlocksTable</a></td></tr>
+<tr class="memdesc:a5c27e36dec851424165a174841e9aec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's Displayed Blocks Table. <br /></td></tr>
 <tr class="separator:a5c27e36dec851424165a174841e9aec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20e22bfda3173d821b2458e6be7c6cbc"><td class="memItemLeft" align="right" valign="top"><a id="a20e22bfda3173d821b2458e6be7c6cbc"></a>
-<a class="el" href="structCPlayerMobile.html">CPlayerMobile</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pPlayerStructure</b></td></tr>
+CPlayerMobile *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a20e22bfda3173d821b2458e6be7c6cbc">m_pPlayerStructure</a></td></tr>
+<tr class="memdesc:a20e22bfda3173d821b2458e6be7c6cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's Player Class Instance. <br /></td></tr>
 <tr class="separator:a20e22bfda3173d821b2458e6be7c6cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a211a8668432111646243ccbc5d44a1cc"><td class="memItemLeft" align="right" valign="top"><a id="a211a8668432111646243ccbc5d44a1cc"></a>
-RefreshTerrainFunction&#160;</td><td class="memItemRight" valign="bottom"><b>m_pRefreshTerrainFunction</b></td></tr>
+<a class="el" href="classClient.html#aad83aee240ec2d11460f4fe243871b39">RefreshTerrainFunction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a211a8668432111646243ccbc5d44a1cc">m_pRefreshTerrainFunction</a></td></tr>
+<tr class="memdesc:a211a8668432111646243ccbc5d44a1cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's Refresh Terrain function. <br /></td></tr>
 <tr class="separator:a211a8668432111646243ccbc5d44a1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb2e001a48e3c46bca8709f62b2aa536"><td class="memItemLeft" align="right" valign="top"><a id="afb2e001a48e3c46bca8709f62b2aa536"></a>
-<a class="el" href="structCStaticObject.html">CStaticObject</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>m_pMasterStaticsList</b></td></tr>
+CStaticObject **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#afb2e001a48e3c46bca8709f62b2aa536">m_pMasterStaticsList</a></td></tr>
+<tr class="memdesc:afb2e001a48e3c46bca8709f62b2aa536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to client's Master Statics List. <br /></td></tr>
 <tr class="separator:afb2e001a48e3c46bca8709f62b2aa536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97b1d85995aa1b49ca336d4824fff186"><td class="memItemLeft" align="right" valign="top"><a id="a97b1d85995aa1b49ca336d4824fff186"></a>
-<a class="el" href="classDotNetHost.html">DotNetHost</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pDotNetHost</b></td></tr>
+<a class="el" href="classDotNetHost.html">DotNetHost</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a97b1d85995aa1b49ca336d4824fff186">m_pDotNetHost</a></td></tr>
+<tr class="memdesc:a97b1d85995aa1b49ca336d4824fff186"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to Dot Net host (currently unused) <br /></td></tr>
 <tr class="separator:a97b1d85995aa1b49ca336d4824fff186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1138932af11fad0119297dbb29dbf45b"><td class="memItemLeft" align="right" valign="top"><a id="a1138932af11fad0119297dbb29dbf45b"></a>
-<a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pNetworkManager</b></td></tr>
+<a class="el" href="classNetworkManager.html">NetworkManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a1138932af11fad0119297dbb29dbf45b">m_pNetworkManager</a></td></tr>
+<tr class="memdesc:a1138932af11fad0119297dbb29dbf45b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local Pointer to global network manager instance. <br /></td></tr>
 <tr class="separator:a1138932af11fad0119297dbb29dbf45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af26ac1d25be90c7b9110a1760c710531"><td class="memItemLeft" align="right" valign="top"><a id="af26ac1d25be90c7b9110a1760c710531"></a>
-<a class="el" href="classBaseFileManager.html">BaseFileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pFileManager</b></td></tr>
+<a class="el" href="classBaseFileManager.html">BaseFileManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#af26ac1d25be90c7b9110a1760c710531">m_pFileManager</a></td></tr>
+<tr class="memdesc:af26ac1d25be90c7b9110a1760c710531"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local Pointer to global file manager instance. <br /></td></tr>
 <tr class="separator:af26ac1d25be90c7b9110a1760c710531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a774f61052de490134c121d5cc65e6487"><td class="memItemLeft" align="right" valign="top"><a id="a774f61052de490134c121d5cc65e6487"></a>
-static void *&#160;</td><td class="memItemRight" valign="bottom"><b>BASE_ADDRESS</b> = reinterpret_cast&lt;void*&gt;(0x400000)</td></tr>
+static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a774f61052de490134c121d5cc65e6487">BASE_ADDRESS</a> = reinterpret_cast&lt;void*&gt;(0x400000)</td></tr>
+<tr class="memdesc:a774f61052de490134c121d5cc65e6487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base address of client module in process virtual address space. <br /></td></tr>
 <tr class="separator:a774f61052de490134c121d5cc65e6487"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c1c9011d74b69dbfb3b7993a86070e0"><td class="memItemLeft" align="right" valign="top"><a id="a1c1c9011d74b69dbfb3b7993a86070e0"></a>
-static const int&#160;</td><td class="memItemRight" valign="bottom"><b>CLIENT_IMAGE_MAX_SIZE</b> = 0x300000</td></tr>
+static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a1c1c9011d74b69dbfb3b7993a86070e0">CLIENT_IMAGE_MAX_SIZE</a> = 0x300000</td></tr>
+<tr class="memdesc:a1c1c9011d74b69dbfb3b7993a86070e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum search size inside the client. <br /></td></tr>
 <tr class="separator:a1c1c9011d74b69dbfb3b7993a86070e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bcc8d88d8cc6dcf180c0b8b44611a6d"><td class="memItemLeft" align="right" valign="top"><a id="a6bcc8d88d8cc6dcf180c0b8b44611a6d"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_sendSignature1</b> [] = { 0x8D, 0x8B, 0x94, 0x00, 0x00, 0x00, 0xE8, 0xCC, 0xCC, 0xCC, 0xCC, 0x55, 0x8D, 0x8B, 0xBC, 0x00, 0x00, 0x00 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a6bcc8d88d8cc6dcf180c0b8b44611a6d">g_sendSignature1</a> [] = { 0x8D, 0x8B, 0x94, 0x00, 0x00, 0x00, 0xE8, 0xCC, 0xCC, 0xCC, 0xCC, 0x55, 0x8D, 0x8B, 0xBC, 0x00, 0x00, 0x00 }</td></tr>
+<tr class="memdesc:a6bcc8d88d8cc6dcf180c0b8b44611a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's send function. <br /></td></tr>
 <tr class="separator:a6bcc8d88d8cc6dcf180c0b8b44611a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd96e96a5f5c704a7d9a3c26e696d365"><td class="memItemLeft" align="right" valign="top"><a id="abd96e96a5f5c704a7d9a3c26e696d365"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_sendSignature2</b> [] = { 0x0F, 0xB7, 0xD8, 0x0F, 0xB6, 0x06, 0x83, 0xC4, 0x04, 0x53, 0x50, 0x8D, 0x4F, 0x6C }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#abd96e96a5f5c704a7d9a3c26e696d365">g_sendSignature2</a> [] = { 0x0F, 0xB7, 0xD8, 0x0F, 0xB6, 0x06, 0x83, 0xC4, 0x04, 0x53, 0x50, 0x8D, 0x4F, 0x6C }</td></tr>
+<tr class="memdesc:abd96e96a5f5c704a7d9a3c26e696d365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's send function. <br /></td></tr>
 <tr class="separator:abd96e96a5f5c704a7d9a3c26e696d365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a971febbf7a262c7adb9daceaa99f7d1d"><td class="memItemLeft" align="right" valign="top"><a id="a971febbf7a262c7adb9daceaa99f7d1d"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_recvSignature1</b> [] = { 0x53, 0x56, 0x57, 0x8B, 0xF9, 0x8B, 0x0D, 0xCC, 0xCC, 0xCC, 0xCC, 0x33, 0xD2 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a971febbf7a262c7adb9daceaa99f7d1d">g_recvSignature1</a> [] = { 0x53, 0x56, 0x57, 0x8B, 0xF9, 0x8B, 0x0D, 0xCC, 0xCC, 0xCC, 0xCC, 0x33, 0xD2 }</td></tr>
+<tr class="memdesc:a971febbf7a262c7adb9daceaa99f7d1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's receive function. <br /></td></tr>
 <tr class="separator:a971febbf7a262c7adb9daceaa99f7d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b89daaafe22081a8cd6652ff7e9cb4"><td class="memItemLeft" align="right" valign="top"><a id="a01b89daaafe22081a8cd6652ff7e9cb4"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_recvSignature2</b> [] = { 0xA1, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xC7, 0x05, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0x8B, 0x38, 0x8B, 0xCC, 0xBE }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a01b89daaafe22081a8cd6652ff7e9cb4">g_recvSignature2</a> [] = { 0xA1, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xC7, 0x05, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0x8B, 0x38, 0x8B, 0xCC, 0xBE }</td></tr>
+<tr class="memdesc:a01b89daaafe22081a8cd6652ff7e9cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's receive function. <br /></td></tr>
 <tr class="separator:a01b89daaafe22081a8cd6652ff7e9cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0b036ff5efee0c422f11db28c29aac0"><td class="memItemLeft" align="right" valign="top"><a id="ac0b036ff5efee0c422f11db28c29aac0"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_NetworkObjectSignature1</b> [] = { 0xA1, 0xCC, 0xCC, 0xCC, 0xCC, 0x8B, 0x0D, 0xCC, 0xCC, 0xCC, 0xCC, 0x8B, 0x16 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ac0b036ff5efee0c422f11db28c29aac0">g_NetworkObjectSignature1</a> [] = { 0xA1, 0xCC, 0xCC, 0xCC, 0xCC, 0x8B, 0x0D, 0xCC, 0xCC, 0xCC, 0xCC, 0x8B, 0x16 }</td></tr>
+<tr class="memdesc:ac0b036ff5efee0c422f11db28c29aac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Network Object. <br /></td></tr>
 <tr class="separator:ac0b036ff5efee0c422f11db28c29aac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad6ae5d53418c537944aa977b10ab7c9"><td class="memItemLeft" align="right" valign="top"><a id="aad6ae5d53418c537944aa977b10ab7c9"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_NetworkObjectSignature2</b> [] = { 0xC7, 0x06, 0xCC, 0xCC, 0xCC, 0xCC, 0x89, 0x35, 0xCC, 0xCC, 0xCC, 0xCC, 0x8B, 0x4C, 0x24, 0x0C }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aad6ae5d53418c537944aa977b10ab7c9">g_NetworkObjectSignature2</a> [] = { 0xC7, 0x06, 0xCC, 0xCC, 0xCC, 0xCC, 0x89, 0x35, 0xCC, 0xCC, 0xCC, 0xCC, 0x8B, 0x4C, 0x24, 0x0C }</td></tr>
+<tr class="memdesc:aad6ae5d53418c537944aa977b10ab7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Network Object. <br /></td></tr>
 <tr class="separator:aad6ae5d53418c537944aa977b10ab7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a5379f7c1969ec89f78ecba3687b9d1"><td class="memItemLeft" align="right" valign="top"><a id="a5a5379f7c1969ec89f78ecba3687b9d1"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_PlayerBaseSignature1</b> [] = { 0x66, 0x89, 0x71, 0x24, 0x8B, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a5a5379f7c1969ec89f78ecba3687b9d1">g_PlayerBaseSignature1</a> [] = { 0x66, 0x89, 0x71, 0x24, 0x8B, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC }</td></tr>
+<tr class="memdesc:a5a5379f7c1969ec89f78ecba3687b9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Player instance. <br /></td></tr>
 <tr class="separator:a5a5379f7c1969ec89f78ecba3687b9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcc88d1d665afee45cb9ccc50ac46bed"><td class="memItemLeft" align="right" valign="top"><a id="abcc88d1d665afee45cb9ccc50ac46bed"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_PlayerBaseSignature2</b> [] = { 0x66, 0x89, 0x71, 0x28, 0x8B, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#abcc88d1d665afee45cb9ccc50ac46bed">g_PlayerBaseSignature2</a> [] = { 0x66, 0x89, 0x71, 0x28, 0x8B, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC }</td></tr>
+<tr class="memdesc:abcc88d1d665afee45cb9ccc50ac46bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Player instance. <br /></td></tr>
 <tr class="separator:abcc88d1d665afee45cb9ccc50ac46bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a6c8bcd67bb6a85ca2ec46e601131ec"><td class="memItemLeft" align="right" valign="top"><a id="a5a6c8bcd67bb6a85ca2ec46e601131ec"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_mapDimensionSignature</b> [] = { 0x00, 0x1c, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a5a6c8bcd67bb6a85ca2ec46e601131ec">g_mapDimensionSignature</a> [] = { 0x00, 0x1c, 0x00, 0x00, 0x00, 0x10, 0x00, 0x00 }</td></tr>
+<tr class="memdesc:a5a6c8bcd67bb6a85ca2ec46e601131ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Map Dimension Structure. <br /></td></tr>
 <tr class="separator:a5a6c8bcd67bb6a85ca2ec46e601131ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b57823270663d3a506581427d436b34"><td class="memItemLeft" align="right" valign="top"><a id="a9b57823270663d3a506581427d436b34"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_aDrawMapThingieTableSig1</b> [] = { 0x83, 0xE1, 0x3F, 0x83, 0xE2, 0x3F, 0xC1, 0xE2, 0x06 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9b57823270663d3a506581427d436b34">g_aDrawMapThingieTableSig1</a> [] = { 0x83, 0xE1, 0x3F, 0x83, 0xE2, 0x3F, 0xC1, 0xE2, 0x06 }</td></tr>
+<tr class="memdesc:a9b57823270663d3a506581427d436b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Map Thingie Structure. <br /></td></tr>
 <tr class="separator:a9b57823270663d3a506581427d436b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a7f277be3442d89cf884aa50216a08d"><td class="memItemLeft" align="right" valign="top"><a id="a9a7f277be3442d89cf884aa50216a08d"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_aDrawMapThingieTableSig2</b> [] = { 0x83, 0xE1, 0x3F, 0xC1, 0xE1, 0x06, 0x83, 0xE2, 0x3F }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9a7f277be3442d89cf884aa50216a08d">g_aDrawMapThingieTableSig2</a> [] = { 0x83, 0xE1, 0x3F, 0xC1, 0xE1, 0x06, 0x83, 0xE2, 0x3F }</td></tr>
+<tr class="memdesc:a9a7f277be3442d89cf884aa50216a08d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Map Thingie Structure. <br /></td></tr>
 <tr class="separator:a9a7f277be3442d89cf884aa50216a08d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a197a9f2b1763ea5d141a7169d215d"><td class="memItemLeft" align="right" valign="top"><a id="ae9a197a9f2b1763ea5d141a7169d215d"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_minClientDisplaySig1</b> [] = { 0xB8, 0xF1, 0xD8, 0xFF, 0xFF, 0x89, 0x3D, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ae9a197a9f2b1763ea5d141a7169d215d">g_minClientDisplaySig1</a> [] = { 0xB8, 0xF1, 0xD8, 0xFF, 0xFF, 0x89, 0x3D, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3 }</td></tr>
+<tr class="memdesc:ae9a197a9f2b1763ea5d141a7169d215d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's <a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> Display Structure. <br /></td></tr>
 <tr class="separator:ae9a197a9f2b1763ea5d141a7169d215d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31b28b61d3e41cbbf09cff6f2da0b3bf"><td class="memItemLeft" align="right" valign="top"><a id="a31b28b61d3e41cbbf09cff6f2da0b3bf"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_minClientDisplaySig2</b> [] = { 0xB8, 0xF1, 0xD8, 0xFF, 0xFF, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a31b28b61d3e41cbbf09cff6f2da0b3bf">g_minClientDisplaySig2</a> [] = { 0xB8, 0xF1, 0xD8, 0xFF, 0xFF, 0xCC, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3 }</td></tr>
+<tr class="memdesc:a31b28b61d3e41cbbf09cff6f2da0b3bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's <a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> Display Structure. <br /></td></tr>
 <tr class="separator:a31b28b61d3e41cbbf09cff6f2da0b3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa63591f20dbc267c0b39ccde0d2fe5de"><td class="memItemLeft" align="right" valign="top"><a id="aa63591f20dbc267c0b39ccde0d2fe5de"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_minClientDisplaySig3</b> [] = { 0xB8, 0xF1, 0xD8, 0xFF, 0xFF, 0xA3, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aa63591f20dbc267c0b39ccde0d2fe5de">g_minClientDisplaySig3</a> [] = { 0xB8, 0xF1, 0xD8, 0xFF, 0xFF, 0xA3, 0xCC, 0xCC, 0xCC, 0xCC, 0xA3 }</td></tr>
+<tr class="memdesc:aa63591f20dbc267c0b39ccde0d2fe5de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's <a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> Display Structure. <br /></td></tr>
 <tr class="separator:aa63591f20dbc267c0b39ccde0d2fe5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab94d89ada7dfb4112801a473302643d0"><td class="memItemLeft" align="right" valign="top"><a id="ab94d89ada7dfb4112801a473302643d0"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_updateBlocksSig1</b> [] = { 0xEE, 0xC1, 0xCC, 0x03, 0xC1, 0xCC, 0x03 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ab94d89ada7dfb4112801a473302643d0">g_updateBlocksSig1</a> [] = { 0xEE, 0xC1, 0xCC, 0x03, 0xC1, 0xCC, 0x03 }</td></tr>
+<tr class="memdesc:ab94d89ada7dfb4112801a473302643d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Update Block function. <br /></td></tr>
 <tr class="separator:ab94d89ada7dfb4112801a473302643d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac93c7f3438fa2eb5a60f531416be92a4"><td class="memItemLeft" align="right" valign="top"><a id="ac93c7f3438fa2eb5a60f531416be92a4"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_updateBlocksSig2</b> [] = { 0x2B, 0xD8, 0xC1, 0xCC, 0x03, 0xC1, 0xCC, 0x03 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#ac93c7f3438fa2eb5a60f531416be92a4">g_updateBlocksSig2</a> [] = { 0x2B, 0xD8, 0xC1, 0xCC, 0x03, 0xC1, 0xCC, 0x03 }</td></tr>
+<tr class="memdesc:ac93c7f3438fa2eb5a60f531416be92a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Update Block function. <br /></td></tr>
 <tr class="separator:ac93c7f3438fa2eb5a60f531416be92a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a107911c3dd2246889756bb25adce813c"><td class="memItemLeft" align="right" valign="top"><a id="a107911c3dd2246889756bb25adce813c"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_refreshTerrainFunctionSig1</b> [] = { 0x75, 0xCC, 0x83, 0xCC, 0xFF, 0x74, 0xCC, 0xE8 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a107911c3dd2246889756bb25adce813c">g_refreshTerrainFunctionSig1</a> [] = { 0x75, 0xCC, 0x83, 0xCC, 0xFF, 0x74, 0xCC, 0xE8 }</td></tr>
+<tr class="memdesc:a107911c3dd2246889756bb25adce813c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Refresh Terrain function. <br /></td></tr>
 <tr class="separator:a107911c3dd2246889756bb25adce813c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b450568aa3d12b172837aa725e6377c"><td class="memItemLeft" align="right" valign="top"><a id="a2b450568aa3d12b172837aa725e6377c"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_masterStaticsListSig1</b> [] = { 0x33, 0xf6, 0x68, 0x00, 0x00, 0xCC, 0x00, 0x89 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a2b450568aa3d12b172837aa725e6377c">g_masterStaticsListSig1</a> [] = { 0x33, 0xf6, 0x68, 0x00, 0x00, 0xCC, 0x00, 0x89 }</td></tr>
+<tr class="memdesc:a2b450568aa3d12b172837aa725e6377c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Master Statics List Structure. <br /></td></tr>
 <tr class="separator:a2b450568aa3d12b172837aa725e6377c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3e53c1af6d7ac66f3c8ead36b402110"><td class="memItemLeft" align="right" valign="top"><a id="aa3e53c1af6d7ac66f3c8ead36b402110"></a>
-static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><b>g_masterStaticsListSig2</b> [] = { 0x68, 0x40, 0xF9, 0x2F, 0x00, 0x89, 0x35 }</td></tr>
+static unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#aa3e53c1af6d7ac66f3c8ead36b402110">g_masterStaticsListSig2</a> [] = { 0x68, 0x40, 0xF9, 0x2F, 0x00, 0x89, 0x35 }</td></tr>
+<tr class="memdesc:aa3e53c1af6d7ac66f3c8ead36b402110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes used to search for client's Master Statics List Structure. <br /></td></tr>
 <tr class="separator:aa3e53c1af6d7ac66f3c8ead36b402110"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c10a6381a1a4630b4d0d0ef8a82b3a9"><td class="memItemLeft" align="right" valign="top"><a id="a9c10a6381a1a4630b4d0d0ef8a82b3a9"></a>
-static <a class="el" href="classSelfRegisteringClass.html">SelfRegisteringClass</a>&lt; <a class="el" href="classClient.html">Client</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_registration</b></td></tr>
+static <a class="el" href="classSelfRegisteringClass.html">SelfRegisteringClass</a>&lt; <a class="el" href="classClient.html">Client</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html#a9c10a6381a1a4630b4d0d0ef8a82b3a9">m_registration</a></td></tr>
+<tr class="memdesc:a9c10a6381a1a4630b4d0d0ef8a82b3a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self Registration mechanism. <br /></td></tr>
 <tr class="separator:a9c10a6381a1a4630b4d0d0ef8a82b3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00050">50</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>This class knows about the client internals. This class assumes that it shares memory space with the actual client, therefor no calls to get memory from an external process are used. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8h_source.html#l00054">54</a> of file <a class="el" href="Client_8h_source.html">Client.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a745f27064f298f72afe22ca35fc06de8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a745f27064f298f72afe22ca35fc06de8">&#9670;&nbsp;</a></span>checkLookupResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Client::checkLookupResult </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pAddress</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks to see if the resulting pointer exists in the memory space of the client. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the memory address is valid, false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00361">361</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="classLogger.html#a88385ddd15152239e0010cc4ef631f92">Logger::LogPrintTaskStatusResult()</a>, and <a class="el" href="classLogger.html#a9ee915d2b364756f10e95ef9565d5903">Logger::LogPrintWithoutDate()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="a57c86f85a47d2c4619a6971aaa299a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c86f85a47d2c4619a6971aaa299a64">&#9670;&nbsp;</a></span>FindClientDisplayedBlocksTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * Client::FindClientDisplayedBlocksTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client's Display Blocks Table. This table contains a 64x64 array of blocks. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to an the clients Display Blocks Table </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00188">188</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00110">MasterControlUtils::FindSignature()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="ac7923bdba756ed0b485f5b1094dd11c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7923bdba756ed0b485f5b1094dd11c9">&#9670;&nbsp;</a></span>FindDrawMapThingieTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char * Client::FindDrawMapThingieTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Looks up the client's DrawMapThingie Structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>Memory pointer to client's DrawMapThingie Structure </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00134">134</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00110">MasterControlUtils::FindSignature()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="a9562300a6b27c585268c7caf8ee6fd70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9562300a6b27c585268c7caf8ee6fd70">&#9670;&nbsp;</a></span>FindMapDimensionStructure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MapTileDefinition * Client::FindMapDimensionStructure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client's Map Dimension Structure. The Map Dimension Structure contains the map dimensions and wrapping coordinates for each client map. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the memory address of the client's Map Dimension Structure </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00350">350</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">MasterControlUtils::FindSignatureOffset()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="ad603a9b894dbf224909e11881e01b91b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad603a9b894dbf224909e11881e01b91b">&#9670;&nbsp;</a></span>FindMapMinCoordDisplayStructure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MapMinDisplay * Client::FindMapMinCoordDisplayStructure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client's Structure that holds the minimum coords to display on screen. </p>
+<dl class="section return"><dt>Returns</dt><dd>Memory pointer to the Minimum Coord Display Structure </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00166">166</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00110">MasterControlUtils::FindSignature()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="a78ce3c4771debf330014c6199fc6f9a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78ce3c4771debf330014c6199fc6f9a6">&#9670;&nbsp;</a></span>FindMasterStaticsList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CStaticObject ** Client::FindMasterStaticsList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client's Master Statics List Structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>Memory pointer to the Master Statics List Structure </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00150">150</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00110">MasterControlUtils::FindSignature()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="ab805df18f0485d0a40179924ccc7c643"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab805df18f0485d0a40179924ccc7c643">&#9670;&nbsp;</a></span>FindNetworkStructureInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ** Client::FindNetworkStructureInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client's network manager. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the memory address of the client's network manager </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00323">323</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">MasterControlUtils::FindSignatureOffset()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="a33cccaa05561a96470ba7a6238b64ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33cccaa05561a96470ba7a6238b64ec9">&#9670;&nbsp;</a></span>FindPlayerStructure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPlayerMobile * Client::FindPlayerStructure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client Player structure memory address. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the memory address of the client player structure </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00252">252</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">MasterControlUtils::FindSignatureOffset()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="aedd57470833d77e1946f548eb8accf93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd57470833d77e1946f548eb8accf93">&#9670;&nbsp;</a></span>FindRecvFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classClient.html#a155b7973b181e0193772f57e405d812a">Client::ClientRecvFunction</a> Client::FindRecvFunction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client's network receive function. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the memory address of the client's network receive function </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00296">296</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">MasterControlUtils::FindSignatureOffset()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="a0afdffb8ad86f6db62b826ba29f26f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0afdffb8ad86f6db62b826ba29f26f15">&#9670;&nbsp;</a></span>FindRefreshTerrainFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classClient.html#aad83aee240ec2d11460f4fe243871b39">Client::RefreshTerrainFunction</a> Client::FindRefreshTerrainFunction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client function that refreshes the onscreen map graphics. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the refresh terrain client function </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00232">232</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">MasterControlUtils::FindSignatureOffset()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="a380b0460c87a6d507327dafb79c2dbec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a380b0460c87a6d507327dafb79c2dbec">&#9670;&nbsp;</a></span>FindSendFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classClient.html#ae08bfbf70068b37445236cec242fdba4">Client::ClientSendFunction</a> Client::FindSendFunction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client's network send function. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the memory address of the client's network send function </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00269">269</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00161">MasterControlUtils::FindSignatureOffset()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="aafc9f186d109c578f3a6c904e1d6dcd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc9f186d109c578f3a6c904e1d6dcd2">&#9670;&nbsp;</a></span>FindUpdateBlocksFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classClient.html#ad668ba7cf25f6e5878fd3c6112fb97e4">Client::ClientUpdateStaticBlocksFunction</a> Client::FindUpdateBlocksFunction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches for the client function that updates onscreen statics. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the UpdateBlocks client function </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00215">215</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="MasterControlUtils_8cpp_source.html#l00075">MasterControlUtils::FindFunctionCall()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>.</p>
+
+</div>
+</div>
+<a id="a7353ecda90d4e5822b32660248a7182c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7353ecda90d4e5822b32660248a7182c">&#9670;&nbsp;</a></span>GetFileManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBaseFileManager.html">BaseFileManager</a> * Client::GetFileManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the pointer to the client's File Manager. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the client's File Manager </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00605">605</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Client_8h_source.html#l00179">m_pFileManager</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="ClientRedirections_8cpp_source.html#l00374">ClientRedirections::OnCloseHandle()</a>, <a class="el" href="ClientRedirections_8cpp_source.html#l00257">ClientRedirections::OnCreateFileA()</a>, <a class="el" href="ClientRedirections_8cpp_source.html#l00220">ClientRedirections::OnCreateFileARunOnce()</a>, <a class="el" href="ClientRedirections_8cpp_source.html#l00347">ClientRedirections::OnCreateFileMappingA()</a>, and <a class="el" href="ClientRedirections_8cpp_source.html#l00288">ClientRedirections::OnMapViewOfFile()</a>.</p>
+
+</div>
+</div>
+<a id="af703752126ba5c00bbaaea9864aa8dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af703752126ba5c00bbaaea9864aa8dfe">&#9670;&nbsp;</a></span>GetNetworkManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNetworkManager.html">NetworkManager</a> * Client::GetNetworkManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the client Network Manager Pointer. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the client's Network Manager </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00595">595</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Client_8h_source.html#l00178">m_pNetworkManager</a>.</p>
+
+</div>
+</div>
+<a id="a2e56496bded89052e0b1dce55491818a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e56496bded89052e0b1dce55491818a">&#9670;&nbsp;</a></span>getPlayerMobile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPlayerMobile * Client::getPlayerMobile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the pointer to the client Player structure. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> Player Structure Pointer </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00585">585</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Client_8h_source.html#l00141">m_pPlayerStructure</a>.</p>
+
+</div>
+</div>
+<a id="a69d32303db0a4aa7364838e5b61a2f12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d32303db0a4aa7364838e5b61a2f12">&#9670;&nbsp;</a></span>Initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Client::Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Self Registering Class Initialize Method. Searches for client internal structures and pointers. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if all client structures are found </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00052">52</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Client_8h_source.html#l00102">g_aDrawMapThingieTableSig1</a>, <a class="el" href="Client_8h_source.html#l00103">g_aDrawMapThingieTableSig2</a>, <a class="el" href="Client_8h_source.html#l00101">g_mapDimensionSignature</a>, <a class="el" href="Client_8h_source.html#l00110">g_masterStaticsListSig1</a>, <a class="el" href="Client_8h_source.html#l00111">g_masterStaticsListSig2</a>, <a class="el" href="Client_8h_source.html#l00104">g_minClientDisplaySig1</a>, <a class="el" href="Client_8h_source.html#l00105">g_minClientDisplaySig2</a>, <a class="el" href="Client_8h_source.html#l00106">g_minClientDisplaySig3</a>, <a class="el" href="Client_8h_source.html#l00097">g_NetworkObjectSignature1</a>, <a class="el" href="Client_8h_source.html#l00098">g_NetworkObjectSignature2</a>, <a class="el" href="Client_8h_source.html#l00099">g_PlayerBaseSignature1</a>, <a class="el" href="Client_8h_source.html#l00100">g_PlayerBaseSignature2</a>, <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="UltimaLive_8h_source.html#l00048">UltimaLive::g_pUltimaLive</a>, <a class="el" href="Client_8h_source.html#l00095">g_recvSignature1</a>, <a class="el" href="Client_8h_source.html#l00096">g_recvSignature2</a>, <a class="el" href="Client_8h_source.html#l00109">g_refreshTerrainFunctionSig1</a>, <a class="el" href="Client_8h_source.html#l00093">g_sendSignature1</a>, <a class="el" href="Client_8h_source.html#l00094">g_sendSignature2</a>, <a class="el" href="Client_8h_source.html#l00107">g_updateBlocksSig1</a>, <a class="el" href="Client_8h_source.html#l00108">g_updateBlocksSig2</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="classLogger.html#a5d08e73b13c0bade3be70a12c6ccabe2">Logger::LogPrintError()</a>, <a class="el" href="UltimaLive_8cpp_source.html#l00200">UltimaLive::Lookup()</a>, <a class="el" href="Client_8cpp_source.html#l00406">LookupClientInternalStructuresAndFunctions()</a>, <a class="el" href="Client_8h_source.html#l00179">m_pFileManager</a>, and <a class="el" href="Client_8h_source.html#l00178">m_pNetworkManager</a>.</p>
+
+</div>
+</div>
+<a id="af5933dc04be85f80660ca2d2d56b0e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5933dc04be85f80660ca2d2d56b0e45">&#9670;&nbsp;</a></span>LookupClientInternalStructuresAndFunctions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Client::LookupClientInternalStructuresAndFunctions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search out all internal structure addresses. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if all pointers and internal structures are found </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00406">406</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Client_8cpp_source.html#l00361">checkLookupResult()</a>, <a class="el" href="Client_8cpp_source.html#l00188">FindClientDisplayedBlocksTable()</a>, <a class="el" href="Client_8cpp_source.html#l00134">FindDrawMapThingieTable()</a>, <a class="el" href="Client_8cpp_source.html#l00350">FindMapDimensionStructure()</a>, <a class="el" href="Client_8cpp_source.html#l00166">FindMapMinCoordDisplayStructure()</a>, <a class="el" href="Client_8cpp_source.html#l00150">FindMasterStaticsList()</a>, <a class="el" href="Client_8cpp_source.html#l00323">FindNetworkStructureInstance()</a>, <a class="el" href="Client_8cpp_source.html#l00252">FindPlayerStructure()</a>, <a class="el" href="Client_8cpp_source.html#l00296">FindRecvFunction()</a>, <a class="el" href="Client_8cpp_source.html#l00232">FindRefreshTerrainFunction()</a>, <a class="el" href="Client_8cpp_source.html#l00269">FindSendFunction()</a>, <a class="el" href="Client_8cpp_source.html#l00215">FindUpdateBlocksFunction()</a>, <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="classLogger.html#a9ee915d2b364756f10e95ef9565d5903">Logger::LogPrintWithoutDate()</a>, <a class="el" href="Client_8h_source.html#l00140">m_pClientDisplayedBlocksTable</a>, <a class="el" href="Client_8h_source.html#l00138">m_pMapDimensionsStructure</a>, <a class="el" href="Client_8h_source.html#l00139">m_pMapMinCoordDisplayStructure</a>, <a class="el" href="Client_8h_source.html#l00137">m_pMapThingieTable</a>, <a class="el" href="Client_8h_source.html#l00143">m_pMasterStaticsList</a>, <a class="el" href="Client_8h_source.html#l00136">m_pNetworkStructureInstance</a>, <a class="el" href="Client_8h_source.html#l00141">m_pPlayerStructure</a>, <a class="el" href="Client_8h_source.html#l00131">m_pRecvFunction</a>, <a class="el" href="Client_8h_source.html#l00142">m_pRefreshTerrainFunction</a>, <a class="el" href="Client_8h_source.html#l00132">m_pSendFunction</a>, and <a class="el" href="Client_8h_source.html#l00133">m_pUpdateBlocksFunction</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Client_8cpp_source.html#l00052">Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="a142dfb15e7f5d3fc47b72095e8ca93f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a142dfb15e7f5d3fc47b72095e8ca93f3">&#9670;&nbsp;</a></span>refreshClientStatics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::refreshClientStatics </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>blockNumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Refreshes statics on the client screen for a given block. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockNumber</td><td>block number to refresh </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00489">489</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="Client_8h_source.html#l00140">m_pClientDisplayedBlocksTable</a>, <a class="el" href="Client_8h_source.html#l00138">m_pMapDimensionsStructure</a>, <a class="el" href="Client_8h_source.html#l00139">m_pMapMinCoordDisplayStructure</a>, <a class="el" href="Client_8h_source.html#l00143">m_pMasterStaticsList</a>, and <a class="el" href="ClientRedirections_8cpp_source.html#l00198">ClientRedirections::OnUpdateStaticBlocks()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00186">Atlas::onUpdateStatics()</a>.</p>
+
+</div>
+</div>
+<a id="ab8d755c2f62f3c32601001aec46f90fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8d755c2f62f3c32601001aec46f90fa">&#9670;&nbsp;</a></span>SendPacketToClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::SendPacketToClient </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>pBuffer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends an array of bytes to the client using the clients receive function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pBuffer</td><td>pointer to byte array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00564">564</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Debug_8h_source.html#l00110">Logger::g_pLogger</a>, <a class="el" href="classLogger.html#a827dd7de91559307344d98a5a939da1e">Logger::LogPrint()</a>, <a class="el" href="Client_8h_source.html#l00136">m_pNetworkStructureInstance</a>, and <a class="el" href="Client_8h_source.html#l00131">m_pRecvFunction</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NetworkManager_8cpp_source.html#l00111">NetworkManager::sendPacketToClient()</a>.</p>
+
+</div>
+</div>
+<a id="a9ff79c4db77861d361711fceb3c9c381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ff79c4db77861d361711fceb3c9c381">&#9670;&nbsp;</a></span>SendPacketToServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::SendPacketToServer </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>pBuffer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends an array of bytes to the server using the clients send function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pBuffer</td><td>pointer to byte array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00554">554</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Client_8h_source.html#l00136">m_pNetworkStructureInstance</a>, and <a class="el" href="Client_8h_source.html#l00132">m_pSendFunction</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NetworkManager_8cpp_source.html#l00121">NetworkManager::sendPacketToServer()</a>.</p>
+
+</div>
+</div>
+<a id="aa6b381a96226578b49f495703f56a3b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b381a96226578b49f495703f56a3b3">&#9670;&nbsp;</a></span>SetMapDimensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::SetMapDimensions </td>
+          <td>(</td>
+          <td class="paramtype">MapTileDefinition&#160;</td>
+          <td class="paramname"><em>definition</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the client's map dimensions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">definition</td><td>New map definition set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00575">575</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Client_8h_source.html#l00138">m_pMapDimensionsStructure</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Atlas_8cpp_source.html#l00142">Atlas::LoadMap()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>UltimaLive/<a class="el" href="Client_8h_source.html">Client.h</a></li>
 <li>UltimaLive/<a class="el" href="Client_8cpp_source.html">Client.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -69,105 +69,223 @@ $(function() {
 <div class="title">UltimaLive Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Enables map streaming to the client and definition and use of additional maps.  
+ <a href="classUltimaLive.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="UltimaLive_8h_source.html">UltimaLive.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for UltimaLive:</div>
 <div class="dyncontent">
 <div class="center"><img src="classUltimaLive__coll__graph.png" border="0" usemap="#UltimaLive_coll__map" alt="Collaboration graph"/></div>
 <map name="UltimaLive_coll__map" id="UltimaLive_coll__map">
-<area shape="rect" id="node3" title="STL class. " alt="" coords="1806,186,1886,213"/>
-<area shape="rect" id="node7" href="classBaseFileManager.html" title="BaseFileManager" alt="" coords="2790,122,2913,149"/>
-<area shape="rect" id="node9" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="2096,219,2232,246"/>
-<area shape="rect" id="node4" title="STL class. " alt="" coords="1472,179,1599,220"/>
-<area shape="rect" id="node5" href="classClient.html" title="Client" alt="" coords="3272,223,3327,250"/>
-<area shape="rect" id="node15" href="classNetworkManager.html" title="NetworkManager" alt="" coords="3696,357,3815,383"/>
-<area shape="rect" id="node6" href="structMapTileDefinition.html" title="MapTileDefinition" alt="" coords="2791,173,2911,199"/>
-<area shape="rect" id="node10" href="classProgressBarDialog.html" title="ProgressBarDialog" alt="" coords="2447,118,2578,145"/>
-<area shape="rect" id="node11" title="STL class. " alt="" coords="2463,66,2562,93"/>
-<area shape="rect" id="node12" title="STL class. " alt="" coords="2096,52,2232,93"/>
-<area shape="rect" id="node13" title="STL class. " alt="" coords="1779,52,1913,93"/>
-<area shape="rect" id="node14" href="structMapMinDisplay.html" title="MapMinDisplay" alt="" coords="2796,290,2907,317"/>
-<area shape="rect" id="node26" href="classBasePacketHandler.html" title="BasePacketHandler" alt="" coords="3973,401,4110,427"/>
-<area shape="rect" id="node17" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="2978,335,3121,376"/>
-<area shape="rect" id="node18" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="2427,303,2599,330"/>
-<area shape="rect" id="node49" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="2780,224,2923,265"/>
-<area shape="rect" id="node28" href="structCStaticObject.html" title="CStaticObject" alt="" coords="731,590,834,617"/>
-<area shape="rect" id="node29" href="structCStaticObjectMembers.html" title="CStaticObjectMembers" alt="" coords="1087,590,1244,617"/>
-<area shape="rect" id="node41" href="structCItemMembers.html" title="CItemMembers" alt="" coords="1791,638,1901,665"/>
-<area shape="rect" id="node36" href="structCPlayerMobile.html" title="CPlayerMobile" alt="" coords="2798,559,2905,586"/>
-<area shape="rect" id="node40" href="structCItem.html" title="CItem" alt="" coords="1507,593,1563,619"/>
-<area shape="rect" id="node47" href="structCMobile.html" title="CMobile" alt="" coords="2129,641,2199,667"/>
-<area shape="rect" id="node30" href="structCDrawItemMembers.html" title="CDrawItemMembers" alt="" coords="414,374,553,401"/>
-<area shape="rect" id="node31" href="structCDrawItem.html" title="CDrawItem" alt="" coords="740,222,825,249"/>
-<area shape="rect" id="node38" href="structCBigMobComponent.html" title="CBigMobComponent" alt="" coords="712,273,853,299"/>
-<area shape="rect" id="node32" href="structCDrawItemVtable.html" title="CDrawItemVtable" alt="" coords="422,179,545,206"/>
-<area shape="rect" id="node33" href="structCDrawItemVtableMembers.html" title="CDrawItemVtableMembers" alt="" coords="15,595,191,622"/>
-<area shape="rect" id="node34" href="structCStaticObjectVtable.html" title="CStaticObjectVtable" alt="" coords="413,590,553,617"/>
-<area shape="rect" id="node42" href="structCItemVtable.html" title="CItemVtable" alt="" coords="437,690,530,717"/>
-<area shape="rect" id="node44" href="structCMobileVtable.html" title="CMobileVtable" alt="" coords="430,870,537,897"/>
-<area shape="rect" id="node35" href="structCStaticObjectVtableMembers.html" title="CStaticObjectVtableMembers" alt="" coords="5,689,200,715"/>
-<area shape="rect" id="node37" href="structCContainerMembers.html" title="CContainerMembers" alt="" coords="1776,439,1916,466"/>
-<area shape="rect" id="node39" href="structCBigMobComponentMembers.html" title="CBigMobComponentMembers" alt="" coords="1068,305,1263,331"/>
-<area shape="rect" id="node43" href="structCItemVtableMembers.html" title="CItemVtableMembers" alt="" coords="29,802,176,829"/>
-<area shape="rect" id="node45" href="structCMobileVtableMembers.html" title="CMobileVtableMembers" alt="" coords="23,915,183,942"/>
-<area shape="rect" id="node46" href="structCMobileMembers.html" title="CMobileMembers" alt="" coords="2451,589,2574,615"/>
-<area shape="rect" id="node48" href="structCPlayerMobileMembers.html" title="CPlayerMobileMembers" alt="" coords="2433,663,2593,690"/>
-<area shape="rect" id="node50" href="classDotNetHost.html" title="DotNetHost" alt="" coords="2807,71,2896,98"/>
+<area shape="rect" id="node3" title="STL class. " alt="" coords="385,90,465,117"/>
+<area shape="rect" id="node6" href="classBaseFileManager.html" title="The responsibility of the file manager is to handle the custom file formats that the client may emplo..." alt="" coords="1305,138,1427,165"/>
+<area shape="rect" id="node8" href="classClientFileHandleSet.html" title="Contains pointers and handles for createfile, mapviewoffile, filesize, etc. " alt="" coords="611,177,747,203"/>
+<area shape="rect" id="node4" title="STL class. " alt="" coords="169,83,295,124"/>
+<area shape="rect" id="node5" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ..." alt="" coords="1724,190,1779,217"/>
+<area shape="rect" id="node15" href="classNetworkManager.html" title="Handles network packets going to/from the server/client. " alt="" coords="2148,485,2267,511"/>
+<area shape="rect" id="node9" href="classProgressBarDialog.html" title="Displays a progress bar. " alt="" coords="962,181,1093,207"/>
+<area shape="rect" id="node10" title="STL class. " alt="" coords="978,242,1077,269"/>
+<area shape="rect" id="node11" title="STL class. " alt="" coords="611,235,747,276"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="359,235,492,276"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="155,242,309,269"/>
+<area shape="rect" id="node14" title="STL class. " alt="" coords="5,242,105,269"/>
+<area shape="rect" id="node26" href="classBasePacketHandler.html" title="Base class for all packet handlers. " alt="" coords="2425,529,2562,555"/>
+<area shape="rect" id="node17" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; NetworkManager \&gt;" alt="" coords="1461,312,1604,353"/>
+<area shape="rect" id="node18" href="classBaseSelfRegisteringClass.html" title="Base class that enables classes to self register (typically as factories) " alt="" coords="941,306,1113,333"/>
+<area shape="rect" id="node28" href="classSelfRegisteringClass.html" title="SelfRegisteringClass\l\&lt; Client \&gt;" alt="" coords="1295,189,1437,231"/>
+<area shape="rect" id="node29" href="classDotNetHost.html" title="Class used to host the .NET common language runtime (CLR) " alt="" coords="1321,255,1411,282"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a3478afb1e9e0027d9534c690ba62a56c"><td class="memItemLeft" align="right" valign="top"><a id="a3478afb1e9e0027d9534c690ba62a56c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#a3478afb1e9e0027d9534c690ba62a56c">UltimaLive</a> ()</td></tr>
+<tr class="memdesc:a3478afb1e9e0027d9534c690ba62a56c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> class constructor. <br /></td></tr>
+<tr class="separator:a3478afb1e9e0027d9534c690ba62a56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80a81c3157b3cc51b3dcbff6a2ea3ef3"><td class="memItemLeft" align="right" valign="top"><a id="a80a81c3157b3cc51b3dcbff6a2ea3ef3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#a80a81c3157b3cc51b3dcbff6a2ea3ef3">Start</a> ()</td></tr>
+<tr class="memdesc:a80a81c3157b3cc51b3dcbff6a2ea3ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a>. Searches for internal client structures and prepares to start handling packets. <br /></td></tr>
 <tr class="separator:a80a81c3157b3cc51b3dcbff6a2ea3ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe2a45c64c037b90116b2af0569f0ba1"><td class="memItemLeft" align="right" valign="top"><a id="afe2a45c64c037b90116b2af0569f0ba1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Register</b> (std::string name, void *obj)</td></tr>
+<tr class="memitem:afe2a45c64c037b90116b2af0569f0ba1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#afe2a45c64c037b90116b2af0569f0ba1">Register</a> (std::string name, void *obj)</td></tr>
+<tr class="memdesc:afe2a45c64c037b90116b2af0569f0ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an instance of a class with a name.  <a href="#afe2a45c64c037b90116b2af0569f0ba1">More...</a><br /></td></tr>
 <tr class="separator:afe2a45c64c037b90116b2af0569f0ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19349753bffc92de1b5997df8025eeea"><td class="memItemLeft" align="right" valign="top"><a id="a19349753bffc92de1b5997df8025eeea"></a>
-void *&#160;</td><td class="memItemRight" valign="bottom"><b>Lookup</b> (std::string name)</td></tr>
+<tr class="memitem:a19349753bffc92de1b5997df8025eeea"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#a19349753bffc92de1b5997df8025eeea">Lookup</a> (std::string name)</td></tr>
+<tr class="memdesc:a19349753bffc92de1b5997df8025eeea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up an instance of a class by name.  <a href="#a19349753bffc92de1b5997df8025eeea">More...</a><br /></td></tr>
 <tr class="separator:a19349753bffc92de1b5997df8025eeea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae47635519ea1413e5d39f2d9bc58673e"><td class="memItemLeft" align="right" valign="top"><a id="ae47635519ea1413e5d39f2d9bc58673e"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetVersionMajor</b> ()</td></tr>
+<tr class="memitem:ae47635519ea1413e5d39f2d9bc58673e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#ae47635519ea1413e5d39f2d9bc58673e">GetVersionMajor</a> ()</td></tr>
+<tr class="memdesc:ae47635519ea1413e5d39f2d9bc58673e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> major version.  <a href="#ae47635519ea1413e5d39f2d9bc58673e">More...</a><br /></td></tr>
 <tr class="separator:ae47635519ea1413e5d39f2d9bc58673e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af69b446df2fa82b7aa69c6d65c5238e2"><td class="memItemLeft" align="right" valign="top"><a id="af69b446df2fa82b7aa69c6d65c5238e2"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>GetVersionMinor</b> ()</td></tr>
+<tr class="memitem:af69b446df2fa82b7aa69c6d65c5238e2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#af69b446df2fa82b7aa69c6d65c5238e2">GetVersionMinor</a> ()</td></tr>
+<tr class="memdesc:af69b446df2fa82b7aa69c6d65c5238e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> minor version.  <a href="#af69b446df2fa82b7aa69c6d65c5238e2">More...</a><br /></td></tr>
 <tr class="separator:af69b446df2fa82b7aa69c6d65c5238e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a8b52aec5ae573d5eb2147cdc2e3a6ba2"><td class="memItemLeft" align="right" valign="top"><a id="a8b52aec5ae573d5eb2147cdc2e3a6ba2"></a>
-<a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>m_pClient</b></td></tr>
+<a class="el" href="classClient.html">Client</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#a8b52aec5ae573d5eb2147cdc2e3a6ba2">m_pClient</a></td></tr>
+<tr class="memdesc:a8b52aec5ae573d5eb2147cdc2e3a6ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to <a class="el" href="classClient.html" title="This class knows about the client internals. This class assumes that it shares memory space with the ...">Client</a> class instance. <br /></td></tr>
 <tr class="separator:a8b52aec5ae573d5eb2147cdc2e3a6ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a83312c679336a228b475531bed77bc88"><td class="memItemLeft" align="right" valign="top"><a id="a83312c679336a228b475531bed77bc88"></a>
-static <a class="el" href="classUltimaLive.html">UltimaLive</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>g_pUltimaLive</b> = NULL</td></tr>
+static <a class="el" href="classUltimaLive.html">UltimaLive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#a83312c679336a228b475531bed77bc88">g_pUltimaLive</a> = NULL</td></tr>
+<tr class="memdesc:a83312c679336a228b475531bed77bc88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Global class instance of <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a>. <br /></td></tr>
 <tr class="separator:a83312c679336a228b475531bed77bc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a2a60ceb87f0d4235670189324b2af864"><td class="memItemLeft" align="right" valign="top"><a id="a2a60ceb87f0d4235670189324b2af864"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>m_versionMajor</b></td></tr>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#a2a60ceb87f0d4235670189324b2af864">m_versionMajor</a></td></tr>
+<tr class="memdesc:a2a60ceb87f0d4235670189324b2af864"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> Major Version. <br /></td></tr>
 <tr class="separator:a2a60ceb87f0d4235670189324b2af864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53dfe04fb2b250da5e23e2718c9a5ffd"><td class="memItemLeft" align="right" valign="top"><a id="a53dfe04fb2b250da5e23e2718c9a5ffd"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>m_versionMinor</b></td></tr>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#a53dfe04fb2b250da5e23e2718c9a5ffd">m_versionMinor</a></td></tr>
+<tr class="memdesc:a53dfe04fb2b250da5e23e2718c9a5ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> Minor Version. <br /></td></tr>
 <tr class="separator:a53dfe04fb2b250da5e23e2718c9a5ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad63db360cefccc886f326d9a4ce7171d"><td class="memItemLeft" align="right" valign="top"><a id="ad63db360cefccc886f326d9a4ce7171d"></a>
-std::map&lt; std::string, void * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>m_registrations</b></td></tr>
+std::map&lt; std::string, void * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUltimaLive.html#ad63db360cefccc886f326d9a4ce7171d">m_registrations</a></td></tr>
+<tr class="memdesc:ad63db360cefccc886f326d9a4ce7171d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class instance registrations. <br /></td></tr>
 <tr class="separator:ad63db360cefccc886f326d9a4ce7171d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="UltimaLive_8h_source.html#l00040">40</a> of file <a class="el" href="UltimaLive_8h_source.html">UltimaLive.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>Enables map streaming to the client and definition and use of additional maps. </p>
+
+<p class="definition">Definition at line <a class="el" href="UltimaLive_8h_source.html#l00045">45</a> of file <a class="el" href="UltimaLive_8h_source.html">UltimaLive.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae47635519ea1413e5d39f2d9bc58673e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47635519ea1413e5d39f2d9bc58673e">&#9670;&nbsp;</a></span>GetVersionMajor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t UltimaLive::GetVersionMajor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> major version. </p>
+<dl class="section return"><dt>Returns</dt><dd>Major version </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="UltimaLive_8cpp_source.html#l00163">163</a> of file <a class="el" href="UltimaLive_8cpp_source.html">UltimaLive.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="UltimaLive_8h_source.html#l00061">m_versionMajor</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FileManagerFactory_8cpp_source.html#l00035">FileManagerFactory::Configure()</a>, and <a class="el" href="NetworkManager_8cpp_source.html#l00046">NetworkManager::Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="af69b446df2fa82b7aa69c6d65c5238e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af69b446df2fa82b7aa69c6d65c5238e2">&#9670;&nbsp;</a></span>GetVersionMinor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t UltimaLive::GetVersionMinor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the <a class="el" href="classUltimaLive.html" title="Enables map streaming to the client and definition and use of additional maps. ">UltimaLive</a> minor version. </p>
+<dl class="section return"><dt>Returns</dt><dd>Minor version </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="UltimaLive_8cpp_source.html#l00173">173</a> of file <a class="el" href="UltimaLive_8cpp_source.html">UltimaLive.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="UltimaLive_8h_source.html#l00062">m_versionMinor</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FileManagerFactory_8cpp_source.html#l00035">FileManagerFactory::Configure()</a>, and <a class="el" href="NetworkManager_8cpp_source.html#l00046">NetworkManager::Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="a19349753bffc92de1b5997df8025eeea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19349753bffc92de1b5997df8025eeea">&#9670;&nbsp;</a></span>Lookup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * UltimaLive::Lookup </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Looks up an instance of a class by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>lookup string</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to class instance </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="UltimaLive_8cpp_source.html#l00200">200</a> of file <a class="el" href="UltimaLive_8cpp_source.html">UltimaLive.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="UltimaLive_8h_source.html#l00063">m_registrations</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FileManagerFactory_8cpp_source.html#l00059">FileManagerFactory::Initialize()</a>, <a class="el" href="LoginHandler_8cpp_source.html#l00046">LoginHandler::Initialize()</a>, <a class="el" href="Atlas_8cpp_source.html#l00048">Atlas::Initialize()</a>, <a class="el" href="Client_8cpp_source.html#l00052">Client::Initialize()</a>, and <a class="el" href="NetworkManager_8cpp_source.html#l00046">NetworkManager::Initialize()</a>.</p>
+
+</div>
+</div>
+<a id="afe2a45c64c037b90116b2af0569f0ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe2a45c64c037b90116b2af0569f0ba1">&#9670;&nbsp;</a></span>Register()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UltimaLive::Register </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers an instance of a class with a name. </p>
+<dl class="section return"><dt>Returns</dt><dd>Major version </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="UltimaLive_8cpp_source.html#l00183">183</a> of file <a class="el" href="UltimaLive_8cpp_source.html">UltimaLive.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="UltimaLive_8h_source.html#l00063">m_registrations</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FileManagerFactory_8cpp_source.html#l00035">FileManagerFactory::Configure()</a>, <a class="el" href="LoginHandler_8cpp_source.html#l00037">LoginHandler::Configure()</a>, <a class="el" href="Atlas_8cpp_source.html#l00037">Atlas::Configure()</a>, <a class="el" href="Client_8cpp_source.html#l00039">Client::Configure()</a>, and <a class="el" href="NetworkManager_8cpp_source.html#l00035">NetworkManager::Configure()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>UltimaLive/<a class="el" href="UltimaLive_8h_source.html">UltimaLive.h</a></li>
 <li>UltimaLive/<a class="el" href="UltimaLive_8cpp_source.html">UltimaLive.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

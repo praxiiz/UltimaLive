@@ -109,7 +109,7 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa26b2c04ff71d6a0f16376f20a6650c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseSelfRegisteringClass.html#aa26b2c04ff71d6a0f16376f20a6650c9">BaseSelfRegisteringClass</a> (void(*)(), bool(*)())</td></tr>
-<tr class="memdesc:aa26b2c04ff71d6a0f16376f20a6650c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded constructor for BaseSelfRegistering class. Stores function pointers for later retrieval.  <a href="#aa26b2c04ff71d6a0f16376f20a6650c9">More...</a><br /></td></tr>
+<tr class="memdesc:aa26b2c04ff71d6a0f16376f20a6650c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded constructor for BaseSelfRegistering class. Stores function pointers for later retrieval. Function pointers are passed in by the <a class="el" href="classSelfRegisteringClass.html" title="Templated class that facilitates automatic registration of classes. ">SelfRegisteringClass</a> automatically through templating.  <a href="#aa26b2c04ff71d6a0f16376f20a6650c9">More...</a><br /></td></tr>
 <tr class="separator:aa26b2c04ff71d6a0f16376f20a6650c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
@@ -159,8 +159,7 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Overloaded constructor for BaseSelfRegistering class. Stores function pointers for later retrieval. </p>
-<p>Function pointers are passed in by the <a class="el" href="classSelfRegisteringClass.html" title="Templated class that facilitates automatic registration of classes. ">SelfRegisteringClass</a> automatically through templating</p>
+<p>Overloaded constructor for BaseSelfRegistering class. Stores function pointers for later retrieval. Function pointers are passed in by the <a class="el" href="classSelfRegisteringClass.html" title="Templated class that facilitates automatic registration of classes. ">SelfRegisteringClass</a> automatically through templating. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>Function pointer to each class's static configure function </td></tr>
@@ -169,9 +168,9 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00043">43</a> of file <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html">BaseSelfRegisteringClass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00042">42</a> of file <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html">BaseSelfRegisteringClass.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00103">getConfigurationFunctions()</a>, and <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00092">getInitalizationFunctions()</a>.</p>
+<p class="reference">References <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00102">getConfigurationFunctions()</a>, and <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00091">getInitalizationFunctions()</a>.</p>
 
 </div>
 </div>
@@ -202,9 +201,9 @@ Static Private Member Functions</h2></td></tr>
 <p>Uses the Construct On First Use Idiom to get the list of configuration functions. </p>
 <dl class="section return"><dt>Returns</dt><dd>vector of function pointers to configuration functions </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00103">103</a> of file <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html">BaseSelfRegisteringClass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00102">102</a> of file <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html">BaseSelfRegisteringClass.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00043">BaseSelfRegisteringClass()</a>, and <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00052">Configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00042">BaseSelfRegisteringClass()</a>, and <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00051">Configure()</a>.</p>
 
 </div>
 </div>
@@ -235,9 +234,9 @@ Static Private Member Functions</h2></td></tr>
 <p>There is a danger to this method if not used propertly: see: <a href="http://www.parashift.com/c++-faq/construct-on-first-use-v2.html">http://www.parashift.com/c++-faq/construct-on-first-use-v2.html</a></p>
 <p>return vector of function pointers to initialization functions </p>
 
-<p class="definition">Definition at line <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00092">92</a> of file <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html">BaseSelfRegisteringClass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00091">91</a> of file <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html">BaseSelfRegisteringClass.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00043">BaseSelfRegisteringClass()</a>, and <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00065">Initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00042">BaseSelfRegisteringClass()</a>, and <a class="el" href="BaseSelfRegisteringClass_8cpp_source.html#l00064">Initialize()</a>.</p>
 
 </div>
 </div>
@@ -248,7 +247,7 @@ Static Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 18 2017 22:14:41 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:12:42 for UltimaLive by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['fileentry',['FileEntry',['../classFileEntry.html',1,'']]],
-  ['fileheader',['FileHeader',['../classFileHeader.html',1,'']]],
-  ['filemanager',['FileManager',['../classFileManager.html',1,'FileManager'],['../classFileManager.html#a41b7c5f66d29e28a954c84b725decb16',1,'FileManager::FileManager()']]],
-  ['filemanager_2eh',['FileManager.h',['../FileManager_8h.html',1,'']]],
-  ['filemanager_5f7_5f0_5f29_5f2',['FileManager_7_0_29_2',['../classFileManager__7__0__29__2.html',1,'']]],
-  ['filemanager_5f7_5f0_5f29_5f2_2ecpp',['FileManager_7_0_29_2.cpp',['../FileManager__7__0__29__2_8cpp.html',1,'']]],
-  ['filemanager_5f7_5f0_5f29_5f2_2eh',['FileManager_7_0_29_2.h',['../FileManager__7__0__29__2_8h.html',1,'']]],
-  ['filemanagerfactory',['FileManagerFactory',['../classFileManagerFactory.html',1,'']]],
-  ['filetable',['FileTable',['../classFileTable.html',1,'']]],
-  ['formatheader',['FormatHeader',['../classFormatHeader.html',1,'']]]
+  ['dataheaderaddress',['dataHeaderAddress',['../classFileHeader.html#a66732d7229b36e5423b8d3f95d425e9a',1,'FileHeader']]],
+  ['dataheaderhash',['dataHeaderHash',['../classFileHeader.html#a892ecb574fdd447cc132b854ae44acf9',1,'FileHeader']]],
+  ['decompressedfilesize',['decompressedFileSize',['../classFileHeader.html#a23cf194d464436143126a76917114e49',1,'FileHeader']]],
+  ['dialogproc',['DialogProc',['../classProgressBarDialog.html#a5307e5fcdd830ee223e6e1cdd0de835b',1,'ProgressBarDialog']]],
+  ['dotnethost',['DotNetHost',['../classDotNetHost.html',1,'DotNetHost'],['../classDotNetHost.html#ae7ee178b8950e9cae903dee409d9dc62',1,'DotNetHost::DotNetHost()']]]
 ];

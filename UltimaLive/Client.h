@@ -61,21 +61,29 @@ class Client
   public:
 	/**
 	 * @typedef ClientRecvFunction
+	 *
+	 * @brief Client Receive Function type
 	 */
     typedef void (__thiscall* ClientRecvFunction)(void* This, unsigned char* pBuffer);
 
 	/**
-	 * @brief ClientSendFunction
+	 * @typedef ClientSendFunction
+	 *
+	 * @brief Client Send Function type
 	 */
 	typedef int (__thiscall* ClientSendFunction)(void* This, unsigned char* pBuffer);
 
 	/**
 	 * @typedef ClientUpdateStaticBlocksFunction
+	 *
+	 * @brief Client Update Statics Block function type
 	 */
 	typedef void (__cdecl* ClientUpdateStaticBlocksFunction)();
 
 	/**
 	 * @typedef RefreshTerrainFunction
+	 * 
+	 * @brief Refresh Terrain Function type
 	 */
 	typedef int(__cdecl* RefreshTerrainFunction)();
   #pragma endregion

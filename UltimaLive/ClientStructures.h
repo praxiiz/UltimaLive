@@ -102,10 +102,6 @@ struct CDrawItemVtableMembers
   int32_t DrawClip;											//!< Unknown
   int32_t DrawSomething;									//!< Unknown
   int32_t (__thiscall *AddToDrawList)(void*);				//!< Unknown
-
-  /**
-   * @brief Remove an item from the draw list
-   */
   void (__thiscall *RemoveFromDrawList)(void*);
   int32_t (__thiscall *IsStatic)(void*);					//!< Unknown
   int32_t (__thiscall *IsTerrain)(void*);					//!< Unknown
@@ -113,9 +109,6 @@ struct CDrawItemVtableMembers
   int32_t (__thiscall *IsMobile)(void*);					//!< Unknown
   int32_t (__thiscall *IsPlayerMobile)(void*);				//!< Unknown
   int32_t (__thiscall *IsDynamic)(void*);					//!< Unknown
-  /**
-   * @brief Is Container getter
-   */
   void (__thiscall *IsContainer)(void*, int);
   int32_t (__thiscall *IsGumpArt)(void*);					//!< Unknown
   int32_t (__thiscall *IsBigMobComponent)(void*);			//!< Unknown
@@ -124,10 +117,6 @@ struct CDrawItemVtableMembers
   int32_t (__thiscall *GetTopZ)(void*);						//!< Unknown
   int32_t GetOtherZ;										//!< Unknown
   int32_t getOtherZZ;										//!< Unknown
-
-  /**
-   * @brief Unequip an item
-   */
   void (__thiscall *Unequip)(void*);
   int32_t (__stdcall *field_54)(DWORD, DWORD, DWORD);		//!< Unknown
   int32_t (__thiscall *field_58)(DWORD, DWORD);				//!< Unknown

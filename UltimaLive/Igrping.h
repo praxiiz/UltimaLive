@@ -40,7 +40,14 @@
 class CIgr_pinger
 {
   public:
+	 /**
+	  * @brief Original class constructor
+	  */
    __declspec(dllexport) CIgr_pinger();
+
+   /**
+    * @brief Original assignment operator overload
+    */
    __declspec(dllexport) CIgr_pinger& __thiscall operator=(CIgr_pinger const &rOther);
    static bool g_firstRun; //!< Keeps track of the first time that UltimaLive has been injected so that it only gets injected once
 };

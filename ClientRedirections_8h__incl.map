@@ -1,0 +1,19 @@
+<map id="UltimaLive/ClientRedirections.h" name="UltimaLive/ClientRedirections.h">
+<area shape="rect" id="node3" href="$UltimaLive_8h_source.html" title="UltimaLive.h" alt="" coords="1222,155,1314,181"/>
+<area shape="rect" id="node19" href="$Client_8h.html" title="Client.h" alt="" coords="2207,80,2273,107"/>
+<area shape="rect" id="node30" href="$BaseFileManager_8h.html" title="FileSystem\\BaseFileManager.h" alt="" coords="970,155,1174,181"/>
+<area shape="rect" id="node7" href="$Utils_8h_source.html" title="Utils.h" alt="" coords="964,237,1023,263"/>
+<area shape="rect" id="node18" href="$Debug_8h_source.html" title="Debug.h" alt="" coords="2665,393,2735,420"/>
+<area shape="rect" id="node15" href="$resource_8h_source.html" title="resource.h" alt="" coords="308,393,391,420"/>
+<area shape="rect" id="node16" href="$ProgressBarDialog_8h_source.html" title="ProgressBarDialog.h" alt="" coords="379,319,520,345"/>
+<area shape="rect" id="node22" href="$mhook_8h_source.html" title="mhook.h" alt="" coords="2280,155,2352,181"/>
+<area shape="rect" id="node23" href="$MasterControlUtils_8h_source.html" title="MasterControlUtils.h" alt="" coords="2875,237,3015,263"/>
+<area shape="rect" id="node24" href="$DotNetHost_8h_source.html" title="DotNetHost.h" alt="" coords="1421,155,1521,181"/>
+<area shape="rect" id="node26" href="$SelfRegisteringClass_8h.html" title="ClassRegistration\\SelfRegistering\lClass.h" alt="" coords="1913,229,2127,271"/>
+<area shape="rect" id="node33" href="$NetworkManager_8h_source.html" title="Network\\NetworkManager.h" alt="" coords="2075,155,2256,181"/>
+<area shape="rect" id="node27" href="$BaseSelfRegisteringClass_8h_source.html" title="BaseSelfRegisteringClass.h" alt="" coords="2027,319,2210,345"/>
+<area shape="rect" id="node32" href="$ClientFileHandleSet_8h_source.html" title="ClientFileHandleSet.h" alt="" coords="1640,237,1787,263"/>
+<area shape="rect" id="node35" href="$PacketHandlerFactory_8h_source.html" title="PacketHandlerFactory.h" alt="" coords="2203,237,2365,263"/>
+<area shape="rect" id="node38" href="$MapDefinition_8h_source.html" title="..\\Maps\\MapDefinition.h" alt="" coords="1793,319,1951,345"/>
+<area shape="rect" id="node36" href="$BasePacketHandler_8h_source.html" title="BasePacketHandler.h" alt="" coords="2286,319,2434,345"/>
+</map>

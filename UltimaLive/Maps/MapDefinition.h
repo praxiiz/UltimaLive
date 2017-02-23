@@ -33,6 +33,7 @@
  *
  * @brief Contains basic map definition data (number of tiles, map index, etc)
  */
+#pragma pack(1)
 class MapDefinition
 {
   public:

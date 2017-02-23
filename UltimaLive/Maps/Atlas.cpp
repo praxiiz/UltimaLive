@@ -237,7 +237,7 @@ void Atlas::onHashQuery(uint32_t blockNumber, uint8_t mapNumber)
 
   m_pNetworkManager->sendPacketToServer(pResponse);
 
-  delete pResponse;
+  delete [] pResponse;
 }
 
 /**

@@ -70,7 +70,7 @@ UltimaLive::UltimaLive()
       }
     }
 
-    delete pVersionBuffer;
+    delete [] pVersionBuffer;
   }
 }
 

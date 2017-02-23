@@ -367,7 +367,7 @@ bool BaseFileManager::createNewPersistentMap(std::string pathWithoutFilename, ui
   {
     mapFile.write(pVerticalBlockStrip, numberOfBytesInStrip);
   }
-  delete pVerticalBlockStrip;
+  delete [] pVerticalBlockStrip;
   mapFile.close();
 
   std::fstream staidxFile;
@@ -389,7 +389,7 @@ bool BaseFileManager::createNewPersistentMap(std::string pathWithoutFilename, ui
   {
     staidxFile.write(pVerticalBlockIndexStrip, numberOfBytesInIndexStrip);
   }
-  delete pVerticalBlockIndexStrip;
+  delete [] pVerticalBlockIndexStrip;
   staidxFile.close();
 
   std::fstream staticsFile;
@@ -424,7 +424,7 @@ void BaseFileManager::copyFile(std::string sourceFilePath, std::string destFileP
   uint32_t prevPercent = 0;
 
   // allocate memory for buffer
-  char* buffer = new char[4096];
+  char* pBuffer = new char[4096];
   size_t bytesToWrite;
 
   FILE* pSource = NULL;
@@ -437,10 +437,10 @@ void BaseFileManager::copyFile(std::string sourceFilePath, std::string destFileP
   // feof(FILE* stream) returns non-zero if the end of file indicator for stream is set
   do 
   {
-    bytesToWrite = fread(buffer, 1, 4096, pSource);
+    bytesToWrite = fread(pBuffer, 1, 4096, pSource);
     if (bytesToWrite != 0)
     {
-      fwrite(buffer, 1, bytesToWrite, pDest);
+      fwrite(pBuffer, 1, bytesToWrite, pDest);
       bytesCopied += bytesToWrite;
       
       if (pProgress != NULL)
@@ -454,6 +454,8 @@ void BaseFileManager::copyFile(std::string sourceFilePath, std::string destFileP
       }
     }
   } while (bytesToWrite != 0);
+
+  delete [] pBuffer;
 
   fclose(pSource);
   fclose(pDest);

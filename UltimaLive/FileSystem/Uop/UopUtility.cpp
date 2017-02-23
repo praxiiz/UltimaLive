@@ -109,7 +109,7 @@ void UopUtility::convertUopMapToMul(std::string uopSourceFilename, std::string u
         }
       }
 
-      delete pEntryData;
+      delete [] pEntryData;
     }
 
     delete pHashes;

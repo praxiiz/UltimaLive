@@ -229,7 +229,7 @@ void LoginHandler::onLogoutRequest()
 
   if (m_pCachedLoginPacket != NULL)
   {
-    delete m_pCachedLoginPacket;
+    delete [] m_pCachedLoginPacket;
     m_pCachedLoginPacket = NULL;
   }
 }

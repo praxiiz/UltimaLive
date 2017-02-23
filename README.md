@@ -9,3 +9,12 @@ Maps can be altered in realtime while the game client is running. This gives fre
 Project Setup
 
 Visual Studio Projects have been moved out of the UltimaLive Project folder so that a separate folder can be maintained for each version of Visual Studio can be supported.
+
+Doxygen 
+
+Doxygen for windows can be installed to generate project documentation. 
+1. Doxygen needs to be installed and added to the system path. 
+2. Create a folder called html in the UltimaLive root folder.
+3. Issue the following command from the UltimaLive root folder to generate documentation:
+
+doxygen docs/Doxyfile
